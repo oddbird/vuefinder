@@ -1,0 +1,35 @@
+{
+  "name": "nuxt-slides",
+  "version": "1.0.0",
+  "description": "Slideshows in nuxt",
+  "author": "Miriam Suzanne <miriam@oddbird.net>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/markdownit": "^1.2.1",
+    "gray-matter": "^4.0.1",
+    "js-yaml": "^3.12.0",
+    "markdown-it-attrs": "^2.2.0",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-highlightjs": "^3.0.0",
+    "node-sass": "^4.9.0",
+    "nuxt": "^1.0.0",
+    "sass-loader": "^7.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
