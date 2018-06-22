@@ -1,8 +1,8 @@
 <template>
   <article>
-    <header v-if="meta.title" v-html="meta.title + meta.subtitle"></header>
+    <header v-if="talk.meta.title" v-html="talk.meta.title + talk.meta.subtitle"></header>
 
-    <section v-for="card in page"
+    <section v-for="card in talk.page"
       class="card"
       :key="card.id"
       v-html="card.content"></section>
@@ -10,41 +10,18 @@
 </template>
 
 <script>
-  import matter from 'gray-matter';
-
   export default {
-    data() {
-      return {
-        meta: {},
-        page: [],
+    computed: {
+      talk() {
+        const talkByPath = this.$store.getters['talks/talkByPath'];
+        return talkByPath(this.$route.params.talk);
+      },
+    },
+    async fetch({ store }) {
+      if (!store.getters['talks/isFetched']) {
+        return store.dispatch('talks/fetchTalks');
       }
     },
-    async asyncData ({ app, params }) {
-      let meta = {};
-      let page = [];
-      let pageData = await app.$axios.$get(`talk_src/${params.talk}.md`);
-      pageData.split('\n<!-- slide -->\n').forEach(function(partRaw, index) {
-        partRaw = partRaw.trimLeft();
-        const bits = matter(partRaw, {excerpt_separator: '<!-- more -->'});
-        bits.id = index;
-        bits.content = app.$md.render(bits.content.trimLeft());
-        bits.excerpt = app.$md.render(bits.excerpt.trimLeft());
-
-        if (bits.id === 0) {
-          meta = bits;
-          meta.title = meta.data.title ?
-            app.$md.render('# ' + meta.data.title) : '';
-          meta.subtitle = meta.data.subtitle ?
-            app.$md.render('# ' + meta.data.subtitle) : '';
-        } else {
-          page.push(bits);
-        }
-      });
-      return {
-        page: page,
-        meta: meta,
-      };
-    }
   }
 </script>
 
