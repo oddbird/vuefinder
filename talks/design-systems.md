@@ -30,9 +30,8 @@ living design systems in an agile and integrated process?
 <!-- slide -->
 
 ---
-background:
-  src: 'https://dl.dropbox.com/s/98zl3nxde444otp/oddbird-w-logo.jpg'
-  alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
+background: 'https://dl.dropbox.com/s/98zl3nxde444otp/oddbird-w-logo.jpg'
+alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 ---
 
 <!-- slide -->
@@ -45,9 +44,8 @@ est. *2008*
 <!-- slide -->
 
 ---
-background:
-  src: 'https://dl.dropbox.com/s/3oyfw1kdtz2qzih/lonely-planet-colors.jpg'
-  alt: Lonely Planet Design System
+background: 'https://dl.dropbox.com/s/3oyfw1kdtz2qzih/lonely-planet-colors.jpg'
+alt: Lonely Planet Design System
 ---
 
 <!-- slide -->

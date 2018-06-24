@@ -1,7 +1,57 @@
+const fs = require('fs');
+const matter = require('gray-matter');
+
+const allRouts = [];
+const allData = {};
+
+// parse a file for metadata and markdown…
+const parseFile = (filePath) => {
+  let page = {
+    slides: [],
+  };
+
+  // get the raw data from the file…
+  let pageRaw = fs.readFileSync(filePath, 'utf8');
+
+  // parse…
+  pageRaw.split('\n<!-- slide -->\n').forEach(function (partRaw, index) {
+    partRaw = partRaw.trimLeft();
+    const part = matter(partRaw, { excerpt_separator: '<!-- more -->' });
+    part.content = part.content.trimLeft();
+    part.excerpt = part.excerpt.trimLeft();
+
+    if (index === 0) {
+      page.main = part;
+    } else {
+      part.id = `slide-${index}`;
+      page.slides.push(part);
+    }
+  });
+
+  return page;
+}
+
+const getFiles = (key) => {
+  allData[key] = {};
+  const dir = `./${key}`;
+  const files = fs.readdirSync(dir);
+
+  files.forEach((file) => {
+    const path = `${dir}/${file}`;
+    let pageData = parseFile(path);
+    pageData.path = path;
+
+    let slug = file.substr(0, file.lastIndexOf('.'));
+    rout = `/talks/${slug}`;
+
+    allData[key][slug] = pageData;
+    allRouts.push(rout);
+  });
+}
+
+getFiles('talks');
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: "nuxt-slides",
     meta: [
@@ -11,17 +61,16 @@ module.exports = {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
-  /*
-  ** Customize the progress bar color
-  */
+
   loading: { color: "#3B8070" },
-  /*
-  ** Build configuration
-  */
+
+  generate: {
+    routes: allRouts
+  },
+
+  env: allData,
+
   build: {
-    /*
-    ** Run ESLint on save
-    */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -31,16 +80,10 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-      config.node = {
-        fs: 'empty'
-      }
     }
   },
 
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/markdownit",
-  ],
+  modules: ["@nuxtjs/markdownit"],
 
   markdownit: {
     html: "true",
@@ -54,5 +97,5 @@ module.exports = {
       "markdown-it-emoji",
       "markdown-it-highlightjs"
     ]
-  },
+  }
 };
