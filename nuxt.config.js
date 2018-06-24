@@ -31,9 +31,9 @@ const parseFile = (filePath) => {
   return page;
 }
 
-const getFiles = (key) => {
+const getStatic = (key) => {
   allData[key] = {};
-  const dir = `./${key}`;
+  const dir = `./static/${key}`;
   const files = fs.readdirSync(dir);
 
   files.forEach((file) => {
@@ -49,7 +49,9 @@ const getFiles = (key) => {
   });
 }
 
-getFiles('talks');
+getStatic('talks');
+getStatic('books');
+getStatic('plays');
 
 module.exports = {
   head: {

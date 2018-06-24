@@ -2,11 +2,6 @@
 public: true
 title: '**Agile** Design Systems'
 subtitle: '(with **Vue**)'
-author:
-  name: 'Miriam Suzanne'
-  link: 'http://oddbird.net'
-  twitter: ['mirisuzanne', 'oddbird']
-  github: ['mirisuzanne', 'oddbird']
 ---
 
 Style Guides & Pattern Libraries

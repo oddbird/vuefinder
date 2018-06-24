@@ -1,20 +1,23 @@
 <template>
-  <div data-layout="container">
+  <div data-layout="home">
     <h1>
       nuxt-slides
     </h1>
-    <h2>
-      Slideshows in nuxt
-    </h2>
+    <nav-list v-for="key in keys" :key="key" :list-key="key"/>
   </div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+  import NavList from '~/components/NavList.vue'
 
-export default {
-  components: {
-    AppLogo
+  export default {
+    components: {
+      'nav-list': NavList
+    },
+    asyncData ({ app }) {
+      return {
+        keys: Object.keys(app.context.env)
+      }
+    },
   }
-}
 </script>
