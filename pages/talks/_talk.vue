@@ -3,10 +3,11 @@
     <h1 v-if="title" v-html="title"></h1>
     <h2 v-if="subtitle" v-html="subtitle"></h2>
     <button v-if="shuffleOpt" @click="shuffle">Shuffle</button>
+    <button @click="toggleView">View</button>
 
     <div class="main-body" v-if="content" v-html="content"></div>
 
-    <transition-group name="slides" class="slides">
+    <transition-group name="slides" class="slides" :data-view="view">
       <section v-for="slide in slides"
         :key="slide.id"
         class="slide"
@@ -39,14 +40,15 @@
         excerpt: md.render(talk.main.excerpt),
         slides: talk.main.data.shuffle ? _.shuffle(slides) : slides,
         shuffleOpt: talk.main.data.shuffle,
+        view: talk.main.data.view ? talk.main.data.view : 'list',
       }
     },
     methods: {
       shuffle() {
         this.slides = _.shuffle(this.slides);
       },
-      order() {
-        this.slides = _.orderBy(this.slides, 'id', 'asc');
+      toggleView() {
+        this.view = (this.view === 'list') ? 'grid' : 'list';
       }
     },
   }
@@ -77,13 +79,16 @@ pre {
 .slides {
   display: grid;
   grid-gap: 1em;
+  margin: 1em;
+}
+
+[data-view='grid'] {
   grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
 }
 
 .slide {
   background-size: cover;
   border: 1px solid #ccc;
-  margin: 1em;
   min-height: 50vh;
 }
 
