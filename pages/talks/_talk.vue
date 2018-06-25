@@ -1,54 +1,43 @@
 <template>
-  <main>
-    <h1 v-if="title" v-html="title"></h1>
-    <h2 v-if="subtitle" v-html="subtitle"></h2>
-    <button v-if="shuffleOpt" @click="shuffle">Shuffle</button>
-    <button @click="toggleView">View</button>
+  <main data-layout="talks">
+    <talk-meta :page="meta"
+      :main="slides[0]"
+      @shuffle="shuffle"
+      @toggleView="toggleView"/>
 
-    <div class="main-body" v-if="content" v-html="content"></div>
-
-    <transition-group name="slides" class="slides" :data-view="view">
-      <section v-for="slide in slides"
+    <transition-group name="slides"
+      :data-slide-layout="meta.view">
+      <talk-slide v-for="slide in slides"
         :key="slide.id"
-        class="slide"
-        :style="{ backgroundImage: slide.background }">
-        <p v-if="slide.alt" v-html="slide.alt" hidden></p>
-        <div v-if="slide.content" class="slide-body" v-html="slide.content"></div>
-      </section>
+        :slide="slide"
+        :view="meta.view ? meta.view : 'list'"/>
     </transition-group>
   </main>
 </template>
 
 <script>
-  import _ from 'lodash';
+  import { parseData } from '~/assets/parser';
+  import TalkMeta from '~/components/TalkMeta.vue';
+  import TalkSlide from '~/components/TalkSlide.vue';
 
   export default {
-    asyncData ({ app, params }) {
-      const talk = app.context.env.talks[params.talk];
-      const md = app.$md;
-      const slides = talk.slides.map(slide => {
-        slide.content = md.render(slide.content);
-        slide.background = slide.data.background ? `url(${slide.data.background})` : 'none';
-        slide.alt = slide.data.alt ? md.renderInline(slide.data.alt) : '';
-        return slide;
-      });
-
-      return {
-        title: md.renderInline(talk.main.data.title),
-        subtitle: md.renderInline(talk.main.data.subtitle),
-        content: md.render(talk.main.content),
-        excerpt: md.render(talk.main.excerpt),
-        slides: talk.main.data.shuffle ? _.shuffle(slides) : slides,
-        shuffleOpt: talk.main.data.shuffle,
-        view: talk.main.data.view ? talk.main.data.view : 'list',
-      }
+    components: {
+      TalkMeta,
+      TalkSlide,
+    },
+    async asyncData({ app, params }) {
+      const key = 'talks';
+      const src = `md/${key}/${params.talk}.md`;
+      let data = await app.$axios.$get(src);
+      data = parseData(data, key, params.talk, src);
+      return data;
     },
     methods: {
       shuffle() {
         this.slides = _.shuffle(this.slides);
       },
       toggleView() {
-        this.view = (this.view === 'list') ? 'grid' : 'list';
+        this.meta.view = (this.meta.view === 'list') ? 'grid' : 'list';
       }
     },
   }
@@ -76,24 +65,19 @@ pre {
   }
 }
 
-.slides {
+[data-slide-layout] {
   display: grid;
   grid-gap: 1em;
   margin: 1em;
 }
 
-[data-view='grid'] {
+[data-slide-layout='grid'] {
   grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
 }
 
-.slide {
-  background-size: cover;
-  border: 1px solid #ccc;
-  min-height: 50vh;
-}
-
-.slides-move {
-  transition: all 1s .01ms ease;
+.slides-move,
+[data-slide] {
+  transition: all 1s ease;
 }
 
 .two-up {
@@ -106,3 +90,4 @@ pre {
   }
 }
 </style>
+

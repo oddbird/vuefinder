@@ -1,57 +1,22 @@
-const fs = require('fs');
-const matter = require('gray-matter');
+const fs = require("fs");
 
-const allRouts = [];
-const allData = {};
+const getRoutes = keys => {
+  const mdRoutes = [];
 
-// parse a file for metadata and markdown…
-const parseFile = (filePath) => {
-  let page = {
-    slides: [],
-  };
+  keys.forEach(key => {
+    const dir = `./static/md/${key}`;
+    const files = fs.readdirSync(dir);
 
-  // get the raw data from the file…
-  let pageRaw = fs.readFileSync(filePath, 'utf8');
+    files.forEach(file => {
+      const slug = file.substr(0, file.lastIndexOf("."));
+      mdRoutes.push(`/${key}/${slug}`);
+    });
+  })
 
-  // parse…
-  pageRaw.split('\n<!-- slide -->\n').forEach(function (partRaw, index) {
-    partRaw = partRaw.trimLeft();
-    const part = matter(partRaw, { excerpt_separator: '<!-- more -->' });
-    part.content = part.content.trimLeft();
-    part.excerpt = part.excerpt.trimLeft();
+  return mdRoutes;
+};
 
-    if (index === 0) {
-      page.main = part;
-    } else {
-      part.id = `slide-${index}`;
-      page.slides.push(part);
-    }
-  });
-
-  return page;
-}
-
-const getStatic = (key) => {
-  allData[key] = {};
-  const dir = `./static/${key}`;
-  const files = fs.readdirSync(dir);
-
-  files.forEach((file) => {
-    const path = `${dir}/${file}`;
-    let pageData = parseFile(path);
-    pageData.path = path;
-
-    let slug = file.substr(0, file.lastIndexOf('.'));
-    rout = `/talks/${slug}`;
-
-    allData[key][slug] = pageData;
-    allRouts.push(rout);
-  });
-}
-
-getStatic('talks');
-getStatic('books');
-getStatic('plays');
+mdRoutes = getRoutes(["books", "talks", "plays"]);
 
 module.exports = {
   head: {
@@ -64,15 +29,22 @@ module.exports = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  loading: { color: "#3B8070" },
+  loading: false,
 
   generate: {
-    routes: allRouts
+    routes: mdRoutes
   },
 
-  env: allData,
+  env: {
+    mdRoutes: mdRoutes
+  },
+
+  css: [
+    '~/assets/scss/slide-talks.scss'
+  ],
 
   build: {
+    vendor: ["~/assets/parser", "lodash"],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -85,10 +57,10 @@ module.exports = {
     }
   },
 
-  modules: ["@nuxtjs/markdownit"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/markdownit"],
 
   markdownit: {
-    html: "true",
+    html: true,
     injected: true,
     linkify: true,
     preset: "commonmark",
