@@ -3,6 +3,7 @@ import matter from "gray-matter";
 export async function parseData(pageRaw, key, slug, src) {
   const page = {
     route: `/${key}/${slug}`,
+    key: key,
     slug: slug,
     src: src,
     slides: [],

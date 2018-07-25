@@ -1,22 +1,19 @@
 const fs = require("fs");
+const path = require("path");
+const mdPath = "static/md";
 
-const getRoutes = keys => {
-  const mdRoutes = [];
+const getAllFiles = (dir) => {
+  return fs
+    .readdirSync(dir)
+    .reduce((files, file) => {
+      const name = path.join(dir, file);
+      const isDirectory = fs.statSync(name).isDirectory();
+      return isDirectory ? [...files, ...getAllFiles(name)] : [...files, name];
+    }, [])
+    .map(path => path.replace(`${mdPath}/`, '').replace('.md', ''));
+}
 
-  keys.forEach(key => {
-    const dir = `./static/md/${key}`;
-    const files = fs.readdirSync(dir);
-
-    files.forEach(file => {
-      const slug = file.substr(0, file.lastIndexOf("."));
-      mdRoutes.push(`/${key}/${slug}`);
-    });
-  })
-
-  return mdRoutes;
-};
-
-mdRoutes = getRoutes(["books", "talks", "plays"]);
+mdRoutes = getAllFiles(mdPath);
 
 module.exports = {
   head: {

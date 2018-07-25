@@ -29,8 +29,7 @@
       const key = 'talks';
       const src = `md/${key}/${params.talk}.md`;
       let data = await app.$axios.$get(src);
-      data = parseData(data, key, params.talk, src);
-      return data;
+      return parseData(data, key, params.talk, src);
     },
     methods: {
       shuffle() {
