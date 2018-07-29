@@ -1,82 +1,151 @@
 <template>
-  <article>
-    <header v-if="meta.title" v-html="meta.title + meta.subtitle"></header>
+  <main data-layout="talks">
+    <talk-meta :page="meta"
+      :views="views()"
+      :activeView="view()"
+      @toggleView="toggleView($event)"
+      @shuffle="shuffle()" />
 
-    <section v-for="card in page"
-      class="card"
-      :key="card.id"
-      v-html="card.content"></section>
-  </article>
+    <slide-controls v-show="(view() === 'slides')"
+      :fallback="fallback()"
+      :paused="paused"
+      :hasPrev="(prev !== active)"
+      :hasNext="(next !== active)"
+      @nextSlide="nextSlide()"
+      @prevSlide="prevSlide()"
+      @togglePaused="togglePaused()"
+      @toggleView="toggleView($event)" />
+
+    <transition-group name="slides"
+      tag="div"
+      :data-slide-layout="view()">
+      <talk-slide v-for="(slide, index) in slides"
+        :isPrev="(prev === index) ? true : false"
+        :isActive="(active === index) ? true : false"
+        :isNext="(next === index) ? true : false"
+        :key="slide.id"
+        :slide="slide"
+        :view="view()" />
+    </transition-group>
+  </main>
 </template>
 
 <script>
-  import matter from 'gray-matter';
+  import { parseData } from '~/assets/parser';
+  import TalkMeta from '~/components/TalkMeta.vue';
+  import TalkSlide from '~/components/TalkSlide.vue';
+  import SlideControls from '~/components/SlideControls.vue';
 
   export default {
+    components: {
+      TalkMeta,
+      TalkSlide,
+      SlideControls,
+    },
     data() {
       return {
-        meta: {},
-        page: [],
+        prev: 0,
+        active: 0,
+        next: 1,
+        paused: false,
+        lastView: false,
       }
     },
-    async asyncData ({ app, params }) {
-      let meta = {};
-      let page = [];
-      let pageData = await app.$axios.$get(`talk_src/${params.talk}.md`);
-      pageData.split('\n<!-- slide -->\n').forEach(function(partRaw, index) {
-        partRaw = partRaw.trimLeft();
-        const bits = matter(partRaw, {excerpt_separator: '<!-- more -->'});
-        bits.id = index;
-        bits.content = app.$md.render(bits.content.trimLeft());
-        bits.excerpt = app.$md.render(bits.excerpt.trimLeft());
+    async asyncData({ app, params }) {
+      const key = 'talks';
+      const src = `md/${key}/${params.talk}.md`;
+      let data = await app.$axios.$get(src);
+      return parseData(data, key, params.talk, src);
+    },
+    mounted() {
+      window.addEventListener('keydown', this.keyMove);
+    },
+    destroyed() {
+      window.removeEventListener('keydown', this.keyMove);
+    },
+    methods: {
+      // Reactive Data
+      defaultView() {
+        return this.views()[0];
+      },
+      views() {
+        const defaultViews = ['list', 'grid', 'slides'];
+        return this.meta.views ? this.meta.views : defaultViews;
+      },
+      view() {
+        return this.meta.view ? this.meta.view : this.defaultView();
+      },
+      fallback() {
+        return this.lastView ? this.lastView : this.defaultView();
+      },
 
-        if (bits.id === 0) {
-          meta = bits;
-          meta.title = meta.data.title ?
-            app.$md.render('# ' + meta.data.title) : '';
-          meta.subtitle = meta.data.subtitle ?
-            app.$md.render('# ' + meta.data.subtitle) : '';
-        } else {
-          page.push(bits);
+      // Actions
+      shuffle() {
+        this.slides = _.shuffle(this.slides);
+      },
+      toggleView(newView) {
+        if (this.views().includes(newView) && (this.view() !== newView)) {
+          this.lastView = this.view();
+          this.meta.view = newView;
         }
-      });
-      return {
-        page: page,
-        meta: meta,
-      };
-    }
+      },
+      togglePaused() {
+        const isSlides = (this.view() === 'slides');
+        this.paused = isSlides ? !this.paused : this.paused;
+      },
+      changeState(move) {
+        const max = (this.slides.length - 1);
+        let isActive = (this.active + move);
+        isActive = (isActive < 0) ? 0 : isActive;
+        isActive = (isActive > max) ? max : isActive;
+
+        this.prev = (isActive === 0) ? 0 : (isActive - 1);
+        this.active = isActive;
+        this.next = (isActive === max) ? max : (isActive + 1);
+      },
+      nextSlide() {
+        this.changeState(1);
+      },
+      prevSlide() {
+        this.changeState(-1);
+      },
+      keyMove(e) {
+        if (this.view() === 'slides') {
+          switch (e.code) {
+            case 'ArrowLeft':
+            case 'ArrowUp':
+            case 'PageUp':
+              if (!this.paused) {
+                this.prevSlide();
+              }
+              break;
+            case 'ArrowRight':
+            case 'ArrowDown':
+            case 'PageDown':
+            case 'Space':
+              if (!this.paused) {
+                this.nextSlide();
+              }
+              break;
+            case 'Escape':
+              if (this.paused) {
+                this.togglePaused();
+              }
+              this.toggleView(this.fallback());
+              break;
+            case 'Period':
+              this.togglePaused();
+              break;
+            }
+        } else {
+          switch (e.code) {
+            case 'F5':
+              this.toggleView('slides');
+              e.preventDefault();
+              break;
+          }
+        }
+      }
+    },
   }
 </script>
-
-<style lang="scss">
-img {
-  max-width: 100%;
-}
-
-pre {
-  background: #eee;
-  overflow-x: auto;
-  padding: 1em;
-  position: relative;
-
-  &::after {
-    background: linear-gradient(to right, transparent, #eee);
-    bottom: 0;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1em;
-  }
-}
-
-.two-up {
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
-
-  pre {
-    margin: 0;
-  }
-}
-</style>

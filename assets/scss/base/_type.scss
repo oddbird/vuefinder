@@ -1,0 +1,68 @@
+// Initial Type
+// ============
+
+@include import-webfonts;
+
+
+:root {
+  // @include show-breakpoints;
+  @include font-family('body');
+  --text-shadow: color('text-shadow');
+  background: color('background');
+  color: color('text');
+  font-size: size('root');
+  font-size: size('responsive');
+  line-height: ratio('text-ratio');
+  text-shadow: 0 1px 0 var(--text-shadow, color('text-shadow'));
+}
+
+
+a {
+  #{$link} {
+    color: color('action');
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    text-decoration-color: color('action-light');
+    text-decoration-skip: ink;
+    transition: color 350ms, text-decoration-color 300ms;
+  }
+
+  #{$focus} {
+    color: var('action-hover');
+    text-decoration-color: currentColor;
+  }
+}
+
+
+svg {
+  fill: currentColor;
+}
+
+
+p,
+ul,
+ol,
+dl {
+  &:not(:last-child) {
+    margin-bottom: size('newline');
+  }
+}
+
+
+abbr[title] {
+  border: 0;
+  text-decoration: underline dotted;
+}
+
+
+.amp {
+  @include font-family('amp');
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+.is-hidden {
+  @include is-hidden;
+}

@@ -1,7 +1,21 @@
+const fs = require("fs");
+const path = require("path");
+const mdPath = "static/md";
+
+const getAllFiles = (dir) => {
+  return fs
+    .readdirSync(dir)
+    .reduce((files, file) => {
+      const name = path.join(dir, file);
+      const isDirectory = fs.statSync(name).isDirectory();
+      return isDirectory ? [...files, ...getAllFiles(name)] : [...files, name];
+    }, [])
+    .map(path => path.replace(`${mdPath}/`, '').replace('.md', ''));
+}
+
+mdRoutes = getAllFiles(mdPath);
+
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'nuxt-slides',
     meta: [
@@ -10,39 +24,49 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Slideshows in nuxt' }
     ],
     link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
+
+  loading: false,
+
+  generate: {
+    routes: mdRoutes
+  },
+
+  env: {
+    mdRoutes: mdRoutes
+  },
+
+  css: ['~/assets/scss/vuefinder.scss'],
+
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
+    vendor: ['~/assets/parser', 'lodash'],
+    extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
-    }
+    },
+    watch: ['static/md/**/*.md', 'static/images/**/*.*']
   },
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/markdownit',
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit'],
 
   markdownit: {
-    html: 'true',
+    html: true,
     injected: true,
     linkify: true,
     preset: 'commonmark',
@@ -51,7 +75,7 @@ module.exports = {
       'markdown-it-attrs',
       ['markdown-it-container', 'two-up'],
       'markdown-it-emoji',
-      'markdown-it-highlightjs',
+      'markdown-it-highlightjs'
     ]
-  },
-}
+  }
+};

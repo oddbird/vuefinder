@@ -1,0 +1,21 @@
+// Banner Layout
+// =============
+
+[data-banner="talk"] {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  padding: size('shim');
+}
+
+
+[data-title="page"] {
+  b {
+    color: color('accent');
+  }
+
+  span {
+    @include before(': ');
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,44 @@
+// Slide Layout
+// ============
+
+
+[data-slide-layout] {
+  display: grid;
+  font-size: size('medium');
+  grid-gap: size('shim');
+  grid-template-columns: minmax(0, 1fr);
+
+  @include above('half-page') {
+    padding: size('half-shim');
+  }
+}
+
+
+// Views
+// -----
+
+[data-slide-layout='list'],
+[data-slide-layout='slides'] {
+  font-size: size('large');
+}
+
+
+[data-slide-layout='slides'] {
+  @include position(fixed 0 0 0 0);
+  background: color('background');
+  overflow: hidden;
+}
+
+
+[data-slide-layout='grid'] {
+  font-size: size('xsmall');
+
+  @include above('half-page') {
+    --col: #{size('half-page')};
+    grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr));
+  }
+
+  @include above('wide') {
+    --col: #{size('small-page')};
+  }
+}

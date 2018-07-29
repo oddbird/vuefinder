@@ -1,0 +1,64 @@
+// Color Configuration
+// ===================
+
+
+// Functions
+// ---------
+@include register-function('desaturate');
+@include register-function('rgba');
+
+
+// Brand Colors
+// ------------
+/// @group color
+/// @colors
+/// @type Map
+$brand-colors: (
+  'brand-blue': hsl(195, 52%, 31%),
+  'brand-pink': hsl(330, 100%, 45%) ('shade': 25%),
+);
+
+@include herman-colors('brand-colors', $brand-colors);
+
+
+// Contrast Colors
+// ---------------
+/// The light and dark contrast colors act as
+/// the high and low range of our palette.
+/// @group color
+/// @colors
+/// @type Map
+$contrast-colors: (
+  'white': #fff,
+  'contrast-light': #f6f6f6,
+  'contrast-dark': '#brand-blue' ('shade': 35%, 'desaturate': 40%),
+);
+
+@include herman-colors('contrast-colors', $contrast-colors);
+
+
+// Pattern Colors
+// --------------
+/// Re-usable color patterns for
+/// application in different components.
+/// @group color
+/// @colors
+/// @type Map
+$pattern-colors: (
+  'text': '#contrast-dark',
+  'text-shadow': '#white',
+  'background': '#contrast-light',
+  'border': '#brand-blue' ('tint': 40%),
+  'shadow': '#border' ('rgba': 0.8),
+
+  'action': '#brand-blue',
+  'action-light': '#action' ('tint': 50%),
+  'action-hover': '#action' ('shade': 25%),
+  'callout': '#action-light' ('tint': 50%),
+
+  'slide': '#white',
+  'accent': '#brand-pink',
+  'accent-light': '#accent' ('tint': 50%),
+);
+
+@include herman-colors('pattern-colors', $pattern-colors);
