@@ -17,13 +17,23 @@ mdRoutes = getAllFiles(mdPath);
 
 module.exports = {
   head: {
-    title: "nuxt-slides",
+    title: 'nuxt-slides',
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Slideshows in nuxt" }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Slideshows in nuxt' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
+      },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 
   loading: false,
@@ -36,37 +46,36 @@ module.exports = {
     mdRoutes: mdRoutes
   },
 
-  css: [
-    '~/assets/scss/slide-talks.scss'
-  ],
+  css: ['~/assets/scss/vuefinder.scss'],
 
   build: {
-    vendor: ["~/assets/parser", "lodash"],
+    vendor: ['~/assets/parser', 'lodash'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: "eslint-loader",
+          loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
       }
-    }
+    },
+    watch: ['static/md/**/*.md', 'static/images/**/*.*']
   },
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/markdownit"],
+  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit'],
 
   markdownit: {
     html: true,
     injected: true,
     linkify: true,
-    preset: "commonmark",
+    preset: 'commonmark',
     typographer: true,
     use: [
-      "markdown-it-attrs",
-      ["markdown-it-container", "two-up"],
-      "markdown-it-emoji",
-      "markdown-it-highlightjs"
+      'markdown-it-attrs',
+      ['markdown-it-container', 'two-up'],
+      'markdown-it-emoji',
+      'markdown-it-highlightjs'
     ]
   }
 };

@@ -19,15 +19,7 @@ export async function parseData(pageRaw, key, slug, src) {
     part.alt = (part.data.alt) ? part.data.alt : null;
 
     if (index === 0) {
-      page.meta = {
-        title: part.data.title,
-        subtitle: part.data.subtitle,
-        excerpt: part.excerpt,
-        content: part.content,
-        shuffle: part.data.shuffle,
-        view: part.data.view ? part.data.view : 'list',
-        pin: part.data.pin ? part.data.pin : 1,
-      };
+      page.meta = part.data;
     } else {
       page.slides.push(part);
     }

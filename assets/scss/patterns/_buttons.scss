@@ -1,0 +1,36 @@
+// Buttons
+// =======
+
+[data-btn-group] {
+  display: flex;
+}
+
+[data-group-btn] {
+  border: pattern('border-action');
+  background: color('callout');
+  flex: 1 0 auto;
+  padding: 0 size('shim');
+  transition: all 200ms ease;
+
+  #{$focus} {
+    @include contrasted('action');
+  }
+
+  &[data-active] {
+    @include contrasted('accent');
+  }
+
+  &:first-child {
+    border-bottom-left-radius: size('corner');
+    border-top-left-radius: size('corner');
+  }
+
+  &:last-child {
+    border-bottom-right-radius: size('corner');
+    border-top-right-radius: size('corner');
+  }
+
+  & + & {
+    border-left: none;
+  }
+}

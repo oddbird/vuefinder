@@ -1,0 +1,41 @@
+// Requirements
+// ============
+
+@import '~accoutrement/sass/tools';
+
+
+// Herman
+@mixin herman-colors(
+  $key,
+  $map
+) {
+  @include add-colors($map);
+  // @include herman-add('colors', $key, $map, get-function('color'));
+}
+
+
+@mixin herman-ratios(
+  $key,
+  $map
+) {
+  @include add-ratios($map);
+  // @include herman-add('ratios', $key, $map, get-function('ratio'));
+}
+
+
+@mixin herman-sizes(
+  $key,
+  $map
+) {
+  @include add-sizes($map);
+  // @include herman-add('sizes', $key, $map, get-function('size'));
+}
+
+
+@mixin herman-font(
+  $key,
+  $map
+) {
+  @include add-font($key, $map);
+  // @include herman-add('font', $key, $map, get-function('font'));
+}

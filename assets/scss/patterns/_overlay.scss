@@ -1,0 +1,11 @@
+// Overlays
+// ========
+
+[data-overlay] {
+  @include position(fixed 0 0 0 0);
+  @include contrasted('text');
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 4;
+}

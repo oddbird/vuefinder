@@ -1,0 +1,17 @@
+// Pattern Config
+// --------------
+
+$patterns: (
+  'border-base': size('hairline') solid,
+  'border': '#border-base' color('border'),
+  'border-action': '#border-base' color('action-hover'),
+  'shadow': 0 0 2px color('shadow'),
+);
+
+@function pattern(
+  $name,
+  $do: null,
+  $source: $patterns
+) {
+  @return get-token($patterns, $name, $do);
+}
