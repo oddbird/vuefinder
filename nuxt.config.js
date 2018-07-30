@@ -1,5 +1,10 @@
+const webpack = require('webpack');
 const fs = require("fs");
 const path = require("path");
+
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
+  ? { router: {base: '/vuefinder/'} } : {};
 
 const getFilePaths = (dir) => {
   return fs
@@ -28,6 +33,7 @@ const allRoutes = (dir) => {
 const mdRoutes = allRoutes('static/md');
 
 module.exports = {
+  ...routerBase,
   loading: false,
   css: ['~/assets/scss/vuefinder.scss'],
   head: {
@@ -55,16 +61,17 @@ module.exports = {
     routes: Object.keys(mdRoutes)
   },
 
-  // router: {
-  //   base: '/vuefinder/'
-  // },
-
   env: {
     mdRoutes: mdRoutes
   },
 
   build: {
-    vendor: ['~/assets/parser', 'lodash'],
+    plugins: [
+      new webpack.ProvidePlugin({
+        '_': 'lodash'
+      })
+    ],
+    vendor: ['~/assets/parser'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -86,10 +93,6 @@ module.exports = {
     linkify: true,
     preset: 'commonmark',
     typographer: true,
-    use: [
-      'markdown-it-attrs',
-      ['markdown-it-container', 'two-up'],
-      'markdown-it-highlightjs'
-    ]
+    use: ['markdown-it-highlightjs', 'markdown-it-attrs']
   }
 };

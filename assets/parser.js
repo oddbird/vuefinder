@@ -8,15 +8,17 @@ export async function parseData(pageRaw) {
   pageRaw.split("\n<!-- slide -->\n").forEach(function (partRaw, index) {
     partRaw = partRaw.trimLeft();
     const part = matter(partRaw, { excerpt_separator: "<!-- more -->" });
-    part.id = `slide-${index}`;
     part.content = part.content.trimLeft();
     part.excerpt = part.excerpt.trimLeft();
-    part.style = (part.data.style) ? part.data.style : {};
-    part.alt = (part.data.alt) ? part.data.alt : null;
 
     if (index === 0) {
       data.meta = part.data;
+      data.meta.content = part.content;
+      data.meta.excerpt = part.excerpt;
     } else {
+      part.id = `slide-${index}`;
+      part.style = (part.data.style) ? part.data.style : {};
+      part.alt = (part.data.alt) ? part.data.alt : null;
       data.slides.push(part);
     }
   });

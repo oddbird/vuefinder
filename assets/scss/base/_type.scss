@@ -44,8 +44,10 @@ p,
 ul,
 ol,
 dl {
+  margin-bottom: var(--newline, initial);
+
   &:not(:last-child) {
-    margin-bottom: size('newline');
+    --newline: size('newline');
   }
 }
 

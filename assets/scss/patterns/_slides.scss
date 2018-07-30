@@ -11,7 +11,6 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  text-align: center;
 
   @include after('') {
     display: inline-block;
@@ -34,9 +33,10 @@
 .md-content {
   margin: 0 auto;
   max-width: 100%;
-  padding: size('double-gutter') 0;
-  width: size('double');
+}
 
+
+[data-project-type] {
   h2 {
     font-size: size('xlarge');
   }
@@ -49,6 +49,33 @@
     font-size: size('medium');
   }
 
+}
+
+
+.tags {
+  color: color('text-light');
+  display: block;
+  list-style: none;
+  margin-top: size('newline');
+
+  li {
+    display: inline-block;
+  }
+}
+
+
+[data-project-type='talks'] {
+  text-align: center;
+
+  &:not([data-slide-layout='grid']) {
+    font-size: size('large');
+  }
+
+  .md-content {
+    padding: size('double-gutter') 0;
+    width: size('double');
+  }
+
   strong {
     color: color('accent');
     font-weight: bold;
@@ -56,7 +83,16 @@
 }
 
 
+[data-project-type='books'] {
+  .md-content {
+    padding: size('gutter');
+    width: size('wide');
+  }
+}
+
+
 [data-view='grid'] {
+  font-size: size('xsmall');
   transition: transform 1s ease;
 }
 

@@ -32,8 +32,8 @@ pre {
 .code-caption {
   @include contrasted('text');
   --text-shadow: color('text');
-  font-size: size('xxsmall');
-  margin-top: size('newline');
+  font-size: size('small');
+  margin: size('newline') 0 0;
   padding: 0 size('half-shim');
   text-align: left;
 }

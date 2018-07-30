@@ -1,5 +1,5 @@
 <template>
-  <main data-layout="talks">
+  <main data-layout="slides">
     <talk-meta :page="meta"
       :views="views()"
       :activeView="view()"
@@ -18,7 +18,8 @@
 
     <transition-group name="slides"
       tag="div"
-      :data-slide-layout="view()">
+      :data-slide-layout="view()"
+      :data-project-type="type" >
       <talk-slide v-for="(slide, index) in slides"
         :isPrev="(prev === index) ? true : false"
         :isActive="(active === index) ? true : false"
@@ -53,9 +54,11 @@
     },
     async asyncData({ app, params }) {
       const src = process.env.mdRoutes[params.project];
+      const type = src.slice(src.indexOf('/') + 1, src.lastIndexOf('/'));
       const meta = {
         slug: params.project,
         src: src,
+        type: type,
       }
       let data = await app.$axios.$get(src);
       data = await parseData(data);

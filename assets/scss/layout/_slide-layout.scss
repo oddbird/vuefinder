@@ -17,12 +17,6 @@
 // Views
 // -----
 
-[data-slide-layout='list'],
-[data-slide-layout='slides'] {
-  font-size: size('large');
-}
-
-
 [data-slide-layout='slides'] {
   @include position(fixed 0 0 0 0);
   background: color('background');
@@ -31,8 +25,6 @@
 
 
 [data-slide-layout='grid'] {
-  font-size: size('xsmall');
-
   @include above('half-page') {
     --col: #{size('half-page')};
     grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr));

@@ -60,9 +60,7 @@ style:
 
 ## Code Patterns **Add Meaning**
 
-<div class="code-caption">
-  scss - Showing your math is good…
-</div>
+scss - showing your math is good… {.code-caption}
 
 ```scss
 .grid-span {
@@ -72,9 +70,7 @@ style:
 }
 ```
 
-<div class="code-caption">
-  scss - Making it readable is even better…
-</div>
+scss - making it readable is even better… {.code-caption}
 
 ```scss
 .grid-span {

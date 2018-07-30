@@ -6,7 +6,7 @@
       <strong>{{ group }}</strong>
       <ul>
         <li v-for="item in list" :key="item" >
-          <link-if :url="`/${item}`">{{ item }}</link-if>
+          <a :href="`/${item}`">{{ item }}</a>
         </li>
       </ul>
     </div>
@@ -14,12 +14,7 @@
 </template>
 
 <script>
-  import LinkIf from '~/components/utility/LinkIf.vue';
-
   export default {
-    components: {
-      LinkIf,
-    },
     data() {
       return {
         mdRoutes: process.env.mdRoutes,
@@ -29,7 +24,7 @@
       routesByType() {
         const group = {};
         for (const route in process.env.mdRoutes) {
-          let src = process.env.mdRoutes[route];
+          const src = process.env.mdRoutes[route];
           const type = src.slice(src.indexOf('/') + 1, src.lastIndexOf('/'));
           if (type in group) {
             group[type].push(route);

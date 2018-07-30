@@ -46,6 +46,7 @@ $contrast-colors: (
 /// @type Map
 $pattern-colors: (
   'text': '#contrast-dark',
+  'text-light': '#text' ('tint': 25%),
   'text-shadow': '#white',
   'background': '#contrast-light',
   'border': '#brand-blue' ('tint': 40%),

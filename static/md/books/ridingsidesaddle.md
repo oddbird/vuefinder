@@ -1,31 +1,34 @@
 ---
 title: Riding SideSaddle*
 subtitle: a novel in fragments
+shuffle: true
 ---
 
 Now also a play
-by [Buntport Theater][bt]
-and [Teacup Gorilla][tg] --
+by [Buntport Theater][bunt]
+and [Teacup Gorilla][teacup] --
 Read
 **[10 Myths on the Proper Application of Beauty Products][10-myths]**
 
-[bt]: http://buntport.com
-[tg]: http://teacupgorilla.com
-[10-myths]: /plays/10-myths
+[bunt]: http://buntport.com
+[teacup]: http://teacupgorilla.com
+[10-myths]: /10-myths
 
 <!-- slide -->
 
 > The offspring of Hermes and Aphrodite was called Hermaphroditus,
 > and he was a good looking but sissy young man.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
 > Restless, Hermaphroditus forsook his childhood home
 > to roam strange lands out west.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
@@ -34,7 +37,8 @@ Read
 > Perfect for a midnight swim, he thinks,
 > pulling his shirt over his head.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
@@ -44,14 +48,16 @@ Read
 > Day after day she would bathe alone in her favorite spring,
 > or lay among the reeds and smoke a bowl.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
 > Salmacis watches Hermaphroditus dip toe, then ankle --
 > clap palm to naked thigh, and dive far out into the pool.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
@@ -62,7 +68,8 @@ Read
 > and prays they never come apart.
 > Gasping for air, they find their bodies fused into one.
 
-#myth
+- #myth
+{.tags}
 
 <!-- slide -->
 
@@ -71,7 +78,9 @@ Read
 
 That's no curse, says Mother Clap.
 
-#molly #myth
+- #molly
+- #myth
+{.tags}
 
 <!-- slide -->
 
@@ -84,14 +93,17 @@ That's no curse, says Mother Clap.
 
 Miss Molly laughs and calls us all barbarians.
 
-#molly #myth
+- #molly
+- #myth
+{.tags}
 
 <!-- slide -->
 
 Herman likes sundresses that show off his well-toned arms.
 Like a real man, he says.
 
-#herman
+- #herman
+{.tags}
 
 <!-- slide -->
 
@@ -102,14 +114,16 @@ skirting the pools of light around gas stations.
 In the foothills he finds a spring,
 and dives in for a midnight swim.
 
-#herman
+- #herman
+{.tags}
 
 <!-- slide -->
 
 Herman sits in her blue raincoat for the rest of the night,
 hunched forward, looking at nothing at all.
 
-#herman
+- #herman
+{.tags}
 
 <!-- slide -->
 
@@ -117,4 +131,5 @@ Herman opens all the curtains,
 turns out the lights,
 and dances to a slow tune on the midnight radio from downtown.
 
-#herman
+- #herman
+{.tags}
