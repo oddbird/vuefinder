@@ -1,11 +1,7 @@
 import matter from "gray-matter";
 
-export async function parseData(pageRaw, key, slug, src) {
-  const page = {
-    route: `/${key}/${slug}`,
-    key: key,
-    slug: slug,
-    src: src,
+export async function parseData(pageRaw) {
+  const data = {
     slides: [],
   };
 
@@ -19,11 +15,11 @@ export async function parseData(pageRaw, key, slug, src) {
     part.alt = (part.data.alt) ? part.data.alt : null;
 
     if (index === 0) {
-      page.meta = part.data;
+      data.meta = part.data;
     } else {
-      page.slides.push(part);
+      data.slides.push(part);
     }
   });
 
-  return page;
+  return data;
 }

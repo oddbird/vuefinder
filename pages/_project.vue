@@ -52,10 +52,14 @@
       }
     },
     async asyncData({ app, params }) {
-      const key = 'talks';
-      const src = `md/${key}/${params.talk}.md`;
+      const src = process.env.mdRoutes[params.project];
+      const meta = {
+        slug: params.project,
+        src: src,
+      }
       let data = await app.$axios.$get(src);
-      return parseData(data, key, params.talk, src);
+      data = await parseData(data);
+      return Object.assign(data, meta);
     },
     mounted() {
       window.addEventListener('keydown', this.keyMove);

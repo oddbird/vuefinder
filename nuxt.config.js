@@ -1,23 +1,37 @@
 const fs = require("fs");
 const path = require("path");
-const mdPath = "static/md";
 
-const getAllFiles = (dir) => {
+const getFilePaths = (dir) => {
   return fs
     .readdirSync(dir)
     .reduce((files, file) => {
       const name = path.join(dir, file);
       const isDirectory = fs.statSync(name).isDirectory();
-      return isDirectory ? [...files, ...getAllFiles(name)] : [...files, name];
-    }, [])
-    .map(path => path.replace(`${mdPath}/`, '').replace('.md', ''));
+      return isDirectory ? [...files, ...getFilePaths(name)] : [...files, name];
+    }, []).map(file => file.replace('static/', ''));
 }
 
-mdRoutes = getAllFiles(mdPath);
+const buildRoute = (file) => {
+  return file.slice(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
+}
+
+const allRoutes = (dir) => {
+  const routes = {};
+
+  getFilePaths(dir).forEach(file => {
+    routes[buildRoute(file)] = file;
+  });
+
+  return routes;
+}
+
+const mdRoutes = allRoutes('static/md');
 
 module.exports = {
+  loading: false,
+  css: ['~/assets/scss/vuefinder.scss'],
   head: {
-    title: 'nuxt-slides',
+    title: 'vuefinder',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +40,8 @@ module.exports = {
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i'
+        href:
+          'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i'
       },
       {
         rel: 'stylesheet',
@@ -36,17 +51,17 @@ module.exports = {
     ]
   },
 
-  loading: false,
-
   generate: {
-    routes: mdRoutes
+    routes: Object.keys(mdRoutes)
   },
+
+  // router: {
+  //   base: '/vuefinder/'
+  // },
 
   env: {
     mdRoutes: mdRoutes
   },
-
-  css: ['~/assets/scss/vuefinder.scss'],
 
   build: {
     vendor: ['~/assets/parser', 'lodash'],
@@ -74,7 +89,6 @@ module.exports = {
     use: [
       'markdown-it-attrs',
       ['markdown-it-container', 'two-up'],
-      'markdown-it-emoji',
       'markdown-it-highlightjs'
     ]
   }
