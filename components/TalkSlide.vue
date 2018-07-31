@@ -2,9 +2,9 @@
   <section :data-slide="slide.id"
     :data-view="view"
     :data-active="state"
-    :style="slide.style">
-    <p v-if="slide.alt"
-      v-html="$md.renderInline(slide.alt)"
+    :style="style">
+    <p v-if="slide.data.alt"
+      v-html="$md.renderInline(slide.data.alt)"
       hidden />
     <div v-if="slide.content"
       class="slide-body">
@@ -44,6 +44,14 @@
         if (this.isPrev) { return 'prev'; }
         if (this.isNext) { return 'next'; }
         return false;
+      },
+      style() {
+        if (this.slide.data.image) {
+          const style = this.slide.data.style;
+          style['background-image'] = `url('${this.slide.data.image}')`;
+          return style;
+        }
+        return this.slide.data.style;
       }
     },
   }

@@ -1,16 +1,12 @@
----
-public: true
-title: 'Agile Design Systems'
-subtitle: 'in Vue'
-view: 'grid'
-author:
-  name: 'Miriam Suzanne'
-  url: 'http://oddbird.net/authors/miriam/'
-org:
-  name: 'OddBird'
-  url: 'http://oddbird.net/'
----
+<template>
+<md-source :meta="meta"
 
+  :edit='false'
+  type="talks"
+  title="Agile Design Systems"
+  subtitle="With Sass and Vue"
+
+  src="
 Style Guides & Pattern Libraries
 are great tools for documenting
 the relationships between code and design,
@@ -32,16 +28,16 @@ living design systems in an agile and integrated process?
 <!-- slide -->
 
 ---
+image: '/images/patterns/oddbird-w-logo.jpg'
 alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 style:
-  'background-image': "url('https://dl.dropbox.com/s/98zl3nxde444otp/oddbird-w-logo.jpg')"
   'background-size': 'contain'
   'background-position': 'center'
 ---
 
 <!-- slide -->
 
-![](https://dl.dropbox.com/s/76e55964w8nvx3y/oddbird.png)
+![](/images/patterns/oddbird.png)
 
 ## [OddBird](http://oddbird.net)
 est. **2008**
@@ -49,20 +45,18 @@ est. **2008**
 <!-- slide -->
 
 ---
+image: '/images/patterns/lonely-planet-colors.jpg'
 alt: Lonely Planet Design System
 style:
-  'background-image': "url('https://dl.dropbox.com/s/3oyfw1kdtz2qzih/lonely-planet-colors.jpg')"
   'background-size': 'cover'
   'background-position': 'top'
 ---
 
 <!-- slide -->
 
-## Code Patterns **Add Meaning**
+### Code Patterns **Add Meaning**
 
-<div class="code-caption">
-  scss - Showing your math is good…
-</div>
+scss - showing your math is good… {.code-caption}
 
 ```scss
 .grid-span {
@@ -72,9 +66,7 @@ style:
 }
 ```
 
-<div class="code-caption">
-  scss - Making it readable is even better…
-</div>
+scss - making it readable is even better… {.code-caption}
 
 ```scss
 .grid-span {
@@ -83,3 +75,37 @@ style:
   padding-left: span(1 wide);
 }
 ```
+
+<!-- slide -->
+
+Hello World
+" />
+</template>
+
+<script>
+  import MdSource from '~/components/MdSource.vue';
+
+  export default {
+    components: { MdSource },
+    data() {
+      return {
+        live: true,
+        meta: {
+          view: 'grid',
+          author: {
+            name: 'Miriam Suzanne',
+            url: 'http://oddbird.net/authors/miriam/',
+          },
+          org: {
+            name: 'OddBird',
+            url: 'http://oddbird.net/',
+          },
+        }
+      }
+    },
+  }
+</script>
+
+<style scoped>
+
+</style>

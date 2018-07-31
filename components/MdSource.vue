@@ -1,38 +1,50 @@
 <template>
-  <main data-layout="slides">
-    <talk-meta :page="meta"
-      :views="views()"
-      :activeView="view()"
-      @toggleView="toggleView($event)"
-      @shuffle="shuffle()" />
+  <div :data-edit-mode="edit">
+    <textarea v-if="edit"
+      v-model="src"
+      name="md-src"
+      id="md-src"
+      :data-editing="edit" />
 
-    <slide-controls v-show="(view() === 'slides')"
-      :fallback="fallback()"
-      :paused="paused"
-      :hasPrev="(prev !== active)"
-      :hasNext="(next !== active)"
-      @nextSlide="nextSlide()"
-      @prevSlide="prevSlide()"
-      @togglePaused="togglePaused()"
-      @toggleView="toggleView($event)" />
+    <main :data-editing="edit">
+      <talk-meta :title="title"
+        :subtitle="subtitle"
+        :meta="meta"
+        :views="views()"
+        :activeView="view()"
+        @toggleView="toggleView($event)"
+        @shuffle="shuffle()" />
 
-    <transition-group name="slides"
-      tag="div"
-      :data-slide-layout="view()"
-      :data-project-type="type" >
-      <talk-slide v-for="(slide, index) in slides"
-        :isPrev="(prev === index) ? true : false"
-        :isActive="(active === index) ? true : false"
-        :isNext="(next === index) ? true : false"
-        :key="slide.id"
-        :slide="slide"
-        :view="view()" />
-    </transition-group>
-  </main>
+      <slide-controls v-show="(view() === 'slides')"
+        :fallback="fallback()"
+        :paused="paused"
+        :hasPrev="(prev !== active)"
+        :hasNext="(next !== active)"
+        @nextSlide="nextSlide()"
+        @prevSlide="prevSlide()"
+        @togglePaused="togglePaused()"
+        @toggleView="toggleView($event)" />
+
+      <transition-group name="slides"
+        tag="div"
+        :data-slide-layout="view()"
+        :data-project-type="type" >
+        <talk-slide v-for="(slide, index) in page().slides"
+          :isPrev="(prev === index) ? true : false"
+          :isActive="(active === index) ? true : false"
+          :isNext="(next === index) ? true : false"
+          :key="slide.id"
+          :slide="slide"
+          :view="view()" />
+      </transition-group>
+    </main>
+  </div>
 </template>
 
 <script>
   import { parseData } from '~/assets/parser';
+  import matter from 'gray-matter';
+  import shuffle from 'lodash/shuffle';
   import TalkMeta from '~/components/TalkMeta.vue';
   import TalkSlide from '~/components/TalkSlide.vue';
   import SlideControls from '~/components/SlideControls.vue';
@@ -43,6 +55,32 @@
       TalkSlide,
       SlideControls,
     },
+    props: {
+      src: {
+        type: String,
+        required: true,
+      },
+      title: {
+        type: String,
+        required: true,
+      },
+      subtitle: {
+        type: [String, Boolean],
+        default: false,
+      },
+      meta: {
+        type: Object,
+        required: true,
+      },
+      type: {
+        type: String,
+        default: 'talks',
+      },
+      edit: {
+        type: Boolean,
+        default: false,
+      },
+    },
     data() {
       return {
         prev: 0,
@@ -51,18 +89,6 @@
         paused: false,
         lastView: false,
       }
-    },
-    async asyncData({ app, params }) {
-      const src = process.env.mdRoutes[params.project];
-      const type = src.slice(src.indexOf('/') + 1, src.lastIndexOf('/'));
-      const meta = {
-        slug: params.project,
-        src: src,
-        type: type,
-      }
-      let data = await app.$axios.$get(src);
-      data = await parseData(data);
-      return Object.assign(data, meta);
     },
     mounted() {
       window.addEventListener('keydown', this.keyMove);
@@ -88,7 +114,7 @@
 
       // Actions
       shuffle() {
-        this.slides = _.shuffle(this.slides);
+        this.page().slides = shuffle(this.page().slides);
       },
       toggleView(newView) {
         if (this.views().includes(newView) && (this.view() !== newView)) {
@@ -101,7 +127,7 @@
         this.paused = isSlides ? !this.paused : this.paused;
       },
       changeState(move) {
-        const max = (this.slides.length - 1);
+        const max = (this.page().slides.length - 1);
         let isActive = (this.active + move);
         isActive = (isActive < 0) ? 0 : isActive;
         isActive = (isActive > max) ? max : isActive;
@@ -152,7 +178,33 @@
               break;
           }
         }
-      }
+      },
+
+      // parser
+      page() {
+        const src = this.src;
+        const data = {
+          slides: [],
+        };
+
+        src.split("\n<!-- slide -->\n").forEach(function (partRaw, index) {
+          partRaw = partRaw.trimLeft();
+
+          const part = matter(partRaw, { excerpt_separator: "<!-- more -->" });
+          part.content = part.content.trimLeft();
+          part.excerpt = part.excerpt.trimLeft();
+
+          if (index === 0) {
+            data.content = part.content;
+            data.excerpt = part.excerpt;
+          } else {
+            part.id = `slide-${index}`;
+            data.slides.push(part);
+          }
+        });
+
+        return data;
+      },
     },
   }
 </script>

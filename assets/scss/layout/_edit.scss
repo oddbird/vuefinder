@@ -1,0 +1,20 @@
+// Edit Layout
+// ===========
+
+[data-edit-mode] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: 100vh;
+  overflow: hidden;
+
+  [name='md-src'] {
+    font-size: size('xsmall');
+    padding: size('shim');
+  }
+
+  [data-editing] {
+    height: 100vh;
+    overflow: auto;
+  }
+}

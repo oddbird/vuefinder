@@ -1,36 +1,8 @@
 const webpack = require('webpack');
-const fs = require("fs");
-const path = require("path");
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
   ? { router: {base: '/vuefinder/'} } : {};
-
-const getFilePaths = (dir) => {
-  return fs
-    .readdirSync(dir)
-    .reduce((files, file) => {
-      const name = path.join(dir, file);
-      const isDirectory = fs.statSync(name).isDirectory();
-      return isDirectory ? [...files, ...getFilePaths(name)] : [...files, name];
-    }, []).map(file => file.replace('static/', ''));
-}
-
-const buildRoute = (file) => {
-  return file.slice(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
-}
-
-const allRoutes = (dir) => {
-  const routes = {};
-
-  getFilePaths(dir).forEach(file => {
-    routes[buildRoute(file)] = file;
-  });
-
-  return routes;
-}
-
-const mdRoutes = allRoutes('static/md');
 
 module.exports = {
   ...routerBase,
@@ -57,21 +29,7 @@ module.exports = {
     ]
   },
 
-  generate: {
-    routes: Object.keys(mdRoutes)
-  },
-
-  env: {
-    mdRoutes: mdRoutes
-  },
-
   build: {
-    plugins: [
-      new webpack.ProvidePlugin({
-        '_': 'lodash'
-      })
-    ],
-    vendor: ['~/assets/parser'],
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -85,7 +43,7 @@ module.exports = {
     watch: ['static/md/**/*.md', 'static/images/**/*.*']
   },
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/markdownit'],
 
   markdownit: {
     html: true,

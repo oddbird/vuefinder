@@ -2,28 +2,28 @@
   <div data-banner="talk">
     <header>
       <h1 data-title="page">
-        <b v-html="$md.renderInline(page.title)" />
+        <b v-html="$md.renderInline(title)" />
         <span
-          v-if="page.subtitle"
-          v-html="$md.renderInline(page.subtitle)"/>
+          v-if="subtitle"
+          v-html="$md.renderInline(subtitle)"/>
       </h1>
 
-      <div v-if="page.author || page.org"
+      <div v-if="meta.author || meta.org"
         class="byline">
         <link-if v-if="name"
           data-by="author"
-          :url="page.author.url">{{ name }}</link-if>
-        <template v-if="page.author && page.org">
+          :url="meta.author.url">{{ name }}</link-if>
+        <template v-if="meta.author && meta.org">
           |
         </template>
         <link-if v-if="org"
           data-by="org"
-          :url="page.org.url">{{ org }}</link-if>
+          :url="meta.org.url">{{ org }}</link-if>
       </div>
     </header>
 
     <nav data-nav="talk">
-      <button v-if="page.shuffle"
+      <button v-if="meta.shuffle"
         data-btn-style
         @click="$emit('shuffle')">
         Shuffle
@@ -50,7 +50,7 @@
       LinkIf,
     },
     props: {
-      page: {
+      meta: {
         type: Object,
         required: true,
       },
@@ -62,18 +62,26 @@
         type: String,
         required: true,
       },
+      title: {
+        type: String,
+        required: true,
+      },
+      subtitle: {
+        type: [String, Boolean],
+        default: false,
+      },
     },
     computed: {
       name() {
-        if (this.page.author) {
-          return this.page.author.name || this.page.author;
+        if (this.meta.author) {
+          return this.meta.author.name || this.meta.author;
         } else {
           return false;
         }
       },
       org() {
-        if (this.page.org) {
-          return this.page.org.name || this.page.org;
+        if (this.meta.org) {
+          return this.meta.org.name || this.meta.org;
         } else {
           return false;
         }

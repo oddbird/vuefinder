@@ -6,17 +6,14 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "build": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/markdownit": "^1.2.1",
     "accoutrement": "^1.0.0-beta.2",
     "autoprefixer": "^8.6.3",
