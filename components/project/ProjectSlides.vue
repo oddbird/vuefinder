@@ -1,5 +1,5 @@
 <template>
-  <section :data-slide-type="meta.type">
+  <section :data-slide-type="meta.type" >
     <slide-controls v-show="(view === 'slides')"
       :paused="paused"
       :hasPrev="(prev !== active)"

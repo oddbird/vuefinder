@@ -1,7 +1,7 @@
 <template>
   <div :data-btn-group="name">
     <button-style v-for="(item, index) in options"
-      type='group'
+      type='group default'
       :key='index'
       :content='item'
       :active="(item === active)"
@@ -46,7 +46,7 @@
   display: flex;
 }
 
-[data-btn-style='group'] {
+[data-btn-style~='group'] {
   &:first-child {
     border-bottom-left-radius: size('corner');
     border-top-left-radius: size('corner');

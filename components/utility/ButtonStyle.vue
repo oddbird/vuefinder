@@ -1,5 +1,6 @@
 <template>
-  <button :data-btn-style="type"
+  <button :data-btn-id="id"
+    :data-btn-style="type"
     :disabled="disabled"
     :data-active='active'
     @click="callback($event)" >
@@ -10,6 +11,10 @@
 <script>
   export default {
     props: {
+      id: {
+        type: [String, Boolean],
+        default: false
+      },
       content: {
         type: [String, Boolean],
         default: false
@@ -38,7 +43,7 @@
 <style lang="scss">
 @import '~assets/scss/config/manifest';
 
-[data-btn-style] {
+[data-btn-style~='default'] {
   background: color('callout');
   border: pattern('border-action');
   flex: 1 0 auto;
@@ -59,5 +64,15 @@
 
 [data-btn-style='default'] {
   border-radius: size('corner');
+}
+
+[data-btn-style='emoji'] {
+  filter: grayscale(100%);
+  font-size: size('xsmall');
+  padding: 0 size('half-shim');
+
+  #{$focus} {
+    filter: grayscale(0);
+  }
 }
 </style>

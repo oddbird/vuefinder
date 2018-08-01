@@ -4,8 +4,10 @@
       :meta="meta"
       :views="views"
       :view="view"
-      :data-edit="edit ? 'full' : false"
+      :edit="edit"
+      :editBtn="showEditToggle()"
       @toggleView="toggleView($event)"
+      @toggleEdit="toggleEdit()"
       @shuffle="shuffle()" />
 
     <textarea v-if="edit"
@@ -69,10 +71,16 @@
       getView() {
         return this.meta.view ? this.meta.view : this.defaultView();
       },
+      showEditToggle() {
+        return process.env.baseURL === '/' ? true : false;
+      },
 
       // Actions
       updatePage() {
         this.page = this.getPage(this.src);
+      },
+      toggleEdit() {
+        this.edit = !this.edit;
       },
       shuffle() {
         this.page.slides = shuffle(this.page.slides);

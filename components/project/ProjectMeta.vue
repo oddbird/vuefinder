@@ -1,9 +1,20 @@
 <template>
-  <div data-banner="project">
-    <nuxt-link to="/" rel="home">🏠</nuxt-link>
+  <div data-banner="project"
+    :data-edit="edit ? 'full' : false" >
+    <nuxt-link to="/"
+      rel="home">
+      🏠
+    </nuxt-link>
 
     <header>
-      <h1 data-title="project" v-html="$md.renderInline(meta.title)" />
+      <h1 data-title="project"
+        v-html="$md.renderInline(meta.title)" />
+
+      <button-style v-if="editBtn"
+        content="🖊️"
+        type="emoji"
+        :data-toggle-edit="edit ? 'on' : 'off'"
+        @click="$emit('toggleEdit')" />
 
       <div v-if="meta.author || meta.org"
         class="byline">
@@ -55,6 +66,14 @@
         type: String,
         required: true,
       },
+      edit: {
+        type: Boolean,
+        default: false,
+      },
+      editBtn: {
+        type: Boolean,
+        default: false,
+      },
     },
     computed: {
       name() {
@@ -93,8 +112,28 @@
   padding: size('shim');
 }
 
+[rel='home'] {
+  #{$link} {
+    filter: grayscale(100%);
+    font-size: size('small');
+  }
+
+  #{$focus} {
+    filter: grayscale(0);
+  }
+}
+
+[data-toggle-edit='off'] {
+  opacity: 0.5;
+
+  #{$focus} {
+    opacity: 1;
+  }
+}
+
 [data-title="project"] {
   color: color('accent');
+  display: inline-block;
 
   em {
     color: color('text');
