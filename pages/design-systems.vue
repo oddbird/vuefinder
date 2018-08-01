@@ -1,6 +1,6 @@
 <template>
 <project-base
-  :edit="false"
+  :edit="true"
   :meta="meta"
   src="
 Style Guides & Pattern Libraries

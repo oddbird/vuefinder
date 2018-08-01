@@ -10,7 +10,8 @@
 
     <textarea v-if="edit"
       v-model="src" name="md-src" id="md-src"
-      :data-edit="edit ? 'half' : false" />
+      :data-edit="edit ? 'half' : false"
+      @change="updatePage" />
 
     <project-slides
       :meta="meta"
@@ -70,6 +71,9 @@
       },
 
       // Actions
+      updatePage() {
+        this.page = this.getPage(this.src);
+      },
       shuffle() {
         this.page.slides = shuffle(this.page.slides);
       },
