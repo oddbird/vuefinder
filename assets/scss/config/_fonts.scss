@@ -3,6 +3,11 @@
 
 $font-path: '/static/fonts/';
 
+// Body Font
+// ---------
+/// A nice body font for the primary layout
+/// @group config-fonts
+/// @font body
 $body: (
   'name': 'Rockingham',
   'stack': 'Helvetica Neue' 'Helvetica' 'Arial' 'sans-serif',
@@ -16,33 +21,16 @@ $body: (
 @include herman-font('body', $body);
 
 
-// Sans Font
-// ---------
-/// A clean sans-serif option
-/// used for smaller text like captions and labels.
-///
-/// @font sans (normal, bold, italic, bold italic)
-///   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
-/// @group config-fonts
-$sans: (
-  'name': 'Source Sans Pro',
-  'source': 'https://fonts.google.com/specimen/Source+Sans+Pro',
-  'stack': 'Helvetica Neue' 'Helvetica' 'Arial' 'sans-serif',
-);
-
-@include herman-font('sans', $sans);
-
-
 // Code Font
 // ---------
-/// A readable monospace font for code previews.
-///
-/// @font code (normal, bold)
-///   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600" rel="stylesheet">
+/// A readable monospace font for code previews
 /// @group config-fonts
+/// @font code
 $code: (
   'name': 'Source Code Pro',
-  'source': 'https://fonts.google.com/specimen/Source+Code+Pro',
+  'formats': 'woff2' 'woff',
+  'normal': 'sourcecodepro/sourcecodepro-regular-webfont',
+  'bold': 'sourcecodepro/sourcecodepro-semibold-webfont',
   'stack':
     (
       'Consolas',
@@ -63,7 +51,7 @@ $code: (
 
 // Ampersand Font
 // --------------
-/// Baskerville Italic provides a nice-looking ampersand.
+/// Baskerville Italic provides a nice-looking ampersand
 /// @group fonts
 $amp: (
   'name': 'amp',

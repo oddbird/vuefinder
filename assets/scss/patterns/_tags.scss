@@ -1,0 +1,13 @@
+// Tags
+// ====
+
+.tags {
+  color: color('text-light');
+  display: block;
+  list-style: none;
+  margin-top: size('newline');
+
+  li {
+    display: inline-block;
+  }
+}

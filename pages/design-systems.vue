@@ -1,11 +1,7 @@
 <template>
-<md-source :meta="meta"
-
-  :edit='false'
-  type="talks"
-  title="Agile Design Systems"
-  subtitle="With Sass and Vue"
-
+<project-base
+  :edit="false"
+  :meta="meta"
   src="
 Style Guides & Pattern Libraries
 are great tools for documenting
@@ -19,6 +15,14 @@ to build a centralized system.
 How can we incorporate patterns into our code,
 using templates and pre-processors to iterate and automate
 living design systems in an agile and integrated process?
+
+<!-- slide -->
+
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+Normal Text
 
 <!-- slide -->
 
@@ -83,15 +87,18 @@ Hello World
 </template>
 
 <script>
-  import MdSource from '~/components/MdSource.vue';
+  import ProjectBase from '~/components/project/ProjectBase.vue';
 
   export default {
-    components: { MdSource },
+    components: { ProjectBase },
     data() {
       return {
-        live: true,
         meta: {
+          title: 'Agile Design Systems *in Vue*',
+          type: 'talks',
           view: 'grid',
+          title_slide: 'default',
+          // shuffle: true,
           author: {
             name: 'Miriam Suzanne',
             url: 'http://oddbird.net/authors/miriam/',
@@ -105,7 +112,3 @@ Hello World
     },
   }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const util = require('util');
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
@@ -40,10 +40,13 @@ module.exports = {
         });
       }
     },
-    watch: ['static/md/**/*.md', 'static/images/**/*.*']
+    watch: ['static/images/**/*.*']
   },
 
   modules: ['@nuxtjs/markdownit'],
+  env: {
+    baseURL: routerBase.router ? routerBase.router.base : '/'
+  },
 
   markdownit: {
     html: true,
