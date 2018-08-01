@@ -47,11 +47,24 @@ svg {
 p,
 ul,
 ol,
-dl {
+dl,
+blockquote {
   margin-bottom: var(--newline, initial);
 
   &:not(:last-child) {
     --newline: #{size('newline')};
+  }
+}
+
+
+blockquote {
+  font-style: italic;
+
+  @include before('“') {
+    color: color('accent');
+    float: left;
+    font-size: size('xlarge');
+    margin: negative('half-shim') 0 0 negative('shim-plus');
   }
 }
 

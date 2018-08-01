@@ -42,6 +42,7 @@
   background: color('callout');
   border: pattern('border-action');
   flex: 1 0 auto;
+  font-size: size('small');
   padding: 0 size('shim');
   transition: all 200ms ease;
 

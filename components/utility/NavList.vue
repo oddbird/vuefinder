@@ -21,6 +21,9 @@
           talks: {
             'design-systems': 'Agile Design Systems',
           },
+          stories: {
+            'ridingsidesaddle': 'Riding SideSaddle*',
+          },
         }
       };
     },

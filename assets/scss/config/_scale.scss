@@ -45,6 +45,7 @@ $spacing-sizes: (
   'double-gutter': '#gutter' ('times': 2),
   'shim': '#gutter' ('divide': 2),
   'half-shim': '#shim' ('divide': 2),
+  'shim-plus': '#shim' ('times': 1.5),
 );
 
 @include herman-sizes('spacing-sizes', $spacing-sizes);
