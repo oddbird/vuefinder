@@ -143,19 +143,13 @@ and dances to a slow tune on the midnight radio from downtown.
     data() {
       return {
         meta: {
-          title: 'Riding SideSaddle* *| a novel in fragments*',
+          title: 'Riding SideSaddle*',
+          subtitle: 'a novel in fragments',
           type: 'books',
           view: 'grid',
-          title_slide: 'default',
           shuffle: true,
-          author: {
-            name: 'Miriam Suzanne',
-            url: 'http://oddbird.net/authors/miriam/',
-          },
-          org: {
-            name: 'Teacup Gorilla',
-            url: 'http://teacupgorilla.com/',
-          },
+          shuffle_start: true,
+          author: 'miriam',
         }
       }
     },

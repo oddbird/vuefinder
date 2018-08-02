@@ -12,14 +12,26 @@
     <transition-group name="slides" tag="div"
       :data-slide-view="view" >
 
-      <!-- <title-slide v-if="meta.title_slide"
-        :meta="meta" /> -->
+      <title-slide v-if="meta.title_slide"
+        key="title-before"
+        :id="meta.title_slide"
+        :state='slideState(-1)'
+        :view="view"
+        :meta="meta" />
 
       <slide-base v-for="(slide, index) in slides"
         :slide="slide"
         :key="slide.id"
         :state='slideState(index)'
         :view="view" />
+
+      <title-slide v-if="meta.title_slide"
+        key="title-after"
+        :id="meta.title_slide"
+        :state='slideState(slides.length)'
+        :view="view"
+        :meta="meta" />
+
     </transition-group>
   </section>
 </template>
@@ -27,11 +39,13 @@
 <script>
   import SlideControls from '~/components/project/SlideControls.vue';
   import SlideBase from '~/components/project/SlideBase.vue';
+  import TitleSlide from '~/components/project/TitleSlide.vue';
 
   export default {
     components: {
       SlideControls,
       SlideBase,
+      TitleSlide,
     },
     props: {
       meta: {
@@ -48,10 +62,12 @@
       },
     },
     data() {
+      const start = this.meta.title_slide ? -1 : 0;
+
       return {
-        prev: 0,
-        active: 0,
-        next: 1,
+        prev: start,
+        active: start,
+        next: start + 1,
         paused: false,
       }
     },
@@ -67,12 +83,19 @@
         this.paused = isSlides ? !this.paused : this.paused;
       },
       changeSlide(move) {
-        const max = (this.slides.length - 1);
+        let min = 0;
+        let max = (this.slides.length - 1);
+
+        if (this.meta.title_slide) {
+          min -= 1;
+          max += 1;
+        }
+
         let isActive = (this.active + move);
-        isActive = (isActive < 0) ? 0 : isActive;
+        isActive = (isActive < min) ? min : isActive;
         isActive = (isActive > max) ? max : isActive;
 
-        this.prev = (isActive === 0) ? 0 : (isActive - 1);
+        this.prev = (isActive === min) ? min : (isActive - 1);
         this.active = isActive;
         this.next = (isActive === max) ? max : (isActive + 1);
       },

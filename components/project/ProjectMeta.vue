@@ -6,9 +6,10 @@
       🏠
     </nuxt-link>
 
-    <header>
-      <h1 data-title="project"
-        v-html="$md.renderInline(meta.title)" />
+    <header data-header="project">
+      <project-title :title="meta.title"
+        :subtitle="meta.subtitle"
+        data-title="project" />
 
       <button-style v-if="editBtn"
         content="🖊️"
@@ -16,18 +17,8 @@
         :data-toggle-edit="edit ? 'on' : 'off'"
         @click="$emit('toggleEdit')" />
 
-      <div v-if="meta.author || meta.org"
-        class="byline">
-        <link-if v-if="name"
-          data-by="author"
-          :url="meta.author.url">{{ name }}</link-if>
-        <template v-if="meta.author && meta.org">
-          |
-        </template>
-        <link-if v-if="org"
-          data-by="org"
-          :url="meta.org.url">{{ org }}</link-if>
-      </div>
+      <by-line :authorID="meta.author"
+        class="project-byline" />
     </header>
 
     <nav data-nav="slides">
@@ -43,15 +34,17 @@
 </template>
 
 <script>
-  import LinkIf from '~/components/utility/LinkIf.vue';
+  import ProjectTitle from '~/components/project/ProjectTitle.vue';
   import ButtonGroup from '~/components/utility/ButtonGroup.vue';
   import ButtonStyle from '~/components/utility/ButtonStyle.vue';
+  import ByLine from '~/components/utility/ByLine.vue';
 
   export default {
     components: {
-      LinkIf,
+      ProjectTitle,
       ButtonStyle,
       ButtonGroup,
+      ByLine,
     },
     props: {
       meta: {
@@ -132,14 +125,11 @@
 }
 
 [data-title="project"] {
-  color: color('accent');
   display: inline-block;
+}
 
-  em {
-    color: color('text');
-    font-style: normal;
-    font-weight: normal;
-  }
+.project-byline {
+  font-size: size('xsmall');
 }
 
 [data-nav='slides'] {

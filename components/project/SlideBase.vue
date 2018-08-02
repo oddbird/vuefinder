@@ -1,33 +1,36 @@
 <template>
-  <section :data-slide="slide.id"
+  <section :data-slide="getId"
     :data-view="view"
     :data-active="state"
     :style="style">
-    <p v-if="slide.data.alt"
-      v-html="$md.renderInline(slide.data.alt)"
+
+    <p v-if="alt"
+      v-html="$md.renderInline(alt)"
       hidden />
-    <div v-if="slide.content"
-      class="slide-body">
-      <div v-html="$md.render(slide.content)"
+
+    <div v-else
+      :data-slide-layout="getLayout" >
+      <div v-if="content"
+        v-html="$md.render(content)"
         class="md-content" />
+      <div v-else
+        class="md-content">
+        <slot />
+      </div>
     </div>
   </section>
 </template>
 
-
-<style lang="scss">
-@import '~assets/scss/config/manifest';
-
-
-</style>
-
-
 <script>
   export default {
     props: {
+      id: {
+        type: [String, Boolean],
+        default: false
+      },
       slide: {
-        type: Object,
-        required: true,
+        type: [Object, Boolean],
+        default: false
       },
       view: {
         type: String,
@@ -37,16 +40,42 @@
         type: [String, Boolean],
         required: true,
       },
+      layout: {
+        type: String,
+        default: 'default'
+      },
     },
     computed: {
+      getId() {
+        return this.slide ? this.slide.id : this.id;
+      },
       style() {
-        if (this.slide.data.image) {
-          const style = this.slide.data.style;
-          style['background-image'] = `url('${this.slide.data.image}')`;
-          return style;
+        if (this.slide) {
+          if (this.slide.data.image) {
+            const style = this.slide.data.style;
+            style['background-image'] = `url('${this.slide.data.image}')`;
+            return style;
+          }
+          return this.slide.data.style;
+        } else {
+          return false;
         }
-        return this.slide.data.style;
-      }
+      },
+      alt() {
+        return this.slide ? this.slide.data.alt : false;
+      },
+      content() {
+        return this.slide ? this.slide.content : false;
+      },
+      getLayout() {
+        let layout = this.layout;
+
+        if ((layout === 'default') && this.slide) {
+          layout = this.slide.data.layout ? this.slide.data.layout : layout;
+        }
+
+        return layout;
+      },
     },
   }
 </script>
@@ -73,7 +102,7 @@
   }
 }
 
-.slide-body {
+[data-slide-layout] {
   align-self: center;
   grid-area: 1 / 1 / -1 / span 2;
   max-width: 100%;
@@ -124,7 +153,7 @@
     }
   }
 
-  .slide-body {
+  [data-slide-layout] {
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 100vh;

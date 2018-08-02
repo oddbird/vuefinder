@@ -1,6 +1,5 @@
 <template>
 <project-base
-  :edit="true"
   :meta="meta"
   src="
 Style Guides & Pattern Libraries
@@ -94,19 +93,12 @@ Hello World
     data() {
       return {
         meta: {
-          title: 'Agile Design Systems *in Vue*',
+          title: 'Agile Design Systems',
+          subtitle: 'in Vue',
           type: 'talks',
           view: 'grid',
-          title_slide: 'default',
-          // shuffle: true,
-          author: {
-            name: 'Miriam Suzanne',
-            url: 'http://oddbird.net/authors/miriam/',
-          },
-          org: {
-            name: 'OddBird',
-            url: 'http://oddbird.net/',
-          },
+          author: 'oddbird',
+          title_slide: 'oddbird',
         }
       }
     },

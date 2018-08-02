@@ -118,6 +118,10 @@
           }
         });
 
+        if (this.meta.shuffle_start) {
+          data.slides = shuffle(data.slides);
+        }
+
         return data;
       },
     },
