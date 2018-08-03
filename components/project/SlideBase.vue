@@ -81,9 +81,10 @@
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config/manifest';
+
 
 [data-slide] {
+  @include transition('move');
   background-color: color('slide');
   border-radius: size('corner');
   box-shadow: pattern('shadow');
@@ -130,7 +131,6 @@
 // -----
 [data-view='grid'] {
   font-size: size('xsmall');
-  transition: transform 1s ease;
 }
 
 [data-view='slides'] {
@@ -138,11 +138,9 @@
   border-radius: 0;
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
-  transition: none;
 
   &[data-active] {
     opacity: 1;
-    transition: transform 0.5s;
   }
 
   &[data-active='active'] {

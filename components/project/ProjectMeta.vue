@@ -96,7 +96,7 @@
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config/manifest';
+
 
 [data-banner="project"] {
   display: grid;
@@ -117,6 +117,7 @@
 }
 
 [data-toggle-edit='off'] {
+  @include transition('opacity');
   opacity: 0.5;
 
   #{$focus} {

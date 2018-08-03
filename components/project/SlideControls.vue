@@ -45,16 +45,16 @@
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config/manifest';
+
 
 [data-slide-control] {
+  @include transition('btn', 'opacity');
   background: color('background');
   border: pattern('border-base') transparent;
   border-radius: size('corner');
   padding: 0 size('half-shim');
   margin: size('half-shim');
   opacity: 0.125;
-  transition: all 200ms ease;
   z-index: 2;
 
   #{$focus} {

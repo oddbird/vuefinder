@@ -93,7 +93,6 @@
 
 [data-view='grid'] {
   font-size: size('xsmall');
-  transition: transform 1s ease;
 }
 
 
@@ -102,11 +101,9 @@
   border-radius: 0;
   opacity: 0;
   transform: translate3d(-100%, 0, 0);
-  transition: none;
 
   &[data-active] {
     opacity: 1;
-    transition: transform 0.5s;
   }
 
   &[data-active='active'] {

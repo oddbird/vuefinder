@@ -40,6 +40,9 @@ module.exports = {
         });
       }
     },
+    styleResources: {
+      scss: './assets/scss/config/_manifest.scss',
+    },
     watch: ['static/images/**/*.*']
   },
 

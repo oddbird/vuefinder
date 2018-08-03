@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config/manifest';
+
 
 [data-layout='home'] {
   margin: 0 auto;

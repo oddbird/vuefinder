@@ -1,0 +1,58 @@
+// Change Configuration
+// ====================
+
+
+@function offset(
+  $time,
+  $do
+) {
+  $offset: time($time, ('divide': 4));
+  @return time($time, ($do: $offset));
+}
+@include register-function('offset');
+
+
+// Base Times
+// ----------
+$base-times: (
+  'fast': 150ms,
+  'medium': 300ms,
+  'slow': 1s,
+);
+
+@include herman-times('base-times', $base-times);
+
+
+// Base Times
+// ----------
+$offset-times: (
+  'post-fast': '#fast' ('offset': 'plus'),
+  'pre-fast': '#fast' ('offset': 'minus'),
+  'post-medium': '#medium' ('offset': 'plus'),
+  'pre-medium': '#medium' ('offset': 'minus'),
+  'post-slow': '#slow' ('offset': 'plus'),
+  'pre-slow': '#slow' ('offset': 'minus'),
+);
+
+@include herman-times('offset-times', $offset-times);
+
+
+// Changes
+// -------
+$transitions: (
+  'opacity': opacity time('post-fast') ease('in-out'),
+  'color': color time('fast') ease('in-out'),
+  'shadow': text-shadow time('pre-fast') ease('in-out'),
+  'background': background-color time('fast') ease('in-out'),
+  'border': border-color time('post-fast') ease('in-out'),
+  'underline': text-decoration-color time('post-fast') ease('in-out'),
+
+  'link': ('#color', '#underline'),
+  'btn': ('#color', '#background', '#border', '#shadow'),
+
+  'move-base': transform time('medium'),
+  'move': '#move-base' ease('in-out'),
+  'elastic': '#move-base' ease('in-out-back'),
+);
+
+@include herman-changes('transitions', $transitions);

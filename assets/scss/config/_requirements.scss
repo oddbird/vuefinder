@@ -14,6 +14,33 @@
 }
 
 
+@mixin herman-times(
+  $key,
+  $map
+) {
+  @include add-times($map);
+  // @include herman-add('times', $key, $map, get-function('time'));
+}
+
+
+@mixin herman-easing(
+  $key,
+  $map
+) {
+  @include add-easing($map);
+  // @include herman-add('easing', $key, $map, get-function('ease'));
+}
+
+
+@mixin herman-changes(
+  $key,
+  $map
+) {
+  @include add-changes($map);
+  // @include herman-add('changes', $key, $map, get-function('change'));
+}
+
+
 @mixin herman-ratios(
   $key,
   $map

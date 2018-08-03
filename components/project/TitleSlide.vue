@@ -60,7 +60,7 @@
 </script>
 
 <style lang="scss">
-@import '~assets/scss/config/manifest';
+
 
 [data-slide-layout='project-title'] {
   text-align: center;

@@ -1,8 +1,10 @@
 // Config Manifest
 // ===============
-
+// This file is included as part of the Style-Loader
+// and will not need to be imported individually
 
 @import 'requirements';
+@import 'changes';
 @import 'color';
 @import 'fonts';
 @import 'scale';
