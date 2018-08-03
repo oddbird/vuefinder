@@ -19,7 +19,7 @@ $text-ratios: (
 /// @sizes
 $text-sizes: (
   'root': 16px,
-  'responsive': calc(#root + 0.5vw),
+  'responsive': 'calc(#root + 0.5vw)',
   'reset': 1rem,
   'rhythm': 1rem ('text-ratio': 1),
   'xlarge': calc(1em + 2vw),

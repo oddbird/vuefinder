@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.1",
-    "accoutrement": "^1.0.0-beta.2",
+    "accoutrement": "^1.0.0-beta.3",
     "autoprefixer": "^8.6.3",
     "gray-matter": "^4.0.1",
     "markdown-it-attrs": "^2.2.0",
