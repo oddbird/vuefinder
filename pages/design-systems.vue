@@ -16,6 +16,9 @@ using templates and pre-processors to iterate and automate
 living design systems in an agile and integrated process?
 
 <!-- slide -->
+---
+layout: title
+---
 
 # Header 1
 ## Header 2
@@ -78,10 +81,6 @@ scss - making it readable is even better… {.code-caption}
   padding-left: span(1 wide);
 }
 ```
-
-<!-- slide -->
-
-Hello World
 " />
 </template>
 
@@ -98,7 +97,6 @@ Hello World
           type: 'talks',
           view: 'grid',
           author: 'oddbird',
-          title_slide: 'oddbird',
         }
       }
     },

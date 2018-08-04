@@ -23,6 +23,7 @@
 
     <nav data-nav="slides">
       <button-style v-if="meta.shuffle"
+        id="shuffle"
         content="shuffle"
         @click="emitShuffle" />
       <button-group name="views"
@@ -97,11 +98,11 @@
 
 <style lang="scss">
 
-
 [data-banner="project"] {
   display: grid;
+  grid-column-gap: size('shim');
+  grid-row-gap: size('half-shim');
   grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
-  grid-gap: size('shim');
   padding: size('shim');
 }
 
@@ -116,6 +117,15 @@
   }
 }
 
+[data-header='project'],
+[data-nav='slides'] {
+  grid-column: 2 / span 2;
+
+  @include above('wide') {
+    grid-column: initial;
+  }
+}
+
 [data-toggle-edit='off'] {
   @include transition('opacity');
   opacity: 0.5;
@@ -125,7 +135,7 @@
   }
 }
 
-[data-title="project"] {
+[data-title='project'] {
   display: inline-block;
 }
 
@@ -135,8 +145,10 @@
 
 [data-nav='slides'] {
   align-items: start;
-  display: grid;
-  grid-gap: size('half-shim');
-  grid-template-columns: auto auto;
+  display: flex;
+}
+
+[data-btn-id='shuffle'] {
+  margin-right: size('half-shim');
 }
 </style>

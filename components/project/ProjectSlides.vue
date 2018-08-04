@@ -1,5 +1,5 @@
 <template>
-  <section :data-slide-type="meta.type" >
+  <section :data-project-slides="meta.type" >
     <slide-controls v-show="(view === 'slides')"
       :paused="paused"
       :hasPrev="(prev !== active)"
@@ -12,25 +12,11 @@
     <transition-group name="slides" tag="div"
       :data-slide-view="view" >
 
-      <title-slide v-if="meta.title_slide"
-        key="title-before"
-        :id="meta.title_slide"
-        :state='slideState(-1)'
-        :view="view"
-        :meta="meta" />
-
       <slide-base v-for="(slide, index) in slides"
-        :slide="slide"
         :key="slide.id"
-        :state='slideState(index)'
-        :view="view" />
-
-      <title-slide v-if="meta.title_slide"
-        key="title-after"
-        :id="meta.title_slide"
-        :state='slideState(slides.length)'
-        :view="view"
-        :meta="meta" />
+        :slide="slide"
+        :meta="meta"
+        :state='slideState(index)' />
 
     </transition-group>
   </section>
@@ -39,13 +25,11 @@
 <script>
   import SlideControls from '~/components/project/SlideControls.vue';
   import SlideBase from '~/components/project/SlideBase.vue';
-  import TitleSlide from '~/components/project/TitleSlide.vue';
 
   export default {
     components: {
       SlideControls,
       SlideBase,
-      TitleSlide,
     },
     props: {
       meta: {
@@ -62,7 +46,7 @@
       },
     },
     data() {
-      const start = this.meta.title_slide ? -1 : 0;
+      const start = 0;
 
       return {
         prev: start,
@@ -83,13 +67,8 @@
         this.paused = isSlides ? !this.paused : this.paused;
       },
       changeSlide(move) {
-        let min = 0;
-        let max = (this.slides.length - 1);
-
-        if (this.meta.title_slide) {
-          min -= 1;
-          max += 1;
-        }
+        const min = 0;
+        const max = (this.slides.length - 1);
 
         let isActive = (this.active + move);
         isActive = (isActive < min) ? min : isActive;
@@ -187,17 +166,41 @@
 
 // Views
 // -----
+[data-slide-view='list'] {
+  --ratio: #{fluid-ratio('widescreen')};
+}
+
 [data-slide-view='slides'] {
   @include position(fixed 0 0 0 0);
   background: color('background');
   overflow: hidden;
+
+  [data-slide] {
+    @include position(0 0 0 0);
+    border-radius: 0;
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  [data-active] {
+    opacity: 1;
+  }
+
+  [data-active='active'] {
+    transform: translate3d(0, 0, 0);
+
+    & ~ [data-slide] {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
 }
 
 [data-slide-view='grid'] {
   --font-size: #{size('small')};
+  --ratio: #{fluid-ratio('widescreen')};
 
-  @include above('half-page') {
-    --col: #{size('half-page')};
+  @include above('small-page') {
+    --col: #{size('small-page')};
     grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr));
   }
 

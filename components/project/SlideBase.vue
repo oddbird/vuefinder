@@ -1,160 +1,93 @@
 <template>
-  <section :data-slide="getId"
-    :data-view="view"
-    :data-active="state"
-    :style="style">
+  <section :data-slide="slide.id"
+    :data-active="state" >
 
-    <p v-if="alt"
-      v-html="$md.renderInline(alt)"
+    <p v-if="slide.data.alt"
+      v-html="$md.renderInline(slide.data.alt)"
       hidden />
 
-    <div v-else
-      :data-slide-layout="getLayout" >
-      <div v-if="content"
-        v-html="$md.render(content)"
-        class="md-content" />
-      <div v-else
-        class="md-content">
-        <slot />
-      </div>
+    <div class="slide"
+      :style="style" >
+      <component class="slide-content"
+        :slide="slide"
+        :meta="meta"
+        :is="getLayout" />
     </div>
   </section>
 </template>
 
 <script>
+  import TitleSlide from '~/components/slide/TitleSlide.vue';
+  import DefaultSlide from '~/components/slide/DefaultSlide.vue';
+
   export default {
+    components: {
+      TitleSlide,
+      DefaultSlide,
+    },
     props: {
-      id: {
-        type: [String, Boolean],
-        default: false
-      },
       slide: {
-        type: [Object, Boolean],
-        default: false
+        type: Object,
+        required: true
       },
-      view: {
-        type: String,
-        default: 'list'
+      meta: {
+        type: Object,
+        required: true
       },
       state: {
         type: [String, Boolean],
         required: true,
       },
-      layout: {
-        type: String,
-        default: 'default'
-      },
     },
     computed: {
-      getId() {
-        return this.slide ? this.slide.id : this.id;
+      getLayout() {
+        const layouts = {
+          'title': 'title-slide',
+          'contact': 'contact-slide',
+        };
+        let layout = this.slide.data.layout || this.meta.layout;
+        return layouts[layout] || layout || 'default-slide';
       },
       style() {
-        if (this.slide) {
-          if (this.slide.data.image) {
-            const style = this.slide.data.style;
-            style['background-image'] = `url('${this.slide.data.image}')`;
-            return style;
+        const style = this.slide.data.style;
+        if (this.slide.data.image) {
+          style['background-image'] = `url('${this.slide.data.image}')`;
+
+          if (!style['align-self']) {
+            style['align-self'] = 'initial';
           }
-          return this.slide.data.style;
-        } else {
-          return false;
         }
-      },
-      alt() {
-        return this.slide ? this.slide.data.alt : false;
-      },
-      content() {
-        return this.slide ? this.slide.content : false;
-      },
-      getLayout() {
-        let layout = this.layout;
-
-        if ((layout === 'default') && this.slide) {
-          layout = this.slide.data.layout ? this.slide.data.layout : layout;
-        }
-
-        return layout;
+        return style;
       },
     },
   }
 </script>
 
 <style lang="scss">
-
-
 [data-slide] {
   @include transition('move');
   background-color: color('slide');
   border-radius: size('corner');
   box-shadow: pattern('shadow');
   display: grid;
-  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  grid-auto-columns: minmax(0, auto);
   position: relative;
-  max-width: 100%;
-  overflow: hidden;
+  overflow: auto;
 
-  @include after('') {
-    display: inline-block;
+  @include before('') {
     grid-area: 1 / 1;
-    width: size('hairline');
+    width: 0;
     height: 0;
-    padding-bottom: fluid-ratio('widescreen');
+    padding-bottom: var(--ratio, 0);
   }
 }
 
-[data-slide-layout] {
+.slide {
   align-self: center;
-  grid-area: 1 / 1 / -1 / span 2;
-  max-width: 100%;
-  padding: size('shim');
-
-  h2 {
-    font-size: size('xlarge');
-  }
-
-  h3 {
-    font-size: size('large');
-  }
-
-  h4 {
-    font-size: size('medium');
-  }
-}
-
-.md-content {
-  margin: size('gutter') auto;
-  max-width: 100%;
-}
-
-// Views
-// -----
-[data-view='grid'] {
-  font-size: size('xsmall');
-}
-
-[data-view='slides'] {
-  @include position(0 0 0 0);
-  border-radius: 0;
-  opacity: 0;
-  transform: translate3d(-100%, 0, 0);
-
-  &[data-active] {
-    opacity: 1;
-  }
-
-  &[data-active='active'] {
-    transform: translate3d(0, 0, 0);
-
-    & ~ [data-slide] {
-      transform: translate3d(100%, 0, 0);
-    }
-  }
-
-  [data-slide-layout] {
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: 100vh;
-  }
+  grid-area: 1 / 1 / -1 / -1;
+  margin: 0 auto;
+  max-width: var(--max-width, size('wide'));
+  width: 100%;
+  padding: size('gutter');
 }
 </style>
