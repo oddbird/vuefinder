@@ -21,8 +21,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-layout='home'] {
   margin: 0 auto;
   max-width: size('page');

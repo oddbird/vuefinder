@@ -32,8 +32,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-slide-layout='project-title'] {
   text-align: center;
 }

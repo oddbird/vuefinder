@@ -126,8 +126,6 @@
 </script>
 
 <style lang="scss">
-
-
 // Types
 // -----
 [data-slide-type='talks'] {

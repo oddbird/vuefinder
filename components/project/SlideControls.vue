@@ -45,8 +45,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-slide-control] {
   @include transition('btn', 'opacity');
   background: color('background');

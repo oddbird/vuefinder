@@ -4,7 +4,7 @@
 
 <script>
   import ProjectBase from '~/components/project/ProjectBase.vue';
-  import fileSrc from '~/assets/books/ridingsidesaddle.slides';
+  import fileSrc from '~/assets/md/books/ridingsidesaddle.slides';
 
   export default {
     components: { ProjectBase },

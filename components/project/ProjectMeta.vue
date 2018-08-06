@@ -97,7 +97,6 @@
 </script>
 
 <style lang="scss">
-
 [data-banner="project"] {
   display: grid;
   grid-column-gap: size('shim');

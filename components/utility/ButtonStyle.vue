@@ -41,8 +41,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-btn-style~='default'] {
   @include transition('btn');
   background: color('callout');

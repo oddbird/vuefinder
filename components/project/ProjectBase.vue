@@ -26,7 +26,6 @@
 </template>
 
 <script>
-  import { parseData } from '~/assets/parser';
   import matter from 'gray-matter';
   import shuffle from 'lodash/shuffle';
   import ProjectMeta from '~/components/project/ProjectMeta.vue';

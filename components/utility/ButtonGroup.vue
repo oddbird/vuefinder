@@ -40,8 +40,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-btn-group] {
   display: flex;
 }

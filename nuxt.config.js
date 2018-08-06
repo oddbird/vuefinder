@@ -16,15 +16,6 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Slideshows in nuxt' }
     ],
     link: [
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600'
-      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },

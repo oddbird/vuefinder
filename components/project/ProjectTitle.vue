@@ -40,8 +40,6 @@
 </script>
 
 <style lang="scss">
-
-
 .title {
   color: color('accent');
   display: inline-block;
