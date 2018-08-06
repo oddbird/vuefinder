@@ -3716,7 +3716,7 @@ markdown-it-highlightjs@^3.0.0:
     highlight.js "^9.9.0"
     lodash.flow "^3.1.0"
 
-markdown-it@^8.3.1:
+markdown-it@^8.3.1, markdown-it@^8.4.2:
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
   dependencies:

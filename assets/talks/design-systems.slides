@@ -1,14 +1,9 @@
 ---
-public: true
 title: 'Agile Design Systems'
 subtitle: 'in Vue'
+type: 'talks'
 view: 'grid'
-author:
-  name: 'Miriam Suzanne'
-  url: 'http://oddbird.net/authors/miriam/'
-org:
-  name: 'OddBird'
-  url: 'http://oddbird.net/'
+author: 'oddbird'
 ---
 
 Style Guides & Pattern Libraries
@@ -25,6 +20,17 @@ using templates and pre-processors to iterate and automate
 living design systems in an agile and integrated process?
 
 <!-- slide -->
+---
+layout: title
+---
+
+# Header 1
+## Header 2
+### Header 3
+#### Header 4
+Normal Text
+
+<!-- slide -->
 
 ## Design **Systems**
 **Style** Guides + **Tool**kits + **Pattern** Libraries + **???**
@@ -32,16 +38,16 @@ living design systems in an agile and integrated process?
 <!-- slide -->
 
 ---
+image: '/images/patterns/oddbird-w-logo.jpg'
 alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 style:
-  'background-image': "url('https://dl.dropbox.com/s/98zl3nxde444otp/oddbird-w-logo.jpg')"
   'background-size': 'contain'
   'background-position': 'center'
 ---
 
 <!-- slide -->
 
-![](https://dl.dropbox.com/s/76e55964w8nvx3y/oddbird.png)
+![](/images/patterns/oddbird.png)
 
 ## [OddBird](http://oddbird.net)
 est. **2008**
@@ -49,16 +55,16 @@ est. **2008**
 <!-- slide -->
 
 ---
+image: '/images/patterns/lonely-planet-colors.jpg'
 alt: Lonely Planet Design System
 style:
-  'background-image': "url('https://dl.dropbox.com/s/3oyfw1kdtz2qzih/lonely-planet-colors.jpg')"
   'background-size': 'cover'
   'background-position': 'top'
 ---
 
 <!-- slide -->
 
-## Code Patterns **Add Meaning**
+### Code Patterns **Add Meaning**
 
 scss - showing your math is good… {.code-caption}
 

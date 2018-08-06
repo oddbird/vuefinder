@@ -18,6 +18,7 @@
     "accoutrement": "^1.0.0-beta.3",
     "autoprefixer": "^8.6.3",
     "gray-matter": "^4.0.1",
+    "markdown-it": "^8.4.2",
     "markdown-it-attrs": "^2.2.0",
     "markdown-it-highlightjs": "^3.0.0",
     "node-dir": "^0.1.17",

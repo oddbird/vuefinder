@@ -1,7 +1,11 @@
 ---
-title: Riding SideSaddle*
-subtitle: a novel in fragments
+title: 'Riding SideSaddle*'
+subtitle: 'a novel in fragments'
+type: 'books'
+view: 'grid'
 shuffle: true
+shuffle_start: true
+author: 'miriam'
 ---
 
 Now also a play

@@ -1,103 +1,16 @@
 <template>
-<project-base
-  :meta="meta"
-  src="
-Style Guides & Pattern Libraries
-are great tools for documenting
-the relationships between code and design,
-but beautiful docs are only half the battle.
-
-<!-- more -->
-
-We don’t all have dedicated teams and budgets
-to build a centralized system.
-How can we incorporate patterns into our code,
-using templates and pre-processors to iterate and automate
-living design systems in an agile and integrated process?
-
-<!-- slide -->
----
-layout: title
----
-
-# Header 1
-## Header 2
-### Header 3
-#### Header 4
-Normal Text
-
-<!-- slide -->
-
-## Design **Systems**
-**Style** Guides + **Tool**kits + **Pattern** Libraries + **???**
-
-<!-- slide -->
-
----
-image: '/images/patterns/oddbird-w-logo.jpg'
-alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
-style:
-  'background-size': 'contain'
-  'background-position': 'center'
----
-
-<!-- slide -->
-
-![](/images/patterns/oddbird.png)
-
-## [OddBird](http://oddbird.net)
-est. **2008**
-
-<!-- slide -->
-
----
-image: '/images/patterns/lonely-planet-colors.jpg'
-alt: Lonely Planet Design System
-style:
-  'background-size': 'cover'
-  'background-position': 'top'
----
-
-<!-- slide -->
-
-### Code Patterns **Add Meaning**
-
-scss - showing your math is good… {.code-caption}
-
-```scss
-.grid-span {
-  width: ((3*4em) + (2*1em)) / ((12*4em) + (11*1em)) * 100%; // 23.7288136%
-  margin-right: 1em / ((12*4em) + (11*1em)) * 100%; // 01.6949153%
-  padding-left: ((1*4em) + (1*1em)) / ((12*4em) + (11*1em)); // 08.4745763%
-}
-```
-
-scss - making it readable is even better… {.code-caption}
-
-```scss
-.grid-span {
-  width: span(3);
-  margin-right: gutter();
-  padding-left: span(1 wide);
-}
-```
-" />
+  <project-base :src="src"/>
 </template>
 
 <script>
   import ProjectBase from '~/components/project/ProjectBase.vue';
+  import fileSrc from '~/assets/talks/design-systems.slides';
 
   export default {
     components: { ProjectBase },
     data() {
       return {
-        meta: {
-          title: 'Agile Design Systems',
-          subtitle: 'in Vue',
-          type: 'talks',
-          view: 'grid',
-          author: 'oddbird',
-        }
+        src: fileSrc,
       }
     },
   }

@@ -1,9 +1,9 @@
 <template>
   <main :data-editing="edit">
     <project-meta
-      :meta="meta"
-      :views="views"
-      :view="view"
+      :meta="page.meta"
+      :views="page.meta.views"
+      :view="page.meta.view"
       :edit="edit"
       :editBtn="showEditToggle()"
       @toggleView="toggleView($event)"
@@ -16,12 +16,12 @@
       @change="updatePage" />
 
     <project-slides
-      :meta="meta"
+      :meta="page.meta"
       :slides="page.slides"
-      :view="view"
+      :view="page.meta.view"
       :data-edit="edit ? 'half' : false"
       @open="toggleView('slides')"
-      @close="toggleView(lastView)" />
+      @close="toggleView(page.meta.lastView)" />
   </main>
 </template>
 
@@ -42,10 +42,6 @@
         type: String,
         required: true,
       },
-      meta: {
-        type: Object,
-        required: true,
-      },
       edit: {
         type: Boolean,
         default: false,
@@ -53,31 +49,18 @@
     },
     data() {
       return {
-        views: this.getViews(),
-        view: this.getView(),
-        lastView: this.defaultView(),
-        page: this.getPage(),
-      }
+        page: this.parse(this.src),
+      };
     },
     methods: {
       // Reactive Data
-      defaultView() {
-        return this.getViews()[0];
-      },
-      getViews() {
-        const defaultViews = ['list', 'grid', 'slides'];
-        return this.meta.views ? this.meta.views : defaultViews;
-      },
-      getView() {
-        return this.meta.view ? this.meta.view : this.defaultView();
-      },
       showEditToggle() {
         return process.env.baseURL === '/' ? true : false;
       },
 
       // Actions
       updatePage() {
-        this.page = this.getPage(this.src);
+        this.page = this.parse(this.src);
       },
       toggleEdit() {
         this.edit = !this.edit;
@@ -86,22 +69,23 @@
         this.page.slides = shuffle(this.page.slides);
       },
       toggleView(newView) {
-        if (this.getViews().includes(newView) && (this.view !== newView)) {
-          this.lastView = this.view;
-          this.view = newView;
+        if (this.page.meta.views.includes(newView) && (this.page.meta.view !== newView)) {
+          this.page.meta.lastView = this.page.meta.view;
+          this.page.meta.view = newView;
         }
       },
 
       // parser
-      getPage() {
+      parse(src) {
         // fix image urls in production
         const imgBase = `${process.env.baseURL}images/`;
-        const src = this.src.replace(/\/images\//g, imgBase);
+        src = src.replace(/\/images\//g, imgBase);
 
         const data = {
           slides: [],
         };
 
+        // parse
         src.split("\n<!-- slide -->\n").forEach(function (partRaw, index) {
           partRaw = partRaw.trimLeft();
 
@@ -110,6 +94,7 @@
           part.excerpt = part.excerpt.trimLeft();
 
           if (index === 0) {
+            data.meta = part.data;
             data.content = part.content;
             data.excerpt = part.excerpt;
           } else {
@@ -118,7 +103,12 @@
           }
         });
 
-        if (this.meta.shuffle_start) {
+        // defaults
+        data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
+        data.meta.view = data.meta.view || data.meta.views[0];
+        data.meta.lastView = data.meta.view;
+
+        if (data.meta.shuffle_start) {
           data.slides = shuffle(data.slides);
         }
 
@@ -129,8 +119,6 @@
 </script>
 
 <style lang="scss">
-
-
 [data-editing] {
   display: grid;
   grid-template-columns: minmax(0, size('small-page')) minmax(50%, 1fr);

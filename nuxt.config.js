@@ -39,6 +39,11 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
+      config.module.rules.push({
+        test: /\.slides$/,
+        loaders: ['raw-loader'],
+        exclude: /(node_modules)/
+      });
     },
     styleResources: {
       scss: './assets/scss/config/_manifest.scss',
