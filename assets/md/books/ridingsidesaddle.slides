@@ -5,7 +5,11 @@ type: 'books'
 view: 'grid'
 shuffle: true
 shuffle_start: true
-author: 'miriam'
+byline:
+  - name: 'Miriam Eric Suzanne'
+    url: 'http://miriamsuzanne.com'
+  - name: '@mirisuzanne'
+    url: 'https://twitter.com/mirisuzanne'
 ---
 
 Now also a play
