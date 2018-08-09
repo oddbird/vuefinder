@@ -46,22 +46,6 @@ module.exports = {
   env: {
     baseURL: routerBase.router ? routerBase.router.base : '/',
     domain: process.env.DEPLOY_ENV ? 'miriamsuzanne.com' : 'localhost:3000',
-    authors: {
-      miriam: {
-        name: 'Miriam Suzanne',
-        url: 'http://miriamsuzanne.com/',
-        org: '@mirisuzanne',
-        org_url: 'http://twitter.com/mirisuzanne',
-        logo: '/images/_template/face.svg'
-      },
-      oddbird: {
-        name: 'Miriam Suzanne',
-        url: 'http://oddbird.net/authors/miriam',
-        org: 'OddBird',
-        org_url: 'http://oddbird.net/',
-        logo: '/images/_template/oddlogo.svg'
-      }
-    }
   },
 
   markdownit: {

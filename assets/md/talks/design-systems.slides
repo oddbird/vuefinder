@@ -3,7 +3,13 @@ title: 'Agile Design Systems'
 subtitle: 'in Vue'
 type: 'talks'
 view: 'grid'
-author: 'oddbird'
+byline:
+  - name: 'Miriam Suzanne'
+    url: 'http://oddbird.net/miriam'
+  - name: '@mirisuzanne'
+    url: 'https://twitter.com/mirisuzanne'
+  - name: '@oddbird'
+    url: 'https://twitter.com/oddbird'
 ---
 
 Style Guides & Pattern Libraries
@@ -20,9 +26,12 @@ using templates and pre-processors to iterate and automate
 living design systems in an agile and integrated process?
 
 <!-- slide -->
+
 ---
 layout: title
 ---
+
+<!-- slide -->
 
 # Header 1
 ## Header 2
@@ -41,7 +50,7 @@ Normal Text
 image: '/images/patterns/oddbird-w-logo.jpg'
 alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 style:
-  'background-size': 'contain'
+  'background-size': 'cover'
   'background-position': 'center'
 ---
 

@@ -1,6 +1,5 @@
 <template>
-  <div data-slide-layout="default"
-    v-html="$md.render(slide.content)" />
+  <div v-html="$md.render(slide.content)" />
 </template>
 
 <script>
@@ -18,6 +17,11 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+[data-slide-layout='default'] {
+  align-self: center;
+  margin: 0 auto;
+  max-width: var(--max-width, size('wide'));
+  padding: size('gutter');
+}
 </style>

@@ -2,17 +2,11 @@
   <section :data-slide="slide.id"
     :data-active="state" >
 
-    <p v-if="slide.data.alt"
-      v-html="$md.renderInline(slide.data.alt)"
-      hidden />
-
-    <div class="slide"
-      :style="style" >
-      <component class="slide-content"
-        :slide="slide"
-        :meta="meta"
-        :is="getLayout" />
-    </div>
+    <component :data-slide-layout="getLayout"
+      :style="style"
+      :slide="slide"
+      :meta="meta"
+      :is="`${getLayout}-slide`" />
   </section>
 </template>
 
@@ -41,12 +35,8 @@
     },
     computed: {
       getLayout() {
-        const layouts = {
-          'title': 'title-slide',
-          'contact': 'contact-slide',
-        };
-        let layout = this.slide.data.layout || this.meta.layout;
-        return layouts[layout] || layout || 'default-slide';
+        const defaultLayout = this.slide.data.image ? 'image' : 'default';
+        return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
       style() {
         const style = this.slide.data.style;
@@ -82,12 +72,8 @@
   }
 }
 
-.slide {
-  align-self: center;
+[data-slide-layout] {
   grid-area: 1 / 1 / -1 / -1;
-  margin: 0 auto;
-  max-width: var(--max-width, size('wide'));
   width: 100%;
-  padding: size('gutter');
 }
 </style>

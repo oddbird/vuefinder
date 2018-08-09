@@ -17,8 +17,8 @@
         :data-toggle-edit="edit ? 'on' : 'off'"
         @click="$emit('toggleEdit')" />
 
-      <by-line :authorID="meta.author"
-        class="project-byline" />
+      <by-line id="banner"
+        :author="meta.byline" />
     </header>
 
     <nav data-nav="slides">
@@ -138,7 +138,7 @@
   display: inline-block;
 }
 
-.project-byline {
+[data-byline='banner'] {
   font-size: size('xsmall');
 }
 

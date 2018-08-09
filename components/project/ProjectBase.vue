@@ -106,6 +106,7 @@
         data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
+        data.meta.imgBase = imgBase;
 
         if (data.meta.shuffle_start) {
           data.slides = shuffle(data.slides);
