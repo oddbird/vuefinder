@@ -79,39 +79,41 @@
         this.next = (isActive === max) ? max : (isActive + 1);
       },
       keyMove(e) {
-        if (this.view === 'slides') {
-          switch (e.code) {
-            case 'ArrowLeft':
-            case 'ArrowUp':
-            case 'PageUp':
-              if (!this.paused) {
-                this.changeSlide(-1);
-              }
-              break;
-            case 'ArrowRight':
-            case 'ArrowDown':
-            case 'PageDown':
-            case 'Space':
-              if (!this.paused) {
-                this.changeSlide(1);
-              }
-              break;
-            case 'Escape':
-              if (this.paused) {
+        if (this.meta.listen) {
+          if (this.view === 'slides') {
+            switch (e.code) {
+              case 'ArrowLeft':
+              case 'ArrowUp':
+              case 'PageUp':
+                if (!this.paused) {
+                  this.changeSlide(-1);
+                }
+                break;
+              case 'ArrowRight':
+              case 'ArrowDown':
+              case 'PageDown':
+              case 'Space':
+                if (!this.paused) {
+                  this.changeSlide(1);
+                }
+                break;
+              case 'Escape':
+                if (this.paused) {
+                  this.togglePaused();
+                }
+                this.$emit('close');
+                break;
+              case 'Period':
                 this.togglePaused();
+                break;
               }
-              this.$emit('close');
-              break;
-            case 'Period':
-              this.togglePaused();
-              break;
+          } else {
+            switch (e.code) {
+              case 'F5':
+                this.$emit('open');
+                e.preventDefault();
+                break;
             }
-        } else {
-          switch (e.code) {
-            case 'F5':
-              this.$emit('open');
-              e.preventDefault();
-              break;
           }
         }
       },
@@ -128,13 +130,9 @@
 <style lang="scss">
 // Types
 // -----
-[data-slide-type='talks'] {
+[data-project-slides='talks'] {
   --font-size: #{size('large')};
   text-align: center;
-
-  .md-content {
-    width: size('double');
-  }
 
   strong {
     color: color('accent');
@@ -143,10 +141,13 @@
 }
 
 
-[data-slide-type='books'] {
-  .md-content {
-    padding: size('gutter');
-    width: size('wide');
+[data-project-slides='books'] {
+  --font-size: #{size('medium')};
+
+  [data-slide-layout='default'] {
+    @include above('page') {
+      padding: size('gutter') size('double-gutter');
+    }
   }
 }
 
@@ -197,7 +198,7 @@
   --font-size: #{size('small')};
   --ratio: #{fluid-ratio('widescreen')};
 
-  @include above('small-page') {
+  @include above('page') {
     --col: #{size('small-page')};
     grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr));
   }

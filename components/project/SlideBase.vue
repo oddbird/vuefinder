@@ -12,12 +12,20 @@
 
 <script>
   import TitleSlide from '~/components/slide/TitleSlide.vue';
+  import ImageSlide from '~/components/slide/ImageSlide.vue';
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
+  import FullSlide from '~/components/slide/FullSlide.vue';
+  import TemplateSlide from '~/components/slide/TemplateSlide.vue';
+  import ContactSlide from '~/components/slide/ContactSlide.vue';
 
   export default {
     components: {
       TitleSlide,
+      ImageSlide,
       DefaultSlide,
+      FullSlide,
+      TemplateSlide,
+      ContactSlide,
     },
     props: {
       slide: {
@@ -39,7 +47,7 @@
         return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
       style() {
-        const style = this.slide.data.style;
+        const style = this.slide.data.style || {};
         if (this.slide.data.image) {
           style['background-image'] = `url('${this.slide.data.image}')`;
 
@@ -75,5 +83,13 @@
 [data-slide-layout] {
   grid-area: 1 / 1 / -1 / -1;
   width: 100%;
+
+  h2 {
+    font-size: size('xlarger');
+  }
+
+  h3 {
+    font-size: size('larger');
+  }
 }
 </style>

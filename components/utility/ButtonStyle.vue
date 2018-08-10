@@ -1,6 +1,6 @@
 <template>
   <button :data-btn-id="id"
-    :data-btn-style="type"
+    :data-btn-style="btnStyle"
     :disabled="disabled"
     :data-active='active'
     @click="callback($event)" >
@@ -19,7 +19,7 @@
         type: [String, Boolean],
         default: false
       },
-      type: {
+      btnStyle: {
         type: String,
         default: 'default'
       },

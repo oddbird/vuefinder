@@ -107,6 +107,7 @@
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
         data.meta.imgBase = imgBase;
+        data.meta.listen = true;
 
         if (data.meta.shuffle_start) {
           data.slides = shuffle(data.slides);

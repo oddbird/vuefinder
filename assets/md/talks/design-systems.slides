@@ -94,3 +94,22 @@ scss - making it readable is even better… {.code-caption}
   padding-left: span(1 wide);
 }
 ```
+
+<!-- slide -->
+
+---
+layout: template
+---
+
+## **Thank you**!
+
+<!-- slide -->
+
+---
+layout: contact
+form:
+  email: 'birds@oddbird.net'
+  next: 'http://oddbird.net/contact/thanks'
+  submit: 'send it!'
+---
+

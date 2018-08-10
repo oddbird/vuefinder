@@ -13,7 +13,7 @@
 
       <button-style v-if="editBtn"
         content="🖊️"
-        type="emoji"
+        btnStyle="emoji"
         :data-toggle-edit="edit ? 'on' : 'off'"
         @click="$emit('toggleEdit')" />
 
@@ -148,6 +148,7 @@
 }
 
 [data-btn-id='shuffle'] {
+  flex: 0 0 auto;
   margin-right: size('half-shim');
 }
 </style>

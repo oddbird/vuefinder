@@ -1,7 +1,7 @@
 <template>
   <div :data-btn-group="name">
     <button-style v-for="(item, index) in options"
-      type='group default'
+      btnStyle='group default'
       :key='index'
       :content='item'
       :active="(item === active)"

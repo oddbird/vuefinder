@@ -1,0 +1,111 @@
+<template>
+  <div data-slide-base="template">
+    <img data-part="template-header"
+      :src="header('src')"
+      :alt="header('alt')"
+      :style="offset" />
+
+    <slot>
+      <div data-part="template-main"
+        v-html="$md.render(slide.content)" />
+    </slot>
+
+    <footer data-part="template-footer">
+      <nuxt-link :to="$route.path"
+        class="slides-url">
+        {{ projectUrl() }}
+      </nuxt-link>
+      <by-line v-if="meta.byline"
+        id="slide"
+        :author="meta.byline" />
+    </footer>
+  </div>
+</template>
+
+<script>
+  import ByLine from '~/components/utility/ByLine.vue';
+
+  export default {
+    components: {
+      ByLine,
+    },
+    props: {
+      slide: {
+        type: Object,
+        required: true
+      },
+      meta: {
+        type: Object,
+        required: true
+      },
+    },
+    data() {
+      return {
+        defaultHeader: {
+          src: '/images/_oddbird/header.jpg',
+          alt: 'OddBird',
+          offset: 10,
+        },
+      }
+    },
+    computed: {
+      offset() {
+        return {'--offset': `${this.header('offset')}%`};
+      },
+    },
+    methods: {
+      header(prop) {
+        const defaultVal = this.defaultHeader[prop];
+        let userVal;
+
+        if (this.slide.data.header) {
+          userVal = this.slide.data.header[prop];
+        }
+
+        return userVal || defaultVal;
+      },
+      getDomain() {
+        return process.env.domain ? process.env.domain : '';
+      },
+      projectUrl() {
+        return `${this.getDomain()}${this.$route.fullPath}`;
+      },
+    },
+  }
+</script>
+
+<style lang="scss" scoped>
+[data-slide-base='template'] {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+[data-part='template-header'] {
+  width: 100%;
+  margin-bottom: size('calc(#shim - var(--offset, 0))');
+}
+
+[data-part='template-main'] {
+  align-self: center;
+}
+
+[data-part='template-footer'] {
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: size('xsmall');
+  font-weight: bold;
+  justify-content: space-between;
+  padding: size('gutter') size('shim') size('shim');
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  .slides-url {
+    margin-right: size('shim');
+  }
+}
+</style>

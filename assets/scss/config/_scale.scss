@@ -22,13 +22,18 @@ $text-sizes: (
   'responsive': 'calc(#root + 0.5vw)',
   'reset': 1rem,
   'rhythm': 1rem ('text-ratio': 1),
-  'xlarge': calc(1em + 2vw),
-  'large': calc(1em + 1vw),
-  'medium': calc(1em + 0.5vw),
-  'small': 1em ('text-ratio': -0.25),
-  'xsmall': 1em ('text-ratio': -0.675),
-  'xxsmall': 1em ('text-ratio': -1.5),
+  'xlarge': calc(1rem + 2vw),
+  'large': calc(1rem + 1vw),
+  'medium': calc(1rem + 0.5vw),
+  'small': 1rem ('text-ratio': -0.25),
+  'xsmall': 1rem ('text-ratio': -0.675),
+  'xxsmall': 1rem ('text-ratio': -1.5),
   'code': '#xsmall',
+
+  'larger': 1em ('text-ratio': 1),
+  'xlarger': 1em ('text-ratio': 2),
+  'smaller': 1em ('text-ratio': -0.5),
+  'xsmaller': 1em ('text-ratio': -1),
 );
 
 @include herman-sizes('text-sizes', $text-sizes);
@@ -43,6 +48,7 @@ $spacing-sizes: (
   'halfline': '#newline' ('divide': 2),
   'gutter': '#rhythm',
   'double-gutter': '#gutter' ('times': 2),
+  'spacer': '#gutter' ('times': 4),
   'shim': '#gutter' ('divide': 2),
   'half-shim': '#shim' ('divide': 2),
   'shim-plus': '#shim' ('times': 1.5),
