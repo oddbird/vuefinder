@@ -56,13 +56,19 @@
     methods: {
       header(prop) {
         const defaultVal = this.defaultHeader[prop];
-        let userVal;
+        let finalVal;
 
         if (this.slide.data.header) {
-          userVal = this.slide.data.header[prop];
+          finalVal = this.slide.data.header[prop];
         }
 
-        return userVal || defaultVal;
+        finalVal = finalVal || defaultVal;
+
+        if (prop === 'src') {
+          finalVal = finalVal.replace(/\/images\//g, this.meta.imgBase);
+        }
+
+        return finalVal;
       },
       getDomain() {
         return process.env.domain ? process.env.domain : '';
