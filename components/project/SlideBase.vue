@@ -17,6 +17,7 @@
   import FullSlide from '~/components/slide/FullSlide.vue';
   import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
+  import DemoSlide from '~/components/slide/DemoSlide.vue';
 
   export default {
     components: {
@@ -26,6 +27,7 @@
       FullSlide,
       TemplateSlide,
       ContactSlide,
+      DemoSlide,
     },
     props: {
       slide: {
@@ -43,18 +45,23 @@
     },
     computed: {
       getLayout() {
-        const defaultLayout = this.slide.data.image ? 'image' : 'default';
+        let defaultLayout = this.slide.data.image ? 'image' : 'default';
+        defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
       style() {
         const style = this.slide.data.style || {};
-        if (this.slide.data.image) {
-          style['background-image'] = `url('${this.slide.data.image}')`;
 
-          if (!style['align-self']) {
-            style['align-self'] = 'initial';
+        if (this.slide.data.image) {
+          style['--image'] = `url('${this.slide.data.image}')`;
+        }
+
+        if ((this.getLayout === 'image') || (this.getLayout === 'demo')) {
+          if (!style['align-self'] && !style['--align-self']) {
+            style['--align-self'] = 'stretch';
           }
         }
+
         return style;
       },
     },
@@ -81,6 +88,10 @@
 }
 
 [data-slide-layout] {
+  align-self: var(--align-self, center);
+  background: var(--image) no-repeat scroll;
+  background-size: var(--image-size, cover);
+  background-position: var(--image-position, center);
   grid-area: 1 / 1 / -1 / -1;
   width: 100%;
 

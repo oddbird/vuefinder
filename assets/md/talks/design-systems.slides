@@ -49,9 +49,6 @@ Normal Text
 ---
 image: '/images/patterns/oddbird-w-logo.jpg'
 alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
-style:
-  'background-size': 'cover'
-  'background-position': 'center'
 ---
 
 <!-- slide -->
@@ -67,8 +64,7 @@ est. **2008**
 image: '/images/patterns/lonely-planet-colors.jpg'
 alt: Lonely Planet Design System
 style:
-  'background-size': 'cover'
-  'background-position': 'top'
+  --image-position: 'top'
 ---
 
 <!-- slide -->

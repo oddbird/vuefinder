@@ -96,22 +96,29 @@
 <style lang="scss" scoped>
 [data-part='contact-form'] {
   align-self: center;
+  display: grid;
+  grid-gap: size('newline');
+  grid-template-columns: repeat(auto-fit, minmax(size('half-page'), 1fr));
   margin: 0 auto;
-  max-width: size('page');
+  max-width: size('wide');
   padding: 0 size('gutter');
   text-align: left;
   width: 100%;
 }
 
+.form-header,
+[data-form-field='contact-message'],
+[data-actions] {
+  grid-column: 1 / -1;
+}
+
 [data-form-field] {
   display: block;
-  margin-bottom: size('half-shim');
 }
 
 [data-label] {
   display: block;
-  font-size: size('xsmall');
-  font-weight: bold;
+  font-size: size('xsmaller');
 }
 
 [data-input='default'],

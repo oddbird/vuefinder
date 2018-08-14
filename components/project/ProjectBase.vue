@@ -41,17 +41,19 @@
         type: String,
         required: true,
       },
-      edit: {
-        type: Boolean,
-        default: false,
-      },
     },
     data() {
       return {
         page: this.parse(this.src),
+        edit: false,
       };
     },
     methods: {
+      projectUrl() {
+        let baseURL = process.env.baseURL.slice(0, -1);
+        return `${process.env.domain}${baseURL}${this.$route.fullPath}`;
+      },
+
       // Reactive Data
       showEditToggle() {
         return process.env.baseURL === '/' ? true : false;
@@ -108,6 +110,7 @@
         data.meta.lastView = data.meta.view;
         data.meta.imgBase = imgBase;
         data.meta.listen = true;
+        data.meta.projectUrl = this.projectUrl();
 
         if (data.meta.shuffle_start) {
           data.slides = shuffle(data.slides);
@@ -127,18 +130,20 @@
   height: 100vh;
   overflow: hidden;
 
-  [name='md-src'] {
-    font-size: size('xsmall');
-    padding: size('shim');
-  }
+}
 
-  [data-edit='full'] {
-    border-bottom: pattern('border');
-    grid-column: 1 / -1;
-  }
+[data-edit='full'] {
+  border-bottom: pattern('border');
+  grid-column: 1 / -1;
+}
 
-  [data-edit='half'] {
-    overflow: auto;
-  }
+[data-edit='half'] {
+  overflow: auto;
+}
+
+[name='md-src'] {
+  @include font-family('code');
+  font-size: size('xxsmall');
+  padding: size('shim');
 }
 </style>

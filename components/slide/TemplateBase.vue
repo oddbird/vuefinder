@@ -13,7 +13,7 @@
     <footer data-part="template-footer">
       <nuxt-link :to="$route.path"
         class="slides-url">
-        {{ projectUrl() }}
+        {{ meta.projectUrl }}
       </nuxt-link>
       <by-line v-if="meta.byline"
         id="slide"
@@ -69,12 +69,6 @@
         }
 
         return finalVal;
-      },
-      getDomain() {
-        return process.env.domain ? process.env.domain : '';
-      },
-      projectUrl() {
-        return `${this.getDomain()}${this.$route.fullPath}`;
       },
     },
   }

@@ -19,12 +19,14 @@
 <script>
   import matter from 'gray-matter';
   import designSystems from '~/assets/md/talks/design-systems.slides';
+  import dynamicCSS from '~/assets/md/talks/dynamic-css.slides';
   import sideSaddle from '~/assets/md/books/ridingsidesaddle.slides';
 
   export default {
     data() {
       const pages = {
         'design-systems': designSystems,
+        'dynamic-css': dynamicCSS,
         'ridingsidesaddle': sideSaddle,
       };
 
