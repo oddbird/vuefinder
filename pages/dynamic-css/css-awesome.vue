@@ -11,25 +11,21 @@
 </script>
 
 <style lang="scss">
-* {
-	box-sizing: border-box;
-}
-
 :root {
 	align-content: center;
-  color: hsl(150, 10%, 10%);
 	background-color: hsl(180, 100%, 30%);
 	background-image: url('/images/dynamic-css/calm-waters.jpg');
-	background-size: cover;
 	background-position: bottom right;
+	background-size: cover;
+  color: hsl(150, 10%, 10%);
 	display: grid;
-	justify-content: center;
-	font-size: calc(50px + 5vmin);
   font-family: 'bookmania', serif;
+	font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "dlig";
 	font-kerning: normal;
+	font-size: calc(16px + 10vw);
 	font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
 	font-variant-numeric: oldstyle-nums proportional-nums;
-	font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "dlig";
+	justify-content: center;
 	min-height: 100vh;
 	padding: 1rem;
 }
@@ -37,25 +33,22 @@
 
 .box {
 	--box: 2.5em;
-	border-radius: 0.125em;
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	grid-template-rows: repeat(2, minmax(0, 1fr));
-  width: var(--box);
-  height: var(--box);
+	height: var(--box);
+	margin-left: calc(0px - var(--box));
 	position: relative;
+	width: var(--box);
 
-	&::after {
-		background: linear-gradient(transparent, hsl(220, 100%, 60%));
+	@include after('') {
+		@include position(0 0 0 0);
+		background: linear-gradient(transparent, hsl(220, 100%, 10%));
 		border: 2px solid hsl(220, 100%, 60%);
 		border-radius: 0.125em;
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
 		mix-blend-mode: difference;
+		pointer-events: none;
+		z-index: -1;
 	}
 }
 
@@ -69,8 +62,8 @@ span {
 
 
 .css {
-	font-size: 1.25em;
 	font-feature-settings: 'ss16';
+	font-size: 1.25em;
 	grid-area: 1 / 1 / auto / -1;
 	margin-right: 0.25em;
 	text-indent: -0.3em;
@@ -84,9 +77,9 @@ span {
 .is {
 	align-self: baseline;
 	display: inline-block;
-	font-style: italic;
-	font-size: 0.5em;
 	font-feature-settings: 'ss13';
+	font-size: 0.5em;
+	font-style: italic;
 	grid-area: 2 / 1;
 	justify-self: start;
 	padding: 0.5em;
@@ -94,10 +87,11 @@ span {
 
 
 .awesome {
+	// -webkit-background-clip: text;
+	background-clip: text;
 	background-image: url('/images/dynamic-css/horizon-nature.jpg');
-	background-size: cover;
 	background-position: center center;
-	-webkit-background-clip: text;
+	background-size: cover;
 	color: transparent;
 	font-feature-settings: 'swsh';
 	font-weight: bold;

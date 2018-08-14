@@ -50,13 +50,12 @@
     },
     methods: {
       projectUrl() {
-        let baseURL = process.env.baseURL.slice(0, -1);
-        return `${process.env.domain}${baseURL}${this.$route.fullPath}`;
+        return `${process.env.domain}${this.$route.fullPath}`;
       },
 
       // Reactive Data
       showEditToggle() {
-        return process.env.baseURL === '/' ? true : false;
+        return process.env.DEPLOY_ENV ? false : true;
       },
 
       // Actions
@@ -78,10 +77,6 @@
 
       // parser
       parse(src) {
-        // fix image urls in production
-        const imgBase = `${process.env.baseURL}images/`;
-        src = src.replace(/\/images\//g, imgBase);
-
         const data = {
           slides: [],
         };
@@ -108,7 +103,6 @@
         data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
-        data.meta.imgBase = imgBase;
         data.meta.listen = true;
         data.meta.projectUrl = this.projectUrl();
 

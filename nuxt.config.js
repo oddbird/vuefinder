@@ -1,11 +1,17 @@
 const util = require('util');
 
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
-const routerBase = (process.env.DEPLOY_ENV === 'GH_PAGES')
-  ? { router: {base: '/vuefinder/'} } : {};
+let domain = 'localhost:3000';
+
+switch (process.env.DEPLOY_ENV) {
+  case 'MIA':
+    domain = 'read.miriamsuzanne.com';
+    break;
+  case 'ODDBIRD':
+    domain = 'talks.oddbird.net';
+    break;
+}
 
 module.exports = {
-  ...routerBase,
   loading: false,
   css: ['~/assets/scss/vuefinder.scss'],
   head: {
@@ -44,8 +50,7 @@ module.exports = {
 
   modules: ['@nuxtjs/markdownit'],
   env: {
-    baseURL: routerBase.router ? routerBase.router.base : '/',
-    domain: process.env.DEPLOY_ENV ? 'miriamsuzanne.com' : 'localhost:3000',
+    domain: domain,
   },
 
   markdownit: {

@@ -62,13 +62,7 @@
           finalVal = this.slide.data.header[prop];
         }
 
-        finalVal = finalVal || defaultVal;
-
-        if (prop === 'src') {
-          finalVal = finalVal.replace(/\/images\//g, this.meta.imgBase);
-        }
-
-        return finalVal;
+        return finalVal || defaultVal;
       },
     },
   }

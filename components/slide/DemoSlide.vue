@@ -1,5 +1,9 @@
 <template>
-  <iframe :src="getSrc" frameborder="0" />
+  <div class="demo-container">
+    <iframe :data-demo="slide.data.demo"
+      :src="getSrc"
+      v-html="$md.render(slide.content)" />
+  </div>
 </template>
 
 <script>
@@ -16,9 +20,16 @@
     },
     computed: {
       getSrc() {
-        let baseURL = process.env.baseURL.slice(0, -1);
-        return `${baseURL}${this.$route.fullPath}/${this.slide.data.demo}`;
+        return `${this.$route.fullPath}/${this.slide.data.demo}`;
       }
     },
   }
 </script>
+
+<style lang="scss">
+.demo-container {
+  display: grid;
+  overflow: hidden;
+  resize: both;
+}
+</style>
