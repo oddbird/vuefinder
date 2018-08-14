@@ -1,11 +1,8 @@
 <template>
   <main data-layout="home">
     <h1 class="site-title">
-      <b>Vue</b>Finder
+      <b>OddBird</b> Talks
     </h1>
-    <p class="tagline">
-      Another way to manage slide decks with markdown…
-    </p>
     <nav-list />
   </main>
 </template>

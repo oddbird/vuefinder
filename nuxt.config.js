@@ -1,25 +1,16 @@
 const util = require('util');
 
-let domain = 'localhost:3000';
-
-switch (process.env.DEPLOY_ENV) {
-  case 'MIA':
-    domain = 'read.miriamsuzanne.com';
-    break;
-  case 'ODDBIRD':
-    domain = 'talks.oddbird.net';
-    break;
-}
+let domain = process.env.DEPLOY_ENV ? 'talks.oddbird.net' : 'localhost:3000';
 
 module.exports = {
   loading: false,
   css: ['~/assets/scss/vuefinder.scss'],
   head: {
-    title: 'vuefinder',
+    title: 'Talks',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Slideshows in nuxt' }
+      { hid: 'description', name: 'description', content: 'OddBird Talks' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
