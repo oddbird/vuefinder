@@ -38,7 +38,6 @@
 	font-variant-numeric: oldstyle-nums proportional-nums;
 	justify-content: center;
 	min-height: 100vh;
-	padding: 1rem;
 }
 
 
