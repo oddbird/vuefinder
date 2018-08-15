@@ -44,7 +44,7 @@
         defaultHeader: {
           src: '/images/_oddbird/header.jpg',
           alt: 'OddBird',
-          offset: 10,
+          offset: 12,
         },
       }
     },
@@ -92,7 +92,7 @@
   font-size: size('xsmall');
   font-weight: bold;
   justify-content: space-between;
-  padding: size('gutter') size('shim') size('shim');
+  padding: size('shim');
 
   > * {
     flex: 0 0 auto;
