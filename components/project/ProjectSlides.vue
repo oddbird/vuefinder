@@ -200,6 +200,7 @@
 
   @include above('page') {
     --col: #{size('small-page')};
+    align-items: start;
     grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr));
   }
 
