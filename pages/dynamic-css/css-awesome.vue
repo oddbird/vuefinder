@@ -7,7 +7,18 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    head () {
+      return {
+        link: [
+          { 
+            rel: 'stylesheet', 
+            href: 'https://use.typekit.net/klr0cdt.css' 
+          }
+        ]
+      }
+    },
+  }
 </script>
 
 <style lang="scss">
@@ -87,11 +98,11 @@ span {
 
 
 .awesome {
-	// -webkit-background-clip: text;
+	-webkit-background-clip: text;
 	background-clip: text;
 	background-image: url('/images/dynamic-css/horizon-nature.jpg');
 	background-position: center center;
-	background-size: cover;
+	background-size: 100% auto;
 	color: transparent;
 	font-feature-settings: 'swsh';
 	font-weight: bold;

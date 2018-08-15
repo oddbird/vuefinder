@@ -48,6 +48,18 @@
         edit: false,
       };
     },
+    head () {
+      return {
+        title: `${this.page.meta.title} | OddTalks`,
+        meta: [
+          { 
+            hid: 'description', 
+            name: 'description', 
+            content: this.page.excerpt,
+          }
+        ]
+      }
+    },
     methods: {
       projectUrl() {
         return `${process.env.domain}${this.$route.fullPath}`;
