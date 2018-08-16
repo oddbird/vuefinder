@@ -97,7 +97,7 @@
 [data-part='contact-form'] {
   align-self: center;
   display: grid;
-  grid-gap: size('newline');
+  grid-gap: size('half-shim');
   grid-template-columns: repeat(auto-fit, minmax(size('half-page'), 1fr));
   margin: 0 auto;
   max-width: size('wide');

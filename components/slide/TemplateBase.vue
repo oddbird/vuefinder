@@ -89,7 +89,7 @@
   align-self: end;
   display: flex;
   flex-wrap: wrap;
-  font-size: size('xsmall');
+  font-size: size('smaller');
   font-weight: bold;
   justify-content: space-between;
   padding: size('shim');

@@ -20,7 +20,13 @@
     },
     computed: {
       getSrc() {
-        return `${this.$route.fullPath}/${this.slide.data.demo}`;
+        let fullPath = this.$route.fullPath;
+
+        if (fullPath.slice(-1) === '/') {
+          fullPath = fullPath.slice(0, -1);
+        }
+
+        return `${fullPath}/${this.slide.data.demo}`;
       }
     },
   }

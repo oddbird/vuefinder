@@ -73,6 +73,12 @@ demo: 'css-awesome'
 <!-- slide -->
 
 ---
+demo: 'hsl-theme'
+---
+
+<!-- slide -->
+
+---
 layout: template
 ---
 

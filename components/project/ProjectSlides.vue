@@ -132,6 +132,7 @@
 // -----
 [data-project-slides='talks'] {
   --font-size: #{size('large')};
+  --max-width: #{size('double')};
   text-align: center;
 
   strong {
@@ -195,7 +196,7 @@
 }
 
 [data-slide-view='grid'] {
-  --font-size: #{size('small')};
+  --font-size: 14px;
   --ratio: #{fluid-ratio('widescreen')};
 
   @include above('page') {
