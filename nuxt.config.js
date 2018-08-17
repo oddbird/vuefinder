@@ -4,7 +4,6 @@ let domain = process.env.DEPLOY_ENV ? 'talks.oddbird.net' : 'localhost:3000';
 
 module.exports = {
   loading: false,
-  css: ['~/assets/scss/vuefinder.scss'],
   head: {
     title: 'OddTalks',
     meta: [
@@ -13,7 +12,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'OddBird Talks' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
 

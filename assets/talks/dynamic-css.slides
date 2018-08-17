@@ -37,6 +37,68 @@ layout: title
 <!-- slide -->
 
 ---
+demo: 'css-awesome'
+caption: true
+---
+
+<!-- slide -->
+
+## Variables **/** Calc() **/** Grids
+
+<!-- slide -->
+
+## Variables **+** Calc() **+** Grids
+
+<!-- slide -->
+
+## 1. **Variables**
+
+<!-- slide -->
+
+## Starting with **Sass**
+
+<!-- slide -->
+
+## `$sass-variables`**`:`** `rad`**`;`**
+
+<!-- slide -->
+
+## Variables Hold **Data**
+
+```scss {data-code=h3}
+$brand: hsl(330, 100%, 45%);
+```
+
+<!-- slide -->
+
+## Variables are **`$reusable`**
+(**D**on't **R**epeat **Y**ourself)
+
+<!-- slide -->
+
+## Make Code **Meaningful**
+(To **humans** `&&` **machines**)
+
+<!-- slide -->
+
+## `hsl(330, 100%, 45%)` => **`$brand`**
+
+<!-- slide -->
+
+## **`!`**`important`
+
+<!-- slide -->
+
+## "Code is **Communication**"
+### —Sarah Drasner **\***
+
+<!-- slide -->
+
+## **\*** (once)
+
+<!-- slide -->
+
+---
 image: '/images/dynamic-css/susy.png'
 alt: 'Susy'
 style:
@@ -58,22 +120,13 @@ style:
 
 <!-- slide -->
 
----
-image: '/images/dynamic-css/future.jpg'
-alt: 'The future!'
----
-
-
-<!-- slide -->
-
----
-demo: 'css-awesome'
----
+## `--css-variables`**`:`** `inherit`**`;`**
 
 <!-- slide -->
 
 ---
 demo: 'hsl-theme'
+caption: true
 ---
 
 <!-- slide -->

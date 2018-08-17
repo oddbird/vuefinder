@@ -52,9 +52,9 @@
       return {
         title: `${this.page.meta.title} | OddTalks`,
         meta: [
-          { 
-            hid: 'description', 
-            name: 'description', 
+          {
+            hid: 'description',
+            name: 'description',
             content: this.page.excerpt,
           }
         ]
@@ -129,6 +129,8 @@
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/_vuefinder.scss';
+
 [data-editing] {
   display: grid;
   grid-template-columns: minmax(0, size('small-page')) minmax(50%, 1fr);

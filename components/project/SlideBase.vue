@@ -95,11 +95,13 @@
   grid-area: 1 / 1 / -1 / -1;
   width: 100%;
 
-  h2 {
+  h2,
+  [data-code='h2'] {
     font-size: size('xlarger');
   }
 
-  h3 {
+  h3,
+  [data-code='h3'] {
     font-size: size('larger');
   }
 }

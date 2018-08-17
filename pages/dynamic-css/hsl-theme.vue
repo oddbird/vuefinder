@@ -38,9 +38,9 @@
   export default {
     data() {
       return {
-        hue: 180,
-        saturation: 50,
-        lightness: 50,
+        hue: 330,
+        saturation: 100,
+        lightness: 34,
       }
     },
     computed: {
@@ -55,9 +55,10 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '~/assets/scss/base/_manifest.scss';
+
 * {
-  --h: var(--hue);
   --s: calc(var(--saturation) * 1%);
   --l: calc(var(--lightness) * 1%);
   --contrast: calc((var(--lightness) - var(--threshold)) * -100%);
@@ -81,6 +82,7 @@
 }
 
 .hsl-controls {
+  --h: var(--hue);
   align-content: center;
   background: var(--hsl);
   border: size('shim') solid var(--border);
@@ -93,16 +95,7 @@
                   minmax(0, auto) auto;
   justify-content: center;
   padding: size('shim');
-
-  @include above('page') {
-    grid-template: 'do-hue do-sat do-light' auto
-                   'hue sat light' auto /
-                   minmax(0, auto) minmax(0, auto) minmax(0, auto);
-  }
-}
-
-code {
-  text-align: center;
+  text-align: left;
 }
 
 [data-do] {
@@ -134,7 +127,7 @@ code {
 }
 
 .hsl-comp {
-  --h: calc(var(--hue) + 60);
+  --h: calc(var(--hue) - 60);
   align-content: center;
   background: var(--hsl);
   border: size('shim') solid var(--border);

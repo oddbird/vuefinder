@@ -6,20 +6,15 @@
 
 :root {
   // @include show-breakpoints;
-  @include font-family('body');
   --text-shadow: #{color('text-shadow')};
+  @include font-family('body');
   background: color('background');
   color: color('text');
   font-size: size('root');
   font-size: size('responsive');
   line-height: ratio('text-ratio');
-}
-
-
-* {
   text-shadow: 0 1px 0 var(--text-shadow, color('text-shadow'));
 }
-
 
 a {
   #{$link} {
