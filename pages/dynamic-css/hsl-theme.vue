@@ -127,7 +127,7 @@
 }
 
 .hsl-comp {
-  --h: calc(var(--hue) - 60);
+  --h: calc(var(--hue) - 180);
   align-content: center;
   background: var(--hsl);
   border: size('shim') solid var(--border);

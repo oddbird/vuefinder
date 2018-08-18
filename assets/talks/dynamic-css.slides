@@ -2,7 +2,7 @@
 title: 'Dynamic CSS'
 subtitle: 'Layouts & Beyond'
 type: 'talks'
-view: 'grid'
+view: 'slides'
 byline:
   - name: 'Miriam Suzanne'
     url: 'http://oddbird.net/miriam'
@@ -544,7 +544,7 @@ main {
 ```css
 * {
   --darken: calc(var(--l) - 20%);
-  --complement: calc(var(--h) - 60);
+  --complement: calc(var(--h) - 180);
   background: hsl(var(--complement), var(--s), var(--darken));
 }
 ```
@@ -572,8 +572,8 @@ caption: |
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/cssconfar18/andres.jpg'
-alt: 'Taqb talking about variable transitions'
+image: '/images/dynamic-css/cssconfar18/tab.jpg'
+alt: 'Tab talking about variable transitions'
 caption: Animate the property, not the variable
 ---
 
