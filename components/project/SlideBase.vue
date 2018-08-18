@@ -1,16 +1,23 @@
 <template>
   <section :data-slide="slide.id"
-    :data-active="state" >
+    :data-active="state"
+    :data-has-caption='hasCaption()'
+    @dblclick.prevent="$emit('openAtSlide');" >
 
     <component :data-slide-layout="getLayout"
       :style="style"
       :slide="slide"
       :meta="meta"
       :is="`${getLayout}-slide`" />
+
+    <slide-caption v-if="getCaption()"
+      :caption='getCaption()' />
   </section>
 </template>
 
 <script>
+  import SlideCaption from '~/components/utility/SlideCaption.vue';
+
   import TitleSlide from '~/components/slide/TitleSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
@@ -21,6 +28,7 @@
 
   export default {
     components: {
+      SlideCaption,
       TitleSlide,
       ImageSlide,
       DefaultSlide,
@@ -65,6 +73,38 @@
         return style;
       },
     },
+    methods: {
+      demoSrc() {
+        let demoSrc = this.slide.data.demoSrc;
+
+        if (this.slide.data.demo && !demoSrc) {
+          let fullPath = this.$route.fullPath;
+
+          if (fullPath.slice(-1) === '/') {
+            fullPath = fullPath.slice(0, -1);
+          }
+
+          const demoSrc = `${fullPath}/${this.slide.data.demo}`
+          this.slide.data.demoSrc = demoSrc;
+        }
+
+        return demoSrc;
+      },
+      getCaption() {
+        if (this.slide.data.demo) {
+          const demoUrl = `${this.meta.projectUrl}/${this.slide.data.demo}`;
+          const demoPath = `Demo: [${demoUrl}](${this.demoSrc()})`;
+          let caption = this.slide.data.caption;
+          caption = caption ? caption + ' | ' : '';
+          return  caption + demoPath;
+        }
+
+        return this.slide.data.caption;
+      },
+      hasCaption() {
+        return this.slide.data.caption ? true : false;
+      },
+    },
   }
 </script>
 
@@ -75,12 +115,11 @@
   border-radius: size('corner');
   box-shadow: pattern('shadow');
   display: grid;
-  grid-auto-columns: minmax(0, auto);
-  position: relative;
+  grid-template: 'main' 1fr 'caption' auto / minmax(0, 1fr);
   overflow: auto;
 
   @include before('') {
-    grid-area: 1 / 1;
+    grid-area: 1 / 1 / -1 / -1;
     width: 0;
     height: 0;
     padding-bottom: var(--ratio, 0);
@@ -92,7 +131,8 @@
   background: var(--image) no-repeat scroll;
   background-size: var(--image-size, cover);
   background-position: var(--image-position, center);
-  grid-area: 1 / 1 / -1 / -1;
+  grid-area: main;
+  position: relative;
   width: 100%;
 
   h2,

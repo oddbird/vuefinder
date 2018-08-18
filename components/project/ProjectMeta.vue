@@ -11,7 +11,7 @@
         :subtitle="meta.subtitle"
         data-title="project" />
 
-      <button-style v-if="editBtn"
+      <button-style v-if="showEditToggle()"
         content="🖊️"
         btnStyle="emoji"
         :data-toggle-edit="edit ? 'on' : 'off'"
@@ -22,6 +22,10 @@
     </header>
 
     <nav data-nav="slides">
+      <span v-if="count"
+        class="slide-count">
+        view <b>{{ count }}</b> cards as…
+      </span>
       <button-style v-if="meta.shuffle"
         id="shuffle"
         content="shuffle"
@@ -60,11 +64,11 @@
         type: String,
         required: true,
       },
-      edit: {
-        type: Boolean,
+      count: {
+        type: [Number, Boolean],
         default: false,
       },
-      editBtn: {
+      edit: {
         type: Boolean,
         default: false,
       },
@@ -86,6 +90,9 @@
       },
     },
     methods: {
+      showEditToggle() {
+        return process.env.DEPLOY_ENV ? false : true;
+      },
       viewSelect(item) {
         this.$emit('toggleView', item);
       },
@@ -145,10 +152,21 @@
 [data-nav='slides'] {
   align-items: start;
   display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  font-size: size('xsmall');
+}
+
+.slide-count {
+  flex: 1 1 100%;
+  text-align: right;
+
+  b {
+    color: color('accent');
+  }
 }
 
 [data-btn-id='shuffle'] {
-  flex: 0 0 auto;
-  margin-right: size('half-shim');
+  margin-left: size('half-shim');
 }
 </style>

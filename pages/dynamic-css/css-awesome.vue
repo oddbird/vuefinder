@@ -11,9 +11,9 @@
     head () {
       return {
         link: [
-          { 
-            rel: 'stylesheet', 
-            href: 'https://use.typekit.net/klr0cdt.css' 
+          {
+            rel: 'stylesheet',
+            href: 'https://use.typekit.net/klr0cdt.css'
           }
         ]
       }
@@ -31,7 +31,7 @@
   color: hsl(150, 10%, 10%);
   display: grid;
   font-family: 'bookmania', serif;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "dlig";
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt', 'onum', 'pnum', 'dlig';
   font-kerning: normal;
   font-size: calc(16px + 10vw);
   font-variant-ligatures: common-ligatures contextual discretionary-ligatures;

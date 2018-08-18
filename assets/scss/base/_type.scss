@@ -54,6 +54,7 @@ blockquote {
 
 blockquote {
   font-style: italic;
+  text-align: left;
 
   @include before('“') {
     color: color('accent');

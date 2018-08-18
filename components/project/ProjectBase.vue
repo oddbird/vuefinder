@@ -5,7 +5,7 @@
       :views="page.meta.views"
       :view="page.meta.view"
       :edit="edit"
-      :editBtn="showEditToggle()"
+      :count="page.slides.length"
       @toggleView="toggleView($event)"
       @toggleEdit="toggleEdit()"
       @shuffle="shuffle()" />
@@ -64,12 +64,6 @@
       projectUrl() {
         return `${process.env.domain}${this.$route.fullPath}`;
       },
-
-      // Reactive Data
-      showEditToggle() {
-        return process.env.DEPLOY_ENV ? false : true;
-      },
-
       // Actions
       updatePage() {
         this.page = this.parse(this.src);

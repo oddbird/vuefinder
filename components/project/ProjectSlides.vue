@@ -16,7 +16,8 @@
         :key="slide.id"
         :slide="slide"
         :meta="meta"
-        :state='slideState(index)' />
+        :state='slideState(index)'
+        @openAtSlide='openAt(index)' />
 
     </transition-group>
   </section>
@@ -67,16 +68,27 @@
         this.paused = isSlides ? !this.paused : this.paused;
       },
       changeSlide(move) {
+        this.goTo(this.active + move);
+      },
+      goTo(toActive) {
         const min = 0;
         const max = (this.slides.length - 1);
 
-        let isActive = (this.active + move);
-        isActive = (isActive < min) ? min : isActive;
-        isActive = (isActive > max) ? max : isActive;
+        toActive = (toActive < min) ? min : toActive;
+        toActive = (toActive > max) ? max : toActive;
 
-        this.prev = (isActive === min) ? min : (isActive - 1);
-        this.active = isActive;
-        this.next = (isActive === max) ? max : (isActive + 1);
+        this.prev = (toActive === min) ? min : (toActive - 1);
+        this.active = toActive;
+        this.next = (toActive === max) ? max : (toActive + 1);
+      },
+      openAt(id) {
+        if (this.meta.views.includes('slides')) {
+          this.goTo(id);
+
+          if (this.view !== 'slides') {
+            this.$emit('open');
+          }
+        }
       },
       keyMove(e) {
         if (this.meta.listen) {
@@ -138,6 +150,31 @@
   strong {
     color: color('accent');
     font-weight: bold;
+  }
+
+  ul,
+  ol,
+  blockquote {
+    font-size: size('larger');
+    margin-left: auto;
+    margin-right: auto;
+    max-width: size('wide');
+    text-align: left;
+  }
+
+  ul,
+  ol {
+    color: color('accent');
+  }
+
+  li {
+    color: color('text');
+  }
+
+  [data-code] {
+    display: block;
+    text-align: center;
+    white-space: normal;
   }
 }
 

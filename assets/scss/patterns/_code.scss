@@ -13,12 +13,6 @@ code {
   font-size: size('code');
 }
 
-[data-code] {
-  display: block;
-  text-align: center;
-  white-space: normal;
-}
-
 /*
 
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
@@ -28,12 +22,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 pre {
   color: #333;
   background: #f8f8f8;
+  font-feature-settings: 'liga', 'dlig';
   margin: size('newline') 0;
-  padding: size('shim');
+  padding: 0 size('shim');
 
   & + &,
   .code-caption + & {
     margin-top: 0;
+  }
+
+  code {
+    display: block;
+    overflow-x: auto;
+    padding: size('shim') 0;
   }
 }
 
@@ -44,12 +45,6 @@ pre {
   margin: size('newline') 0 0;
   padding: 0 size('half-shim');
   text-align: left;
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: size('shim') 0;
 }
 
 .hljs-comment,
