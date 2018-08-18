@@ -38,7 +38,7 @@
         <i v-for="blip in invader.blips"
           :key="blip.id"
           :style="{'--bg': blip.color, '--col': blip.column}"
-          class="blip"></i>
+          class="blip" />
       </span>
     </transition-group>
   </div>
