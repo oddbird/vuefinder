@@ -539,7 +539,7 @@ main {
 
 <!-- slide -->
 
-## Use **Circle** Values to Theme
+## Use **Radial** Values to Theme
 
 ```css
 * {
@@ -571,11 +571,18 @@ caption: |
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/cssconfar18/andres.jpg'
+alt: 'Taqb talking about variable transitions'
+caption: Animate the property, not the variable
+---
+
+<!-- slide -->
+
 ## Issues:
 
 1. Don't work inside `url()`
 2. ~~`var(--size)em`~~ **=>** `calc(var(--size) * 1em)`
-3. Animate the property it's on, not the variable itself
 
 <!-- slide -->
 
@@ -735,6 +742,13 @@ image: '/images/layouts/schedule.jpg'
 alt: 'Screenshot of schedule grid'
 style:
   --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/cssconfar18/daniela.jpg'
+alt: 'Daniela talking about data visualization'
 ---
 
 <!-- slide -->
