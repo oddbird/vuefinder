@@ -74,27 +74,12 @@
       },
     },
     methods: {
-      demoSrc() {
-        let demoSrc = this.slide.data.demoSrc;
-
-        if (this.slide.data.demo && !demoSrc) {
-          let fullPath = this.$route.fullPath;
-
-          if (fullPath.slice(-1) === '/') {
-            fullPath = fullPath.slice(0, -1);
-          }
-
-          const demoSrc = `${fullPath}/${this.slide.data.demo}`
-          this.slide.data.demoSrc = demoSrc;
-        }
-
-        return demoSrc;
-      },
       getCaption() {
         if (this.slide.data.demo) {
-          const demoUrl = `${this.meta.projectUrl}/${this.slide.data.demo}`;
-          const demoPath = `Demo: [${demoUrl}](${this.demoSrc()})`;
+          let demoPath = `/demos/${this.slide.data.demo}`;
           let caption = this.slide.data.caption;
+          const demoUrl = `${process.env.domain}${demoPath}`;
+          demoPath = `Demo: [${demoUrl}](${demoPath})`;
           caption = caption ? caption + ' | ' : '';
           return  caption + demoPath;
         }

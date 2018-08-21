@@ -21,7 +21,7 @@
       :view="page.meta.view"
       :data-edit="edit ? 'half' : false"
       @open="toggleView('slides')"
-      @close="toggleView(page.meta.lastView)" />
+      @close="close()" />
   </main>
 </template>
 
@@ -79,6 +79,20 @@
           this.page.meta.lastView = this.page.meta.view;
           this.page.meta.view = newView;
         }
+      },
+      close() {
+        let goTo = this.page.meta.lastView;
+
+        if (goTo === this.page.meta.view) {
+          for (let i = 0; i < this.page.meta.views.length; i++) {
+            const maybe = this.page.meta.views[i];
+            goTo = (maybe === this.page.meta.view)
+              ? goTo
+              : maybe;
+          }
+        }
+
+        this.toggleView(goTo);
       },
 
       // parser

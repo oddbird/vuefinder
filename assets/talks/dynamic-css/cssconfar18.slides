@@ -2,7 +2,7 @@
 title: 'Dynamic CSS'
 subtitle: 'Layouts & Beyond'
 type: 'talks'
-view: 'slides'
+view: 'grid'
 byline:
   - name: 'Miriam Suzanne'
     url: 'http://oddbird.net/miriam'

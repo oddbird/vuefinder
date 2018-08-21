@@ -1,7 +1,7 @@
 <template>
   <figure :data-resize='slide.data.resize' >
     <iframe :data-demo="slide.data.demo"
-      :src="slide.data.demoSrc" />
+      :src="`/demos/${slide.data.demo}`" />
   </figure>
 </template>
 

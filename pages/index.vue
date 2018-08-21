@@ -18,6 +18,8 @@
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/_vuefinder.scss';
+
 [data-layout='home'] {
   margin: 0 auto;
   max-width: size('page');

@@ -4,7 +4,7 @@
 
 <script>
   import ProjectBase from '~/components/project/ProjectBase.vue';
-  import fileSrc from '~/assets/talks/dynamic-css/index.slides';
+  import fileSrc from '~/assets/talks/dynamic-css/cssconfar18.slides';
 
   export default {
     components: { ProjectBase },

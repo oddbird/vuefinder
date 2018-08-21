@@ -1,7 +1,5 @@
 const util = require('util');
 
-let domain = process.env.DEPLOY_ENV ? 'talks.oddbird.net' : 'localhost:3000';
-
 module.exports = {
   loading: false,
   head: {
@@ -40,7 +38,7 @@ module.exports = {
 
   modules: ['@nuxtjs/markdownit'],
   env: {
-    domain: domain,
+    domain: 'talks.oddbird.net',
   },
 
   markdownit: {

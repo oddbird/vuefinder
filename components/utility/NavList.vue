@@ -18,7 +18,7 @@
 
 <script>
   import matter from 'gray-matter';
-  import dynamicCSS from '~/assets/talks/dynamic-css.slides';
+  import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
 
   export default {
     data() {
