@@ -41,6 +41,10 @@
         type: String,
         required: true,
       },
+      demos: {
+        type: Object,
+        default: function () { return {} },
+      },
     },
     data() {
       return {
@@ -123,6 +127,7 @@
         data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
+        data.meta.demos = this.demos;
         data.meta.listen = true;
         data.meta.projectUrl = this.projectUrl();
 

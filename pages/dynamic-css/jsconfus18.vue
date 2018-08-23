@@ -6,7 +6,7 @@
 <script>
   // The primary stuff
   import ProjectBase from '~/components/project/ProjectBase';
-  import fileSrc from '~/assets/talks/dynamic-css/index.slides';
+  import fileSrc from '~/assets/talks/dynamic-css/jsconfus18.slides';
 
   // Inline-Demo Components as needed
   import cssAwesome from '~/components/demos/css-awesome';

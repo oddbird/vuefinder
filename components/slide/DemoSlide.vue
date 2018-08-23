@@ -1,6 +1,10 @@
 <template>
   <figure :data-resize='slide.data.resize' >
-    <iframe :data-demo="slide.data.demo"
+    <component v-if="inlineDemo"
+      :data-demo="slide.data.demo"
+      :is="inlineDemo" />
+    <iframe v-else
+      :data-demo="slide.data.demo"
       :src="`/demos/${slide.data.demo}`" />
   </figure>
 </template>
@@ -12,6 +16,15 @@
         type: Object,
         required: true
       },
+      meta: {
+        type: Object,
+        required: true
+      },
+    },
+    computed: {
+      inlineDemo() {
+        return this.meta.demos[this.slide.data.demo];
+      },
     },
   }
 </script>
@@ -22,6 +35,7 @@
   display: grid;
   grid-template: minmax(0, 1fr) / minmax(0, 1fr);
   justify-items: stretch;
+  text-align: left;
 }
 
 [data-resize] {

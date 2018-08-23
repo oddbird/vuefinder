@@ -76,12 +76,18 @@
     methods: {
       getCaption() {
         if (this.slide.data.demo) {
-          let demoPath = `/demos/${this.slide.data.demo}`;
-          let caption = this.slide.data.caption;
-          const demoUrl = `${process.env.domain}${demoPath}`;
-          demoPath = `Demo: [${demoUrl}](${demoPath})`;
-          caption = caption ? caption + ' | ' : '';
-          return  caption + demoPath;
+          let demoPath = this.slide.data.demo;
+
+          if (!this.meta.demos[demoPath]) {
+            demoPath = `/demos/${demoPath}`;
+
+            const demoUrl = `${process.env.domain}${demoPath}`;
+            let caption = this.slide.data.caption;
+            let demoCaption = `Demo: [${demoUrl}](${demoPath})`;
+
+            caption = caption ? caption + ' | ' : '';
+            return  caption + demoCaption;
+          }
         }
 
         return this.slide.data.caption;

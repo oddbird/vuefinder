@@ -39,10 +39,8 @@
   }
 </script>
 
-<style lang="scss">
-@import '~/assets/scss/_vuefinder.scss';
-
-:root {
+<style lang="scss" scoped>
+[data-flow] {
   padding: size('gutter');
 }
 

@@ -29,6 +29,8 @@
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/base/_manifest.scss';
+
 :root {
   /* "--susy-" variables establish the grid */
   /* settings will inherit... */

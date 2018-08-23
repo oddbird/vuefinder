@@ -244,7 +244,7 @@ alt: 'A zillion different devices of all sizes (original)'
 <!-- slide -->
 
 ---
-demo: 'css-flow'
+demo: 'cssFlow'
 ---
 
 <!-- slide -->
@@ -564,9 +564,10 @@ main {
 <!-- slide -->
 
 ---
-demo: 'hsl-theme'
+demo: 'hslTheme'
 caption: |
   Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
+  | Demo: [talks.oddbird.net/demos/hsl-theme/](/demos/hsl-theme/)
 ---
 
 <!-- slide -->
@@ -779,10 +780,11 @@ alt: 'Daniela talking about data visualization'
 <!-- slide -->
 
 ---
-demo: 'css-chart'
+demo: 'cssChart'
 resize: true
 caption: |
   [Article on **CSS Tricks**](https://css-tricks.com/css-charts-grid-custom-properties/)
+  | Demo: [talks.oddbird.net/demos/css-chart/](/demos/css-chart/)
 ---
 
 <!-- slide -->
