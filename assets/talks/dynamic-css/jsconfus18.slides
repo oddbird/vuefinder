@@ -36,6 +36,89 @@ layout: title
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/jsconfus18/intro.jpg'
+alt: 'Miriam intro (stolen from Jenn)'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+
+## [OddBird](http://oddbird.net)
+Full-Stack **Agency**
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/jsconfus18/learning.jpg'
+alt: 'One does not simply "learn" JavaScript'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+## ¯\\\_**(ツ)**_/¯
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy.png'
+alt: 'Susy'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy-downloads.jpg'
+alt: 'Susy download numbers are big'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy-no.jpg'
+alt: 'Susy, scribbled out'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/jsconfus18/bags.jpg'
+alt: 'My luggage, flying in for the conference'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/jsconfus18/toothpaste.jpg'
+alt: 'TSA stole my toothpaste, but the hotel replaced it'
+style:
+  --image-size: 'auto'
+---
+
+<!-- slide -->
+
+## Let's Talk About **CSS**
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/jsconfus18/history.jpg'
+alt: 'Jenn Schiffer on repeating history'
+---
+
+<!-- slide -->
+
 ## 1993: **HTML**
 Markup Language
 
@@ -50,6 +133,11 @@ alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 
 ## 1997: **`<font>`** `&&` **`<table>`**
 HTML 3.2
+
+<!-- slide -->
+
+## `(╯'□')╯︵` **`┻━┻`**
+"TABLES ARE FOR **DATA**"
 
 <!-- slide -->
 
@@ -141,15 +229,6 @@ style:
 
 <!-- slide -->
 
----
-image: '/images/dynamic-css/susy-no.jpg'
-alt: 'Susy'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
 ```scss
 .grid-span {
   width: span(3);
@@ -202,6 +281,37 @@ Firefox 4
 ---
 image: '/images/dynamic-css/devices.jpg'
 alt: 'A zillion different devices of all sizes (original)'
+---
+
+<!-- slide -->
+
+## **!**👨
+
+<!-- slide -->
+
+---
+image: '/images/patterns/people-masc.jpg'
+alt: 'Masculine emojis'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/patterns/people-femme.jpg'
+alt: 'Feminine emojis'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/patterns/people-rando.jpg'
+alt: 'Various people emojis'
+style:
+  --image-size: 'contain'
 ---
 
 <!-- slide -->
@@ -553,6 +663,15 @@ footer.style.setProperty('--color', newColor);
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/jsconfus18/learning.jpg'
+alt: 'One does not simply "learn" JavaScript'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
 ## Issues:
 
 1. Unknown value `type`s
@@ -598,13 +717,20 @@ alt: 'Woman akimbo with helmet and cardboard jet-pack wings'
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/jsconfus18/nodeboat.jpg'
+alt: 'The winning node boat'
+---
+
+<!-- slide -->
+
 ## **Nothing** Like It
 At All
 
 <!-- slide -->
 
-# The Spec is *Complex*…
-## *Getting Started* Is Not
+# The Spec is **Complex**…
+## **Getting Started** Is Not
 
 <!-- slide -->
 
