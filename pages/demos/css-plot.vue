@@ -169,11 +169,27 @@ button {
   --y-max: calc(var(--y-scale) + 1);
   --z-max: calc(var(--z-scale) + 1);
   align-items: start;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      color('shadow', ('rgba': 0.25)),
+      color('shadow', ('rgba': 0.25)) 1px,
+      transparent 1px,
+      transparent
+    ), repeating-linear-gradient(
+      to top,
+      color('shadow', ('rgba': 0.25)),
+      color('shadow', ('rgba': 0.25)) 1px,
+      transparent 1px,
+      transparent
+    );
+  background-size: 5% 5%;
+  background-position: bottom left;
   display: grid;
   grid-area: plot;
   grid-template: repeat(var(--y-max), minmax(1px, 1fr))
                / repeat(var(--x-max), minmax(1px, 1fr));
-  justify-items: end;
+  justify-items: start;
   overflow: hidden;
 }
 
@@ -186,7 +202,7 @@ button {
   border: pattern('border-base') var(--border, transparent);
   border-radius: 50%;
   box-shadow: 0 0 size('half-shim') var(--border, transparent);
-  grid-area: var(--y) / var(--x) / span 2 / span 2;
+  grid-area: var(--y) / var(--x);
   height: var(--size);
   position: relative;
   width: var(--size);
