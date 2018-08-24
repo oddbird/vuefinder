@@ -1,7 +1,7 @@
 <template>
   <section data-root="css-plot">
     <div class="plot-controls">
-      <button @click="makeData">
+      <button @click="setData">
         Generate Data
       </button>
     </div>
@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody class="plot-body">
-        <tr v-for="(item, index) in plot"
+        <tr v-for="(item, index) in getPlot"
           :key="index"
           :style="{
             '--x': item.x,
@@ -43,35 +43,48 @@
 </template>
 
 <script>
-  const randomInt = max => {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
   export default {
     data() {
       return {
         x: 100,
         y: 100,
-        z: 30,
+        z: 25,
         plot: [],
       }
     },
+    computed: {
+      getPlot() {
+        if (this.plot.length < 1) {
+          this.setData();
+        }
+
+        return this.plot;
+      }
+    },
     methods: {
-      makeData() {
-        this.plot = [];
+      randomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      },
+      makeData(count) {
+        const plot = [];
 
         for (
-          let index = 0;
-          index < 20;
+          let index = 1;
+          index <= count;
           index++
         ) {
-          this.plot.push({
+          plot.push({
             name: `item-${index}`,
-            x: randomInt(this.x),
-            y: randomInt(this.y),
-            z: randomInt(this.z),
+            x: this.randomInt(this.x),
+            y: this.randomInt(this.y),
+            z: this.randomInt(this.z),
           });
         }
+
+        return plot;
+      },
+      setData() {
+        this.plot = this.makeData(20);
       }
     },
   }
@@ -112,7 +125,9 @@ button {
 // -----
 
 .plot-graph {
+  @include font-family('code');
   display: grid;
+  font-size: size('code');
   grid-template: '. z' size('gutter')
                  'y plot' 1fr
                  '. x' size('gutter');
@@ -163,7 +178,7 @@ button {
 }
 
 .plot-item {
-  --size: calc((var(--z) + 1) * 2px);
+  --size: calc((var(--z) + 1) * 1vmin);
   --r: calc(255 / var(--x-max) * var(--x));
   --g: calc(255 / var(--y-max) * var(--y));
   --b: calc(255 / var(--z-max) * var(--z));
@@ -192,6 +207,7 @@ button {
     border-radius: size('corner');
     box-shadow: inherit;
     display: block;
+    font-size: size('xsmaller');
     left: var(--left, 50%);
     opacity: var(--a, 0);
     pointer-events: none;
