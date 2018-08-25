@@ -156,6 +156,7 @@ button {
 }
 
 [data-head='y'] {
+  display: block;
   grid-area: y;
   writing-mode: vertical-rl;
 }
@@ -195,14 +196,14 @@ button {
 
 .plot-item {
   --size: calc((var(--z) + 1) * 1vmin);
-  --r: calc(255 / var(--x-max) * var(--x));
-  --g: calc(255 / var(--y-max) * var(--y));
-  --b: calc(255 / var(--z-max) * var(--z));
-  background: rgb(var(--r), var(--g), var(--b));
+  --h: calc(330 / var(--x-scale) * var(--x));
+  --s: calc(85 / var(--y-scale) * var(--y) * 1% + 15%);
+  --l: calc(75 / var(--z-scale) * var(--z) * 1%);
+  background: hsl(var(--h), var(--s), var(--l));
   border: pattern('border-base') var(--border, transparent);
   border-radius: 50%;
   box-shadow: 0 0 size('half-shim') var(--border, transparent);
-  grid-area: var(--y) / var(--x);
+  grid-area: calc(var(--y) * -1) / var(--x);
   height: var(--size);
   position: relative;
   width: var(--size);

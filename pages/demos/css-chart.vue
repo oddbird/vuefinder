@@ -14,4 +14,8 @@
 
 <style lang="scss">
 @import '~/assets/scss/base/_manifest.scss';
+
+.css-chart {
+  min-height: 100vh;
+}
 </style>

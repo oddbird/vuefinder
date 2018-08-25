@@ -97,6 +97,7 @@
   background-size: 100% calc((100% - 1.4rem) / var(--scale) * var(--line-every));
 
   /* other styles… */
+  background-color: #fff;
   margin: 2em 0 1em;
   padding: 0 1em;
   position: relative;
