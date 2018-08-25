@@ -1,5 +1,7 @@
 const util = require('util');
 
+const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
+
 module.exports = {
   loading: false,
   head: {
@@ -39,6 +41,7 @@ module.exports = {
   modules: ['@nuxtjs/markdownit'],
   env: {
     domain: 'talks.oddbird.net',
+    isDev: isDev,
   },
 
   markdownit: {

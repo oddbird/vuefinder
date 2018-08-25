@@ -11,10 +11,9 @@
         :subtitle="meta.subtitle"
         data-title="project" />
 
-      <button-style v-if="showEditToggle()"
+      <button-style v-if="isDev"
         content="🖊️"
         btnStyle="emoji"
-        :data-toggle-edit="edit ? 'on' : 'off'"
         @click="$emit('toggleEdit')" />
 
       <by-line id="banner"
@@ -74,6 +73,9 @@
       },
     },
     computed: {
+      isDev() {
+        return process.env.isDev;
+      },
       name() {
         if (this.meta.author) {
           return this.meta.author.name || this.meta.author;
@@ -90,9 +92,6 @@
       },
     },
     methods: {
-      showEditToggle() {
-        return process.env.DEPLOY_ENV ? false : true;
-      },
       viewSelect(item) {
         this.$emit('toggleView', item);
       },

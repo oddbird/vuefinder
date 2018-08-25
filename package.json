@@ -9,26 +9,32 @@
     "start": "nuxt start",
     "build": "nuxt build",
     "generate": "nuxt generate",
+
     "start-prod": "DEPLOY_ENV=PROD nuxt start",
     "build-prod": "DEPLOY_ENV=PROD nuxt build",
     "generate-prod": "DEPLOY_ENV=PROD nuxt generate",
-    "show": "yarn build-prod && yarn start-prod",
     "deploy": "yarn generate-prod && push-dir --dir=dist --branch=gh-pages --cleanup",
+
+    "start-show": "DEPLOY_ENV=SHOW nuxt start",
+    "build-show": "DEPLOY_ENV=SHOW nuxt build",
+    "generate-show": "DEPLOY_ENV=SHOW nuxt generate",
+    "show": "yarn build-show && yarn start-show",
+
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.1",
-    "accoutrement": "^1.0.0-beta.3",
+    "accoutrement": "^1.0.0",
     "autoprefixer": "^8.6.3",
     "gray-matter": "^4.0.1",
     "markdown-it": "^8.4.2",
     "markdown-it-attrs": "^2.2.0",
     "markdown-it-highlightjs": "^3.0.0",
     "node-dir": "^0.1.17",
-    "node-sass": "^4.9.0",
-    "nuxt": "^1.4.1",
-    "sass-loader": "^7.0.3"
+    "node-sass": "^4.9.3",
+    "nuxt": "^1.4.2",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
