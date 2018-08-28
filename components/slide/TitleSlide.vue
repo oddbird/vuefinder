@@ -34,7 +34,7 @@
 <style lang="scss" scoped>
 [data-part='title-main'] {
   align-self: center;
-  padding: size('gutter');
+  padding: size('shim');
   text-align: center;
 }
 </style>

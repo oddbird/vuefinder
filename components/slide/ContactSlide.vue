@@ -1,65 +1,61 @@
 <template>
-  <template-base
-    :slide="slide"
-    :meta="meta" >
-    <form data-part="contact-form"
-      :action="`https://formspree.io/${slide.data.form.email}`"
-      method="POST">
+  <form data-part="contact-form"
+    :action="`https://formspree.io/${slide.data.form.email}`"
+    method="POST">
 
-      <h4 class="form-header">Stay in touch…</h4>
+    <h4 class="form-header">Stay in touch…</h4>
 
-      <input type="hidden"
-        name="_next"
-        :value="slide.data.form.next" />
-      <input type="text"
-        name="_gotcha"
-        style="display:none" />
+    <input type="hidden"
+      name="_next"
+      :value="slide.data.form.next" />
+    <input type="text"
+      name="_gotcha"
+      style="display:none" />
 
-      <label for="contact-name"
-        data-form-field="contact-name"
-        data-field-state="required" >
-        <span data-label="contact-name">Name</span>
-        <input id="contact-name"
-          name="contact-name"
-          data-input="default"
-          required="true"
-          type="text"
-          @focus="listen(false)"
-          @blur="listen(true)" >
-      </label>
+    <label for="contact-name"
+      data-form-field="contact-name"
+      data-field-state="required" >
+      <span data-label="contact-name">Name</span>
+      <input id="contact-name"
+        name="contact-name"
+        data-input="default"
+        required="true"
+        type="text"
+        @focus="listen(false)"
+        @blur="listen(true)" >
+    </label>
 
-      <label for="contact-email"
-        data-form-field="contact-email"
-        data-field-state="required" >
-        <span data-label="contact-email">Email Address</span>
-        <input id="contact-email"
-          name="_replyto"
-          data-input="default"
-          required="true"
-          type="email"
-          @focus="listen(false)"
-          @blur="listen(true)" />
-      </label>
+    <label for="contact-email"
+      data-form-field="contact-email"
+      data-field-state="required" >
+      <span data-label="contact-email">Email Address</span>
+      <input id="contact-email"
+        name="_replyto"
+        data-input="default"
+        required="true"
+        type="email"
+        @focus="listen(false)"
+        @blur="listen(true)" />
+    </label>
 
-      <label for="contact-message"
-        data-form-field="contact-message"
-        data-field-state="required" >
-        <span data-label="contact-message">Message</span>
-        <textarea id="contact-message"
-          name="contact-message"
-          data-input="textarea"
-          required="true"
-          @focus="listen(false)"
-          @blur="listen(true)" />
-      </label>
+    <label for="contact-message"
+      data-form-field="contact-message"
+      data-field-state="required" >
+      <span data-label="contact-message">Message</span>
+      <textarea id="contact-message"
+        name="contact-message"
+        data-input="textarea"
+        required="true"
+        @focus="listen(false)"
+        @blur="listen(true)" />
+    </label>
 
-      <div data-actions>
-        <button-style type="submit"
-          id="contact-submit"
-          :content="slide.data.form.submit" />
-      </div>
-    </form>
-  </template-base>
+    <div data-actions>
+      <button-style type="submit"
+        id="contact-submit"
+        :content="slide.data.form.submit" />
+    </div>
+  </form>
 </template>
 
 <script>
@@ -97,11 +93,11 @@
 [data-part='contact-form'] {
   align-self: center;
   display: grid;
-  grid-gap: size('newline');
+  grid-gap: size('half-shim');
   grid-template-columns: repeat(auto-fit, minmax(size('half-page'), 1fr));
   margin: 0 auto;
   max-width: size('wide');
-  padding: 0 size('gutter');
+  padding: size('gutter');
   text-align: left;
   width: 100%;
 }

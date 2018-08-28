@@ -1,28 +1,18 @@
 const util = require('util');
 
-let domain = 'localhost:3000';
-
-switch (process.env.DEPLOY_ENV) {
-  case 'MIA':
-    domain = 'read.miriamsuzanne.com';
-    break;
-  case 'ODDBIRD':
-    domain = 'talks.oddbird.net';
-    break;
-}
+const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
 
 module.exports = {
   loading: false,
-  css: ['~/assets/scss/vuefinder.scss'],
   head: {
-    title: 'vuefinder',
+    title: 'OddTalks',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Slideshows in nuxt' }
+      { hid: 'description', name: 'description', content: 'OddBird Talks' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ]
   },
 
@@ -50,7 +40,8 @@ module.exports = {
 
   modules: ['@nuxtjs/markdownit'],
   env: {
-    domain: domain,
+    domain: 'talks.oddbird.net',
+    isDev: isDev,
   },
 
   markdownit: {

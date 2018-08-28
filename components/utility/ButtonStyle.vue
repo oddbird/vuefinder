@@ -45,7 +45,7 @@
   @include transition('btn');
   background: color('callout');
   border: pattern('border-action');
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   font-size: size('small');
   padding: 0 size('shim');
 

@@ -27,10 +27,16 @@ $body: (
 /// @group config-fonts
 /// @font code
 $code: (
-  'name': 'Source Code Pro',
   'formats': 'woff2' 'woff',
-  'normal': 'sourcecodepro/sourcecodepro-regular-webfont',
-  'bold': 'sourcecodepro/sourcecodepro-semibold-webfont',
+
+  'name': 'Source Code Pro',
+  'normal': 'dankmono/dankmono-regular-webfont',
+  'italic': 'dankmono/dankmono-italic-webfont',
+
+  // 'name': 'Source Code Pro',
+  // 'normal': 'sourcecodepro/sourcecodepro-regular-webfont',
+  // 'bold': 'sourcecodepro/sourcecodepro-semibold-webfont',
+
   'stack':
     (
       'Consolas',

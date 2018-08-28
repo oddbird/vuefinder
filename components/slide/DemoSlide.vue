@@ -1,9 +1,12 @@
 <template>
-  <div class="demo-container">
-    <iframe :data-demo="slide.data.demo"
-      :src="getSrc"
-      v-html="$md.render(slide.content)" />
-  </div>
+  <figure :data-resize='slide.data.resize' >
+    <component v-if="inlineDemo"
+      :data-demo="slide.data.demo"
+      :is="inlineDemo" />
+    <iframe v-else
+      :data-demo="slide.data.demo"
+      :src="`/demos/${slide.data.demo}`" />
+  </figure>
 </template>
 
 <script>
@@ -19,16 +22,23 @@
       },
     },
     computed: {
-      getSrc() {
-        return `${this.$route.fullPath}/${this.slide.data.demo}`;
-      }
+      inlineDemo() {
+        return this.meta.demos[this.slide.data.demo];
+      },
     },
   }
 </script>
 
 <style lang="scss">
-.demo-container {
+[data-slide-layout='demo'] {
+  align-items: stretch;
   display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  justify-items: stretch;
+  text-align: left;
+}
+
+[data-resize] {
   overflow: hidden;
   resize: both;
 }

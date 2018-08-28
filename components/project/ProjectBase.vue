@@ -5,7 +5,7 @@
       :views="page.meta.views"
       :view="page.meta.view"
       :edit="edit"
-      :editBtn="showEditToggle()"
+      :count="page.slides.length"
       @toggleView="toggleView($event)"
       @toggleEdit="toggleEdit()"
       @shuffle="shuffle()" />
@@ -21,7 +21,7 @@
       :view="page.meta.view"
       :data-edit="edit ? 'half' : false"
       @open="toggleView('slides')"
-      @close="toggleView(page.meta.lastView)" />
+      @close="close()" />
   </main>
 </template>
 
@@ -41,6 +41,10 @@
         type: String,
         required: true,
       },
+      demos: {
+        type: Object,
+        default: function () { return {} },
+      },
     },
     data() {
       return {
@@ -48,16 +52,22 @@
         edit: false,
       };
     },
+    head () {
+      return {
+        title: `${this.page.meta.title} | OddTalks`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.page.excerpt,
+          }
+        ]
+      }
+    },
     methods: {
       projectUrl() {
         return `${process.env.domain}${this.$route.fullPath}`;
       },
-
-      // Reactive Data
-      showEditToggle() {
-        return process.env.DEPLOY_ENV ? false : true;
-      },
-
       // Actions
       updatePage() {
         this.page = this.parse(this.src);
@@ -73,6 +83,20 @@
           this.page.meta.lastView = this.page.meta.view;
           this.page.meta.view = newView;
         }
+      },
+      close() {
+        let goTo = this.page.meta.lastView;
+
+        if (goTo === this.page.meta.view) {
+          for (let i = 0; i < this.page.meta.views.length; i++) {
+            const maybe = this.page.meta.views[i];
+            goTo = (maybe === this.page.meta.view)
+              ? goTo
+              : maybe;
+          }
+        }
+
+        this.toggleView(goTo);
       },
 
       // parser
@@ -103,6 +127,7 @@
         data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
+        data.meta.demos = this.demos;
         data.meta.listen = true;
         data.meta.projectUrl = this.projectUrl();
 
@@ -117,6 +142,8 @@
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/_vuefinder.scss';
+
 [data-editing] {
   display: grid;
   grid-template-columns: minmax(0, size('small-page')) minmax(50%, 1fr);
