@@ -8,7 +8,7 @@
         </nuxt-link>
         {{ talk.data.subtitle }}
       </h2>
-      {{ talk.excerpt }}
+      <div v-html="$md.render(talk.excerpt)" />
       <version-list :path="path"
         :versions="talk.data.versions" />
     </article>

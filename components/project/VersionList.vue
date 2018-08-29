@@ -2,10 +2,10 @@
   <ul class="version-list">
     <li v-for="version in versions"
       :key="version.slug">
-      {{ version.date }} —
-      <nuxt-link :to="fullPath(version.slug)">
-        {{ version.title }}
-      </nuxt-link>
+      <nuxt-link :to="fullPath(version.slug)">{{ version.title }}</nuxt-link>
+      <span>
+        — {{ version.date }}
+      </span>
     </li>
   </ul>
 </template>
@@ -30,3 +30,13 @@
     },
   }
 </script>
+
+<style lang="scss" scoped>
+.version-list {
+  margin: size('newline') auto;
+}
+
+span {
+  color: color('text-light');
+}
+</style>
