@@ -1,9 +1,6 @@
 <template>
   <div data-slide-base="template">
-    <img data-part="template-header"
-      :src="header('src')"
-      :alt="header('alt')"
-      :style="offset" />
+    <template-header />
 
     <slot>
       <div data-part="template-main"
@@ -24,10 +21,12 @@
 
 <script>
   import ByLine from '~/components/utility/ByLine.vue';
+  import TemplateHeader from '~/components/TemplateHeader.vue';
 
   export default {
     components: {
       ByLine,
+      TemplateHeader,
     },
     props: {
       slide: {
@@ -39,32 +38,6 @@
         required: true
       },
     },
-    data() {
-      return {
-        defaultHeader: {
-          src: '/images/_oddbird/header.jpg',
-          alt: 'OddBird',
-          offset: 12,
-        },
-      }
-    },
-    computed: {
-      offset() {
-        return {'--offset': `${this.header('offset')}%`};
-      },
-    },
-    methods: {
-      header(prop) {
-        const defaultVal = this.defaultHeader[prop];
-        let finalVal;
-
-        if (this.slide.data.header) {
-          finalVal = this.slide.data.header[prop];
-        }
-
-        return finalVal || defaultVal;
-      },
-    },
   }
 </script>
 
@@ -74,11 +47,6 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
-}
-
-[data-part='template-header'] {
-  width: 100%;
-  margin-bottom: size('calc(#shim - var(--offset, 0))');
 }
 
 [data-part='template-main'] {

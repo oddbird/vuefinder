@@ -1,32 +1,19 @@
 <template>
-  <project-base :src="src"
-    :demos="demos" />
+  <project-index :src="src" />
 </template>
 
 <script>
   // The primary stuff
-  import ProjectBase from '~/components/project/ProjectBase';
+  import ProjectIndex from '~/components/project/ProjectIndex';
   import fileSrc from '~/assets/talks/dynamic-css/index.slides';
-
-  // Inline-Demo Components as needed
-  import cssAwesome from '~/components/demos/css-awesome';
-  import cssChart from '~/components/demos/css-chart';
-  import cssFlow from '~/components/demos/css-flow';
-  import hslTheme from '~/components/demos/hsl-theme';
 
   export default {
     components: {
-      ProjectBase,
+      ProjectIndex,
     },
     data() {
       return {
         src: fileSrc,
-        demos: {
-          cssAwesome,
-          cssChart,
-          cssFlow,
-          hslTheme,
-        }
       }
     },
   }

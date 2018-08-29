@@ -1,36 +1,63 @@
 <template>
-  <main data-layout="home">
-    <h1 class="site-title">
-      <b>OddBird</b> Talks
-    </h1>
-    <nav-list />
-  </main>
+  <page-template>
+    <article v-for="(talk, path) in talks"
+      :key="path">
+      <h2>
+        <nuxt-link :to="`${path}/`">
+          {{ talk.data.title }}
+        </nuxt-link>
+        {{ talk.data.subtitle }}
+      </h2>
+      {{ talk.excerpt }}
+      <version-list :path="path"
+        :versions="talk.data.versions" />
+    </article>
+  </page-template>
 </template>
 
 <script>
-  import NavList from '~/components/utility/NavList.vue';
+  import matter from 'gray-matter';
+  import PageTemplate from '~/components/PageTemplate.vue';
+  import VersionList from '~/components/project/VersionList.vue';
+
+  // pages
+  import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
 
   export default {
-     components: {
-      NavList,
+    components: {
+      PageTemplate,
+      VersionList,
     },
- }
+    data() {
+      const talks = {
+        'dynamic-css': dynamicCSS,
+      };
+
+      return {
+        talks: this.get(talks),
+      };
+    },
+    methods: {
+      get(talks) {
+        const data = {};
+
+        for (const path in talks) {
+          if (talks.hasOwnProperty(path)) {
+            const talk = matter(talks[path], {
+              excerpt_separator: "<!-- more -->"
+            });
+
+            data[path] = talk;
+          }
+        }
+
+        return data;
+      }
+    },
+  }
 </script>
 
 <style lang="scss">
 @import '~/assets/scss/_vuefinder.scss';
 
-[data-layout='home'] {
-  margin: 0 auto;
-  max-width: size('page');
-  padding: size('gutter');
-}
-
-.site-title {
-  font-size: size('xlarge');
-
-  b {
-    color: color('accent');
-  }
-}
 </style>
