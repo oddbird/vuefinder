@@ -31,6 +31,7 @@
 [data-part='template-header'] {
   background: url('/images/_oddbird/header.jpg') repeat-x top;
   background-size: auto 100%;
+  grid-column: 1 / -1;
   mix-blend-mode: multiply;
   padding: size('shim');
   text-align: center;

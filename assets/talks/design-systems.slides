@@ -3,13 +3,7 @@ title: 'Agile Design Systems'
 subtitle: 'in Vue'
 type: 'talks'
 view: 'grid'
-byline:
-  - name: 'Miriam Suzanne'
-    url: 'http://oddbird.net/miriam'
-  - name: '@mirisuzanne'
-    url: 'https://twitter.com/mirisuzanne'
-  - name: '@oddbird'
-    url: 'https://twitter.com/oddbird'
+author: 'miriam'
 ---
 
 Style Guides & Pattern Libraries

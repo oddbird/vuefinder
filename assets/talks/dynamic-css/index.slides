@@ -1,6 +1,9 @@
 ---
 title: 'Dynamic CSS'
 subtitle: 'Layouts & Beyond'
+author: 'miriam'
+image: '/images/dynamic-css/_cover.jpg'
+tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
   # - slug: 'fullstackfest18'
   #   title: 'Full Stack Fest'

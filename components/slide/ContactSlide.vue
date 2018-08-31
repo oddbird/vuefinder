@@ -61,14 +61,12 @@
 <script>
   import ProjectTitle from '~/components/project/ProjectTitle.vue';
   import TemplateBase from '~/components/slide/TemplateBase.vue';
-  import ByLine from '~/components/utility/ByLine.vue';
   import ButtonStyle from '~/components/utility/ButtonStyle.vue';
 
   export default {
     components: {
       ProjectTitle,
       TemplateBase,
-      ByLine,
       ButtonStyle,
     },
     props: {

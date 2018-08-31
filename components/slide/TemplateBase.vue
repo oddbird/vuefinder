@@ -12,9 +12,8 @@
         class="slides-url">
         {{ meta.projectUrl }}
       </nuxt-link>
-      <by-line v-if="meta.byline"
-        id="slide"
-        :author="meta.byline" />
+      <by-line id="slide"
+        :author="meta.author" />
     </footer>
   </div>
 </template>

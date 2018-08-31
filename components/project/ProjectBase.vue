@@ -52,16 +52,70 @@
         edit: false,
       };
     },
-    head () {
-      return {
-        title: `${this.page.meta.title} | OddTalks`,
-        meta: [
+    head() {
+      const page = this.page.meta;
+      const meta = [
+        {
+          hid: 'og_title', property: 'og:title',
+          content: `${page.title}: ${page.subtitle}`,
+        },
+        {
+          hid: 'og_url', property: 'og:url',
+          content: `http://${this.projectUrl()}`,
+        },
+        {
+          hid: 'og_type', property: 'og:type',
+          content: 'article',
+        },
+        {
+          hid: 'description', name: 'description',
+          content: this.page.excerpt || this.page.content,
+        },
+        {
+          property: 'article:published_time',
+          content: `${page.date}T00:00:00`,
+        },
+      ];
+
+      if (page.image) {
+        meta.push(
           {
-            hid: 'description',
-            name: 'description',
-            content: this.page.excerpt,
-          }
-        ]
+            hid: 'og_image', property: 'og:image',
+            content: page.image,
+          },
+          {
+            hid: 'twitter_card', property: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        );
+      }
+
+      if (page.author.facebook) {
+        meta.push({
+          property: 'article:author',
+          content: `https://www.facebook.com/${page.author.facebook}`,
+        });
+      }
+
+      if (page.author.twitter) {
+        meta.push({
+          property: 'twitter:creator',
+          content: `@${page.author.twitter}`,
+        });
+      }
+
+      if (page.tags) {
+        page.tags.forEach(tag => {
+          meta.push({
+            property: 'article:tag',
+            content: tag,
+          });
+        });
+      }
+
+      return {
+        title: `${page.title} | OddTalks`,
+        meta: meta
       }
     },
     methods: {
@@ -124,12 +178,16 @@
         });
 
         // defaults
-        data.meta.views = data.meta.views || ['list', 'grid', 'slides'];
+        data.meta.views = data.meta.views || ['grid', 'list', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.lastView = data.meta.view;
+        data.meta.type = data.meta.type || 'talks';
         data.meta.demos = this.demos;
         data.meta.listen = true;
         data.meta.projectUrl = this.projectUrl();
+
+        const author = data.meta.author || 0;
+        data.meta.author = process.env.authors[author];
 
         if (data.meta.shuffle_start) {
           data.slides = shuffle(data.slides);

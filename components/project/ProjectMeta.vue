@@ -17,7 +17,7 @@
         @click="$emit('toggleEdit')" />
 
       <by-line id="banner"
-        :author="meta.byline" />
+        :author="meta.author" />
     </header>
 
     <nav data-nav="slides">

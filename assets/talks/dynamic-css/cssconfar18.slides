@@ -1,15 +1,10 @@
 ---
 title: 'Dynamic CSS'
 subtitle: 'Layouts & Beyond'
-type: 'talks'
-view: 'grid'
-byline:
-  - name: 'Miriam Suzanne'
-    url: 'http://oddbird.net/miriam'
-  - name: '@mirisuzanne'
-    url: 'https://twitter.com/mirisuzanne'
-  - name: '@oddbird'
-    url: 'https://twitter.com/oddbird'
+author: 'miriam'
+date: '2018-08-18'
+image: '/images/dynamic-css/_cover.jpg'
+tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 ---
 
 CSS has come a long way

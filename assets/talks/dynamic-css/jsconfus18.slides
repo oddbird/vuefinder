@@ -1,32 +1,15 @@
 ---
 title: 'Dynamic CSS'
 subtitle: 'Layouts & Beyond'
-type: 'talks'
-view: 'grid'
-byline:
-  - name: 'Miriam Suzanne'
-    url: 'http://oddbird.net/miriam'
-  - name: '@mirisuzanne'
-    url: 'https://twitter.com/mirisuzanne'
-  - name: '@oddbird'
-    url: 'https://twitter.com/oddbird'
+author: 'miriam'
+date: '2018-08-21'
+image: '/images/dynamic-css/_cover.jpg'
+tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 ---
 
-CSS has come a long way
-since the browser wars of the late 90s.
-What used to be a struggle,
-is now often a breeze
-(see `box-shadow` or `border-radius`).
-But the last 2 years have pushed CSS into entirely new territory:
-with DOM-aware variables and calculations
-that can drive your design,
-without all the invasive Javascript.
-
-<!-- more -->
-
-- Basics for understanding Custom Properties & Calc().
-- Practical examples and use-cases for data-infused design.
-- Integrating with CSS Grids to build layouts on-the-fly.
+Don't be fooled by the declarative syntax,
+CSS is a powerful language for
+building dynamic design systems.
 
 <!-- slide -->
 
