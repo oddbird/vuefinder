@@ -51,6 +51,7 @@ $spacing-sizes: (
   'spacer': '#gutter' ('times': 4),
   'shim': '#gutter' ('divide': 2),
   'half-shim': '#shim' ('divide': 2),
+  'quarter-shim': '#shim' ('divide': 4),
   'shim-plus': '#shim' ('times': 1.5),
 );
 

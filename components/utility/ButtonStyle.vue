@@ -44,9 +44,9 @@
 [data-btn-style~='default'] {
   @include transition('btn');
   background: color('callout');
-  border: pattern('border-action');
+  border: pattern('border');
   flex: 0 0 auto;
-  font-size: size('small');
+  font-size: size('xsmall');
   padding: 0 size('shim');
 
   #{$focus} {
