@@ -2,10 +2,15 @@
   <template-base
     :slide="slide"
     :meta="meta" >
-    <project-title :title="meta.title"
-      :subtitle="meta.subtitle"
-      :h2="true"
-      data-part="title-main" />
+    <div data-part="title-main">
+      <project-title :title="meta.title"
+        :subtitle="meta.subtitle"
+        :h2="true" />
+      <p v-if="meta.event || meta.date">
+        <strong v-if="meta.event">{{ meta.event }}</strong>
+        <span v-if="meta.date"> — {{ meta.date }}</span>
+      </p>
+    </div>
   </template-base>
 </template>
 
