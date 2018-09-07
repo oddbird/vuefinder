@@ -929,6 +929,15 @@ caption: |
 <!-- slide -->
 
 ---
+demo: 'cssLinegraph'
+resize: true
+caption: |
+  Demo: [talks.oddbird.net/demos/css-linegraph/](/demos/css-linegraph/)
+---
+
+<!-- slide -->
+
+---
 demo: 'cssPlot'
 resize: true
 caption: |

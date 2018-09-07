@@ -1,7 +1,7 @@
 <template>
   <section data-root="css-plot">
     <div class="plot-controls">
-      <button-style @click="setData" >
+      <button-style @click="makeData" >
         Generate Data
       </button-style>
     </div>
@@ -20,7 +20,9 @@
           <th data-head="z">size == z value</th>
         </tr>
       </thead>
-      <tbody class="plot-body">
+      <transition-group name="plot-data"
+        tag="tbody"
+        class="plot-body" >
         <tr v-for="(item, index) in getPlot"
           :key="index"
           :style="{
@@ -35,7 +37,7 @@
           <td data-val="y">{{ item.y }}</td>
           <td data-val="z">{{ item.z }}</td>
         </tr>
-      </tbody>
+      </transition-group>
     </table>
   </section>
 </template>
@@ -57,8 +59,8 @@
     },
     computed: {
       getPlot() {
-        if (this.plot.length < 1) {
-          this.setData();
+        if (this.plot.length === 0) {
+          this.makeData(20);
         }
 
         return this.plot;
@@ -69,26 +71,31 @@
         return Math.floor(Math.random() * Math.floor(max));
       },
       makeData(count) {
-        const plot = [];
-
-        for (
-          let index = 1;
-          index <= count;
-          index++
-        ) {
-          plot.push({
-            name: `item-${index}`,
-            x: this.randomInt(this.x),
-            y: this.randomInt(this.y),
-            z: this.randomInt(this.z),
-          });
+        if (this.plot.length > 0) {
+          for (
+            let index = 0;
+            index < this.plot.length;
+            index++
+          ) {
+            this.plot[index].x = this.randomInt(this.x);
+            this.plot[index].y = this.randomInt(this.y);
+            this.plot[index].z = this.randomInt(this.z);
+          }
+        } else {
+          for (
+            let index = 1;
+            index <= count;
+            index++
+          ) {
+            this.plot.push({
+              name: `item-${index}`,
+              x: this.randomInt(this.x),
+              y: this.randomInt(this.y),
+              z: this.randomInt(this.z),
+            });
+          }
         }
-
-        return plot;
       },
-      setData() {
-        this.plot = this.makeData(20);
-      }
     },
   }
 </script>
@@ -190,7 +197,7 @@
   height: 1px;
   opacity: var(--a, 0.5);
   position: relative;
-  transition: opacity 200ms ease;
+  transition: all 200ms ease;
   transform: translate3d(-50%, -50%, 0);
   white-space: nowrap;
   width: 1px;
@@ -211,6 +218,7 @@
     display: block;
     height: var(--size);
     position: absolute;
+    transition: all 200ms ease;
     transform: translate3d(-50%, -50%, 0);
     width: var(--size);
   }
