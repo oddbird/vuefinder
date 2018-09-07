@@ -77,6 +77,13 @@ style:
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/fullstack18/mission.jpg'
+caption: 'Mission statement…'
+---
+
+<!-- slide -->
+
 ## Let's Talk About **CSS**
 
 <!-- slide -->
@@ -336,6 +343,20 @@ demo: 'cssFlow'
 1. Fluid **Grids**
 2. Flexible **Images**
 3. Media **Queries**
+
+<!-- slide -->
+
+## 2012: **Flexbox**
+Chrome 21
+
+<!-- slide -->
+
+---
+image: '/images/layouts/flexbox.jpg'
+caption: 'Flexbox line-wrapping'
+style:
+  --image-size: contain
+---
 
 <!-- slide -->
 
@@ -841,15 +862,6 @@ columns & rows!
 ---
 image: '/images/layouts/grid-axis.jpg'
 caption: 'Grid columns and rows'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-image: '/images/layouts/flexbox.jpg'
-caption: 'Flexbox line-wrapping'
 style:
   --image-size: contain
 ---
