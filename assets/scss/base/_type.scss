@@ -6,6 +6,8 @@
 
 :root {
   // @include show-breakpoints;
+  --gutter: #{size('gutter')};
+  --shim: #{size('shim')};
   --text-shadow: #{color('text-shadow')};
   @include font-family('body');
   background: color('background');

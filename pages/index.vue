@@ -22,6 +22,7 @@
 
   // pages
   import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
+  import agileSystems from '~/assets/talks/agile-systems/index.slides';
 
   export default {
     components: {
@@ -31,6 +32,7 @@
     data() {
       const talks = {
         'dynamic-css': dynamicCSS,
+        'agile-systems': agileSystems,
       };
 
       return {
@@ -59,5 +61,4 @@
 
 <style lang="scss">
 @import '~/assets/scss/_vuefinder.scss';
-
 </style>

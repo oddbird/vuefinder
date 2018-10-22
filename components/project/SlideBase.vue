@@ -18,10 +18,10 @@
 <script>
   import SlideCaption from '~/components/utility/SlideCaption.vue';
 
+  import DefaultSlide from '~/components/slide/DefaultSlide.vue';
   import TitleSlide from '~/components/slide/TitleSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
-  import DefaultSlide from '~/components/slide/DefaultSlide.vue';
-  import FullSlide from '~/components/slide/FullSlide.vue';
+  import SplitSlide from '~/components/slide/SplitSlide.vue';
   import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
   import DemoSlide from '~/components/slide/DemoSlide.vue';
@@ -32,7 +32,7 @@
       TitleSlide,
       ImageSlide,
       DefaultSlide,
-      FullSlide,
+      SplitSlide,
       TemplateSlide,
       ContactSlide,
       DemoSlide,
@@ -54,6 +54,7 @@
     computed: {
       getLayout() {
         let defaultLayout = this.slide.data.image ? 'image' : 'default';
+        defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
