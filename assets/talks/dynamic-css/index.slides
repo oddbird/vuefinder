@@ -5,6 +5,9 @@ author: 'miriam'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
+  - slug: 'frontrange18'
+    title: 'Front Range Front End'
+    date: '1 Nov, 2018'
   - slug: 'fullstack18'
     title: 'Full Stack Fest'
     date: '7 Sept, 2018'
