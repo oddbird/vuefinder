@@ -3,7 +3,7 @@
     <project-meta
       :meta="page.meta"
       :views="page.meta.views"
-      :view="page.meta.view"
+      :view="getView()"
       :edit="edit"
       :count="page.slides.length"
       @toggleView="toggleView($event)"
@@ -18,7 +18,7 @@
     <project-slides
       :meta="page.meta"
       :slides="page.slides"
-      :view="page.meta.view"
+      :view="getView()"
       :data-edit="edit ? 'half' : false"
       @open="toggleView('slides')"
       @close="close()" />
@@ -50,6 +50,7 @@
       return {
         page: this.parse(this.src),
         edit: false,
+        lastView: false,
       };
     },
     head() {
@@ -132,19 +133,28 @@
       shuffle() {
         this.page.slides = shuffle(this.page.slides);
       },
+      getView() {
+        const dataView = this.page.meta.view;
+        return this.$route.query.view || dataView;
+      },
       toggleView(newView) {
-        if (this.page.meta.views.includes(newView) && (this.page.meta.view !== newView)) {
-          this.page.meta.lastView = this.page.meta.view;
-          this.page.meta.view = newView;
+        if (this.page.meta.views.includes(newView)
+          && (newView !== this.getView())) {
+          this.lastView = this.getView();
+          this.$router.push({
+            path: this.$route.path,
+            query: { view: newView },
+          });
         }
       },
       close() {
-        let goTo = this.page.meta.lastView;
+        const currrent = this.getView();
+        let goTo = this.lastView || this.page.meta.view;
 
-        if (goTo === this.page.meta.view) {
+        if (goTo === currrent) {
           for (let i = 0; i < this.page.meta.views.length; i++) {
             const maybe = this.page.meta.views[i];
-            goTo = (maybe === this.page.meta.view)
+            goTo = (maybe === currrent)
               ? goTo
               : maybe;
           }
@@ -180,7 +190,6 @@
         // defaults
         data.meta.views = data.meta.views || ['grid', 'list', 'slides'];
         data.meta.view = data.meta.view || data.meta.views[0];
-        data.meta.lastView = data.meta.view;
         data.meta.type = data.meta.type || 'talks';
         data.meta.demos = this.demos;
         data.meta.listen = true;
