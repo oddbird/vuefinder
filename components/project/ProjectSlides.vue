@@ -110,6 +110,7 @@
                 }
                 break;
               case 'Escape':
+              case 'F5':
                 if (this.paused) {
                   this.togglePaused();
                 }
