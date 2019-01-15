@@ -4,7 +4,7 @@
 
     <slot>
       <div data-part="template-main"
-        v-html="$md.render(slide.content)" />
+        v-html="slide.content" />
     </slot>
 
     <footer data-part="template-footer">

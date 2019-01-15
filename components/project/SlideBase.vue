@@ -1,7 +1,7 @@
 <template>
   <section :data-slide="slide.id"
     :data-active="state"
-    :data-has-caption='hasCaption()'
+    :data-has-caption='hasCaption'
     @dblclick.prevent="$emit('openAtSlide');" >
 
     <component :data-slide-layout="getLayout"
@@ -10,8 +10,9 @@
       :meta="meta"
       :is="`${getLayout}-slide`" />
 
-    <slide-caption v-if="getCaption()"
-      :caption='getCaption()' />
+    <slide-caption v-if="hasCaption"
+      :caption='getCaption'
+      :tags='getTags(slide.data.tags)' />
   </section>
 </template>
 
@@ -52,6 +53,27 @@
       },
     },
     computed: {
+      hasCaption() {
+        return this.slide.data.caption || this.slide.data.tags ? true : false;
+      },
+      getCaption() {
+        if (this.slide.data.demo) {
+          let demoPath = this.slide.data.demo;
+
+          if (!this.meta.demos[demoPath]) {
+            demoPath = `/demos/${demoPath}`;
+
+            const demoUrl = `${process.env.domain}${demoPath}`;
+            let caption = this.slide.data.caption;
+            let demoCaption = `Demo: [${demoUrl}](${demoPath})`;
+
+            caption = caption ? caption + ' | ' : '';
+            return  caption + demoCaption;
+          }
+        }
+
+        return this.slide.data.caption;
+      },
       getLayout() {
         let defaultLayout = this.slide.data.image ? 'image' : 'default';
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
@@ -75,26 +97,11 @@
       },
     },
     methods: {
-      getCaption() {
-        if (this.slide.data.demo) {
-          let demoPath = this.slide.data.demo;
-
-          if (!this.meta.demos[demoPath]) {
-            demoPath = `/demos/${demoPath}`;
-
-            const demoUrl = `${process.env.domain}${demoPath}`;
-            let caption = this.slide.data.caption;
-            let demoCaption = `Demo: [${demoUrl}](${demoPath})`;
-
-            caption = caption ? caption + ' | ' : '';
-            return  caption + demoCaption;
-          }
+      getTags(tags) {
+        const sort = (arr) => {
+          return arr.concat().sort();
         }
-
-        return this.slide.data.caption;
-      },
-      hasCaption() {
-        return this.slide.data.caption ? true : false;
+        return tags ? sort(tags) : false;
       },
     },
   }
@@ -120,7 +127,8 @@
 
 [data-slide-layout] {
   align-self: var(--align-self, center);
-  background: var(--image) no-repeat scroll;
+  background-image: var(--image);
+  background-repeat: no-repeat;
   background-size: var(--image-size, cover);
   background-position: var(--image-position, center);
   grid-area: main;

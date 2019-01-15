@@ -1,6 +1,6 @@
 <template>
   <main data-layout="page-template">
-    <template-header logoHeight="10em"
+    <template-header
       :pullContent="false" />
 
     <header class="page-header">
@@ -36,7 +36,7 @@
     props: {
       pageTitle: {
         type: String,
-        default: '**OddBird** Talks'
+        default: 'Riding SideSaddle<strong>*</strong>'
       },
       author: {
         type: [Object, Boolean],

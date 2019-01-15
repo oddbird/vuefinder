@@ -50,13 +50,25 @@
       const start = 0;
 
       return {
+        start: start,
+        active: this.getActive() || 0,
         prev: start,
-        active: start,
         next: start + 1,
         paused: false,
       }
     },
     methods: {
+      getActive() {
+        let id = this.$route.query.active;
+        const getIndexByID = (slide) => {
+          return slide.id === id;
+        }
+        let index = id ? this.slides.findIndex(getIndexByID) : this.start;
+        index = index || this.start;
+
+        this.active = index;
+        return index;
+      },
       slideState(index) {
         if (this.active === index) { return 'active'; }
         if (this.prev === index) { return 'prev'; }
@@ -71,23 +83,33 @@
         this.goTo(this.active + move);
       },
       goTo(toActive) {
+        toActive = toActive || 0;
         const min = 0;
         const max = (this.slides.length - 1);
 
         toActive = (toActive < min) ? min : toActive;
         toActive = (toActive > max) ? max : toActive;
 
-        this.prev = (toActive === min) ? min : (toActive - 1);
+        this.$router.push({
+          path: this.$route.path,
+          query: {
+            view: this.$route.query.view,
+            active: this.slides[toActive].id,
+          },
+        });
+
         this.active = toActive;
+        this.prev = (toActive === min) ? min : (toActive - 1);
         this.next = (toActive === max) ? max : (toActive + 1);
       },
-      openAt(id) {
+      openAt(index) {
         if (this.meta.views.includes('slides')) {
-          this.goTo(id);
-
-          if (this.view !== 'slides') {
-            this.$emit('open');
+          const open = async () => {
+            if (this.view !== 'slides') {
+              await this.$emit('open');
+            }
           }
+          open().then(this.goTo(index));
         }
       },
       keyMove(e) {
@@ -180,12 +202,8 @@
 
 
 [data-project-slides='books'] {
-  --font-size: #{size('medium')};
-
   [data-slide-layout='default'] {
-    @include above('page') {
-      padding: size('gutter') size('double-gutter');
-    }
+    max-width: size('wide');
   }
 }
 
@@ -233,7 +251,7 @@
 }
 
 [data-slide-view='grid'] {
-  --font-size: 14px;
+  --font-size: 18px;
   --ratio: #{fluid-ratio('widescreen')};
 
   @include above('page') {

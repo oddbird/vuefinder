@@ -1,16 +1,10 @@
 <template>
   <page-template>
-    <article v-for="(talk, path) in talks"
+    <article v-for="(project, path) in projects"
       :key="path">
-      <h2>
-        <nuxt-link :to="`${path}/`">
-          {{ talk.data.title }}
-        </nuxt-link>
-        {{ talk.data.subtitle }}
-      </h2>
-      <div v-html="$md.render(talk.excerpt)" />
+      <div v-html="$md.render(project.excerpt)" />
       <version-list :path="path"
-        :versions="talk.data.versions" />
+        :versions="project.data.versions" />
     </article>
   </page-template>
 </template>
@@ -21,8 +15,8 @@
   import VersionList from '~/components/project/VersionList.vue';
 
   // pages
-  import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
-  import agileSystems from '~/assets/talks/agile-systems/index.slides';
+  import sidesaddle from '~/assets/slides/sidesaddle/index.slides';
+  // import tenmyths from '~/assets/slides/10myths/index.slides';
 
   export default {
     components: {
@@ -30,26 +24,26 @@
       VersionList,
     },
     data() {
-      const talks = {
-        'dynamic-css': dynamicCSS,
-        'agile-systems': agileSystems,
+      const projects = {
+        sidesaddle: sidesaddle,
+        // '10myths': tenmyths,
       };
 
       return {
-        talks: this.get(talks),
+        projects: this.get(projects),
       };
     },
     methods: {
-      get(talks) {
+      get(projects) {
         const data = {};
 
-        for (const path in talks) {
-          if (talks.hasOwnProperty(path)) {
-            const talk = matter(talks[path], {
+        for (const path in projects) {
+          if (projects.hasOwnProperty(path)) {
+            const project = matter(projects[path], {
               excerpt_separator: "<!-- more -->"
             });
 
-            data[path] = talk;
+            data[path] = project;
           }
         }
 

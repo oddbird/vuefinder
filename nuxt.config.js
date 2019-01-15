@@ -1,15 +1,21 @@
-const util = require('util');
+import 'util';
 
 const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
-const domain = 'talks.oddbird.net';
+const domain = 'read.ridingsidesaddle.com';
 const httpUrl = `http://${domain}`;
-const siteDesc = 'Details and slides from OddBird presentations';
-const siteImage = '/images/_oddbird/social.jpg';
+const siteDesc = 'a novel in fragments';
+const siteImage = '/images/brand/social.jpg';
 
 const authors = {
   miriam: {
     name: 'Miriam Suzanne',
-    url: 'http://oddbird.net/authors/miriam',
+    url: 'http://miriamsuzanne.com/',
+    twitter: 'mirisuzanne',
+    facebook: 'mirisuzanne',
+  },
+  buntport: {
+    name: 'Buntport Theater',
+    url: 'http://miriamsuzanne.com/',
     twitter: 'mirisuzanne',
     facebook: 'mirisuzanne',
   }
@@ -18,17 +24,16 @@ const authors = {
 module.exports = {
   loading: false,
   head: {
-    title: 'OddTalks',
+    title: 'Riding SideSaddle*',
     meta: [
       // GLOBAL
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { property: 'fb:app_id', content: '1820980378150914' },
-      { property: 'og:site_name', content: 'OddTalks' },
-      { name: 'twitter:site', content: '@oddbird' },
+      { property: 'og:site_name', content: 'Miriam Suzanne' },
+      { name: 'twitter:site', content: '@mirisuzanne' },
 
       // ALL PAGES
-      { hid: 'og_title', property: 'og:title', content: 'Talks by OddBird' },
+      { hid: 'og_title', property: 'og:title', content: 'Riding SideSaddle*' },
       { hid: 'og_image', property: 'og:image', content: siteImage },
       { hid: 'og_url', property: 'og:url', content: httpUrl },
       { hid: 'og_type', property: 'og:type', content: 'website' },
@@ -56,13 +61,18 @@ module.exports = {
         exclude: /(node_modules)/
       });
     },
-    styleResources: {
-      scss: './assets/scss/config/_manifest.scss',
-    },
     watch: ['static/images/**/*.*']
   },
 
-  modules: ['@nuxtjs/markdownit'],
+  modules: [
+    '@nuxtjs/markdownit',
+    '@nuxtjs/style-resources',
+  ],
+
+  styleResources: {
+    scss: './assets/scss/config/_manifest.scss',
+  },
+
   env: {
     isDev,
     domain,

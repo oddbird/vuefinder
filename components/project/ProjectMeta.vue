@@ -1,6 +1,5 @@
 <template>
-  <div data-banner="project"
-    :data-edit="edit ? 'full' : false" >
+  <div data-banner="project" >
     <nuxt-link to="/"
       rel="home">
       🏠
@@ -10,11 +9,6 @@
       <project-title :title="meta.title"
         :subtitle="meta.subtitle"
         data-title="project" />
-
-      <button-style v-if="isDev"
-        content="🖊️"
-        btnStyle="emoji"
-        @click="$emit('toggleEdit')" />
 
       <by-line id="banner"
         :author="meta.author" />
@@ -67,15 +61,8 @@
         type: [Number, Boolean],
         default: false,
       },
-      edit: {
-        type: Boolean,
-        default: false,
-      },
     },
     computed: {
-      isDev() {
-        return process.env.isDev;
-      },
       name() {
         if (this.meta.author) {
           return this.meta.author.name || this.meta.author;
@@ -131,15 +118,6 @@
   }
 }
 
-[data-toggle-edit='off'] {
-  @include transition('opacity');
-  opacity: 0.5;
-
-  #{$focus} {
-    opacity: 1;
-  }
-}
-
 [data-title='project'] {
   display: inline-block;
 }
@@ -149,7 +127,7 @@
 }
 
 [data-nav='slides'] {
-  align-items: start;
+  align-items: flex-start;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;

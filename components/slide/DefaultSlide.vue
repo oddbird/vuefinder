@@ -1,5 +1,5 @@
 <template>
-  <div v-html="$md.render(slide.content)" />
+  <div v-html="slide.content" />
 </template>
 
 <script>

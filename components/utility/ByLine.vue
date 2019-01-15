@@ -7,9 +7,6 @@
       <link-if :url="`http://twitter.com/${author.twitter}`">
         @{{ author.twitter }}</link-if>
     </template>
-    |
-    <link-if url="http://twitter.com/oddbird">
-      @oddbird</link-if>
   </p>
 </template>
 

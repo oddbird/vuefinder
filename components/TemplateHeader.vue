@@ -1,23 +1,17 @@
 <template>
   <div data-part="template-header"
     :data-pull="pullContent"
+    :style="{height: logoHeight}"
     role="presentation">
-    <odd-logo color="var(--background, #fff)"
-      :height="logoHeight" />
   </div>
 </template>
 
 <script>
-  import OddLogo from '~/components/utility/OddLogo.vue';
-
   export default {
-    components: {
-      OddLogo,
-    },
     props: {
       logoHeight: {
         type: String,
-        default: '7em',
+        default: 'calc(10em + 3vw)',
       },
       pullContent: {
         type: Boolean,
@@ -29,7 +23,8 @@
 
 <style lang="scss" scoped>
 [data-part='template-header'] {
-  background: url('/images/_oddbird/header.jpg') repeat-x top;
+  background: url('/images/_brand/header.jpg') repeat-x top;
+  background-position: top;
   background-size: auto 100%;
   grid-column: 1 / -1;
   mix-blend-mode: multiply;

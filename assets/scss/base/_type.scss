@@ -26,7 +26,7 @@ a {
     outline: none;
     text-decoration: underline;
     text-decoration-color: color('action-light');
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
   }
 
   #{$focus} {
@@ -55,14 +55,15 @@ blockquote {
 
 
 blockquote {
+  font-size: 1.2em;
   font-style: italic;
   text-align: left;
 
   @include before('“') {
     color: color('accent');
     float: left;
-    font-size: size('xlarge');
-    margin: negative('half-shim') 0 0 negative('shim-plus');
+    font-size: 2.5em;
+    margin: -0.2em 0 0 -0.4em;
   }
 }
 

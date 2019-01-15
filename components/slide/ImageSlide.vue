@@ -1,17 +1,11 @@
 <template>
   <div>
-    <p v-if="slide.data.alt"
-      v-html="$md.renderInline(slide.data.alt)"
+    <div v-if="slide.data.alt"
+      v-html="$md.render(slide.data.alt)"
       hidden />
-
-    <template v-else>
-      <div v-html="$md.render(slide.content)"
-        data-part="image-main" />
-
-      <div v-if="slide.data.caption"
-        v-html="$md.render(slide.content)"
-        data-part="image-caption" />
-    </template>
+    <div v-else
+      v-html="slide.content"
+      data-part="image-main" />
   </div>
 </template>
 
@@ -29,3 +23,9 @@
     },
   }
 </script>
+
+<style lang="scss">
+[data-slide-layout='image'] {
+  background-color: contrast('background');
+}
+</style>

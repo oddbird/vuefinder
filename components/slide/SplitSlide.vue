@@ -3,7 +3,7 @@
     <div data-split="image"
       :style="style" />
     <div data-split="content"
-      v-html="$md.render(slide.content)" />
+      v-html="slide.content" />
   </div>
 </template>
 
