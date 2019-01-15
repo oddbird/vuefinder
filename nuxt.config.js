@@ -6,8 +6,8 @@ const httpUrl = `http://${domain}`;
 const siteDesc = 'a novel in fragments';
 const siteImage = {
   src: '/images/_brand/social.jpg',
-  height: '498',
-  width: '1230',
+  height: '628',
+  width: '1200',
 };
 
 const authors = {
