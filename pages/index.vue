@@ -3,7 +3,7 @@
     <article v-for="(project, path) in projects"
       :key="path">
       <div v-html="$md.render(project.excerpt)" />
-      <version-list :path="path"
+      <version-list :path="false"
         :versions="project.data.versions" />
     </article>
   </page-template>
