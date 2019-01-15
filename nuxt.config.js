@@ -1,10 +1,14 @@
-const util = require('util');
+import 'util';
 
 const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
 const domain = 'talks.oddbird.net';
 const httpUrl = `http://${domain}`;
 const siteDesc = 'Details and slides from OddBird presentations';
-const siteImage = '/images/_oddbird/social.jpg';
+const siteImage = {
+  src: '/images/_oddbird/social.jpg',
+  height: '498',
+  width: '1230',
+};
 
 const authors = {
   miriam: {
@@ -29,7 +33,9 @@ module.exports = {
 
       // ALL PAGES
       { hid: 'og_title', property: 'og:title', content: 'Talks by OddBird' },
-      { hid: 'og_image', property: 'og:image', content: siteImage },
+      { hid: 'og_image', property: 'og:image', content: httpUrl + siteImage.src },
+      { hid: 'og_image_height', property: 'og:image:height', content: siteImage.height },
+      { hid: 'og_image_width', property: 'og:image:width', content: siteImage.width },
       { hid: 'og_url', property: 'og:url', content: httpUrl },
       { hid: 'og_type', property: 'og:type', content: 'website' },
       { hid: 'twitter_card', property: 'twitter:card', content: 'summary' },
@@ -56,13 +62,18 @@ module.exports = {
         exclude: /(node_modules)/
       });
     },
-    styleResources: {
-      scss: './assets/scss/config/_manifest.scss',
-    },
     watch: ['static/images/**/*.*']
   },
 
-  modules: ['@nuxtjs/markdownit'],
+  modules: [
+    '@nuxtjs/markdownit',
+    '@nuxtjs/style-resources',
+  ],
+
+  styleResources: {
+    scss: './assets/scss/config/_manifest.scss',
+  },
+
   env: {
     isDev,
     domain,

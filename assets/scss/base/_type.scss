@@ -3,7 +3,6 @@
 
 @include import-webfonts;
 
-
 :root {
   // @include show-breakpoints;
   --gutter: #{size('gutter')};
@@ -26,7 +25,7 @@ a {
     outline: none;
     text-decoration: underline;
     text-decoration-color: color('action-light');
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
   }
 
   #{$focus} {
@@ -61,8 +60,8 @@ blockquote {
   @include before('“') {
     color: color('accent');
     float: left;
-    font-size: size('xlarge');
-    margin: negative('half-shim') 0 0 negative('shim-plus');
+    font-size: size('larger');
+    margin: -0.2em 0 0 -0.4em;
   }
 }
 

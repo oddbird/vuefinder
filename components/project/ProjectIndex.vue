@@ -1,6 +1,6 @@
 <template>
   <page-template :homeLink="true"
-    :pageTitle="`**${page.data.title}** ${page.data.subtitle}`"
+    :pageTitle="`**${page.data.title}** ${page.data.subtitle || ''}`"
     :author="author()" >
     <div class="project-summary"
       v-html="$md.render(page.content)" />
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  import ProjectTitle from '~/components/project/ProjectTitle.vue';
   import matter from 'gray-matter';
   import PageTemplate from '~/components/PageTemplate.vue';
   import VersionList from '~/components/project/VersionList.vue';
@@ -19,7 +18,6 @@
   export default {
     components: {
       PageTemplate,
-      ProjectTitle,
       VersionList,
     },
     props: {

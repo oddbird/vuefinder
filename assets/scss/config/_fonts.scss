@@ -1,7 +1,7 @@
 // Fonts Config
 // ============
 
-$font-path: '/static/fonts/';
+$font-path: '/fonts/';
 
 // Body Font
 // ---------
@@ -29,13 +29,9 @@ $body: (
 $code: (
   'formats': 'woff2' 'woff',
 
-  'name': 'Source Code Pro',
+  'name': 'Dank Mono',
   'normal': 'dankmono/dankmono-regular-webfont',
   'italic': 'dankmono/dankmono-italic-webfont',
-
-  // 'name': 'Source Code Pro',
-  // 'normal': 'sourcecodepro/sourcecodepro-regular-webfont',
-  // 'bold': 'sourcecodepro/sourcecodepro-semibold-webfont',
 
   'stack':
     (

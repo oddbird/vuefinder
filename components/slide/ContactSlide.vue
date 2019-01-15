@@ -59,14 +59,10 @@
 </template>
 
 <script>
-  import ProjectTitle from '~/components/project/ProjectTitle.vue';
-  import TemplateBase from '~/components/slide/TemplateBase.vue';
   import ButtonStyle from '~/components/utility/ButtonStyle.vue';
 
   export default {
     components: {
-      ProjectTitle,
-      TemplateBase,
       ButtonStyle,
     },
     props: {

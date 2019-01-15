@@ -1,25 +1,17 @@
 <template>
-  <main :data-editing="edit">
+  <main>
     <project-meta
       :meta="page.meta"
       :views="page.meta.views"
-      :view="getView()"
-      :edit="edit"
+      :view="view"
       :count="page.slides.length"
       @toggleView="toggleView($event)"
-      @toggleEdit="toggleEdit()"
       @shuffle="shuffle()" />
-
-    <textarea v-if="edit"
-      v-model="src" name="md-src" id="md-src"
-      :data-edit="edit ? 'half' : false"
-      @change="updatePage" />
 
     <project-slides
       :meta="page.meta"
       :slides="page.slides"
-      :view="getView()"
-      :data-edit="edit ? 'half' : false"
+      :view="view"
       @open="toggleView('slides')"
       @close="close()" />
   </main>
@@ -47,9 +39,11 @@
       },
     },
     data() {
+      const page = this.parse(this.src);
+
       return {
-        page: this.parse(this.src),
-        edit: false,
+        page: page,
+        view: this.getView(page.meta.view),
         lastView: false,
       };
     },
@@ -124,31 +118,28 @@
         return `${process.env.domain}${this.$route.fullPath}`;
       },
       // Actions
-      updatePage() {
-        this.page = this.parse(this.src);
-      },
-      toggleEdit() {
-        this.edit = !this.edit;
-      },
       shuffle() {
         this.page.slides = shuffle(this.page.slides);
       },
-      getView() {
-        const dataView = this.page.meta.view;
+      getView(dataView) {
         return this.$route.query.view || dataView;
       },
       toggleView(newView) {
         if (this.page.meta.views.includes(newView)
-          && (newView !== this.getView())) {
-          this.lastView = this.getView();
+          && (newView !== this.view)) {
+          this.lastView = this.view;
+          this.view = newView;
           this.$router.push({
             path: this.$route.path,
-            query: { view: newView },
+            query: {
+              view: newView,
+              active: this.$route.query.active,
+            },
           });
         }
       },
       close() {
-        const currrent = this.getView();
+        const currrent = this.view;
         let goTo = this.lastView || this.page.meta.view;
 
         if (goTo === currrent) {
@@ -198,10 +189,6 @@
         const author = data.meta.author || 0;
         data.meta.author = process.env.authors[author];
 
-        if (data.meta.shuffle_start) {
-          data.slides = shuffle(data.slides);
-        }
-
         return data;
       },
     },
@@ -210,28 +197,4 @@
 
 <style lang="scss">
 @import '~/assets/scss/_vuefinder.scss';
-
-[data-editing] {
-  display: grid;
-  grid-template-columns: minmax(0, size('small-page')) minmax(50%, 1fr);
-  grid-template-rows: auto minmax(0, 1fr);
-  height: 100vh;
-  overflow: hidden;
-
-}
-
-[data-edit='full'] {
-  border-bottom: pattern('border');
-  grid-column: 1 / -1;
-}
-
-[data-edit='half'] {
-  overflow: auto;
-}
-
-[name='md-src'] {
-  @include font-family('code');
-  font-size: size('xxsmall');
-  padding: size('shim');
-}
 </style>
