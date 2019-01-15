@@ -4,7 +4,11 @@ const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
 const domain = 'read.ridingsidesaddle.com';
 const httpUrl = `http://${domain}`;
 const siteDesc = 'a novel in fragments';
-const siteImage = '/images/brand/social.jpg';
+const siteImage = {
+  src: '/images/_brand/social.jpg',
+  height: '498',
+  width: '1230',
+};
 
 const authors = {
   miriam: {
@@ -34,7 +38,9 @@ module.exports = {
 
       // ALL PAGES
       { hid: 'og_title', property: 'og:title', content: 'Riding SideSaddle*' },
-      { hid: 'og_image', property: 'og:image', content: siteImage },
+      { hid: 'og_image', property: 'og:image', content: siteImage.src },
+      { hid: 'og_image_height', property: 'og:image:height', content: siteImage.height },
+      { hid: 'og_image_width', property: 'og:image:width', content: siteImage.width },
       { hid: 'og_url', property: 'og:url', content: httpUrl },
       { hid: 'og_type', property: 'og:type', content: 'website' },
       { hid: 'twitter_card', property: 'twitter:card', content: 'summary' },
