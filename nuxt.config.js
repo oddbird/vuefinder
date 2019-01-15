@@ -38,7 +38,7 @@ module.exports = {
 
       // ALL PAGES
       { hid: 'og_title', property: 'og:title', content: 'Riding SideSaddle*' },
-      { hid: 'og_image', property: 'og:image', content: siteImage.src },
+      { hid: 'og_image', property: 'og:image', content: httpUrl + siteImage.src },
       { hid: 'og_image_height', property: 'og:image:height', content: siteImage.height },
       { hid: 'og_image_width', property: 'og:image:width', content: siteImage.width },
       { hid: 'og_url', property: 'og:url', content: httpUrl },
