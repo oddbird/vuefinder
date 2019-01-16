@@ -169,16 +169,6 @@ how is this going to **change**…?
 
 <!-- slide -->
 
-## Go with **the flow**!
-
-<!-- slide -->
-
----
-demo: 'layoutFlow'
----
-
-<!-- slide -->
-
 ---
 image: '/images/dynamic-css/devices.jpg'
 alt: 'A zillion different devices of all sizes (original)'
@@ -217,6 +207,16 @@ style:
 
 <!-- slide -->
 
+## Go with **the flow**!
+
+<!-- slide -->
+
+---
+demo: 'layoutFlow'
+---
+
+<!-- slide -->
+
 ## **Classic** Layouts…
 
 <!-- slide -->
@@ -248,7 +248,7 @@ off-canvas, drop-downs, tooltips, modals, etc…
 
 <!-- slide -->
 
-# **Floats**?
+## **Floats**?
 `float: `**`left`** // `float: `**`right`**
 
 <!-- slide -->
