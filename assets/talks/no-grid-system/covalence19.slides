@@ -22,6 +22,20 @@ layout: title
 <!-- slide -->
 
 ---
+image: '/images/dynamic-css/covalence/intro.jpg'
+alt: "ES6 Modules in Electron"
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/covalence/intro-edit.jpg'
+alt: "Web Layouts in Electron"
+---
+
+<!-- slide -->
+
+---
 image: '/images/dynamic-css/covalence/electron.jpg'
 alt: "Hi, my name is Miriam, and I've never used Electron.js"
 ---
