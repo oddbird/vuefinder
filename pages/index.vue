@@ -23,6 +23,7 @@
   // pages
   import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
   import agileSystems from '~/assets/talks/agile-systems/index.slides';
+  import noGrids from '~/assets/talks/no-grid-system/index.slides';
 
   export default {
     components: {
@@ -31,6 +32,7 @@
     },
     data() {
       const talks = {
+        'no-grid-system': noGrids,
         'dynamic-css': dynamicCSS,
         'agile-systems': agileSystems,
       };
