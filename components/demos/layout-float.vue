@@ -5,7 +5,7 @@
       <div class="float">
         <button-style
           id="clear"
-          content='clearfix'
+          :content='clear ? "clearfix" : "no fix"'
           @click="toggleClear()" />
 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis laudantium ea tenetur quas incidunt. Voluptatibus veritatis, rerum vitae illum, recusandae quis. Recusandae quisquam sunt id, eius debitis quos animi hic.
@@ -40,8 +40,7 @@
 .layout {
   background: white;
   border: 1px solid;
-  margin: 2em auto;
-  max-width: 30rem;
+  margin: 2em;
   padding: 1rem;
 }
 

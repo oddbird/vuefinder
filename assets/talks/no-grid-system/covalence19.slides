@@ -35,12 +35,10 @@ alt: "Ok, so I use it every day…"
 
 <!-- slide -->
 
----
-image: '/images/dynamic-css/jsconfus18/learning.jpg'
-alt: 'One does not simply "learn" JavaScript'
-style:
-  --image-size: 'contain'
----
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+
+## [OddBird](http://oddbird.net)
+Full-Stack **Consulting Agency**
 
 <!-- slide -->
 
@@ -51,19 +49,7 @@ caption: 'Jessica Lord: [Nativize is the New Normalize](https://www.youtube.com/
 
 <!-- slide -->
 
----
-layout: template
----
-
-## The **End**!
-Just watch her video…
-
-<!-- slide -->
-
-![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-## [OddBird](http://oddbird.net)
-Full-Stack **Client Services**
+## CSS **Layout**
 
 <!-- slide -->
 
@@ -88,16 +74,7 @@ layout: template
 ---
 
 ## The **End**!
-Damn, this is easy…
-
-<!-- slide -->
-
-## ¯\\\_**(ツ)**_/¯
-## Another F<strong>*</strong>cking Grid System
-
-<!-- slide -->
-
-## Let's Talk About ~~Grids~~ **History**
+Damn, that was easy…
 
 <!-- slide -->
 
@@ -768,6 +745,8 @@ button {
 
 <!-- slide -->
 
+## Media **Queries**…
+
 ```scss
 :root {
   --columns: 3;
@@ -809,25 +788,6 @@ button {
   --su-gutters-left: calc(
       var(--gutter-width) * var(--gutters-left)
     );
-}
-```
-
-<!-- slide -->
-
-## Media Queries…
-
-```css
-@media (min-width: 30em) {
-  /* settings */
-  :root { --susy-columns: 5; }
-
-  /* layout */
-  [data-susy~='2']{ --span: 1; }
-  [data-susy~='6'] { --span: 3; }
-  [data-susy~='6'] * { --susy-columns: 3 }
-  [data-susy~='3'] { --span: 3; }
-  [data-susy~='4'] { --span: 2; }
-  [data-susy~='4'] * { --susy-columns: 2 }
 }
 ```
 
