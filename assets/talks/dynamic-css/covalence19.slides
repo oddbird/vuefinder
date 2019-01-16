@@ -20,16 +20,23 @@ layout: title
 
 <!-- slide -->
 
-![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-## [OddBird](http://oddbird.net)
-Full-Stack **Client Services**
+---
+image: '/images/dynamic-css/covalence/electron.jpg'
+alt: "Hi, my name is Miriam, and I've never used Electron.js"
+---
 
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/susy.png'
-alt: 'Susy'
+image: '/images/dynamic-css/covalence/logos.jpg'
+alt: "Ok, so I use it every day as a user"
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/jsconfus18/learning.jpg'
+alt: 'One does not simply "learn" JavaScript'
 style:
   --image-size: 'contain'
 ---
@@ -37,11 +44,18 @@ style:
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/susy-no.jpg'
-alt: 'Susy, scribbled out'
-style:
-  --image-size: 'contain'
+image: '/images/dynamic-css/covalence/nativize.jpg'
+caption: 'Jessica Lord: [Nativize is the New Normalize](https://www.youtube.com/watch?v=H6IDoraEpO0)'
 ---
+
+<!-- slide -->
+
+---
+layout: template
+---
+
+## The **End**!
+Just watch her video…
 
 <!-- slide -->
 
@@ -55,6 +69,10 @@ style:
 
 ## 1993: **HTML**
 Markup Language
+
+<!-- slide -->
+
+## One (Dynamic) **Web**
 
 <!-- slide -->
 
@@ -83,16 +101,6 @@ Principle of **Least Power**
 ![CSS is Awesome](/images/dynamic-css/css-is-awesome.jpg)
 (This is a **Feature**)
 
-<!-- slide -->
-
-## 2000: A **Dao** of Web Design
-[John Allsopp](https://alistapart.com/article/dao)
-
-<!-- slide -->
-
-> The **control** which designers know in the **print medium**,
-> and often desire in the web medium,
-> is simply a function of the **limitation of the printed page**.
 
 <!-- slide -->
 
@@ -104,7 +112,7 @@ Blueprint, OOCSS, 960gs
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
 ## [OddBird](http://oddbird.net)
-est. **2008**
+Full-Stack **Client Services**, Since 2008
 
 <!-- slide -->
 
@@ -139,10 +147,6 @@ style:
   padding-left: 08.4745763%;
 }
 ```
-
-<!-- slide -->
-
-## **`target`** `/` **`context`** `*` `100%`
 
 <!-- slide -->
 
@@ -213,16 +217,6 @@ Safari 4
 
 <!-- slide -->
 
-## 2011: **`calc()`**
-Firefox 4
-
-<!-- slide -->
-
-## **Mixed-Unit** Calculations
-### `calc(` **`16px`** `+` **`20%`** `)`
-
-<!-- slide -->
-
 ## 2011: **Responsive** Web Design
 [Ethan Marcotte](https://alistapart.com/article/responsive-web-design)
 
@@ -235,7 +229,7 @@ alt: 'A zillion different devices of all sizes (original)'
 
 <!-- slide -->
 
-## **`!=`** 👨
+## **!** 👨
 
 <!-- slide -->
 
@@ -287,17 +281,43 @@ demo: 'cssFlow'
 
 <!-- slide -->
 
+## 2011: **`calc()`**
+Firefox 4
+
+<!-- slide -->
+
+## **Mixed-Unit** Calculations
+### `calc(` **`16px`** `+` **`20%`** `)`
+
+<!-- slide -->
+
 ## 2012: **Flexbox**
 Chrome 21
 
 <!-- slide -->
 
 ---
+todo: 'create a demo'
 image: '/images/layouts/flexbox.jpg'
 caption: 'Flexbox line-wrapping'
 style:
   --image-size: contain
 ---
+
+<!-- slide -->
+
+## **Global** Flow
+`flex-direction: column;` **|** `flex-wrap: wrap;`
+
+<!-- slide -->
+
+## **Individual** Sizing
+grow, shrink, basis **`=>`** `flex: 1 2 auto`;
+
+<!-- slide -->
+
+## 👍
+## `-Grow` & `-Shrink` Define **Relationships**!
 
 <!-- slide -->
 
@@ -350,15 +370,16 @@ $brand: hsl(330, 100%, 45%);
 <!-- slide -->
 
 ## Sass Variables **Scope**
+Based on **Source File Structure**
 
 <!-- slide -->
 
 ```scss
-.example { $columns: 2; }
+:root { $columns: 2; }
 .nested-class { /* $columns == undefined */ }
 
 @media (min-width: 30em) {
-  .example { $columns: 6; }
+  :root { /* $columns == undefined */ }
   .nested-class { /* $columns == undefined */ }
 }
 ```
@@ -366,15 +387,16 @@ $brand: hsl(330, 100%, 45%);
 <!-- slide -->
 
 ## CSS Variables **Inherit**
+Based on **DOM & Cascade**
 
 <!-- slide -->
 
 ```scss
-.example { --columns: 2; }
+:root { --columns: 2; }
 .nested-class { /* var(--columns) == 2 */ }
 
 @media (min-width: 30em) {
-  .example { --columns: 6; }
+  :root { --columns: 6; }
   .nested-class { /* var(--columns) == 6 */ }
 }
 ```
@@ -485,7 +507,7 @@ button {
 
 ## Combine with **`calc()`**
 
-```scss {data-code=h3}
+```scss
 .example {
   margin: calc(1em + var(--extra-margin));
 }
@@ -493,17 +515,7 @@ button {
 
 <!-- slide -->
 
----
-demo: 'css-susy'
-resize: true
-caption: |
-  [AG Grid Nesting Test](http://oocss.org/grids_docs.html)
-  from OOCSS
----
-
-<!-- slide -->
-
-## Global Settings…
+## **CSS**Susy!
 
 ```css
 :root {
@@ -567,8 +579,22 @@ main {
 
 <!-- slide -->
 
-## 😆
-## **Please** Don't Use It
+---
+demo: 'css-susy'
+resize: true
+caption: |
+  [AG Grid Nesting Test](http://oocss.org/grids_docs.html)
+  from OOCSS
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy-no.jpg'
+alt: 'Susy, scribbled out'
+style:
+  --image-size: 'contain'
+---
 
 <!-- slide -->
 
@@ -627,12 +653,9 @@ footer.style.setProperty('--color', newColor);
 
 <!-- slide -->
 
-## Issues:
-
-1. Unknown value `type`s
-  (transition known properties, not variables)
-2. Don't work inside `url()`
-3. ~~`var(--size)em`~~ **=>** `calc(var(--size) * 1em)`
+## 👎
+## Unknown **Types**
+Transition known properties, not variables
 
 <!-- slide -->
 
@@ -654,6 +677,8 @@ CSS.registerProperty({
 
 <!-- slide -->
 
+## *Proposed **CSS Syntax**
+
 ```css
 @property --brand-color {
   syntax: "<color>";
@@ -661,6 +686,13 @@ CSS.registerProperty({
   inherits: true;
 }
 ```
+
+<!-- slide -->
+
+## Other Issues:
+
+1. Don't work inside `url()`
+2. ~~`var(--size)em`~~ **=>** `calc(var(--size) * 1em)`
 
 <!-- slide -->
 
@@ -684,13 +716,15 @@ At All
 
 <!-- slide -->
 
-## Defined **On Containers**
+## **Global** Flow && Sizing*
 
 ```scss
 .container {
   display: grid;
+  grid-auto-flow: column dense;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
+  place-content: center;
 }
 ```
 
@@ -701,9 +735,14 @@ At All
 
 <!-- slide -->
 
+---
+style:
+  text-align: 'left'
+---
+
 ## **`%`** => relative to **parent width**
 ## **`vw`** => relative to **the viewport**
-## **`fr`** => relative to **remaining space**
+## **`fr`** => relative to **available space**
 
 <!-- slide -->
 
@@ -713,6 +752,7 @@ At All
 <!-- slide -->
 
 ---
+todo: 'add demo?'
 image: '/images/layouts/grid-lines.jpg'
 alt: 'Grid lines are 1-indexed'
 style:
@@ -722,6 +762,7 @@ style:
 <!-- slide -->
 
 ---
+todo: 'add demo?'
 image: '/images/layouts/grid-lines-negative.jpg'
 alt: 'Grid lines are also -1 indexed in reverse'
 style:
@@ -730,9 +771,19 @@ style:
 
 <!-- slide -->
 
+---
+todo: 'add demo?'
+image: '/images/layouts/grid.jpg'
+alt: 'Grid output from grid-area code'
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
 ## Single **Source of Truth**
 
-```scss
+```css
 body {
   grid-template-areas:
       'header               header'           auto
@@ -744,7 +795,7 @@ body {
 
 <!-- slide -->
 
-```scss
+```css
 h1 { grid-area: header; }
 nav { grid-area: nav; }
 main { grid-area: main; }
@@ -754,6 +805,7 @@ footer { grid-area: footer; }
 <!-- slide -->
 
 ---
+todo: 'add demo?'
 image: '/images/layouts/grid.jpg'
 alt: 'Grid output from grid-area code'
 style:
@@ -803,6 +855,7 @@ columns & rows!
 <!-- slide -->
 
 ---
+todo: 'add demo?'
 image: '/images/layouts/grid-axis.jpg'
 caption: 'Grid columns and rows'
 style:
@@ -885,19 +938,19 @@ caption: |
 <!-- slide -->
 
 ---
-demo: 'cssLinegraph'
+demo: 'cssPlot'
 resize: true
 caption: |
-  Demo: [talks.oddbird.net/demos/css-linegraph/](/demos/css-linegraph/)
+  Demo: [talks.oddbird.net/demos/css-plot/](/demos/css-plot/)
 ---
 
 <!-- slide -->
 
 ---
-demo: 'cssPlot'
+demo: 'cssLinegraph'
 resize: true
 caption: |
-  Demo: [talks.oddbird.net/demos/css-plot/](/demos/css-plot/)
+  Demo: [talks.oddbird.net/demos/css-linegraph/](/demos/css-linegraph/)
 ---
 
 <!-- slide -->
@@ -918,26 +971,19 @@ resize: true
 
 <!-- slide -->
 
-## Movement Demos by [**Mauricio Palma**][mp]
-https://codepen.io/collection/DVPpvo/
-
-[mp]: https://twitter.com/PalmaSwell
-
-<!-- slide -->
-
-## Learn from [Lea Verou](http://twitter.com/leaverou)
+## [Lea Verou](http://twitter.com/leaverou): Variables
 [video](https://www.youtube.com/watch?v=2an6-WVPuJU)
 | [slides](http://leaverou.github.io/css-variables)
 
 <!-- slide -->
 
-## gridbyexample.com
-examples, templates, and fallbacks by **Rachel Andrew**
+## **Rachel Andrew**: gridbyexample.com
+examples, templates, and fallbacks
 
 <!-- slide -->
 
-## youtube.com/layoutland
-and labs.jensimmons.com by **Jen Simmons**
+## **Jen Simmons**: youtube.com/layoutland
+also: labs.jensimmons.com
 
 <!-- slide -->
 

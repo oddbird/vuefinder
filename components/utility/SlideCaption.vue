@@ -28,10 +28,13 @@
 
 <style lang="scss">
 [data-caption] {
+  border-top: 1px solid color('border');
+  font-size: size('smaller');
   grid-area: caption;
-  padding: size('shim') size('gutter');
+  padding: size('half-shim') size('shim');
   text-align: left;
 }
+
 [data-caption='tags'] {
   color: color('text-light');
   text-align: right;
