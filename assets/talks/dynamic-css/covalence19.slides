@@ -20,6 +20,13 @@ layout: title
 
 <!-- slide -->
 
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+
+## [OddBird](http://oddbird.net)
+Full-Stack **Client Services**
+
+<!-- slide -->
+
 ---
 image: '/images/dynamic-css/covalence/electron.jpg'
 alt: "Hi, my name is Miriam, and I've never used Electron.js"
@@ -29,7 +36,7 @@ alt: "Hi, my name is Miriam, and I've never used Electron.js"
 
 ---
 image: '/images/dynamic-css/covalence/logos.jpg'
-alt: "Ok, so I use it every day as a user"
+alt: "Ok, so I use it every day…"
 ---
 
 <!-- slide -->
@@ -72,14 +79,15 @@ Markup Language
 
 <!-- slide -->
 
-## One (Dynamic) **Web**
-
-<!-- slide -->
-
 ---
 image: '/images/patterns/oddbird-w-logo.jpg'
 alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
 ---
+
+<!-- slide -->
+
+## One (**Dynamic**) Web
+W3C Mission: **Web for All, Web on Everything**
 
 <!-- slide -->
 
@@ -101,67 +109,14 @@ Principle of **Least Power**
 ![CSS is Awesome](/images/dynamic-css/css-is-awesome.jpg)
 (This is a **Feature**)
 
-
 <!-- slide -->
 
-## 2007-2010: Major Grid **Frameworks**
-Blueprint, OOCSS, 960gs
+## 2007-2010: Major **Grid Frameworks**
+Blueprint, OOCSS, 960gs, Susy, etc…
 
 <!-- slide -->
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-## [OddBird](http://oddbird.net)
-Full-Stack **Client Services**, Since 2008
-
-<!-- slide -->
-
----
-image: '/images/patterns/systems.png'
-alt: 'CSS Systems by Natalie Downe'
-caption: 'Source: http://www.slideshare.net/nataliedowne/css-systems-presentation'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
-1. **Systems** > Frameworks
-2. **Fluid** Grids
-3. Static (`px`) | Elastic (`em`) **Containers**
-
-<!-- slide -->
-
-## 👍
-## "Responsive" **before** Responsive(tm)
-
-<!-- slide -->
-
-## 👎
-## **Ugly** Math
-
-```scss
-.grid-span {
-  width: 23.7288136%;
-  margin-right: 01.6949153%;
-  padding-left: 08.4745763%;
-}
-```
-
-<!-- slide -->
-
-## 2009: Compass + **Sass**
-Turing-complete CSS!
-
-<!-- slide -->
-
-```scss
-.grid-span {
-  width: percentage(((3*4em) + (2*1em)) / ((12*4em) + (11*1em))); // 23.7288136%
-  margin-right: percentage(1em / ((12*4em) + (11*1em))); // 01.6949153%
-  padding-left: percentage(((1*4em) + (1*1em)) / ((12*4em) + (11*1em))); // 08.4745763%
-}
-```
 
 <!-- slide -->
 
@@ -177,38 +132,7 @@ style:
 ---
 image: '/images/dynamic-css/susy-no.jpg'
 alt: 'Susy, scribbled out'
-style:
-  --image-size: 'contain'
 ---
-
-<!-- slide -->
-
-```scss
-.grid-span {
-  width: span(3);
-  margin-right: gutter();
-  padding-left: span(1 wide);
-}
-```
-
-<!-- slide -->
-
-## Make Code **Meaningful**
-(To **humans** `&&` **machines**)
-
-<!-- slide -->
-
-## `hsl(330, 100%, 45%)` => **`$brand`**
-We're **Naming Things**!
-
-<!-- slide -->
-
-## "Code is **Communication**"
-—Sarah Drasner **\***
-
-<!-- slide -->
-
-## **\*** (once)
 
 <!-- slide -->
 
@@ -270,7 +194,7 @@ style:
 <!-- slide -->
 
 ---
-demo: 'cssFlow'
+demo: 'layoutFlow'
 ---
 
 <!-- slide -->
@@ -297,11 +221,7 @@ Chrome 21
 <!-- slide -->
 
 ---
-todo: 'create a demo'
-image: '/images/layouts/flexbox.jpg'
-caption: 'Flexbox line-wrapping'
-style:
-  --image-size: contain
+demo: 'layoutFlex'
 ---
 
 <!-- slide -->
@@ -716,22 +636,68 @@ At All
 
 <!-- slide -->
 
-## **Global** Flow && Sizing*
+## Truly **Two-Dimensional** Layouts
+columns & rows!
 
-```scss
-.container {
+<!-- slide -->
+
+---
+demo: 'layoutGrid'
+caption: 'Grid lines 1-indexed and -1 in reverse (see dev tools)'
+---
+
+<!-- slide -->
+
+## **Global** Flow && Sizing
+With **`auto`** escape-hatch to element flow…
+
+```css
+body {
   display: grid;
-  grid-auto-flow: column dense;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 10px;
-  place-content: center;
+  grid-gap: 0.5em;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(14em, auto) minmax(0, 1fr);
 }
 ```
 
 <!-- slide -->
 
-## Optional **Element** Control
-**`auto`** returns to the flow…
+## Named Areas
+
+```css
+body {
+  grid-template-areas: 'header header'
+                       'nav main'
+                       'footer footer';
+}
+
+h1 { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+```
+
+<!-- slide -->
+
+## **Single** Source of Truth
+
+```scss
+@media (max-width: 50em) {
+  body {
+    grid-template: 'header'
+                   'nav'
+                   'main'
+                   'footer';
+  }
+}
+```
+
+<!-- slide -->
+
+---
+demo: 'layoutGrid'
+caption: 'Resize window to see media-query in action…'
+---
 
 <!-- slide -->
 
@@ -751,84 +717,6 @@ style:
 
 <!-- slide -->
 
----
-todo: 'add demo?'
-image: '/images/layouts/grid-lines.jpg'
-alt: 'Grid lines are 1-indexed'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-todo: 'add demo?'
-image: '/images/layouts/grid-lines-negative.jpg'
-alt: 'Grid lines are also -1 indexed in reverse'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-todo: 'add demo?'
-image: '/images/layouts/grid.jpg'
-alt: 'Grid output from grid-area code'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
-## Single **Source of Truth**
-
-```css
-body {
-  grid-template-areas:
-      'header               header'           auto
-      'nav                  main'             1fr
-      'footer               footer'           auto
-    / minmax(14em, auto)    minmax(0, 1fr);
-}
-```
-
-<!-- slide -->
-
-```css
-h1 { grid-area: header; }
-nav { grid-area: nav; }
-main { grid-area: main; }
-footer { grid-area: footer; }
-```
-
-<!-- slide -->
-
----
-todo: 'add demo?'
-image: '/images/layouts/grid.jpg'
-alt: 'Grid output from grid-area code'
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
-## Simple **Overrides**
-
-```scss
-@media (max-width: 40em) {
-  body {
-    grid-template-areas: 'header'
-                         'nav'
-                         'main'
-                         'footer';
-  }
-}
-```
-
-<!-- slide -->
-
 ## 2018: **Intrinsic** Web Design
 [Jen Simmons](https://twitter.com/jensimmons/status/980980521848127488)
 
@@ -842,25 +730,10 @@ style:
 
 <!-- slide -->
 
-1. fixed
-2. `fr` units (fluid)
-3. `minmax()` (fluid until fixed)
-4. `auto` (flow)
-
-<!-- slide -->
-
-## Truly **Two-Dimensional** Layouts
-columns & rows!
-
-<!-- slide -->
-
----
-todo: 'add demo?'
-image: '/images/layouts/grid-axis.jpg'
-caption: 'Grid columns and rows'
-style:
-  --image-size: contain
----
+1. **fixed**
+2. **fluid** (`fr`)
+3. **fluid**-until-**fixed** (`minmax()` | `flex-basis`)
+4. **flow** (`auto`)
 
 <!-- slide -->
 

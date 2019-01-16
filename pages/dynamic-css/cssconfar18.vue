@@ -11,7 +11,7 @@
   // Inline-Demo Components as needed
   import cssAwesome from '~/components/demos/css-awesome';
   import cssChart from '~/components/demos/css-chart';
-  import cssFlow from '~/components/demos/css-flow';
+  import layoutFlow from '~/components/demos/layout-flow';
   import hslTheme from '~/components/demos/hsl-theme';
 
   export default {
@@ -24,7 +24,7 @@
         demos: {
           cssAwesome,
           cssChart,
-          cssFlow,
+          layoutFlow,
           hslTheme,
         }
       }

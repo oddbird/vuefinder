@@ -11,10 +11,12 @@
   // Inline-Demo Components as needed
   import cssAwesome from '~/components/demos/css-awesome';
   import cssChart from '~/components/demos/css-chart';
-  import cssFlow from '~/components/demos/css-flow';
   import cssLinegraph from '~/components/demos/css-linegraph';
   import cssPlot from '~/components/demos/css-plot';
   import hslTheme from '~/components/demos/hsl-theme';
+  import layoutFlex from '~/components/demos/layout-flex';
+  import layoutFlow from '~/components/demos/layout-flow';
+  import layoutGrid from '~/components/demos/layout-grid';
 
   export default {
     components: {
@@ -26,10 +28,12 @@
         demos: {
           cssAwesome,
           cssChart,
-          cssFlow,
           cssLinegraph,
           cssPlot,
           hslTheme,
+          layoutFlow,
+          layoutFlex,
+          layoutGrid,
         }
       }
     },

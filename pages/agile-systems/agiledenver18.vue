@@ -11,7 +11,7 @@
   // Inline-Demo Components as needed
   // import cssAwesome from '~/components/demos/css-awesome';
   // import cssChart from '~/components/demos/css-chart';
-  // import cssFlow from '~/components/demos/css-flow';
+  // import layoutFlow from '~/components/demos/layout-flow';
   // import cssLinegraph from '~/components/demos/css-linegraph';
   // import cssPlot from '~/components/demos/css-plot';
   // import hslTheme from '~/components/demos/hsl-theme';
@@ -26,7 +26,7 @@
         demos: {
         //   cssAwesome,
         //   cssChart,
-        //   cssFlow,
+        //   layoutFlow,
         //   cssLinegraph,
         //   cssPlot,
         //   hslTheme,
