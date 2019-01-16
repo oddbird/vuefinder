@@ -20,13 +20,6 @@ layout: title
 
 <!-- slide -->
 
-![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-## [OddBird](http://oddbird.net)
-Full-Stack **Client Services**
-
-<!-- slide -->
-
 ---
 image: '/images/dynamic-css/covalence/electron.jpg'
 alt: "Hi, my name is Miriam, and I've never used Electron.js"
@@ -63,6 +56,29 @@ layout: template
 
 ## The **End**!
 Just watch her video…
+
+<!-- slide -->
+
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+
+## [OddBird](http://oddbird.net)
+Full-Stack **Client Services**
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy.png'
+alt: 'Susy'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/susy-no.jpg'
+alt: 'No Susy'
+---
 
 <!-- slide -->
 
@@ -116,23 +132,27 @@ Blueprint, OOCSS, 960gs, Susy, etc…
 
 <!-- slide -->
 
-![OddBird Faces](/images/_oddbird/allbirds.svg)
+## Fluid Grid Math **Sux**
+
+```scss
+.grid-span {
+  width: percentage(((3*4em) + (2*1em)) / ((12*4em) + (11*1em))); // 23.7288136%
+  margin-right: percentage(1em / ((12*4em) + (11*1em))); // 01.6949153%
+  padding-left: percentage(((1*4em) + (1*1em)) / ((12*4em) + (11*1em))); // 08.4745763%
+}
+```
 
 <!-- slide -->
 
----
-image: '/images/dynamic-css/susy.png'
-alt: 'Susy'
-style:
-  --image-size: 'contain'
----
+## **Sass** (2006) & **Susy** (2009)
 
-<!-- slide -->
-
----
-image: '/images/dynamic-css/susy-no.jpg'
-alt: 'Susy, scribbled out'
----
+```scss
+.grid-span {
+  width: span(3);
+  margin-right: gutter();
+  padding-left: span(1 wide);
+}
+```
 
 <!-- slide -->
 
