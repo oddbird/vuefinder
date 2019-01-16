@@ -132,6 +132,30 @@ Blueprint, OOCSS, 960gs, Susy, etc…
 
 <!-- slide -->
 
+---
+image: '/images/layouts/12.jpg'
+caption: '12 column grid, single axis'
+---
+
+<!-- slide -->
+
+---
+image: '/images/layouts/grid-math.jpg'
+caption: 'Span some of those columns!'
+---
+
+<!-- slide -->
+
+```scss
+.grid-span {
+  width: 23.7288136%;
+  margin-right: 01.6949153%;
+  padding-left: 08.4745763%;
+}
+```
+
+<!-- slide -->
+
 ## Fluid Grid Math **Sux**
 
 ```scss
