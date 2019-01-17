@@ -115,7 +115,7 @@
     },
     methods: {
       projectUrl() {
-        return `${process.env.domain}${this.$route.fullPath}`;
+        return `${process.env.domain}${this.$route.path}`;
       },
       // Actions
       shuffle() {
