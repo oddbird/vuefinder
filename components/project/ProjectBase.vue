@@ -1,5 +1,15 @@
 <template>
-  <main :data-has-please="needsShuffle">
+  <main v-if="needsShuffle"
+    data-please="shuffle" >
+    <p>
+      This book needs a good mixing before it's ready to read!
+    </p>
+    <button-style
+      id="newShuffle"
+      content="shuffle now!"
+      @click="shuffle()" />
+  </main>
+  <main v-else>
     <project-meta
       :meta="page.meta"
       :views="page.meta.views"
@@ -8,18 +18,7 @@
       @toggleView="toggleView($event)"
       @shuffle="shuffle()" />
 
-    <div v-if="needsShuffle"
-      data-please="shuffle" >
-      <p>
-        This book needs a good mixing before it's ready to read!
-      </p>
-      <button-style
-        id="newShuffle"
-        content="shuffle now!"
-        @click="shuffle()" />
-    </div>
-    <project-slides v-else
-      :meta="page.meta"
+    <project-slides :meta="page.meta"
       :slides="page.slides"
       :view="view"
       @open="toggleView('slides')"
@@ -99,17 +98,17 @@
         );
       }
 
-      if (page.author.facebook) {
+      if (page.authors[0].facebook) {
         meta.push({
           property: 'article:author',
-          content: `https://www.facebook.com/${page.author.facebook}`,
+          content: `https://www.facebook.com/${page.authors[0].facebook}`,
         });
       }
 
-      if (page.author.twitter) {
+      if (page.authors[0].twitter) {
         meta.push({
           property: 'twitter:creator',
-          content: `@${page.author.twitter}`,
+          content: `@${page.authors[0].twitter}`,
         });
       }
 
@@ -123,13 +122,13 @@
       }
 
       return {
-        title: `${page.title} | OddTalks`,
+        title: `Riding SideSaddle: ${page.title}`,
         meta: meta
       }
     },
     methods: {
       projectUrl() {
-        return `${process.env.domain}${this.$route.fullPath}`;
+        return `${process.env.domain}${this.$route.path}`;
       },
       // Actions
       shuffle() {
@@ -201,9 +200,6 @@
         data.meta.listen = true;
         data.meta.projectUrl = this.projectUrl();
 
-        const author = data.meta.author || 0;
-        data.meta.author = process.env.authors[author];
-
         return data;
       },
     },
@@ -217,12 +213,6 @@
   @include font-family('code');
   font-size: size('xxsmall');
   padding: size('shim');
-}
-
-[data-has-please] {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  min-height: 100vh;
 }
 
 [data-please] {

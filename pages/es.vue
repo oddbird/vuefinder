@@ -6,7 +6,7 @@
 <script>
   // The primary stuff
   import ProjectBase from '~/components/project/ProjectBase';
-  import fileSrc from '~/assets/slides/sidesaddle/es.slides';
+  import fileSrc from '~/assets/slides/es.slides';
 
   // Inline-Demo Components as needed
   // import cssAwesome from '~/components/demos/css-awesome';

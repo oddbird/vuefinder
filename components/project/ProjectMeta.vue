@@ -11,7 +11,7 @@
         data-title="project" />
 
       <by-line id="banner"
-        :author="meta.author" />
+        :authors="meta.authors" />
     </header>
 
     <nav data-nav="slides">
@@ -60,22 +60,6 @@
       count: {
         type: [Number, Boolean],
         default: false,
-      },
-    },
-    computed: {
-      name() {
-        if (this.meta.author) {
-          return this.meta.author.name || this.meta.author;
-        } else {
-          return false;
-        }
-      },
-      org() {
-        if (this.meta.org) {
-          return this.meta.org.name || this.meta.org;
-        } else {
-          return false;
-        }
       },
     },
     methods: {

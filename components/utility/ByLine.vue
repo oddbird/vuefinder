@@ -1,12 +1,13 @@
 <template>
   <p :data-byline="id">
-    <link-if :url="author.url">
-      {{ author.name }}</link-if>
-    <template v-if="author.twitter">
-      |
-      <link-if :url="`http://twitter.com/${author.twitter}`">
-        @{{ author.twitter }}</link-if>
-    </template>
+    <span v-for="(author, index) in authors"
+      class="h-card"
+      :key="index" >
+      <i>{{ author.role || 'by' }}</i>
+      <link-if :url="author.url">
+        {{ author.name }}
+      </link-if>
+    </span>
   </p>
 </template>
 
@@ -18,7 +19,7 @@
       LinkIf,
     },
     props: {
-      author: {
+      authors: {
         type: Object,
         required: true
       },

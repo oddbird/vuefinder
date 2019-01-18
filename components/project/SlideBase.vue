@@ -19,24 +19,15 @@
 <script>
   import SlideCaption from '~/components/utility/SlideCaption.vue';
 
-  import DefaultSlide from '~/components/slide/DefaultSlide.vue';
-  import TitleSlide from '~/components/slide/TitleSlide.vue';
-  import ImageSlide from '~/components/slide/ImageSlide.vue';
-  import SplitSlide from '~/components/slide/SplitSlide.vue';
-  import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
-  import DemoSlide from '~/components/slide/DemoSlide.vue';
+  import DefaultSlide from '~/components/slide/DefaultSlide.vue';
+  import ImageSlide from '~/components/slide/ImageSlide.vue';
 
   export default {
     components: {
-      SlideCaption,
-      TitleSlide,
+      ContactSlide,
       ImageSlide,
       DefaultSlide,
-      SplitSlide,
-      TemplateSlide,
-      ContactSlide,
-      DemoSlide,
     },
     props: {
       slide: {

@@ -10,21 +10,6 @@ const siteImage = {
   width: '1200',
 };
 
-const authors = {
-  miriam: {
-    name: 'Miriam Suzanne',
-    url: 'http://miriamsuzanne.com/',
-    twitter: 'mirisuzanne',
-    facebook: 'mirisuzanne',
-  },
-  buntport: {
-    name: 'Buntport Theater',
-    url: 'http://miriamsuzanne.com/',
-    twitter: 'mirisuzanne',
-    facebook: 'mirisuzanne',
-  }
-};
-
 module.exports = {
   loading: false,
   head: {
@@ -80,12 +65,7 @@ module.exports = {
   },
 
   env: {
-    isDev,
     domain,
-    httpUrl,
-    siteDesc,
-    siteImage,
-    authors,
   },
 
   markdownit: {
