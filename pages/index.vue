@@ -7,24 +7,27 @@
     </header>
 
     <nav v-if="src.meta.versions">
-      <span v-for="version in src.meta.versions"
-        :key="version.slug"
-        :data-nav="version.slug" >
+      <template v-for="(version, index) in src.meta.versions">
+        {{ index > 0 ? '|' : '' }}
         <nuxt-link v-if="version.slug"
+          :key="version.slug"
+          :data-nav="version.slug"
           :to="version.slug">
           {{ version.title }}
         </nuxt-link>
         <a v-else-if="version.url"
+          :key="version.slug"
+          :data-nav="version.slug"
           :href="version.url">
           {{ version.title }}
         </a>
-      </span>
+      </template>
     </nav>
 
     <section data-section="intro"
       v-html="src.content" />
 
-    <section v-for="(slide, index) in slides"
+    <section v-for="(slide, index) in src.slides"
       :key="index"
       :data-section="slide.data.section"
       :style="slide.data.style"
@@ -86,4 +89,12 @@
 
 <style lang="scss">
 @import '~/assets/scss/_vuefinder.scss';
+[data-layout='home'] {
+  max-width: size('page');
+  margin: size('gutter') auto;
+}
+
+[data-section] {
+  margin: size('spacer') 0;
+}
 </style>

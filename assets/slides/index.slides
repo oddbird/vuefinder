@@ -27,15 +27,59 @@ category, or completion.
 
 <!-- slide -->
 
-**Riding SideSaddle\*** is
-an open-source text
-published by [SpringGun Press][press],
-released online by [OddBird][odd],
+---
+section: press
+---
+
+> It’s a new, and wonderful, adventure each time, a story of outcasts, their caretaker, and the friendship and love they find with each other. It’s a story about the body and hybridity — based on the myth of Hermaphroditus — and it’s a story about magic and the slipperiness of categories.
+
+— Ryo Yamaguchi, Michigan Quarterly Review
+
+> One of the most ambitious projects that has come across our desk recently.
+
+— Tim Wenger, Colorado Music Buzz
+
+> A really, really good reading time! Miriam has gathered all of the beauteous, ugly, and necessary parts together in one place. The characters, ideas, story are exposed, raw, alive — merging masculine and feminine into some kind of mystical marriage. Graciously, Miriam leaves us the pleasure of assembly without rules.
+
+— Erin Rollman & Brian Colonna, Buntport Theatre
+
+> This feels more realistic than any other novel could hope to be: every moment is just one in a sea of other moments, no more or less important, although no less interesting for that. The result is an impressionist array of feelings and emotions and understandings of oneself and others.
+
+— Natalie Weizenbaum, Lead Designer/Developer of Sass
+
+<!-- slide -->
+
+---
+section: thanks
+---
+
+I am not a writer without Jacob Liechty, Sondra Eby, and Aaron Liechty. They provide direction, inspiration, training, and pages of raw material.
+
+Thanks to SpringGun Press — Erin Costello, Mark Rockswold, Christopher Rosales, and Derrick Mund — for taking the risk, editing, and giving this form; Teacup Gorilla and Buntport for turning it into theater and music; Daniel Eisenstat, Julie Rada, Kenny Storms, Rachel Carlisle, Erin Rollman, and Brian Colonna for being artistic family; Adam Stone and James Belflower for inspiring the visuals; Lori DeBoer, Brandi Homan, and E. Tracy Grinnell for early direction; and an entire community of queer/trans* friends and artists who make me love the world — TC, CA, Aaron, Natalie, et al.
+
+<!-- slide -->
+
+---
+section: legal
+style:
+  font-size: small
+  font-family: sans-serif
+---
+
+Riding SideSaddle* © 2015-2019
+[Miriam Eric Suzanne](http://miriamsuzanne.com) |
+[some rights reserved](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+Published by [SpringGun Press][press],
+and distributed to the trade
+by [Small Press Distribution][spd].\
+Adapted for the web by [OddBird][odd],
 and [adapted to the stage][10myths] by
-[Buntport Theater][buntport]
-and [Teacup Gorilla][teacup].
+[Buntport Theater][buntport].\
+Music by [Teacup Gorilla][teacup].
 
 [press]: http://springgunpress.com
+[spd]: http://www.spdbooks.org/Producte/9780986176401/riding-sidesaddle.aspx
 [odd]: http://oddbird.net
 [buntport]: http://buntport.com
 [teacup]: http://teacupgorilla.com
