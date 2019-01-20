@@ -17,17 +17,17 @@
 </template>
 
 <script>
-  import SlideCaption from '~/components/utility/SlideCaption.vue';
-
   import ContactSlide from '~/components/slide/ContactSlide.vue';
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
+  import SlideCaption from '~/components/utility/SlideCaption.vue';
 
   export default {
     components: {
       ContactSlide,
       ImageSlide,
       DefaultSlide,
+      SlideCaption,
     },
     props: {
       slide: {
