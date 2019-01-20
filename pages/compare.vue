@@ -1,23 +1,14 @@
 <template>
   <main data-layout="compare">
-    <template v-for="index in en.slides.length">
-      <div :data-en="index" :key="`${index}-en`">
+    <template v-for="index in versions.en.slides.length">
+      <div v-for="(version, lang) in versions"
+        :data-version="lang"
+        :key="`${lang}-${index}`">
         <div class="content"
-          v-html="en.slides[index - 1].content || en.slides[index].data.alt || 'none'" />
-        <ul v-if="en.slides[index - 1].data.tags"
+          v-html="version.slides[index - 1].content || version.slides[index].data.alt || 'none'" />
+        <ul v-if="version.slides[index - 1].data.tags"
           class="tags">
-          <li v-for="tag in en.slides[index - 1].data.tags"
-            :key="tag">
-            #{{ tag }}
-          </li>
-        </ul>
-      </div>
-      <div :data-es="index" :key="`${index}-es`">
-        <div class="content"
-          v-html="es.slides[index - 1].content || es.slides[index].data.alt || 'none'" />
-        <ul v-if="es.slides[index - 1].data.tags"
-          class="tags">
-          <li v-for="tag in es.slides[index - 1].data.tags"
+          <li v-for="tag in version.slides[index - 1].data.tags"
             :key="tag">
             #{{ tag }}
           </li>
@@ -36,8 +27,10 @@
   export default {
     data() {
       return {
-        en: this.parse(en),
-        es: this.parse(es),
+        versions: {
+          en: this.parse(en),
+          es: this.parse(es),
+        },
       };
     },
     methods: {
@@ -87,8 +80,7 @@
   max-width: size('double');
 }
 
-[data-en],
-[data-es] {
+[data-version] {
   border-top: 1px solid color('border');
   display: grid;
   grid-template-rows: 1fr auto;
@@ -115,11 +107,11 @@
   }
 }
 
-[data-en] {
+[data-version='en'] {
   grid-column: 1;
 }
 
-[data-es] {
+[data-version='es'] {
   grid-column: 2;
 }
 </style>
