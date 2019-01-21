@@ -5,7 +5,7 @@
       :is="inlineDemo" />
     <iframe v-else
       :data-demo="slide.data.demo"
-      :src="`/demos/${slide.data.demo}`" />
+      :src="`${httpUrl}/demos/${slide.data.demo}`" />
   </figure>
 </template>
 
@@ -24,6 +24,9 @@
     computed: {
       inlineDemo() {
         return this.meta.demos[this.slide.data.demo];
+      },
+      httpUrl() {
+        return process.env.httpUrl;
       },
     },
   }
