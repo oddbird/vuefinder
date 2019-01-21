@@ -34,7 +34,7 @@ style:
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
-## 2008: [OddBird](http://oddbird.net)
+## 2008: [OddBird](https://oddbird.net)
 Application **Design** & **Development**
 
 <!-- slide -->
@@ -460,7 +460,7 @@ $color-text-error: rgb(194, 57, 52);
 
 ---
 caption: |
-  See [OddBird's **Accoutrement**](http://oddbird.net/accoutrement/)
+  See [OddBird's **Accoutrement**](https://oddbird.net/accoutrement/)
 ---
 
 ## Sass **Maps**
@@ -742,7 +742,7 @@ image: '/images/agile-systems/herman.jpg'
 style:
   --image-size: 'contain'
 caption: |
-  OddBird's [**Herman**](http://oddbird.net/herman)
+  OddBird's [**Herman**](https://oddbird.net/herman)
   is based on [**SassDoc**](http://sassdoc.com) syntax
 ----
 
@@ -961,7 +961,7 @@ layout: template
 layout: contact
 form:
   email: 'birds@oddbird.net'
-  next: 'http://oddbird.net/contact/thanks'
+  next: 'https://oddbird.net/contact/thanks'
   submit: 'send it!'
 ---
 

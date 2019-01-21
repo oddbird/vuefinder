@@ -2,7 +2,7 @@ import 'util';
 
 const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
 const domain = 'talks.oddbird.net';
-const httpUrl = `http://${domain}`;
+const httpUrl = `https://${domain}`;
 const siteDesc = 'Details and slides from OddBird presentations';
 const siteImage = {
   src: '/images/_oddbird/social.jpg',
@@ -13,7 +13,7 @@ const siteImage = {
 const authors = {
   miriam: {
     name: 'Miriam Suzanne',
-    url: 'http://oddbird.net/authors/miriam',
+    url: 'https://oddbird.net/authors/miriam',
     twitter: 'mirisuzanne',
     facebook: 'mirisuzanne',
   }

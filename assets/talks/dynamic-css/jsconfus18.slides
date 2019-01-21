@@ -31,7 +31,7 @@ style:
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
-## [OddBird](http://oddbird.net)
+## [OddBird](https://oddbird.net)
 Full-Stack **Agency**
 
 <!-- slide -->
@@ -147,7 +147,7 @@ Blueprint, OOCSS, 960gs
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
-## [OddBird](http://oddbird.net)
+## [OddBird](https://oddbird.net)
 est. **2008**
 
 <!-- slide -->
@@ -930,7 +930,7 @@ layout: template
 layout: contact
 form:
   email: 'birds@oddbird.net'
-  next: 'http://oddbird.net/contact/thanks'
+  next: 'https://oddbird.net/contact/thanks'
   submit: 'send it!'
 ---
 

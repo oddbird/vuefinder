@@ -56,7 +56,7 @@
         },
         {
           hid: 'og_url', property: 'og:url',
-          content: `http://${this.projectUrl()}`,
+          content: `https://${this.projectUrl()}`,
         },
         {
           hid: 'og_type', property: 'og:type',

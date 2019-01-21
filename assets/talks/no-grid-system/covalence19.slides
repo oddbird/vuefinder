@@ -51,7 +51,7 @@ alt: "Ok, so I use it every day…"
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
-## [OddBird](http://oddbird.net)
+## [OddBird](https://oddbird.net)
 Full-Stack **Consulting Agency**
 
 <!-- slide -->
@@ -1136,7 +1136,7 @@ layout: template
 layout: contact
 form:
   email: 'birds@oddbird.net'
-  next: 'http://oddbird.net/contact/thanks'
+  next: 'https://oddbird.net/contact/thanks'
   submit: 'send it!'
 ---
 

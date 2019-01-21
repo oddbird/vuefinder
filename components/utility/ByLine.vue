@@ -4,11 +4,11 @@
       {{ author.name }}</link-if>
     <template v-if="author.twitter">
       |
-      <link-if :url="`http://twitter.com/${author.twitter}`">
+      <link-if :url="`https://twitter.com/${author.twitter}`">
         @{{ author.twitter }}</link-if>
     </template>
     |
-    <link-if url="http://twitter.com/oddbird">
+    <link-if url="https://twitter.com/oddbird">
       @oddbird</link-if>
   </p>
 </template>
