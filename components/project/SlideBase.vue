@@ -80,7 +80,9 @@
         const style = this.slide.data.style || {};
 
         if (this.slide.data.image) {
-          style['--image'] = `url('${this.slide.data.image}')`;
+          let imageUrl = this.slide.data.image;
+          imageUrl = imageUrl.includes('://') ? imageUrl : process.env.httpUrl + imageUrl;
+          style['--image'] = `url('${imageUrl}')`;
         }
 
         if ((this.getLayout === 'image') || (this.getLayout === 'demo')) {
