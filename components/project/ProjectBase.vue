@@ -115,7 +115,9 @@
     },
     methods: {
       projectUrl() {
-        return `${process.env.domain}${this.$route.path}`;
+        let path = `${process.env.domain}${this.$route.path}`;
+        path = path.endsWith('/') ? path : path + '/';
+        return path;
       },
       // Actions
       shuffle() {

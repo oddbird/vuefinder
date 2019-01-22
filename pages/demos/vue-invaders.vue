@@ -136,6 +136,28 @@
         invaders: invade(200),
       }
     },
+    head() {
+      const title = 'Vue Invaders Demo';
+
+      let path = `${process.env.httpUrl}${this.$route.path}`;
+      path = path.endsWith('/') ? path : path + '/';
+
+      const meta = [
+        {
+          hid: 'og_title', property: 'og:title',
+          content: title,
+        },
+        {
+          hid: 'og_url', property: 'og:url',
+          content: path,
+        },
+      ];
+
+      return {
+        title: `${title} | OddTalks`,
+        meta: meta,
+      }
+    },
     methods: {
       invade() {
         let diff = this.count - this.invaders.length;
