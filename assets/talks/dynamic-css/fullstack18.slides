@@ -672,7 +672,6 @@ main {
 demo: 'hslTheme'
 caption: |
   Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
-  | Demo: [talks.oddbird.net/demos/hsl-theme/](/demos/hsl-theme/)
 ---
 
 <!-- slide -->
@@ -927,7 +926,6 @@ demo: 'cssChart'
 resize: true
 caption: |
   [Article on **CSS Tricks**](https://css-tricks.com/css-charts-grid-custom-properties/)
-  | Demo: [talks.oddbird.net/demos/css-chart/](/demos/css-chart/)
 ---
 
 <!-- slide -->
@@ -944,8 +942,6 @@ caption: |
 ---
 demo: 'cssLinegraph'
 resize: true
-caption: |
-  Demo: [talks.oddbird.net/demos/css-linegraph/](/demos/css-linegraph/)
 ---
 
 <!-- slide -->
@@ -953,8 +949,6 @@ caption: |
 ---
 demo: 'cssPlot'
 resize: true
-caption: |
-  Demo: [talks.oddbird.net/demos/css-plot/](/demos/css-plot/)
 ---
 
 <!-- slide -->
@@ -1014,7 +1008,6 @@ demo: 'cssAwesome'
 resize: true
 caption: |
   Inspired by [Stacy Kvernmo](https://codepen.io/stacy/pen/VxvpBj)
-  | Demo: [talks.oddbird.net/demos/css-awesome/](/demos/css-awesome/)
 ---
 
 <!-- slide -->

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <section class="invaders-root">
     <footer>
       <div class="field">
         <label for="blipsize">Bit Size</label>
@@ -28,7 +28,8 @@
     </footer>
 
     <transition-group name="invaders"
-                      tag="main"
+                      tag="div"
+                      class="main"
                       :style="{'--blip': blipSize, '--gap': gapSize}">
       <span v-for="(invader, index) in invaders"
             :key="invader.id"
@@ -41,7 +42,7 @@
           class="blip" />
       </span>
     </transition-group>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -167,12 +168,11 @@
   }
 </script>
 
-<style lang="scss">
-@import '~/assets/scss/base/_manifest.scss';
+<style lang="scss" scoped>
 
 // Main Grid
 // ---------
-main {
+.main {
   --blip: 5px;
   --gap: 1px;
   --size: calc(var(--blip, 5px) * 6 + var(--gap, 1px) * 4);
@@ -233,15 +233,11 @@ main {
 
 // Setup
 // -----
-:root {
+.invaders-root {
   @include font-family('code');
   background: black;
   color: white;
-  font-size: calc(12px + 0.125vw);
-}
-
-* {
-  box-sizing: border-box;
+  font-size: size('xsmaller');
 }
 
 a,
@@ -284,7 +280,7 @@ footer {
 
 .field {
   flex: 0 0 auto;
-  padding: 1em;
+  padding: size('half-shim') size('shim');
 }
 
 input {
@@ -297,7 +293,7 @@ input {
 
 .actions {
   flex: 1 0 auto;
-  padding: 1em;
+  padding: size('half-shim') size('shim');
 
   @media (min-width: 40em) {
     text-align: right;

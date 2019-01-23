@@ -54,19 +54,16 @@
     },
     computed: {
       hasCaption() {
-        return this.slide.data.caption || this.slide.data.tags ? true : false;
+        return this.slide.data.caption || this.slide.data.demo || this.slide.data.tags ? true : false;
       },
       getCaption() {
         if (this.slide.data.demo) {
-          let demoPath = this.slide.data.demo;
-          if (!this.meta.demos[demoPath]) {
-            demoPath = `/demos/${demoPath}`;
-            const demoUrl = `${process.env.domain}${demoPath}`;
-            let caption = this.slide.data.caption;
-            let demoCaption = `Demo: [${demoUrl}](${demoPath})`;
-            caption = caption ? caption + ' | ' : '';
-            return  caption + demoCaption;
-          }
+          const demoPath = `/demos/${this.slide.data.demo}`;
+          const demoUrl = `${process.env.domain}${demoPath}`;
+          const demoCaption = `Demo: [${demoUrl}](${demoPath})`;
+          let caption = this.slide.data.caption;
+          caption = caption ? caption + ' | ' : '';
+          return  caption + demoCaption;
         }
         return this.slide.data.caption;
       },
