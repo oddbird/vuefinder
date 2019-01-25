@@ -6,7 +6,7 @@
       :hasNext="(next !== active)"
       @nextSlide="changeSlide(1)"
       @prevSlide="changeSlide(-1)"
-      @togglePaused="togglePaused()"
+      @togglePaused="togglePaused"
       @close="$emit('close')" />
 
     <transition-group name="slides" tag="div"

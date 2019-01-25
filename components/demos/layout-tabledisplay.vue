@@ -3,7 +3,7 @@
     <button-style
       id="table"
       :content='display'
-      @click="toggleDisplay()" />
+      @click="toggleDisplay" />
     <div class="layout"
       :data-display="display" >
       <div class="cell">div</div>

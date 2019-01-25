@@ -23,7 +23,6 @@
 
       <div class="actions">
         <button @click="shuffle">Shuffle</button>
-        <button @click="kickAss">KickAss Battle Mode</button>
       </div>
     </footer>
 
@@ -49,102 +48,63 @@
   import shuffle from 'lodash/shuffle';
   import random from 'lodash/random';
   import dropRight from 'lodash/dropRight';
-
-  const guid = () => {
-    function s4() {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
-    }
-    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-  }
-
-  // Build an array of individual bits with random/symmetrical backgrounds
-  const makeBlips = () => {
-    let blips = [];
-
-    // The first 15 bits can ge generated individually
-    for (
-      let blipIndex = 1;
-      blipIndex <= 15;
-      blipIndex++
-    ) {
-      let blip = {
-        id: guid(),
-        color: (random(1) === 1) ? 'transparent' : 'white',
-        column: Math.ceil(blipIndex / 5),
-      };
-      blips.push(blip);
-    }
-
-    // The final 10 bits are reflections of the first 10
-    for (
-      let blipIndex = 0;
-      blipIndex < 10;
-      blipIndex++
-    ) {
-      let revBlip = {
-        id: guid(),
-        color: blips[blipIndex].color,
-        column: (blips[blipIndex].column + 1) * -1,
-      };
-
-      blips.push(revBlip);
-    }
-
-    // return a full set of 25 bits
-    return blips;
-  }
-
-  // Generate a random invader size,
-  // with occasional random larger sizes
-  const makeScale = () => {
-    const big = (random(1, 50) === 50);
-    const top = big ? 10 : 2;
-    return random(1, top);
-  }
-
-  // Build an invader with id, bits, and scale
-  const makeInvader = () => {
-    return {
-      id: guid(),
-      scale: makeScale(),
-      blips: makeBlips()
-    }
-  }
-
-  // Build any number of invaders
-  const invade = (add) => {
-    let invaders = [];
-
-    for (
-      let i=0;
-      i < add;
-      i++
-    ) {
-      invaders.push(makeInvader());
-    }
-
-    return invaders;
-  }
+  import uuidv1 from 'uuid/v1';
 
   export default {
     data() {
+      const count = 200;
+
       return {
         blipSize: '5px',
         gapSize: '1px',
-        count: 200,
-        invaders: invade(200),
+        count: count,
+        invaders: this.initVaders(count),
       }
     },
     methods: {
+      makeBlips() {
+        let blips = [];
+
+        // The first 15 bits can ge generated individually
+        [...Array(15)].forEach((e, i) => {
+          const blip = {
+            id: uuidv1(),
+            color: random(1) ? 'transparent' : 'white',
+            column: Math.ceil((i + 1) / 5),
+          };
+          blips.push(blip);
+        });
+
+        // The final 10 bits are reflections of the first 10
+        [...Array(10)].forEach((e, i) => {
+          const mirror = blips[i];
+          const revBlip = {
+            id: uuidv1(),
+            color: mirror.color,
+            column: (mirror.column + 1) * -1,
+          };
+          blips.push(revBlip);
+        });
+
+        // return a full set of 25 bits
+        return blips;
+      },
+      makeInvader() {
+        const big = (random(1, 50) === 50);
+        const top = big ? 10 : 2;
+        return {
+          id: uuidv1(),
+          scale: random(1, top),
+          blips: this.makeBlips()
+        }
+      },
+      initVaders(add) {
+        return [...Array(add)].map(() => this.makeInvader());
+      },
       invade() {
         let diff = this.count - this.invaders.length;
         if (diff > 0) {
-          let newInvaders = invade(diff);
-          for (let i=0; i<newInvaders.length; i++) {
-            this.invaders.push(newInvaders[i]);
-          }
+          this.initVaders(diff).forEach((e) => this.invaders.push(e));
         } else if (diff) {
           diff = Math.abs(diff);
           this.invaders = dropRight(this.invaders, diff);
@@ -154,16 +114,8 @@
         this.invaders = shuffle(this.invaders);
       },
       remake(index) {
-        this.invaders[index].blips = makeBlips();
+        this.invaders[index].blips = this.makeBlips();
       },
-      kickAss() {
-        let KICKASSVERSION = '2.0';
-        let s = document.createElement('script');
-        s.type = 'text/javascript';
-        document.body.appendChild(s);
-        s.src='//hi.kickassapp.com/kickass.js';
-        void(0);
-      }
     }
   }
 </script>

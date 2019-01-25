@@ -6,7 +6,7 @@
         <button-style
           id="clear"
           :content='clear ? "clearfix" : "no fix"'
-          @click="toggleClear()" />
+          @click="toggleClear" />
 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis laudantium ea tenetur quas incidunt. Voluptatibus veritatis, rerum vitae illum, recusandae quis. Recusandae quisquam sunt id, eius debitis quos animi hic.
       </div>
@@ -30,7 +30,7 @@
     },
     methods: {
       toggleClear() {
-        this.clear = this.clear ? false : true;
+        this.clear = !this.clear;
       }
     },
   }

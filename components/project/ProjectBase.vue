@@ -6,14 +6,14 @@
       :view="view"
       :count="page.slides.length"
       @toggleView="toggleView($event)"
-      @shuffle="shuffle()" />
+      @shuffle="shuffle" />
 
     <project-slides
       :meta="page.meta"
       :slides="page.slides"
       :view="view"
       @open="toggleView('slides')"
-      @close="close()" />
+      @close="close" />
   </main>
 </template>
 

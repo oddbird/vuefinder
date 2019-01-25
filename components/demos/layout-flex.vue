@@ -4,11 +4,11 @@
       <button-style
         id="flow"
         :content='flow'
-        @click="toggleFlow()" />
+        @click="toggleFlow" />
       <button-style
         id="wrap"
         :content='wrap'
-        @click="toggleWrap()" />
+        @click="toggleWrap" />
     </header>
     <div :style="style">
       <div class="one">one</div>
