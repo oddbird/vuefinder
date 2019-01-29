@@ -3,9 +3,11 @@
     :slide="slide"
     :meta="meta" >
     <div data-part="title-main">
-      <project-title :title="meta.title"
-        :subtitle="meta.subtitle"
-        :h2="true" />
+      <h2>
+        <project-title
+          :title="meta.title"
+          :subtitle="meta.subtitle" />
+      </h2>
       <p v-if="meta.event || meta.date">
         <strong v-if="meta.event">{{ meta.event }}</strong>
         <span v-if="meta.date"> — {{ meta.date }}</span>

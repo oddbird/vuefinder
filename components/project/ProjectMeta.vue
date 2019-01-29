@@ -1,29 +1,36 @@
 <template>
   <div data-banner="project" >
-    <nuxt-link to="/"
+    <nuxt-link
+      to="/"
       rel="home">
       🏠
     </nuxt-link>
 
     <header data-header="project">
-      <project-title :title="meta.title"
-        :subtitle="meta.subtitle"
-        data-title="project" />
+      <h1 data-title="project">
+        <project-title
+          :title="meta.title"
+          :subtitle="meta.subtitle" />
+      </h1>
 
-      <by-line id="banner"
+      <by-line
+        id="banner"
         :author="meta.author" />
     </header>
 
     <nav data-nav="slides">
-      <span v-if="count"
+      <span
+        v-if="count"
         class="slide-count">
         view <b>{{ count }}</b> cards as…
       </span>
-      <button-style v-if="meta.shuffle"
+      <button-style
+        v-if="meta.shuffle"
         id="shuffle"
         content="shuffle"
         @click="emitShuffle" />
-      <button-group name="views"
+      <button-group
+        name="views"
         :options="views"
         :active="view"
         @click="viewSelect" />
@@ -60,22 +67,6 @@
       count: {
         type: [Number, Boolean],
         default: false,
-      },
-    },
-    computed: {
-      name() {
-        if (this.meta.author) {
-          return this.meta.author.name || this.meta.author;
-        } else {
-          return false;
-        }
-      },
-      org() {
-        if (this.meta.org) {
-          return this.meta.org.name || this.meta.org;
-        } else {
-          return false;
-        }
       },
     },
     methods: {

@@ -4,6 +4,7 @@
 
 <script>
   import cssChart from '~/components/demos/css-chart.vue';
+  import path from 'path';
 
   export default {
     components: {
@@ -11,9 +12,10 @@
     },
     head() {
       const title = 'CSS Chart Demo';
-
-      let path = `${process.env.httpUrl}${this.$route.path}`;
-      path = path.endsWith('/') ? path : path + '/';
+      let route = this.$route.path.endsWith('/')
+        ? this.$route.path
+        : this.$route.path + '/';
+      route = path.join(process.env.httpUrl, route);
 
       const meta = [
         {
@@ -22,7 +24,7 @@
         },
         {
           hid: 'og_url', property: 'og:url',
-          content: path,
+          content: route,
         },
       ];
 

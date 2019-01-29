@@ -38,22 +38,20 @@
       };
 
       return {
-        talks: this.get(talks),
+        talks: this.talkData(talks),
       };
     },
     methods: {
-      get(talks) {
+      talkData(talks) {
         const data = {};
 
-        for (const path in talks) {
-          if (talks.hasOwnProperty(path)) {
-            const talk = matter(talks[path], {
-              excerpt_separator: "<!-- more -->"
-            });
+        Object.keys(talks).forEach(path => {
+          const talk = matter(talks[path], {
+            excerpt_separator: "<!-- more -->"
+          });
 
-            data[path] = talk;
-          }
-        }
+          data[path] = talk;
+        });
 
         return data;
       }

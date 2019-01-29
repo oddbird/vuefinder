@@ -23,12 +23,15 @@
 </template>
 
 <script>
+  import path from 'path';
+
   export default {
     head() {
       const title = 'CSS Susy Demo';
-
-      let path = `${process.env.httpUrl}${this.$route.path}`;
-      path = path.endsWith('/') ? path : path + '/';
+      let route = this.$route.path.endsWith('/')
+        ? this.$route.path
+        : this.$route.path + '/';
+      route = path.join(process.env.httpUrl, route);
 
       const meta = [
         {
@@ -37,7 +40,7 @@
         },
         {
           hid: 'og_url', property: 'og:url',
-          content: path,
+          content: route,
         },
       ];
 

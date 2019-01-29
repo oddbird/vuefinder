@@ -1,10 +1,13 @@
 <template>
-  <h2 v-if="h2"
-    v-html="fullTitle"
-    class="project-title" />
-  <h1 v-else
-    v-html="fullTitle"
-    class="project-title" />
+  <span class="project-title">
+    <span
+      class="title"
+      v-html="$md.renderInline(this.title)" />
+    <span
+      v-if="subtitle"
+      class="subtitle"
+      v-html="$md.renderInline(this.subtitle)" />
+  </span>
 </template>
 
 <script>
@@ -18,23 +21,6 @@
         type: [String, Boolean],
         default: false
       },
-      h2: {
-        type: Boolean,
-        default: false
-      },
-    },
-    computed: {
-      fullTitle() {
-        let title = this.$md.renderInline(this.title);
-        title = `<span class="title">${title}</span>`;
-
-        if (this.subtitle) {
-          const subtitle = this.$md.renderInline(this.subtitle);
-          return `${title} <span class="subtitle">${subtitle}</span>`
-        } else {
-          return title;
-        }
-      }
     },
   }
 </script>

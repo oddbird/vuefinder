@@ -96,7 +96,7 @@
         const sort = (arr) => {
           return arr.concat().sort();
         }
-        return tags ? sort(tags) : false;
+        return tags ? sort(tags) : null;
       },
     },
   }

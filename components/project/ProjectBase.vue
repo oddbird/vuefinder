@@ -12,7 +12,7 @@
       :meta="page.meta"
       :slides="page.slides"
       :view="view"
-      @open="toggleView('slides')"
+      @open="toggleView('slides', $event)"
       @close="close" />
   </main>
 </template>
@@ -22,6 +22,7 @@
   import shuffle from 'lodash/shuffle';
   import ProjectMeta from '~/components/project/ProjectMeta.vue';
   import ProjectSlides from '~/components/project/ProjectSlides.vue';
+  import path from 'path';
 
   export default {
     components: {
@@ -115,9 +116,10 @@
     },
     methods: {
       projectUrl() {
-        let path = `${process.env.domain}${this.$route.path}`;
-        path = path.endsWith('/') ? path : path + '/';
-        return path;
+        let route = this.$route.path.endsWith('/')
+          ? this.$route.path
+          : this.$route.path + '/';
+        return path.join(process.env.domain, route);
       },
       // Actions
       shuffle() {
@@ -126,36 +128,33 @@
       getView(dataView) {
         return this.$route.query.view || dataView;
       },
-      toggleView(newView) {
+      toggleView(newView, slide=null) {
         if (this.page.meta.views.includes(newView)
           && (newView !== this.view)) {
+          slide = slide || this.$route.query.active;
           this.lastView = this.view;
           this.view = newView;
           this.$router.push({
             path: this.$route.path,
             query: {
               view: newView,
-              active: this.$route.query.active,
+              active: slide,
             },
           });
         }
       },
       close() {
-        const currrent = this.view;
-        let goTo = this.lastView || this.page.meta.view;
-
-        if (goTo === currrent) {
-          for (let i = 0; i < this.page.meta.views.length; i++) {
-            const maybe = this.page.meta.views[i];
-            goTo = (maybe === currrent)
-              ? goTo
-              : maybe;
-          }
+        if (this.lastView) {
+          this.toggleView(this.lastView);
+        } else {
+          this.nextView();
         }
-
-        this.toggleView(goTo);
       },
-
+      nextView() {
+        const views = this.page.meta.views;
+        const next = (views.indexOf(this.view) + 1) % views.length;
+        this.toggleView(views[next]);
+      },
       // parser
       parse(src) {
         const data = {
