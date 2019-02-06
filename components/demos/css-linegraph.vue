@@ -1,7 +1,7 @@
 <template>
   <section data-root="css-linegraph">
     <div class="line-controls">
-      <button-style @click="makeData()" >
+      <button-style @click="makeData" >
         Generate Data
       </button-style>
     </div>
@@ -15,7 +15,7 @@
       </thead>
       <tbody class="line-data"
         :style="dataStyle()">
-        <tr v-for="(item, index) in get"
+        <tr v-for="(item, index) in getData"
           :key="index"
           :style="{'--value': item}"
           :data-item="index" >
@@ -42,8 +42,8 @@
       }
     },
     computed: {
-      get() {
-        if (this.plot.length === 0) {
+      getData() {
+        if (!this.plot.length) {
           this.makeData();
         }
 
@@ -55,28 +55,11 @@
         return Math.floor(Math.random() * Math.floor(max));
       },
       makeData() {
-        const plot = [];
-
-        for (
-          let index = 0;
-          index < this.x;
-          index++
-        ) {
-          let newItem = this.randomInt(this.y);
-          plot.push(newItem);
-        }
-
-        this.plot = plot;
+        this.plot = [...Array(this.x)].map(() => this.randomInt(this.y));
       },
       dataStyle() {
         const style = {};
-
-        for (let index = 0; index < this.plot.length; index++) {
-          const value = this.plot[index];
-
-          style[`--i-${index}`] = value;
-        }
-
+        this.plot.forEach((e, i) => style[`--i-${i}`] = e);
         return style;
       },
     },

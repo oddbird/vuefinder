@@ -1,7 +1,7 @@
 <template>
   <section data-root="css-plot">
     <div class="plot-controls">
-      <button-style @click="makeData" >
+      <button-style @click="changeData" >
         Generate Data
       </button-style>
     </div>
@@ -23,7 +23,7 @@
       <transition-group name="plot-data"
         tag="tbody"
         class="plot-body" >
-        <tr v-for="(item, index) in getPlot"
+        <tr v-for="(item, index) in plot"
           :key="index"
           :style="{
             '--x': item.x,
@@ -50,51 +50,30 @@
       ButtonStyle,
     },
     data() {
-      return {
-        x: 100,
-        y: 100,
-        z: 25,
-        plot: [],
-      }
-    },
-    computed: {
-      getPlot() {
-        if (this.plot.length === 0) {
-          this.makeData(20);
-        }
+      const x = 100;
+      const y = 100;
+      const z = 25;
+      const plot = [...Array(20)].map((i) => {
+        return {
+          name: `item-${i}`,
+          x: this.randomInt(x),
+          y: this.randomInt(y),
+          z: this.randomInt(z),
+        };
+      });
 
-        return this.plot;
-      }
+      return { x, y, z, plot }
     },
     methods: {
       randomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
       },
-      makeData(count) {
-        if (this.plot.length > 0) {
-          for (
-            let index = 0;
-            index < this.plot.length;
-            index++
-          ) {
-            this.plot[index].x = this.randomInt(this.x);
-            this.plot[index].y = this.randomInt(this.y);
-            this.plot[index].z = this.randomInt(this.z);
-          }
-        } else {
-          for (
-            let index = 1;
-            index <= count;
-            index++
-          ) {
-            this.plot.push({
-              name: `item-${index}`,
-              x: this.randomInt(this.x),
-              y: this.randomInt(this.y),
-              z: this.randomInt(this.z),
-            });
-          }
-        }
+      changeData() {
+        this.plot.forEach((e, i) => {
+          this.plot[i].x = this.randomInt(this.x);
+          this.plot[i].y = this.randomInt(this.y);
+          this.plot[i].z = this.randomInt(this.z);
+        });
       },
     },
   }

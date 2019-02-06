@@ -11,6 +11,8 @@
 </template>
 
 <script>
+  import path from 'path';
+
   export default {
     props: {
       versions: {
@@ -18,14 +20,13 @@
         required: true,
       },
       path: {
-        type: [String, Boolean],
+        type: String,
         required: true,
       },
     },
     methods: {
       fullPath(slug) {
-        const path = this.path ? `${this.path}/` : '';
-        return `${path}${slug}/`
+        return path.join(this.path, slug);
       }
     },
   }

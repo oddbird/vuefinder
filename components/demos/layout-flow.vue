@@ -5,7 +5,7 @@
       <button-style
         id="flow"
         content='toggle'
-        @click="toggleFlow()" />
+        @click="toggleFlow" />
     </h3>
 
     <div class="content">

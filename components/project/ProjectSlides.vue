@@ -6,7 +6,7 @@
       :hasNext="(next !== active)"
       @nextSlide="changeSlide(1)"
       @prevSlide="changeSlide(-1)"
-      @togglePaused="togglePaused()"
+      @togglePaused="togglePaused"
       @close="$emit('close')" />
 
     <transition-group name="slides" tag="div"
@@ -50,7 +50,7 @@
       const start = 0;
 
       return {
-        start: start,
+        start,
         active: this.getActive() || 0,
         prev: start,
         next: start + 1,
@@ -81,32 +81,39 @@
       changeSlide(move) {
         this.goTo(this.active + move);
       },
-      goTo(toActive) {
-        toActive = toActive || 0;
+      toActive(index) {
         const min = 0;
         const max = (this.slides.length - 1);
-        toActive = (toActive < min) ? min : toActive;
-        toActive = (toActive > max) ? max : toActive;
+        let to = index || 0;
+        to = (to < min) ? min : to;
+        to = (to > max) ? max : to;
+        return {
+          active: to,
+          id: this.slides[to].id,
+          prev: ((to === min) ? min : (to - 1)),
+          next: ((to === max) ? max : (to + 1)),
+        }
+      },
+      setActive(to) {
+        this.active = to.active;
+        this.prev = to.prev;
+        this.next = to.next;
+      },
+      goTo(index) {
+        const to = this.toActive(index);
+        this.setActive(to);
         this.$router.push({
           path: this.$route.path,
           query: {
             view: this.$route.query.view,
-            active: this.slides[toActive].id,
+            active: to.id,
           },
         });
-        this.active = toActive;
-        this.prev = (toActive === min) ? min : (toActive - 1);
-        this.next = (toActive === max) ? max : (toActive + 1);
       },
       openAt(index) {
-        if (this.meta.views.includes('slides')) {
-          const open = async () => {
-            if (this.view !== 'slides') {
-              await this.$emit('open');
-            }
-          }
-          open().then(this.goTo(index));
-        }
+        const to = this.toActive(index);
+        this.setActive(to);
+        this.$emit('open', to.id);
       },
       keyMove(e) {
         if (this.meta.listen) {

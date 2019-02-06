@@ -5,7 +5,7 @@
     <div class="project-summary"
       v-html="$md.render(page.content)" />
     <h2>Event Slides:</h2>
-    <version-list :path="false"
+    <version-list path="."
       :versions="page.data.versions" />
   </page-template>
 </template>
@@ -35,8 +35,11 @@
     },
     methods: {
       author() {
-        const author = this.page.data.author || 0;
-        return process.env.authors[author];
+        const authors = process.env.authors;
+        const author = this.page.data.author;
+        return author
+          ? authors[author]
+          : authors[Object.keys(authors)[0]];
       }
     },
   }
