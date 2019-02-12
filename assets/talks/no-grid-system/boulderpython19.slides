@@ -1,9 +1,9 @@
 ---
 title: "Don't Use My Grid System"
 subtitle: 'The Past & Future of Web Layout'
-event: 'Covalence Conference'
+event: 'Boulder Python'
 author: 'miriam'
-date: '2019-01-16'
+date: '2019-02-12'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 ---
 
@@ -20,49 +20,19 @@ layout: title
 
 <!-- slide -->
 
----
-image: '/images/dynamic-css/covalence/intro.jpg'
-alt: "ES6 Modules in Electron"
----
-
-<!-- slide -->
-
----
-image: '/images/dynamic-css/covalence/intro-edit.jpg'
-alt: "Web Layouts in Electron"
----
-
-<!-- slide -->
-
----
-image: '/images/dynamic-css/covalence/electron.jpg'
-alt: "Hi, my name is Miriam, and I've never used Electron.js"
----
-
-<!-- slide -->
-
----
-image: '/images/dynamic-css/covalence/logos.jpg'
-alt: "Ok, so I use it every day…"
----
-
-<!-- slide -->
-
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
 ## [OddBird](https://oddbird.net)
-Full-Stack **Consulting Agency**
+Full-Service **Consulting** (with Python)
 
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/covalence/nativize.jpg'
-caption: 'Jessica Lord: [Nativize is the New Normalize](https://www.youtube.com/watch?v=H6IDoraEpO0)'
+image: '/images/_mia/sass.svg'
+alt: 'Sass'
+style:
+  --image-size: 'contain'
 ---
-
-<!-- slide -->
-
-## CSS **Layout**
 
 <!-- slide -->
 
@@ -78,6 +48,8 @@ style:
 ---
 image: '/images/dynamic-css/susy-no.jpg'
 alt: 'No Susy'
+style:
+  --image-size: 'contain'
 ---
 
 <!-- slide -->
@@ -88,6 +60,11 @@ layout: template
 
 ## The **End**!
 Damn, that was easy…
+
+<!-- slide -->
+
+## Some **History...**
+How did we get here?
 
 <!-- slide -->
 
@@ -216,11 +193,7 @@ demo: 'layoutFlow'
 
 <!-- slide -->
 
-## **Classic** Layouts…
-
-<!-- slide -->
-
-## **Position**?
+## So... **Position**?
 
 <!-- slide -->
 
@@ -242,7 +215,7 @@ style:
 
 <!-- slide -->
 
-## Absolute (or Fixed) For **Overlays** Only
+## Absolute/Fixed `->` **Overlays** Only
 off-canvas, drop-downs, tooltips, modals, etc…
 
 <!-- slide -->
@@ -489,20 +462,11 @@ alt: 'No Susy'
 
 <!-- slide -->
 
-## Remove **Gutters**
+## **DIY** Grids...
 
 <!-- slide -->
 
----
-image: '/images/layouts/12-inside.jpg'
-caption: 'OOCSS uses fractions to keep math simple…'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
-## Fix the **Box Model**
+## 1. Fix the **Box Model**
 (**IE** got it right the first time)
 
 <!-- slide -->
@@ -553,8 +517,30 @@ html {
 
 <!-- slide -->
 
-## Avoid **Tightly Coupled** Elements
-components respond to **unexpected changes**
+## 2. Remove **Gutters** from Grid Math
+Use `padding` rather than `margin`
+
+<!-- slide -->
+
+---
+image: '/images/layouts/12-inside.jpg'
+caption: 'OOCSS uses fractions to keep math simple…'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+## **Fractions** > Columns
+
+<!-- slide -->
+
+## **`percentage(`** `target / context` **`)`**
+A no-framework Sass grid
+
+<!-- slide -->
+
+## 3. Use the "**New**" **Toys**...
 
 <!-- slide -->
 
@@ -845,11 +831,6 @@ style:
 
 <!-- slide -->
 
-## 2017: **Jet Packs***!
-*Kinda
-
-<!-- slide -->
-
 ## 2017: CSS **Grid**
 Firefox 52 **&** Chrome 57 **&** Safari 10
 
@@ -1052,12 +1033,6 @@ demo: 'cssChart'
 resize: true
 caption: |
   [Article on **CSS Tricks**](https://css-tricks.com/css-charts-grid-custom-properties/)
----
-
-<!-- slide -->
-
----
-image: '/images/dynamic-css/covalence/graph.jpg'
 ---
 
 <!-- slide -->

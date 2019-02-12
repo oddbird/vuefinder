@@ -5,6 +5,9 @@ author: 'miriam'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'layout', 'susy', 'grid', 'graphs']
 versions:
+  - slug: 'boulderpython19'
+    title: 'Boulder Python'
+    date: '12 Feb, 2019'
   - slug: 'covalence19'
     title: 'Covalence Conference'
     date: '16 Jan, 2019'
@@ -23,7 +26,6 @@ so you’re not relying on a bloated library to make decisions for you.
 We’ll also look at the new layout toys —
 from flexbox to CSS Grid —
 and how to get started with only a few lines of code.
-
 
 - When to use floats, CSS Grid, flexbox,
   custom properties, and other techniques.

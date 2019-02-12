@@ -28,12 +28,12 @@
     },
     data() {
       return {
-        flow: 'inline (float)'
+        flow: 'inline'
       }
     },
     methods: {
       toggleFlow() {
-        this.flow = (this.flow === 'block') ? 'inline (float)' : 'block';
+        this.flow = (this.flow === 'block') ? 'inline' : 'block';
       }
     },
   }
@@ -66,8 +66,9 @@ b {
     min-width: 20%;
     padding: size('half-shim') size('shim');
 
-    [data-flow~='inline'] & {
-      float: left;
+    [data-flow='inline'] & {
+      display: inline-block;
+      vertical-align: top;
     }
   }
 }
