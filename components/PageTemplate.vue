@@ -70,7 +70,6 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
 
   [rel='home'] {
     display: inline-block;
@@ -98,10 +97,6 @@
 }
 
 .page-content {
-  display: grid;
-  grid-gap: size('gutter') size('double-gutter');
-  grid-template-columns: repeat(auto-fit, minmax(size('half-page'), size('page')));
-  justify-content: center;
   margin-bottom: size('spacer');
 
   h2 {

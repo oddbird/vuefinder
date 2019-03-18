@@ -1,13 +1,15 @@
 <template>
   <page-template>
-    <article v-for="(talk, path) in talks" :key="path">
-      <h2>
-        <nuxt-link :to="`${path}/`">{{ talk.data.title }}</nuxt-link>
-        {{ talk.data.subtitle }}
-      </h2>
-      <div v-html="$md.render(talk.excerpt)"/>
-      <version-list :path="path" :versions="talk.data.versions"/>
-    </article>
+    <div class="talk-list">
+      <article v-for="(talk, path) in talks" :key="path">
+        <h2>
+          <nuxt-link :to="`${path}/`">{{ talk.data.title }}</nuxt-link>
+          {{ talk.data.subtitle }}
+        </h2>
+        <div v-html="$md.render(talk.excerpt)"/>
+        <version-list :path="path" :versions="talk.data.versions"/>
+      </article>
+    </div>
   </page-template>
 </template>
 
@@ -59,4 +61,11 @@ export default {
 
 <style lang="scss">
 @import "~/assets/scss/_vuefinder.scss";
+
+.talk-list {
+  display: grid;
+  grid-gap: size('gutter') size('double-gutter');
+  grid-template-columns: repeat(auto-fit, minmax(size('half-page'), size('page')));
+  justify-content: space-between;
+}
 </style>
