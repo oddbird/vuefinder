@@ -1,0 +1,24 @@
+---
+title: "User Unfriendly"
+subtitle: "Towards a Queer Web"
+author: "miriam"
+image: "/images/agile-systems/_cover.jpg"
+tags: ["css", "html", "accessibility", "usability", "art", "process"]
+versions:
+  - slug: "agiledenver19"
+    title: "Agile Denver"
+    date: "18 Mar, 2019"
+---
+
+The web is more than a technology platform,
+it was created with a mission statement.
+Design and code trends also come with attached philosophies,
+and we need to consider the implications.
+
+<!-- more -->
+
+We’ll talk about our human-centered approach to product-design –-
+learning to understand user-feedback,
+designing for edge-cases,
+transparent client communication,
+and tightly integrated design and development teams.
