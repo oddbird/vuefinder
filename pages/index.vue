@@ -1,64 +1,62 @@
 <template>
   <page-template>
-    <article v-for="(talk, path) in talks"
-      :key="path">
+    <article v-for="(talk, path) in talks" :key="path">
       <h2>
-        <nuxt-link :to="`${path}/`">
-          {{ talk.data.title }}
-        </nuxt-link>
+        <nuxt-link :to="`${path}/`">{{ talk.data.title }}</nuxt-link>
         {{ talk.data.subtitle }}
       </h2>
-      <div v-html="$md.render(talk.excerpt)" />
-      <version-list :path="path"
-        :versions="talk.data.versions" />
+      <div v-html="$md.render(talk.excerpt)"/>
+      <version-list :path="path" :versions="talk.data.versions"/>
     </article>
   </page-template>
 </template>
 
 <script>
-  import matter from 'gray-matter';
-  import PageTemplate from '~/components/PageTemplate.vue';
-  import VersionList from '~/components/project/VersionList.vue';
+import matter from "gray-matter";
+import PageTemplate from "~/components/PageTemplate.vue";
+import VersionList from "~/components/project/VersionList.vue";
 
-  // pages
-  import dynamicCSS from '~/assets/talks/dynamic-css/index.slides';
-  import agileSystems from '~/assets/talks/agile-systems/index.slides';
-  import noGrids from '~/assets/talks/no-grid-system/index.slides';
+// pages
+import dynamicCSS from "~/assets/talks/dynamic-css/index.slides";
+import agileSystems from "~/assets/talks/agile-systems/index.slides";
+import noGrids from "~/assets/talks/no-grid-system/index.slides";
+import userUnfriendly from "~/assets/talks/user-unfriendly/index.slides";
 
-  export default {
-    components: {
-      PageTemplate,
-      VersionList,
-    },
-    data() {
-      const talks = {
-        'no-grid-system': noGrids,
-        'dynamic-css': dynamicCSS,
-        'agile-systems': agileSystems,
-      };
+export default {
+  components: {
+    PageTemplate,
+    VersionList
+  },
+  data() {
+    const talks = {
+      "user-unfriendly": userUnfriendly,
+      "no-grid-system": noGrids,
+      "dynamic-css": dynamicCSS,
+      "agile-systems": agileSystems
+    };
 
-      return {
-        talks: this.talkData(talks),
-      };
-    },
-    methods: {
-      talkData(talks) {
-        const data = {};
+    return {
+      talks: this.talkData(talks)
+    };
+  },
+  methods: {
+    talkData(talks) {
+      const data = {};
 
-        Object.keys(talks).forEach(path => {
-          const talk = matter(talks[path], {
-            excerpt_separator: "<!-- more -->"
-          });
-
-          data[path] = talk;
+      Object.keys(talks).forEach(path => {
+        const talk = matter(talks[path], {
+          excerpt_separator: "<!-- more -->"
         });
 
-        return data;
-      }
-    },
+        data[path] = talk;
+      });
+
+      return data;
+    }
   }
+};
 </script>
 
 <style lang="scss">
-@import '~/assets/scss/_vuefinder.scss';
+@import "~/assets/scss/_vuefinder.scss";
 </style>

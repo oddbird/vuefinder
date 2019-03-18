@@ -124,10 +124,12 @@
 
 [data-slide-layout] {
   align-self: var(--align-self, center);
+  background-color: var(--background, transparent);
   background-image: var(--image);
   background-repeat: no-repeat;
   background-size: var(--image-size, cover);
   background-position: var(--image-position, center);
+  color: var(--color, inherit);
   grid-area: main;
   position: relative;
   width: 100%;

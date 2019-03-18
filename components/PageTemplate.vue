@@ -55,9 +55,9 @@
   display: grid;
   grid-gap: size('newline');
   grid-template-columns:
-    [full-start] minmax(size('shim'), 1fr)
-    [content-start] minmax(0, size('page'))
-    [content-end] minmax(size('shim'), 1fr)
+    [full-start] minmax(size('shim'), size('gutter'))
+    [content-start] minmax(0, 1fr)
+    [content-end] minmax(size('shim'), size('gutter'))
     [full-end];
 }
 
@@ -70,6 +70,7 @@
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
 
   [rel='home'] {
     display: inline-block;
@@ -97,6 +98,12 @@
 }
 
 .page-content {
+  display: grid;
+  grid-gap: size('gutter') size('double-gutter');
+  grid-template-columns: repeat(auto-fit, minmax(size('half-page'), size('page')));
+  justify-content: center;
+  margin-bottom: size('spacer');
+
   h2 {
     font-size: size('medium');
     font-weight: normal;
