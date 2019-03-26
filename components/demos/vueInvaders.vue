@@ -29,17 +29,17 @@
     <transition-group name="invaders"
                       tag="div"
                       class="main"
-                      :style="{'--blip': blipSize, '--gap': gapSize}">
-      <span v-for="(invader, index) in invaders"
+                      :style="{'--size': blipSize, '--gap': gapSize}">
+      <div v-for="(invader, index) in invaders"
             :key="invader.id"
-            :style="{'--scale': invader.scale}"
+            :style="{'--span': invader.scale}"
             class="invader"
             @click="remake(index)">
-        <i v-for="blip in invader.blips"
+        <span v-for="blip in invader.blips"
           :key="blip.id"
-          :style="{'--bg': blip.color, '--col': blip.column}"
+          :style="{'--alpha': blip.alpha, '--column': blip.column}"
           class="blip" />
-      </span>
+      </div>
     </transition-group>
   </section>
 </template>
@@ -69,7 +69,7 @@
         [...Array(15)].forEach((e, i) => {
           const blip = {
             id: uuidv1(),
-            color: random(1) ? 'transparent' : 'white',
+            alpha: random(1) ? 0 : 1,
             column: Math.ceil((i + 1) / 5),
           };
           blips.push(blip);
@@ -80,7 +80,7 @@
           const mirror = blips[i];
           const revBlip = {
             id: uuidv1(),
-            color: mirror.color,
+            alpha: mirror.alpha,
             column: (mirror.column + 1) * -1,
           };
           blips.push(revBlip);
@@ -125,14 +125,15 @@
 // Main Grid
 // ---------
 .main {
-  --blip: 5px;
+  --size: 5px;
   --gap: 1px;
-  --size: calc(var(--blip, 5px) * 6 + var(--gap, 1px) * 4);
+  --grid: calc(var(--size, 5px) * 6 + var(--gap, 1px) * 4);
   align-content: center;
   display: grid;
   grid-auto-flow: dense;
-  grid-auto-rows: var(--size);
-  grid-template-columns: repeat(auto-fill, var(--size));
+  grid-auto-rows: var(--grid);
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, var(--grid));
   justify-content: center;
 }
 
@@ -141,11 +142,10 @@
 .invader {
   display: grid;
   grid-auto-flow: dense;
-  grid-column-end: span var(--scale);
-  grid-gap: var(--gap);
-  grid-row-end: span var(--scale);
+  grid-column-end: span var(--span);
+  grid-gap: inherit;
+  grid-row-end: span var(--span);
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-  padding: calc(var(--blip) / 2);
   transition: background-color 4s 2s ease-in-out;
 
   &:hover {
@@ -156,8 +156,8 @@
 }
 
 .blip {
-  background-color: var(--bg);
-  grid-column-start: var(--col);
+  background-color: hsla(0, 0%, 100%, var(--alpha, 0));
+  grid-column-start: var(--column);
   transition: background-color 300ms ease-in-out;
 }
 

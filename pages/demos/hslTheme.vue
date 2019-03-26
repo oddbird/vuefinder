@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import hslTheme from '~/components/demos/hsl-theme.vue';
+  import hslTheme from '~/components/demos/hslTheme.vue';
   import path from 'path';
 
   export default {

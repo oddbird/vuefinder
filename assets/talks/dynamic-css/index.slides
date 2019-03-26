@@ -5,6 +5,9 @@ author: 'miriam'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
+  - slug: 'vueconf19'
+    title: 'VueConf US'
+    date: '26 Mar, 2019'
   - slug: 'frontrange18'
     title: 'Front Range Front End'
     date: '1 Nov, 2018'

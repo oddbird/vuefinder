@@ -9,12 +9,12 @@
   import fileSrc from '~/assets/talks/dynamic-css/frontrange18.slides';
 
   // Inline-Demo Components as needed
-  import cssAwesome from '~/components/demos/css-awesome';
-  import cssChart from '~/components/demos/css-chart';
-  import layoutFlow from '~/components/demos/layout-flow';
-  import cssLinegraph from '~/components/demos/css-linegraph';
-  import cssPlot from '~/components/demos/css-plot';
-  import hslTheme from '~/components/demos/hsl-theme';
+  import cssAwesome from '~/components/demos/cssAwesome';
+  import cssChart from '~/components/demos/cssChart';
+  import layoutFlow from '~/components/demos/layoutFlow';
+  import cssLinegraph from '~/components/demos/cssLinegraph';
+  import cssPlot from '~/components/demos/cssPlot';
+  import hslTheme from '~/components/demos/hslTheme';
 
   export default {
     components: {

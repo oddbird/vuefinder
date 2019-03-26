@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import cssChart from '~/components/demos/css-chart.vue';
+  import cssChart from '~/components/demos/cssChart.vue';
   import path from 'path';
 
   export default {

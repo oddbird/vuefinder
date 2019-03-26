@@ -1,17 +1,17 @@
 <template>
-  <css-plot />
+  <css-awesome />
 </template>
 
 <script>
-  import cssPlot from '~/components/demos/css-plot.vue';
+  import cssAwesome from '~/components/demos/cssAwesome.vue';
   import path from 'path';
 
   export default {
     components: {
-      cssPlot,
+      cssAwesome,
     },
-    head() {
-      const title = 'CSS Plot Graph Demo';
+    head () {
+      const title = 'CSS is Awesome Demo';
       let route = this.$route.path.endsWith('/')
         ? this.$route.path
         : this.$route.path + '/';
@@ -31,6 +31,12 @@
       return {
         title: `${title} | OddTalks`,
         meta: meta,
+        link: [
+          {
+            rel: 'stylesheet',
+            href: 'https://use.typekit.net/klr0cdt.css'
+          }
+        ]
       }
     },
   }
@@ -39,8 +45,11 @@
 <style lang="scss">
 @import '~/assets/scss/base/_manifest.scss';
 
-[data-root='css-plot'] {
-  --grow: 1vmin;
+:root {
+  font-size: calc(16px + 1.5vw);
+}
+
+section {
   min-height: 100vh;
 }
 </style>

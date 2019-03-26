@@ -1,17 +1,17 @@
 <template>
-  <css-linegraph />
+  <css-plot />
 </template>
 
 <script>
-  import cssLinegraph from '~/components/demos/css-linegraph.vue';
+  import cssPlot from '~/components/demos/cssPlot.vue';
   import path from 'path';
 
   export default {
     components: {
-      cssLinegraph,
+      cssPlot,
     },
     head() {
-      const title = 'CSS Line Graph Demo';
+      const title = 'CSS Plot Graph Demo';
       let route = this.$route.path.endsWith('/')
         ? this.$route.path
         : this.$route.path + '/';
@@ -39,9 +39,8 @@
 <style lang="scss">
 @import '~/assets/scss/base/_manifest.scss';
 
-[data-root='css-linegraph'] {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+[data-root='css-plot'] {
+  --grow: 1vmin;
   min-height: 100vh;
 }
 </style>

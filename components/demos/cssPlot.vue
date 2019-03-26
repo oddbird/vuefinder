@@ -86,11 +86,10 @@
 }
 
 .plot-controls {
-  background: lightgray;
   border-bottom: pattern('border');
   display: flex;
   justify-content: flex-end;
-  padding: size('half-shim') size('gutter');
+  padding: size('quarter-shim');
   text-align: right;
 }
 

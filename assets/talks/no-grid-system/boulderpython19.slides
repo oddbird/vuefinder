@@ -802,7 +802,7 @@ button {
 <!-- slide -->
 
 ---
-demo: 'css-susy'
+demo: 'cssSusy'
 resize: true
 caption: |
   [AG Grid Nesting Test](http://oocss.org/grids_docs.html)
@@ -1070,7 +1070,7 @@ caption: |
 <!-- slide -->
 
 ---
-demo: 'vue-invaders'
+demo: 'vueInvaders'
 resize: true
 ---
 

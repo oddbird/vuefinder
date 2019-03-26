@@ -28,7 +28,7 @@
       frameSrc() {
         const demoUrl = `/demos/${this.slide.data.demo}/`
         return process.env.isDev
-          ? demoUrl
+          ? 'http://localhost:3000' + demoUrl
           : process.env.httpUrl + demoUrl;
       },
     },

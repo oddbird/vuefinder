@@ -8,7 +8,7 @@ import ProjectBase from "~/components/project/ProjectBase";
 import fileSrc from "~/assets/talks/user-unfriendly/agiledenver19.slides";
 
 // Inline-Demo Components as needed
-// import cssAwesome from '~/components/demos/css-awesome';
+// import cssAwesome from '~/components/demos/cssAwesome';
 
 export default {
   components: {

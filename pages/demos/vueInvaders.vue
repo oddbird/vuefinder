@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import vueInvaders from '~/components/demos/vue-invaders.vue';
+  import vueInvaders from '~/components/demos/vueInvaders.vue';
   import path from 'path';
 
   export default {
