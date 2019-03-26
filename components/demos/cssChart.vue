@@ -1,6 +1,7 @@
 <template>
   <div class="css-chart">
     <div class="chart-controls">
+      <input type="number" v-model="scale">
       <button-style @click="changeData" >
         Generate Data
       </button-style>
@@ -16,6 +17,7 @@
         <th>{{ bar.year }}</th>
         <td>
           <input
+            class="value"
             type="number"
             v-model="plot[i].value"
             min="1"
@@ -143,7 +145,7 @@ td {
   position: relative;
 }
 
-input {
+.value {
   max-width: 3em;
   position: absolute;
   padding: 0 0.4em;
