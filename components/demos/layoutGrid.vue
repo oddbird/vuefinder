@@ -19,6 +19,7 @@
                   'main'
                   'footer'
                 / 1fr;
+  min-height: 100vh;
   padding: size('gutter');
 
   @media (min-width: 45em) {

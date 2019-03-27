@@ -52,7 +52,7 @@ style:
 
 <!-- slide -->
 
-## Let's Talk About **CSS**
+## Web **History**
 
 <!-- slide -->
 
@@ -663,7 +663,7 @@ style:
 <!-- slide -->
 
 ```html
-<div style="{
+<div :style="{
   '--start': item.start,
   '--duration': item.duration
 }" >
@@ -689,15 +689,6 @@ caption: |
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/vueconf19/dots.jpeg'
-alt: 'Guillaume Chau: Dot animation demo'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
----
 image: '/images/dynamic-css/vueconf19/zen.jpeg'
 alt: 'Jen Looper: Zen and the Art of Vue'
 style:
@@ -718,6 +709,15 @@ style:
 ---
 demo: 'vueInvaders'
 resize: true
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/dots.jpeg'
+alt: 'Guillaume Chau: Dot animation demo'
+style:
+  --image-size: 'contain'
 ---
 
 <!-- slide -->
@@ -822,21 +822,21 @@ section {
 
 <!-- slide -->
 
-```css
-.bar {
-  --start: calc(var(--scale) + 1 - var(--value));
-  grid-row-start: var(--start);
-}
-```
-
-<!-- slide -->
-
 ---
 demo: 'cssChart'
 resize: true
 caption: |
   [Article on **CSS Tricks**](https://css-tricks.com/css-charts-grid-custom-properties/)
 ---
+
+<!-- slide -->
+
+```css
+.bar {
+  --start: calc(var(--scale) + 1 - var(--value));
+  grid-row-start: var(--start);
+}
+```
 
 <!-- slide -->
 
@@ -873,8 +873,10 @@ style:
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/vueconf19/animations.png'
+image: '/images/dynamic-css/vueconf19/animations-copy.png'
 alt: 'Sprite from Monster Slayer animation'
+style:
+  --image-size: 'contain'
 ---
 
 <!-- slide -->

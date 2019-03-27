@@ -3,15 +3,15 @@
     <div class="controls">
       <label for="layout">
         <span>layout:</span>
-        <input id="layout" type="text" v-model="layout">
+        <input @keydown.stop="" id="layout" type="text" v-model="layout">
       </label>
       <label for="start">
         <span>start:</span>
-        <input id="start" type="text" v-model="start">
+        <input @keydown.stop="" id="start" type="text" v-model="start">
       </label>
       <label for="duration">
         <span>duration:</span>
-        <input id="duration" type="text" v-model="duration">
+        <input @keydown.stop="" id="duration" type="text" v-model="duration">
       </label>
     </div>
     <div

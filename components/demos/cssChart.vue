@@ -3,7 +3,7 @@
     <div class="chart-controls">
       <label for="scale">
         <span class="label">scale:</span>
-        <input type="number" v-model="scale">
+        <input @keydown.stop="" type="number" v-model="scale">
       </label>
       <button-style @click="changeData" >
         Generate Data
@@ -22,6 +22,7 @@
           <input
             class="value"
             type="number"
+            @keydown.stop=""
             v-model="plot[i].value"
             min="1"
             :max='scale'>

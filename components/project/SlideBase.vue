@@ -8,6 +8,7 @@
       :style="style"
       :slide="slide"
       :meta="meta"
+      :active="state === 'active'"
       :is="`${getLayout}-slide`" />
 
     <slide-caption v-if="hasCaption"
@@ -65,8 +66,8 @@
           const permaLink = `[permalink](${demoUrl})`;
           const srcPath = `${process.env.codeSrc}/blob/master/components${demoPath}.vue`;
           const srcLink = `[source](${srcPath})`;
-          const demoCaption = `[${permaLink} / ${srcLink}]`;
-          let caption = this.slide.data.caption;
+          const demoCaption = ` [${permaLink} / ${srcLink}]`;
+          let caption = this.slide.data.caption || '';
           return  caption + demoCaption;
         }
         return this.slide.data.caption;

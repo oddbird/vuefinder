@@ -1,6 +1,7 @@
 <template>
   <div>
     <video
+      ref="video"
       :src="slide.data.video"
       data-part="video-main"
       controls/>
@@ -22,6 +23,21 @@
         type: Object,
         required: true
       },
+      active: {
+        type: Boolean,
+        default: false
+      }
     },
+    watch: {
+      active() {
+        if (this.active) {
+          this.$refs.video.currentTime = 0;
+          this.$refs.video.play();
+        } else {
+          this.$refs.video.pause();
+          this.$refs.video.currentTime = 0;
+        }
+      }
+    }
   }
 </script>
