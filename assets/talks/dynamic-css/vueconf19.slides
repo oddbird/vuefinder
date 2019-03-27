@@ -520,6 +520,15 @@ columns & rows! mixed units!
 <!-- slide -->
 
 ---
+image: '/images/dynamic-css/vueconf19/layout.jpg'
+alt: 'Maria Lamardo: ARIA layout regions'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
 demo: 'layoutGrid'
 caption: 'Grid lines 1-indexed and -1 in reverse (see dev tools)'
 resize: true
@@ -1023,6 +1032,7 @@ layout: template
 ---
 
 ## Have **Fun**!
+Built with [**Vue**Finder](https://github.com/oddbird/vuefinder)
 
 <!-- slide -->
 
