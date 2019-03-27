@@ -1,14 +1,12 @@
 <template>
-  <section>
-    <div class="layout">
-      <div class="inner h1">header</div>
-      <div class="inner nav">nav</div>
-      <div class="inner main">
-        <strong>main</strong>
-        <p>with some content...</p>
-      </div>
-      <div class="inner footer">footer</div>
+  <section class="layout">
+    <div class="inner h1">header</div>
+    <div class="inner nav">nav</div>
+    <div class="inner main">
+      <strong>main</strong>
+      <p>with some content...</p>
     </div>
+    <div class="inner footer">footer</div>
   </section>
 </template>
 
@@ -34,7 +32,7 @@
 
 .inner {
   background: color('callout');
-  padding: size('shim');
+  padding: size('half-shim');
 }
 
 .h1 { grid-area: header; }

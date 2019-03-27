@@ -270,17 +270,6 @@ main {
 /* display styles */
 /* -------------- */
 
-@supports not (--css: variables) {
-  body::before {
-    content: 'This browser does not support CSS Variables';
-    display: block;
-  }
-}
-
-body {
-  padding: var(--static-gutters);
-}
-
 h3 {
   padding: size(--static-gutter);
   text-align: center;

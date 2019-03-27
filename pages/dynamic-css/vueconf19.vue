@@ -13,7 +13,7 @@
   import cssChart from '~/components/demos/cssChart';
   import layoutFlow from '~/components/demos/layoutFlow';
   import layoutFlex from '~/components/demos/layoutFlex';
-  import layoutGrid from '~/components/demos/layoutGrid';
+  import layoutGridVar from '~/components/demos/layoutGridVar';
   import cssLinegraph from '~/components/demos/cssLinegraph';
   import cssPlot from '~/components/demos/cssPlot';
   import hslTheme from '~/components/demos/hslTheme';
@@ -30,7 +30,7 @@
           cssChart,
           layoutFlow,
           layoutFlex,
-          layoutGrid,
+          layoutGridVar,
           cssLinegraph,
           cssPlot,
           hslTheme,

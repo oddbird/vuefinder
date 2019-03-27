@@ -22,6 +22,7 @@
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
   import TitleSlide from '~/components/slide/TitleSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
+  import VideoSlide from '~/components/slide/VideoSlide.vue';
   import SplitSlide from '~/components/slide/SplitSlide.vue';
   import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
@@ -32,6 +33,7 @@
       SlideCaption,
       TitleSlide,
       ImageSlide,
+      VideoSlide,
       DefaultSlide,
       SplitSlide,
       TemplateSlide,
@@ -69,6 +71,7 @@
       },
       getLayout() {
         let defaultLayout = this.slide.data.image ? 'image' : 'default';
+        defaultLayout = this.slide.data.video ? 'video' : defaultLayout;
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;

@@ -1,7 +1,10 @@
 <template>
   <div class="css-chart">
     <div class="chart-controls">
-      <input type="number" v-model="scale">
+      <label for="scale">
+        <span class="label">scale:</span>
+        <input type="number" v-model="scale">
+      </label>
       <button-style @click="changeData" >
         Generate Data
       </button-style>
@@ -68,11 +71,19 @@ export default {
 }
 
 .chart-controls {
+  align-items: center;
   border-bottom: pattern('border');
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: size('quarter-shim');
   text-align: right;
+}
+
+.label {
+  @include font-family('code');
+  color: color('accent');
+  font-size: size('code');
+  font-style: italic;
 }
 
 .chart {

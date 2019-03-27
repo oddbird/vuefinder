@@ -123,6 +123,12 @@ Responsive before **Responsive(tm)**
 
 <!-- slide -->
 
+---
+video: '/images/dynamic-css/vueconf19/sarah.mov'
+---
+
+<!-- slide -->
+
 ## 2009: **`@media`** queries
 Safari 4 -- **`if/then`**
 
@@ -461,6 +467,13 @@ Firefox 52 **&** Chrome 57 **&** Safari 10
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/vueconf19/mind-blown.gif'
+alt: 'Mind-blown gif of Gregg Pollack as Carl Sagan'
+---
+
+<!-- slide -->
+
 ## Truly **Two-Dimensional** Layouts
 columns & rows! mixed units!
 
@@ -469,6 +482,7 @@ columns & rows! mixed units!
 ---
 demo: 'layoutGrid'
 caption: 'Grid lines 1-indexed and -1 in reverse (see dev tools)'
+resize: true
 ---
 
 <!-- slide -->
@@ -524,6 +538,7 @@ footer { grid-area: footer; }
 ---
 demo: 'layoutGrid'
 caption: 'Resize window to see media-query in action…'
+resize: true
 ---
 
 <!-- slide -->
@@ -572,6 +587,23 @@ style:
 
 ## Let's Add **Vue**
 **CSS** & **JavaScript**
+
+<!-- slide -->
+
+## Client **Day Planner**
+![Screenshot of schedule grid](/images/layouts/schedule.jpg)
+
+<!-- slide -->
+
+### `<div style="` **`--start`**`: 30;` **`--duration`**`: 60;">`
+
+<!-- slide -->
+
+---
+demo: 'layoutGridVar'
+caption: 'This one is for [Maria](https://twitter.com/marialamardo)'
+resize: true
+---
 
 <!-- slide -->
 
@@ -681,15 +713,6 @@ section {
   grid-column-start: var(--column);
 }
 ```
-
-<!-- slide -->
-
-## Client **Day Planner**
-![Screenshot of schedule grid](/images/layouts/schedule.jpg)
-
-<!-- slide -->
-
-### `<div style="` **`--start`**`: 30;` **`--duration`**`: 60;">`
 
 <!-- slide -->
 
