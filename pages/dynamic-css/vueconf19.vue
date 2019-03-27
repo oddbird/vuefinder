@@ -16,6 +16,7 @@
   import layoutGridVar from '~/components/demos/layoutGridVar';
   import cssLinegraph from '~/components/demos/cssLinegraph';
   import cssPlot from '~/components/demos/cssPlot';
+  import cssSprites from '~/components/demos/cssSprites';
   import hslTheme from '~/components/demos/hslTheme';
 
   export default {
@@ -33,6 +34,7 @@
           layoutGridVar,
           cssLinegraph,
           cssPlot,
+          cssSprites,
           hslTheme,
         }
       }

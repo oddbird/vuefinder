@@ -146,6 +146,7 @@
   grid-gap: inherit;
   grid-row-end: span var(--span);
   grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  padding: calc(var(--gap) * 2);
   transition: background-color 4s 2s ease-in-out;
 
   &:hover {

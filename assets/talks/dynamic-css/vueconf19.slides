@@ -20,6 +20,13 @@ layout: title
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/vueconf19/design-patterns.jpeg'
+alt: 'Jacob Schatz: Design Patterns'
+---
+
+<!-- slide -->
+
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
 
 ## [OddBird](https://oddbird.net)
@@ -123,6 +130,21 @@ Responsive before **Responsive(tm)**
 
 <!-- slide -->
 
+## 2009: **Sass**\* & Susy
+**\*** When I found out about it...
+
+<!-- slide -->
+
+```scss
+.grid-span {
+  width: span(3);
+  margin-right: gutter();
+  padding-left: span(1 wide);
+}
+```
+
+<!-- slide -->
+
 ---
 video: '/images/dynamic-css/vueconf19/sarah.mov'
 ---
@@ -152,6 +174,15 @@ alt: 'A zillion different devices of all sizes (original)'
 > Let the language work out the details.
 >
 > ---Keith J Grant, [Resilient, Declarative, Contextual](https://keithjgrant.com/posts/2018/06/resilient-declarative-contextual/)
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/explicit.jpg'
+alt: 'Chris Fritz: Explicit, clear relationships'
+style:
+  --image-size: 'contain'
+---
 
 <!-- slide -->
 
@@ -219,6 +250,15 @@ Firefox 31 (unless you count **`currentColor`**)
 .example { $columns: 2; }
 .nested-class { /* $columns == undefined */ }
 ```
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/browsers.jpeg'
+alt: 'Rahul Kadyan: Browsers dont understand ~~SFC~~ Sass'
+style:
+  --image-size: 'contain'
+---
 
 <!-- slide -->
 
@@ -590,12 +630,44 @@ style:
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/vueconf19/template.jpeg'
+alt: 'Andrew Krawchyk'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
 ## Client **Day Planner**
 ![Screenshot of schedule grid](/images/layouts/schedule.jpg)
 
 <!-- slide -->
 
-### `<div style="` **`--start`**`: 30;` **`--duration`**`: 60;">`
+```html
+<div style="
+  --start: 30;
+  --duration: 60;
+" >
+```
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/inline.jpeg'
+alt: 'Krystal Campioni: Inline Styles'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+```html
+<div style="{
+  '--start': item.start,
+  '--duration': item.duration
+}" >
+```
 
 <!-- slide -->
 
@@ -612,6 +684,24 @@ image: '/images/layouts/invade.jpg'
 caption: |
   [Levitated Toy Factory](http://levitated.guru/work/)
   at **Beyond Tellerand**
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/dots.jpeg'
+alt: 'Guillaume Chau: Dot animation demo'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/zen.jpeg'
+alt: 'Jen Looper: Zen and the Art of Vue'
+style:
+  --image-size: 'contain'
 ---
 
 <!-- slide -->
@@ -773,6 +863,118 @@ resize: true
 
 <!-- slide -->
 
+---
+image: '/images/dynamic-css/vueconf19/sprite.jpeg'
+alt: 'Krystal Campioni: Sprite animation'
+style:
+  --image-size: 'contain'
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/animations.png'
+alt: 'Sprite from Monster Slayer animation'
+---
+
+<!-- slide -->
+
+```js
+return {
+   sprite: {
+     src: spriteSrc, // e.g. url('…')
+     vh: 415,
+     vw: 415,
+     steps: 9,
+   },
+}
+```
+
+<!-- slide -->
+
+```js
+return {
+  actions: [
+    {
+      name: 'attack',
+      row: 1,
+    },
+    {
+      name: 'special',
+      row: 2,
+    }
+  ],
+}
+```
+
+<!-- slide -->
+
+```html
+<section
+ class="sprite-demo"
+ :style="{
+   '--src': sprite.src,
+   '--vw': sprite.vw,
+   '--vh': sprite.vh,
+   '--steps': sprite.steps,
+ }">
+ <div
+   v-for="action in actions"
+   :key="action.name"
+   :data-action="action.name"
+   :style="{
+     '--row': action.row,
+   }"
+ />
+</section>
+```
+
+<!-- slide -->
+
+```css
+.sprite-demo {
+  --height: calc(var(--vh) * 1px);
+  --width: calc(var(--vw) * 1px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--width));
+  grid-auto-rows: var(--height);
+}
+```
+
+<!-- slide -->
+
+```css
+@keyframes sprite {
+  to {
+    background-position: 100% var(--posY);
+  }
+}
+
+[data-action] {
+  --posY: calc(0px - var(--row) * var(--height));
+  background-image: var(--src);
+  background-position: 0% var(--posY);
+  height: var(--height);
+  width: var(--width);
+
+  &:hover {
+    animation: sprite 1s steps(var(--steps), end) infinite both;
+  }
+}
+```
+
+<!-- slide -->
+
+---
+demo: 'cssSprites'
+caption: |
+  Animated sprites from
+  [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
+  by [Krystal Campioni](https://twitter.com/krystalcampioni)
+---
+
+<!-- slide -->
+
 ## [Lea Verou](http://twitter.com/leaverou) on **Variables**
 [video](https://www.youtube.com/watch?v=2an6-WVPuJU)
 | [slides](http://leaverou.github.io/css-variables)
@@ -793,6 +995,15 @@ examples, templates, and fallbacks
 
 ## **Jen Simmons**: youtube.com/layoutland
 also: labs.jensimmons.com
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/vueconf19/think-bigger.jpeg'
+alt: 'Sarah Drasner: Think Bigger'
+style:
+  --image-size: 'contain'
+---
 
 <!-- slide -->
 

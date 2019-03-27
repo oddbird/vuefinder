@@ -2,6 +2,7 @@ import 'util';
 
 const isDev = (process.env.DEPLOY_ENV === 'PROD') ? false : true;
 const domain = 'talks.oddbird.net';
+const codeSrc = 'https://github.com/oddbird/vuefinder';
 const httpUrl = `https://${domain}`;
 const siteDesc = 'Details and slides from OddBird presentations';
 const siteImage = {
@@ -76,6 +77,7 @@ module.exports = {
 
   env: {
     isDev,
+    codeSrc,
     domain,
     httpUrl,
     siteDesc,

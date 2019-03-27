@@ -62,9 +62,11 @@
         if (this.slide.data.demo) {
           const demoPath = `/demos/${this.slide.data.demo}`;
           const demoUrl = `${process.env.domain}${demoPath}`;
-          const demoCaption = `Demo: [${demoUrl}](${demoPath})`;
+          const permaLink = `[permalink](${demoUrl})`;
+          const srcPath = `${process.env.codeSrc}/blob/master/components${demoPath}.vue`;
+          const srcLink = `[source](${srcPath})`;
+          const demoCaption = `[${permaLink} / ${srcLink}]`;
           let caption = this.slide.data.caption;
-          caption = caption ? caption + ' | ' : '';
           return  caption + demoCaption;
         }
         return this.slide.data.caption;
