@@ -3,9 +3,8 @@
     class="sprite-demo"
     :style="{
       '--src': sprite.src,
-      '--vw': sprite.vw,
-      '--vh': sprite.vh,
-      '--steps': sprite.steps,
+      '--columns': sprite.columns,
+      '--rows': sprite.rows,
     }">
     <div
       v-for="action in actions"
@@ -30,11 +29,14 @@ export default {
     return {
       sprite: {
         src: spriteSrc, // e.g. url('…')
-        vh: 415,
-        vw: 415,
-        steps: 9,
+        columns: 10,
+        rows: 5,
       },
       actions: [
+        {
+          name: 'idle',
+          row: 0, // 0 index
+        },
         {
           name: 'attack',
           row: 1,
@@ -42,7 +44,7 @@ export default {
         {
           name: 'special',
           row: 2,
-        }
+        },
       ],
     }
   },
@@ -52,14 +54,14 @@ export default {
 
 <style lang="scss" scoped>
 .sprite-demo {
-  --height: calc(var(--vh) * 1px);
-  --width: calc(var(--vw) * 1px);
+  --steps: calc(var(--columns) - 1);
+  --square: 10em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, var(--width));
-  grid-auto-rows: var(--height);
+  grid-template-columns: repeat(auto-fit, var(--square));
+  grid-auto-rows: var(--square);
   justify-content: center;
-  justify-items: center;
-  align-items: center;
+  justify-items: stretch;
+  align-items: stretch;
   align-content: center;
 }
 
@@ -70,14 +72,15 @@ export default {
 }
 
 [data-action] {
-  --posY: calc(0px - var(--row) * var(--height));
+  --posY: calc(0px - var(--square) * var(--row));
+  animation: sprite 1s steps(var(--steps), end) infinite paused;
   background-image: var(--src);
+  background-size: calc(var(--square) * var(--columns)) auto;
   background-position: 0% var(--posY);
-  height: var(--height);
-  width: var(--width);
+  width: 100%;
 
   &:hover {
-    animation: sprite 1s steps(var(--steps), end) infinite both;
+    animation-play-state: running;
   }
 }
 </style>

@@ -892,12 +892,11 @@ style:
 
 ```js
 return {
-   sprite: {
-     src: spriteSrc, // e.g. url('…')
-     vh: 415,
-     vw: 415,
-     steps: 9,
-   },
+  sprite: {
+    src: spriteSrc, // e.g. url('…')
+    columns: 10,
+    rows: 5,
+  },
 }
 ```
 
@@ -907,13 +906,14 @@ return {
 return {
   actions: [
     {
+      name: 'idle',
+      row: 0, // 0 index
+    },
+    {
       name: 'attack',
       row: 1,
     },
-    {
-      name: 'special',
-      row: 2,
-    }
+    { ... },
   ],
 }
 ```
@@ -922,21 +922,18 @@ return {
 
 ```html
 <section
- class="sprite-demo"
- :style="{
-   '--src': sprite.src,
-   '--vw': sprite.vw,
-   '--vh': sprite.vh,
-   '--steps': sprite.steps,
- }">
- <div
-   v-for="action in actions"
-   :key="action.name"
-   :data-action="action.name"
-   :style="{
-     '--row': action.row,
-   }"
- />
+  class="sprite-demo"
+  :style="{
+    '--src': sprite.src,
+    '--columns': sprite.columns,
+    '--rows': sprite.rows,
+}">
+  <div
+    v-for="action in actions" :key="action.name"
+    :data-action="action.name"
+    :style="{
+      '--row': action.row,
+  }"/>
 </section>
 ```
 
@@ -944,11 +941,11 @@ return {
 
 ```css
 .sprite-demo {
-  --height: calc(var(--vh) * 1px);
-  --width: calc(var(--vw) * 1px);
+  --square: 10em; // anything but `%`
+  --steps: calc(var(--columns) - 1);
   display: grid;
-  grid-template-columns: repeat(auto-fit, var(--width));
-  grid-auto-rows: var(--height);
+  grid-template-columns: repeat(auto-fit, var(--square));
+  grid-auto-rows: var(--square);
 }
 ```
 
@@ -962,16 +959,12 @@ return {
 }
 
 [data-action] {
-  --posY: calc(0px - var(--row) * var(--height));
+  --posY: calc(0px - var(--square) * var(--row));
+  animation: sprite 1s steps(var(--steps), end) infinite;
   background-image: var(--src);
+  background-size: calc(var(--square) * var(--columns)) auto;
   background-position: 0% var(--posY);
-  height: var(--height);
-  width: var(--width);
-
-  &:hover {
-    animation: sprite 1s steps(var(--steps), end) infinite both;
-  }
-}
+  width: 100%;
 ```
 
 <!-- slide -->
