@@ -1,9 +1,24 @@
 <template>
   <ul class="version-list">
-    <li v-for="version in versions"
-      :key="version.slug">
-      <nuxt-link :to="fullPath(version.slug)">{{ version.title }}</nuxt-link>
-      <span>
+    <li v-for="(version, index) in versions"
+      :key="index">
+
+      <nuxt-link
+        v-if="version.slug"
+        :to="fullPath(version.slug)"
+        v-html="$md.renderInline(version.title)"
+      />
+      <a
+        v-else-if="version.url"
+        :href="version.url"
+        v-html="`» ${$md.renderInline(version.title)}`"
+      />
+      <i
+        v-else
+        v-html="$md.renderInline(version.title)"
+      />
+
+      <span v-if="version.date">
         — {{ version.date }}
       </span>
     </li>
@@ -26,7 +41,9 @@
     },
     methods: {
       fullPath(slug) {
-        return path.join(this.path, slug);
+        return slug
+          ? path.join(this.path, slug)
+          : null;
       }
     },
   }

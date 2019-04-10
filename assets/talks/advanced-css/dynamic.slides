@@ -1,0 +1,15 @@
+---
+title: Dynamic Styles
+subtitle: with Raw Data
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- Passing data into CSS
+- Manipulating grids
+- Manipulating backgrounds
+- Manipulating shapes/clip-paths

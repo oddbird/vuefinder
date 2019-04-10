@@ -1,0 +1,23 @@
+---
+title: Building Systems
+subtitle: that Scale
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- Establishing Conventions:
+	- CSS Systems & OOCSS
+	- Atomic Design / BEM / SMACSS / ITCSS
+	- Attribute Selectors
+	- (Design Systems)
+- Separation of concerns / layers
+- Single File Components & scoping
+- Importing abstractions
+- Using Sass maps for organization
+- Recursion and reference
+- Looping
+- Testing

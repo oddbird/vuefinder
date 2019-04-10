@@ -1,0 +1,18 @@
+---
+title: Intrinsic Layouts
+subtitle: using Everything
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- auto-flow
+- auto-fit / auto-fill
+- Object Fit
+- named areas & media-queries
+- Writing Modes / Logical Properties
+- Multicolumn
+- named lines for complex areas

@@ -1,0 +1,17 @@
+---
+title: CSS Variables
+subtitle: '& Functions'
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- Syntax
+- Inheritance
+- Use-Cases
+- Gotchas
+- Using `calc()` functions
+- SusyCSS

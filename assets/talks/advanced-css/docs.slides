@@ -1,0 +1,14 @@
+---
+title: Documentation
+subtitle: is Required
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- Exporting to JSON
+- Alternatives: Theo, Style Dictionary
+- SassDoc / Herman / Storybook

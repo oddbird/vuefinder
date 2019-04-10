@@ -92,7 +92,9 @@
           style['--image'] = `url('${imageUrl}')`;
         }
 
-        if ((this.getLayout === 'image') || (this.getLayout === 'demo')) {
+        const fullScreen = ['image', 'demo', 'split'];
+
+        if (fullScreen.includes(this.getLayout)) {
           if (!style['align-self'] && !style['--align-self']) {
             style['--align-self'] = 'stretch';
           }

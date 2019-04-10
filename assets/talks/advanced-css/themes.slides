@@ -1,0 +1,15 @@
+---
+title: Color Themes
+subtitle: '& Automation'
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+- Naming layers
+- Automating relationships
+- hsl manipulation
+- looping to generate
