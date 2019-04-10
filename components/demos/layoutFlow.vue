@@ -9,8 +9,9 @@
     </h3>
 
     <div class="content">
-      <div class="resize">
+      <div class="resize" contenteditable>
         Resize Me!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sunt dolorem dolorum rem. Quibusdam, veritatis aut aperiam eum totam dolores aliquid obcaecati. Culpa voluptatem id nam itaque iusto sed architecto.
       </div>
 
       <div class="next">Next In Flow</div>

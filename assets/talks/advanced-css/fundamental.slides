@@ -9,10 +9,271 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
-- User-Control / Responsive
-- Declarative / Minimal
-- Cascade / Inheritance / Specificity
-- Overflow / Height
-- Flow / Relationships
-- Responsive™
-- Progressive Enhancement / Support Queries
+---
+layout: title
+---
+
+<!-- slide -->
+
+## HTML/CSS **History**
+
+<!-- slide -->
+
+## 1993: **HTML**
+Markup Language
+
+<!-- slide -->
+
+---
+image: '/images/patterns/oddbird-w-logo.jpg'
+alt: OddBird siblings (Jonny, Carl, and Miriam) in 1994
+---
+
+<!-- slide -->
+
+## 1997: **`<font>`** `&&` **`<table>`**
+HTML 3.2
+
+<!-- slide -->
+
+## `(╯'□')╯︵` **`┻━┻`**
+"TABLES ARE FOR **DATA**"
+
+<!-- slide -->
+
+## ~~1996~~ 2000: Cascading **Style Sheets**
+
+<!-- slide -->
+
+![CSS is Awesome](/images/dynamic-css/css-is-awesome.jpg)
+### The **End**
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/indesign-is.jpg'
+alt: |
+  A box with text inside
+  that says 'InDesign is'
+  and then has a small + icon
+  to indicate overset text
+caption: '¯\\\_(ツ)_/¯ what were you hoping for?'
+style:
+  --image-size: 60%
+---
+
+<!-- slide -->
+
+> ### Web **for all**. Web **on everything**.
+>
+> ---[World Wide Web Consortium][W3C], **1989**
+
+[W3C]: http://www.w3.org/Consortium/mission.html#principles
+
+<!-- slide -->
+
+![CSS is Awesome](/images/dynamic-css/css-is-awesome.jpg)
+### First, **Do No Harm**
+
+<!-- slide -->
+
+---
+image: '/images/process/ibm-pc.jpg'
+alt: Old IBM desktop
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/process/imac.png'
+alt: Desktops
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/process/iphone-3.jpg'
+alt: All iPhones
+---
+
+<!-- slide -->
+
+---
+image: '/images/process/tablets.jpg'
+alt: Several tablets
+---
+
+<!-- slide -->
+
+---
+image: '/images/dynamic-css/devices.jpg'
+alt: 100s of mobile Devices
+---
+
+<!-- slide -->
+
+---
+image: '/images/process/smartwatch.jpg'
+alt: Lineup of smart watches
+---
+
+<!-- slide -->
+
+---
+image: '/images/process/www-cern.jpg'
+alt: 'Screenshot of first world wide website'
+caption: |
+  CERN
+  [first website](http://line-mode.cern.ch/www/hypertext/WWW/TheProject.html),
+  with line-mode browser simulation
+---
+
+<!-- slide -->
+
+## The Web is **Resilient**
+and it has to be
+
+<!-- slide -->
+
+## The Web is **User-Centered**
+
+<!-- slide -->
+
+## Your Canvas is **User-Defined**
+
+<!-- slide -->
+
+---
+image: '/images/patterns/people-rando.jpg'
+alt: Various people emojis
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+### Your code is going on
+## A Semi-Scripted **Improv Tour** with **Audience Interaction**
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/improv.jpg'
+alt: 'Photo of an improv show'
+---
+
+<!-- slide -->
+
+## You're the **Playwright**
+you're not even in the room
+
+<!-- slide -->
+
+---
+image: '/images/_mia/true-west.jpg'
+alt: Denver 2016 True West Award in Theater
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+## Design for **The Unknown**
+
+<!-- slide -->
+
+## Design for **Change**
+
+<!-- slide -->
+
+> There are **too many variables to consider**.
+> The point of CSS is to make it so you don’t have to worry about them all.
+> **Define some constraints**.
+> Let the language work out the details.
+>
+> ---Keith J Grant: [Resilient, Declarative, Contextual][resilient], 2018
+
+[resilient]: https://keithjgrant.com/posts/2018/06/resilient-declarative-contextual/
+
+<!-- slide -->
+
+---
+caption: Specificity, Source Order, Origin, etc...
+---
+
+## **Cascade** for **Resolving Conflict**
+Because there are so many variables
+
+<!-- slide -->
+
+## Don't **Over-Specify**
+
+<!-- slide -->
+
+![CSS is Awesome](/images/dynamic-css/css-is-awesome.jpg)
+### `height` **`+`** `width` **`==`** `overflow`
+
+<!-- slide -->
+
+## HTML / CSS
+## **Convey Meaning** & **Relationships**
+**Semantics** Help the Browser **Adapt to Context**
+
+<!-- slide -->
+
+---
+caption: |
+  **\*** [Understanding why Semantic HTML is Important...][ts],
+  by **Mandy Michael**
+
+  [ts]: https://medium.com/@mandy.michael/understanding-why-semantic-html-is-important-as-told-by-typescript-bd71ad41e6c4
+---
+
+## `<h1>This is a top level header</h1>`
+### Like **TypeScript**\* For Content
+
+<!-- slide -->
+
+## `16px` **`!==`** `1em`
+### Units Carry **Semantic Meaning**
+
+<!-- slide -->
+
+## CSS is **Contextual**
+
+<!-- slide -->
+
+@@@ inheritance demo?
+
+<!-- slide -->
+
+## Loosely Coupled **Relationships**
+Go with **The Flow**
+
+<!-- slide -->
+
+---
+demo: layoutFlow
+resize: true
+caption: |
+  Relationships that are both
+  **Loosely Coupled** and **Contextual**
+---
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/judo.jpg'
+alt: Judo athlete throwing a competitor
+caption: Use the browser to your advantage
+---
+
+<!-- slide -->
+
+## **Progressive Enhancement** is Built-In
+`font-family: Consolas, Menlo, Monaco, 'Courier New', monospace;`
+
