@@ -16,7 +16,7 @@ versions:
   - date: 11:00am
     title: '`coffee`'
   - date: 11:15am
-    title: Intrinsic Layouts
+    title: Defining Layouts
     slug:  intrinsic
   - date: 12:00pm
     title: CSS Variables & Functions

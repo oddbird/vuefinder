@@ -1,6 +1,6 @@
 ---
 title: Distributing Space
-subtitle: in the Unknown
+subtitle: Between Elements
 event: Advanced CSS & Sass
 home: /advanced-css/
 author: miriam
@@ -248,39 +248,6 @@ todo: sizing demo
 
 <!-- slide -->
 
----
-caption: |
-  Supported by [IE6+][caniuse] using an old syntax
-
-  [caniuse]: https://caniuse.com/#feat=css-writing-mode
----
-
-## Writing **Modes**
-**`horizontal-tb`** | **`vertical-`**`rl`/`lr` | **`sideways-`**`rl`/`lr`
-
-<!-- slide -->
-
----
-todo: writing-mode demo
----
-
-<!-- slide -->
-
----
-caption: |
-  **\***[Mixed Support][can]
-  (best with [easily-mapped properties][mdn])
-
-  [can]: https://caniuse.com/#feat=css-logical-props
-  [mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts#Browser_support
----
-
-### Coming Soon:
-## **Logical** Properties **\***
-`width =>` **`inline-size`** | etc...
-
-<!-- slide -->
-
 ### 1D Layouts:
 ## **Multi-Column** & **Flexbox**
 
@@ -301,8 +268,8 @@ todo: multicolumn demo
 
 ```css
 .default-values {
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: row; // column [+ reverse]
+  flex-wrap: nowrap; // wrap | wrap-reverse
 }
 ```
 
@@ -320,3 +287,9 @@ layout: todo
 
 - Flex (Grow / Shrink / Basis)
 - order
+
+<!-- slide -->
+
+---
+todo: Distribution Assignment??
+---

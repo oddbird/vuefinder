@@ -9,6 +9,10 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
+---
+layout: todo
+---
+
 - Establishing Conventions:
 	- CSS Systems & OOCSS
 	- Atomic Design / BEM / SMACSS / ITCSS
@@ -21,3 +25,16 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 - Recursion and reference
 - Looping
 - Testing
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+### Assignment:
+
+- Write a map of colors
+- Write a function & tests to access the map
+- Write a loop to display colors?
+- Use `data-` attributes as selectors

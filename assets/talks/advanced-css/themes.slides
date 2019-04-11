@@ -9,7 +9,24 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
+---
+layout: todo
+---
+
 - Naming layers
 - Automating relationships
 - hsl manipulation
 - looping to generate
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+### Assignment:
+
+- Make a second color map for a second theme
+- Loop to apply colors to variables
+- Use variables to show themes
+- Use conrast function to auto-set some of the colors?

@@ -9,7 +9,22 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
+---
+layout: todo
+---
+
 - Passing data into CSS
 - Manipulating grids
 - Manipulating backgrounds
 - Manipulating shapes/clip-paths
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+### Assignment:
+
+- Build a bar graph (or any graph you want)?
+- Build a day-planner e.g. Tegy Time?

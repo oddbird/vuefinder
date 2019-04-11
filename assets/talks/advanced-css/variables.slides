@@ -9,9 +9,24 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
+---
+layout: todo
+---
+
 - Syntax
 - Inheritance
 - Use-Cases
 - Gotchas
 - Using `calc()` functions
 - SusyCSS
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+### Assignment:
+
+- Button Variations? (doesn't require  calc…)
+- Simpler Variable-Based Layout System?
