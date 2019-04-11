@@ -9,15 +9,15 @@ versions:
     slug: intro
   - date: 9:45am
     title: Do No Harm (a CSS Manifesto)
-    slug:  fundamental
+    slug:  manifesto
   - date: 10:00am
     title: Distributing Space
-    slug:  flexible
+    slug:  flex
   - date: 11:00am
     title: '`coffee`'
   - date: 11:15am
     title: Defining Layouts
-    slug:  intrinsic
+    slug:  layout
   - date: 12:00pm
     title: CSS Variables & Functions
     slug: variables

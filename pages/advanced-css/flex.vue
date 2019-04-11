@@ -6,7 +6,7 @@
 <script>
   // The primary stuff
   import ProjectBase from '~/components/project/ProjectBase';
-  import fileSrc from '~/assets/talks/advanced-css/intrinsic.slides';
+  import fileSrc from '~/assets/talks/advanced-css/flex.slides';
 
   // Inline-Demo Components as needed
   // import cssAwesome from '~/components/demos/cssAwesome';

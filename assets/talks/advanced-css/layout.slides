@@ -1,0 +1,211 @@
+---
+title: Defining Layouts
+subtitle: with CSS Grid
+event: Advanced CSS & Sass
+home: /advanced-css/
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+---
+
+<!-- slide -->
+
+---
+layout: title
+---
+
+<!-- slide -->
+
+## 2017: CSS **Grid**
+**March 6-8**: Firefox 52 **&** Chrome 57 \
+**March 20-26**: Safari 10 **&** Opera 44
+
+<!-- slide -->
+
+## Full **2D Layouts**!
+
+<!-- slide -->
+
+---
+demo: layoutGrid
+caption: Grid lines 1-indexed and -1 in reverse (see dev tools)
+resize: true
+---
+
+<!-- slide -->
+
+## Defined by the **Container**
+Use **`auto`** to access intrinsic sizing...
+
+<!-- slide -->
+
+## `display:` **`grid`**`;`
+creates **implicit** `auto`-sized grids
+
+<!-- slide -->
+
+---
+todo: auto grid demo
+---
+
+<!-- slide -->
+
+## **`grid-auto-flow`**`: row;`
+**`column`** | [+ **`dense`**]
+
+<!-- slide -->
+
+## **Sizing** Implicit Grids
+**`grid-auto-rows`** | **`grid-auto-columns`**
+
+<!-- slide -->
+
+## `grid-auto-columns:` **`1fr`**`;`
+
+<!-- slide -->
+
+## `1fr` **`~=`** `flex: 1`
+same concept, different algorythm
+
+<!-- slide -->
+
+- **`%`** `=>` relative to **parent width**
+- **`vw`** `=>` relative to **the viewport**
+- **`fr`** `=>` relative to **available space**
+
+<!-- slide -->
+
+## **`minmax(`** `20em, 1fr` **`)`**
+**fluid**-until-**fixed**
+
+<!-- slide -->
+
+## **`1fr`** `==` **`minmax(auto, 1fr)`**
+### use **`minmax(0, 1fr)`** to allow shrinking
+
+<!-- slide -->
+
+---
+todo: auto grid demo
+---
+
+<!-- slide -->
+
+---
+todo: auto-fit / auto-fill
+---
+
+<!-- slide -->
+
+## **`grid-template-columns`**: `auto` **`1fr`** `20%;`
+see also: **`grid-template-rows`**
+
+<!-- slide -->
+
+## **`repeat(`** `6, 1fr 2fr` **`)`**
+
+<!-- slide -->
+
+---
+todo: grid template demo
+---
+
+<!-- slide -->
+
+## **`grid-auto-flow`** `: dense;`
+
+<!-- slide -->
+
+## Explicit **Placement**
+
+```css
+.example {
+  grid-row: 2 / span 2;
+  grid-column: 1 / 4;
+  /* grid-area: 2 / 1 / span 2 / 4; */
+}
+```
+
+<!-- slide -->
+
+---
+todo: placement demo (with overlap)
+---
+
+<!-- slide -->
+
+```css
+body {
+  grid-template-areas: 'header header'
+                       'nav main'
+                       'nav footer';
+}
+
+h1 { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+```
+
+<!-- slide -->
+
+## **Single** Source of Truth
+
+```scss
+@media (max-width: 50em) {
+  body {
+    grid: 'header'
+          'nav'
+          'main'
+          'footer'
+         / 1fr;
+  }
+}
+```
+
+<!-- slide -->
+
+---
+demo: layoutGrid
+caption: Resize window to see media-query in action…
+resize: true
+---
+
+<!-- slide -->
+
+---
+todo: named lines for complex areas
+---
+
+<!-- slide -->
+
+## 2018: **Intrinsic** Web Design
+[Jen Simmons](https://twitter.com/jensimmons/status/980980521848127488)
+
+<!-- slide -->
+
+1. **Fluid** & **Fixed**
+2. Stages of **Squishiness**
+3. Truly **Two-Dimensional** Layouts
+4. **Nested** Contexts
+5. **Expand** & **Contract** Content
+6. Media Queries, **As Needed**
+
+<!-- slide -->
+
+- **`px`**/**`in`**/`...` `=>` **Fixed** (static)
+- **`%`**/**`em`**/**`vw`**/`...` `=>` **Fixed** (relative)
+- **`fr`** `=>` **Fluid** (relational)
+- **`minmax()`** `=>` **Fluid** until **Fixed**
+- **`auto`** `=>` **Flow**
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+### Assignment:
+
+- Responsive Layout using Grid Areas
+- Optionally use named-lines for complex areas?
+- Auto-Fit/Fill Image Gallery

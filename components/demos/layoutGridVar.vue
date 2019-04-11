@@ -61,7 +61,7 @@
 
   // the rest is just detatils
   grid-auto-rows: 1fr;
-  grid-gap: 1em;
+  grid-gap: 0.5em;
 }
 
 [data-inner] {
