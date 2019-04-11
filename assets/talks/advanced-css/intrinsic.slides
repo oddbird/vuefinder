@@ -28,39 +28,6 @@ layout: todo
 <!-- slide -->
 
 ---
-caption: |
-  Supported by [IE6+][caniuse] using an old syntax
-
-  [caniuse]: https://caniuse.com/#feat=css-writing-mode
----
-
-## Writing **Modes**
-**`horizontal-tb`** | **`vertical-`**`rl`/`lr` | **`sideways-`**`rl`/`lr`
-
-<!-- slide -->
-
----
-todo: writing-mode demo
----
-
-<!-- slide -->
-
----
-caption: |
-  **\***[Mixed Support][can]
-  (best with [easily-mapped properties][mdn])
-
-  [can]: https://caniuse.com/#feat=css-logical-props
-  [mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts#Browser_support
----
-
-### Coming Soon:
-## **Logical** Properties **\***
-`width =>` **`inline-size`** | etc...
-
-<!-- slide -->
-
----
 layout: todo
 ---
 

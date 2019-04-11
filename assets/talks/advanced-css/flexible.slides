@@ -237,6 +237,39 @@ todo: box alignment demo
 
 <!-- slide -->
 
+---
+caption: |
+  Supported by [IE6+][caniuse] using an old syntax
+
+  [caniuse]: https://caniuse.com/#feat=css-writing-mode
+---
+
+## Writing **Modes**
+**`horizontal-tb`** | **`vertical-`**`rl`/`lr` | **`sideways-`**`rl`/`lr`
+
+<!-- slide -->
+
+---
+todo: writing-mode demo
+---
+
+<!-- slide -->
+
+---
+caption: |
+  **\***[Mixed Support][can]
+  (best with [easily-mapped properties][mdn])
+
+  [can]: https://caniuse.com/#feat=css-logical-props
+  [mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts#Browser_support
+---
+
+### Coming Soon:
+## **Logical** Properties **\***
+`width =>` **`inline-size`** | etc...
+
+<!-- slide -->
+
 ## **Intrinsic** Sizes
 auto | **`max-content`** | **`min-content`** | **`fit-content()`**
 
@@ -248,7 +281,7 @@ todo: sizing demo
 
 <!-- slide -->
 
-### 1D Layouts:
+### 1D "Flow" Layouts:
 ## **Multi-Column** & **Flexbox**
 
 <!-- slide -->
@@ -268,7 +301,7 @@ todo: multicolumn demo
 
 ```css
 .default-values {
-  flex-direction: row; // column [+ reverse]
+  flex-direction: row; // column[-reverse]
   flex-wrap: nowrap; // wrap | wrap-reverse
 }
 ```
@@ -276,17 +309,63 @@ todo: multicolumn demo
 <!-- slide -->
 
 ---
-todo: flex parent properties
+todo: flex-flow demo
 ---
 
 <!-- slide -->
 
+## **`flex-grow`**`: 0;`
+Relative Distribution of **Available** Space
+
+<!-- slide -->
+
+## **`flex-shrink`**`: 1;`
+Relative Distribution of **Unavailable** Space
+
+<!-- slide -->
+
+## **`flex-basis`**`: auto;`
+Set the ideal **starting width**, before flexing
+
+<!-- slide -->
+
+## **`order`**`: 3;`
+
+<!-- slide -->
+
 ---
-layout: todo
+caption: |
+  [Read the MDN article »](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility)
 ---
 
-- Flex (Grow / Shrink / Basis)
-- order
+## **`!important`** -- accessibility issues
+**`*-reverse`** | **`order`**
+
+<!-- slide -->
+
+> Authors must use order and the grid-placement properties only for visual,
+>  not logical, reordering of content.
+> Style sheets that use these features
+> to perform logical reordering are non-conforming.
+>
+> ---w3c [specification](https://drafts.csswg.org/css-grid/#order-accessibility)
+
+<!-- slide -->
+
+## Ordering **Can Improve** Readability
+Maintain **logical order** across layouts
+
+<!-- slide -->
+
+1. Start with a structured and accessible document
+2. Create a responsive, and responsible grid
+3. If you are re-ordering elements, consider updating the DOM instead
+
+<!-- slide -->
+
+---
+todo: flex demo (w/ order issues?)
+---
 
 <!-- slide -->
 
