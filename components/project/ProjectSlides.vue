@@ -188,15 +188,6 @@
     text-align: left;
   }
 
-  ul,
-  ol {
-    color: color('accent');
-  }
-
-  li {
-    color: color('text');
-  }
-
   [data-code] {
     display: block;
     text-align: center;

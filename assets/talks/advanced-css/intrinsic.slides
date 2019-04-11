@@ -1,6 +1,6 @@
 ---
-title: Intrinsic Layouts
-subtitle: using Everything
+title: CSS Grids
+subtitle: for
 event: Advanced CSS & Sass
 home: /advanced-css/
 author: miriam
@@ -9,10 +9,18 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
+---
+layout: todo
+---
+
+- indexed columns & rows (lines / repeat)
+- fr as "relational" truely-fluid units
+- minmax "fluid until fixed"
+- start / end / span
+- overlapping
+- grid-auto-*
 - auto-flow
 - auto-fit / auto-fill
 - Object Fit
 - named areas & media-queries
-- Writing Modes / Logical Properties
-- Multicolumn
 - named lines for complex areas

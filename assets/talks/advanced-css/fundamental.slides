@@ -1,6 +1,6 @@
 ---
-title: CSS Fundamentals
-subtitle: and Mental Models
+title: Do No Harm
+subtitle: a CSS Manifesto
 event: Advanced CSS & Sass
 home: /advanced-css/
 author: miriam
@@ -266,14 +266,35 @@ caption: |
 
 <!-- slide -->
 
+## **Progressive Enhancement** is Built-In
+`font-family: Consolas, Menlo, Monaco, 'Courier New', monospace;`
+
+<!-- slide -->
+
 ---
 image: '/images/advanced-css/judo.jpg'
 alt: Judo athlete throwing a competitor
-caption: Use the browser to your advantage
+caption: momentum rather than brute force, like judo
 ---
 
 <!-- slide -->
 
-## **Progressive Enhancement** is Built-In
-`font-family: Consolas, Menlo, Monaco, 'Courier New', monospace;`
+---
+image: '/images/advanced-css/sappho.jpg'
+alt: Illustration of the poet Sappho
+caption: create meaningful associations, like poetry
+---
 
+<!-- slide -->
+
+> **CSS is unlike anything else**,
+> because it exists to serve an environment
+> that is unlike anything else.
+> However we can start to understand it as
+> **a designed language, with much consistency**...
+> designed for the realities of a
+> **flexible, multilingual, multi-device** web.
+>
+> ---Rachel Andrew: [The Way We Talk About CSS][talk], 2018
+
+[talk]: https://rachelandrew.co.uk/archives/2018/10/04/the-way-we-talk-about-css/

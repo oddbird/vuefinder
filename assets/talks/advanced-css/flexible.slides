@@ -9,15 +9,314 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
-- Flexbox (Grow / Shrink / Basis)
+---
+layout: title
+---
+
+<!-- slide -->
+
+## How Will This **Change**…?
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/wire-wide.jpg'
+alt: 'A wide-screen wireframe'
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/wire-narrow.jpg'
+alt: 'A small-screen wireframe'
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/advanced-css/wire-content.jpg'
+alt: 'A wide-screen wireframe with different sizes'
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+### ?? **Viewport**
+### ?? **Context**
+### ?? **Content**
+### ?? **Fonts**
+### ?? **Resolution**
+### ?? **Aspect Ratio**
+### ?? **...**
+
+<!-- slide -->
+
+---
+demo: layoutFlow
+resize: true
+caption: |
+  The browser already does this by default
+---
+
+<!-- slide -->
+
+### **Then:**
+## The **Float Hack**
+`float:` **`left`** | **`right`** `;`
+
+<!-- slide -->
+
+---
+image: '/images/layouts/float.jpg'
+caption: Great for elements that should... float...
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+demo: layoutFloat
+caption: Broken relationships…
+---
+
+<!-- slide -->
+
+## 2007-2010: Major **Grid Frameworks**
+Blueprint, OOCSS, 960gs, Susy, etc…
+
+<!-- slide -->
+
+---
+image: '/images/layouts/spread-narrow.jpg'
+alt: light blue columns, with a red box aligned to some of them
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/layouts/12-after.jpg'
+alt: a red box spanning 1 of 12 columns, with a right margin to create gutter
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+## `class="`**`column col6of12 last`**`"`
+
+<!-- slide -->
+
+## Fluid Grid Math **Sux**
+
+```scss
+.grid-span {
+  width: percentage(((3*4em) + (2*1em)) / ((12*4em) + (11*1em))); // 23.7288136%
+  margin-right: percentage(1em / ((12*4em) + (11*1em))); // 01.6949153%
+  padding-left: percentage(((1*4em) + (1*1em)) / ((12*4em) + (11*1em))); // 08.4745763%
+}
+```
+
+<!-- slide -->
+
+### **Now:**
+## Real **CSS Layout** Tools
+Not just **Grid** or **Flexbox**...
+
+<!-- slide -->
+
+## Control the **Box Model**
+
+<!-- slide -->
+
+---
+image: '/images/layouts/content-box.jpg'
+caption: |
+  **Content**-Box: `total = width/height` **`+`** `borders` **`+`** `padding`
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/layouts/border-box.jpg'
+caption: |
+  **Border**-Box: `total = width/height`
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+## Global **Box-Sizing**
+
+```css
+* { box-sizing: border-box; }
+```
+
+<!-- slide -->
+
+## 👎
+### **Layout Properties** Rarely Inherit
+
+```css
+html { box-sizing: border-box; }
+* { box-sizing: inherit; }
+```
+
+<!-- slide -->
+
+---
+caption: |
+  [Box Alignment Cheatsheet](https://rachelandrew.co.uk/css/cheatsheets/box-alignment)
+  by **Rachel Andrew**
+---
+
+## 2D **Box Alignment**
+vertical & horizontal
+
+<!-- slide -->
+
+## Text Flow `=>` **Inline Axis**
+## Line Wrap `=>` **Block Axis**
+
+<!-- slide -->
+
+## Inline Axis `=>` **`justify-*`**
+`justify`**`-content`** | `justify-`**`items`** | `justify-`**`self`**
+
+<!-- slide -->
+
+## Block Axis `=>` **`align-*`**
+`align`**`-content`** | `align-`**`items`** | `align-`**`self`**
+
+<!-- slide -->
+
+## 2D Shorthand `=>` **`place-*`**
+`place`**`-content`** | `place-`**`items`** | `place-`**`self`**
+
+<!-- slide -->
+
+### **Positional** Values
+**`start`** | **`end`** | **`center`** ...
+
+### **Baseline** Values
+**`baseline`** | **`first`** `baseline` | **`last`** `baseline`
+
+### **Distributed** Values
+**`stretch`** | **`space-between`** | **`space-around`**  | **`space-evenly`**
+
+### **Overflow** Keywords
+**`safe`** | **`unsafe`**
+
+<!-- slide -->
+
+---
+caption: |
+  **\***[Best browser support][support] in grid layouts with `grid-*` prefix
+
+  [support]: https://developer.mozilla.org/en-US/docs/Web/CSS/gap#Browser_compatibility
+---
+
+## Real **Gutters**\*
+**`row-gap`** | **`column-gap`** | **`gap`**
+
+<!-- slide -->
+
+---
+todo: box alignment demo
+---
+
+<!-- slide -->
+
+## **Intrinsic** Sizes
+auto | **`max-content`** | **`min-content`** | **`fit-content()`**
+
+<!-- slide -->
+
+---
+todo: sizing demo
+---
+
+<!-- slide -->
+
+---
+caption: |
+  Supported by [IE6+][caniuse] using an old syntax
+
+  [caniuse]: https://caniuse.com/#feat=css-writing-mode
+---
+
+## Writing **Modes**
+**`horizontal-tb`** | **`vertical-`**`rl`/`lr` | **`sideways-`**`rl`/`lr`
+
+<!-- slide -->
+
+---
+todo: writing-mode demo
+---
+
+<!-- slide -->
+
+---
+caption: |
+  **\***[Mixed Support][can]
+  (best with [easily-mapped properties][mdn])
+
+  [can]: https://caniuse.com/#feat=css-logical-props
+  [mdn]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts#Browser_support
+---
+
+### Coming Soon:
+## **Logical** Properties **\***
+`width =>` **`inline-size`** | etc...
+
+<!-- slide -->
+
+### 1D Layouts:
+## **Multi-Column** & **Flexbox**
+
+<!-- slide -->
+
+## **`columns`**`: 5 10em;`
+**`column-count`** | **`column-width`**
+
+<!-- slide -->
+
+---
+todo: multicolumn demo
+---
+
+<!-- slide -->
+
+## `display:` **`flex`**;
+
+```css
+.default-values {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+```
+
+<!-- slide -->
+
+---
+todo: flex parent properties
+---
+
+<!-- slide -->
+
+---
+layout: todo
+---
+
+- Flex (Grow / Shrink / Basis)
 - order
-- Alignment & Justification
-- Overflow
-- indexed columns & rows (lines / repeat)
-- fr as "relational" truely-fluid units
-- minmax "fluid until fixed"
-- Min-Content / Max-Content / Auto
-- gap
-- start / end / span
-- overlapping
-- grid-auto-*

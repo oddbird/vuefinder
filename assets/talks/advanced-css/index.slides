@@ -8,7 +8,7 @@ versions:
     title: Workshop Intro
     slug: intro
   - date: 9:45am
-    title: CSS Fundamentals
+    title: Do No Harm (a CSS Manifesto)
     slug:  fundamental
   - date: 10:00am
     title: Distributing Space
