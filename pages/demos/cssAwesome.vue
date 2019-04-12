@@ -10,7 +10,7 @@
     components: {
       cssAwesome,
     },
-    head () {
+    head() {
       const title = 'CSS is Awesome Demo';
       let route = this.$route.path.endsWith('/')
         ? this.$route.path

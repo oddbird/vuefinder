@@ -32,6 +32,3 @@
   }
 </script>
 
-<style lang="scss">
-@import '~/assets/scss/_vuefinder.scss';
-</style>

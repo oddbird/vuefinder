@@ -9,12 +9,8 @@
   import fileSrc from '~/assets/talks/advanced-css/flex.slides';
 
   // Inline-Demo Components as needed
-  // import cssAwesome from '~/components/demos/cssAwesome';
-  // import cssChart from '~/components/demos/cssChart';
-  // import layoutFlow from '~/components/demos/layoutFlow';
-  // import cssLinegraph from '~/components/demos/cssLinegraph';
-  // import cssPlot from '~/components/demos/cssPlot';
-  // import hslTheme from '~/components/demos/hslTheme';
+  import layoutFlow from '~/components/demos/layoutFlow';
+  import layoutFloat from '~/components/demos/layoutFloat';
 
   export default {
     components: {
@@ -24,18 +20,11 @@
       return {
         src: fileSrc,
         demos: {
-        //   cssAwesome,
-        //   cssChart,
-        //   layoutFlow,
-        //   cssLinegraph,
-        //   cssPlot,
-        //   hslTheme,
+          layoutFlow,
+          layoutFloat,
         }
       }
     },
   }
 </script>
 
-<style lang="scss">
-@import '~/assets/scss/_vuefinder.scss';
-</style>

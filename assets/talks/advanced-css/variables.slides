@@ -262,7 +262,7 @@ caption: |
 <!-- slide -->
 
 ---
-demo: 'hslTheme'
+demo: hslTheme
 caption: |
   Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
 ---

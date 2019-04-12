@@ -9,12 +9,7 @@
   import fileSrc from '~/assets/talks/advanced-css/layout.slides';
 
   // Inline-Demo Components as needed
-  // import cssAwesome from '~/components/demos/cssAwesome';
-  // import cssChart from '~/components/demos/cssChart';
-  // import layoutFlow from '~/components/demos/layoutFlow';
-  // import cssLinegraph from '~/components/demos/cssLinegraph';
-  // import cssPlot from '~/components/demos/cssPlot';
-  // import hslTheme from '~/components/demos/hslTheme';
+  import layoutGrid from '~/components/demos/layoutGrid';
 
   export default {
     components: {
@@ -24,18 +19,10 @@
       return {
         src: fileSrc,
         demos: {
-        //   cssAwesome,
-        //   cssChart,
-        //   layoutFlow,
-        //   cssLinegraph,
-        //   cssPlot,
-        //   hslTheme,
+          layoutGrid,
         }
       }
     },
   }
 </script>
 
-<style lang="scss">
-@import '~/assets/scss/_vuefinder.scss';
-</style>

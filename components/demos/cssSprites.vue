@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 .sprite-demo {
   --steps: calc(var(--columns) - 1);
-  --square: 10em;
+  --square: calc(6em + 10vw);
   display: grid;
   grid-template-columns: repeat(auto-fit, var(--square));
   grid-auto-rows: var(--square);
@@ -63,6 +63,10 @@ export default {
   justify-items: stretch;
   align-items: stretch;
   align-content: center;
+
+  [data-slide-view='grid'] & {
+    --square: calc(5em + 5vw);
+  }
 }
 
 @keyframes sprite {

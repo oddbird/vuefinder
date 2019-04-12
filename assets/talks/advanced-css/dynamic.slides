@@ -127,10 +127,10 @@ resize: true
 <!-- slide -->
 
 ---
-demo: cssChart
-resize: true
-caption: |
-  [Article on **CSS Tricks**](https://css-tricks.com/css-charts-grid-custom-properties/)
+image: '/images/advanced-css/graph.jpg'
+alt: Bar graph with random data
+style:
+  --image-size: 80%
 ---
 
 <!-- slide -->
