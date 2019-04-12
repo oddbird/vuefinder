@@ -247,13 +247,34 @@ caption: |
 <!-- slide -->
 
 ---
-todo: box alignment demo
+todo: DEMO box alignment
 ---
 
 <!-- slide -->
 
 ---
-todo: Object Fit
+caption: |
+  [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) |
+  [caniuse](https://caniuse.com/#feat=object-fit)
+---
+
+## Distribute **Replaced Elements**
+**`object-fit`** | **`object-position`**
+
+<!-- slide -->
+
+### **`object-position`** `~=` `background-position`
+Same values, but for placing an object
+
+<!-- slide -->
+
+## **`object-fit`**`: fill;`
+**`contain`** | **`cover`** | **`scale-down`**
+
+<!-- slide -->
+
+---
+todo: DEMO object-fit
 ---
 
 <!-- slide -->
@@ -271,7 +292,7 @@ caption: |
 <!-- slide -->
 
 ---
-todo: writing-mode demo
+todo: DEMO writing-mode
 ---
 
 <!-- slide -->
@@ -297,7 +318,7 @@ auto | **`max-content`** | **`min-content`** | **`fit-content()`**
 <!-- slide -->
 
 ---
-todo: sizing demo
+todo: DEMO sizing
 ---
 
 <!-- slide -->
@@ -313,7 +334,7 @@ todo: sizing demo
 <!-- slide -->
 
 ---
-todo: multicolumn demo
+todo: DEMO multicolumn
 ---
 
 <!-- slide -->
@@ -330,7 +351,7 @@ todo: multicolumn demo
 <!-- slide -->
 
 ---
-todo: flex-flow demo
+todo: DEMO flex-flow
 ---
 
 <!-- slide -->
@@ -385,11 +406,11 @@ Maintain **logical order** across layouts
 <!-- slide -->
 
 ---
-todo: flex demo (w/ order issues?)
+todo: DEMO flex (w/ order issues?)
 ---
 
 <!-- slide -->
 
 ---
-todo: Distribution Assignment??
+todo: ASSIGNMENT Distribution??
 ---

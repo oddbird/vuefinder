@@ -44,7 +44,7 @@ creates **implicit** `auto`-sized grids
 <!-- slide -->
 
 ---
-todo: auto grid demo
+todo: DEMO auto grid
 ---
 
 <!-- slide -->
@@ -85,18 +85,46 @@ same concept, different algorythm
 <!-- slide -->
 
 ---
-todo: auto grid demo
+todo: DEMO auto grid
 ---
 
 <!-- slide -->
 
+## **Repeating** Grids
+**`repeat(`** `<count>, <size>` **`)`**
+
+<!-- slide -->
+
+## `repeat(` **`12, 1fr`** `)`
+it's boring, but it works...
+
+<!-- slide -->
+
 ---
-todo: auto-fit / auto-fill
+caption: Great for **image galleries**
+---
+
+## **Fit** Available **Items**
+`repeat(` **`auto-fit`** `,` **`minmax(`** `15em, 1fr`  **`)`**`);`
+
+<!-- slide -->
+
+---
+caption: Great for... something? I'm sure...
+---
+
+## **Fill** Available **Space**
+`repeat(` **`auto-fill`** `, 200px);`
+
+<!-- slide -->
+
+---
+todo: DEMO repeating grids
 ---
 
 <!-- slide -->
 
-## **`grid-template-columns`**: `auto` **`1fr`** `20%;`
+## **`grid-template-columns`**`: auto` **`1fr`** `20%;`
 see also: **`grid-template-rows`**
 
 <!-- slide -->
@@ -106,12 +134,8 @@ see also: **`grid-template-rows`**
 <!-- slide -->
 
 ---
-todo: grid template demo
+todo: DEMO grid template
 ---
-
-<!-- slide -->
-
-## **`grid-auto-flow`** `: dense;`
 
 <!-- slide -->
 
@@ -128,10 +152,18 @@ todo: grid template demo
 <!-- slide -->
 
 ---
-todo: placement demo (with overlap)
+todo: DEMO placement (with overlap)
 ---
 
 <!-- slide -->
+
+---
+caption: |
+  Use quotes when defining area-names,
+  no quotes when aligning to named areas
+---
+
+## Named Grid **Areas**
 
 ```css
 body {
@@ -173,7 +205,40 @@ resize: true
 <!-- slide -->
 
 ---
-todo: named lines for complex areas
+caption: Use quotes when defining line-names
+---
+
+## **Named** Grid Lines
+**`['before']`** `1fr` **`['after']`**
+
+<!-- slide -->
+
+---
+caption: No quotes when aligning to named lines
+---
+
+## **Align** to Names
+`grid-column:` **`before`** `/` **`after`** `;`
+
+<!-- slide -->
+
+## Names **`=>`** Areas
+with matching **`*-start`** & **`*-end`** names
+
+<!-- slide -->
+
+## **`['nav-start']`** `15em` **`['nav-end']`**
+## `grid-area: nav;`
+
+<!-- slide -->
+
+## **Overlapping** Areas
+**`['full-start' 'nav-start']`** `20em` **`['nav-end']`** `1fr` **`['full-end']`**
+
+<!-- slide -->
+
+---
+todo: DEMO overlapping areas
 ---
 
 <!-- slide -->
