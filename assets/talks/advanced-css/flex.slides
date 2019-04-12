@@ -21,7 +21,7 @@ layout: title
 
 ---
 image: '/images/advanced-css/wire-wide.jpg'
-alt: 'A wide-screen wireframe'
+alt: A wide-screen wireframe
 style:
   --image-size: contain
 ---
@@ -30,7 +30,7 @@ style:
 
 ---
 image: '/images/advanced-css/wire-narrow.jpg'
-alt: 'A small-screen wireframe'
+alt: A small-screen wireframe
 style:
   --image-size: contain
 ---
@@ -39,7 +39,7 @@ style:
 
 ---
 image: '/images/advanced-css/wire-content.jpg'
-alt: 'A wide-screen wireframe with different sizes'
+alt: A wide-screen wireframe with different sizes
 style:
   --image-size: contain
 ---
