@@ -10,15 +10,303 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 <!-- slide -->
 
 ---
-layout: todo
+layout: title
 ---
 
-- Syntax
-- Inheritance
-- Use-Cases
-- Gotchas
-- Using `calc()` functions
-- SusyCSS
+<!-- slide -->
+
+## 2014: CSS **Variables**
+Firefox 31 (unless you count **`currentColor`**)
+
+<!-- slide -->
+
+## `--aka`**`:`** `'custom properties'`**`;`**
+
+<!-- slide -->
+
+## `-<empty>-`**`browser-prefix`**
+
+<!-- slide -->
+
+## `var(` **`--property-name`** `, fallback)`
+
+<!-- slide -->
+
+## Sass Variables **Scope**
+###  No **DOM** Awareness
+
+```scss
+.example { $columns: 2; }
+.nested-class { /* $columns == undefined */ }
+```
+
+<!-- slide -->
+
+## CSS Variables **Inherit**
+### **DOM** Awareness!
+
+```scss
+.example { --columns: 2; }
+.nested-class { /* var(--columns) == 2 */ }
+```
+
+<!-- slide -->
+
+
+```scss
+@media (min-width: 30em) {
+  .example {
+    $columns: 6; /* 👎 {} scope only */
+    --columns: 6; /* 👍 30em+ browsers! */
+  }
+}
+```
+
+<!-- slide -->
+
+## **Global** Variables Inherit
+
+```css
+html {
+  --brand-color: hsl(330, 100%, 45%);
+}
+```
+
+<!-- slide -->
+
+## Some Should **Reset** Instead
+
+```css
+* {
+  --columns: 12;
+  --column-span: initial;
+}
+```
+
+<!-- slide -->
+
+## **Assign Locally** When Possible
+
+```css
+button {
+  --btn-color: green;
+}
+```
+
+<!-- slide -->
+
+## Avoid **Nesting**…
+
+```scss
+button {
+  background: blue
+}
+
+.this button {
+  background: red;
+}
+```
+
+<!-- slide -->
+
+## …For Lower **Specificity**
+
+```scss
+button {
+  --btn-color: var(--brand-color, blue);
+  background: var(--btn-color, blue);
+}
+
+.this {
+  --btn-color: red;
+}
+```
+
+<!-- slide -->
+
+## **Safe** Inline Styles
+
+```html
+<button style="--color: blue;">
+```
+
+<!-- slide -->
+
+## **Use** the Variable…
+
+```scss
+button {
+  background: var(--color, red);
+}
+```
+
+<!-- slide -->
+
+## …or **Ignore** the Variable
+
+```scss
+button.green {
+  background: green;
+}
+```
+
+<!-- slide -->
+
+## Missing **Longhand** (& Defaults)
+
+```css
+.example {
+  --shadow-y: -1px;
+  box-shadow: var(--shadow-x, 0)
+              var(--shadow-y, 1px)
+              var(--shadow-blur, 0)
+              var(--shadow-color, currentColor);
+}
+```
+
+<!-- slide -->
+
+## `calc(` **`16px`** `+` **`20%`** `)`
+mix and match units
+
+<!-- slide -->
+
+## Variables `+` Calc `==` **Functions**
+`calc(` **`var(--span)`** `/` **`var(--columns)`** `* 100%)`
+
+<!-- slide -->
+
+## New Old **Grid System**?
+I'm not sure there's any reason to do this exactly...
+
+```css
+html {
+  --columns: 12;
+}
+
+[data-span] {
+  --width: calc(var(--span) / var(--columns) * 100%);
+  width: var(--width, initial);
+}
+```
+
+<!-- slide -->
+
+```css
+[data-span='3'] {
+  --span: 3;
+}
+
+[data-span='half'] {
+  --span: calc(var(--columns) / 2);
+}
+```
+
+<!-- slide -->
+
+## Smart **Media-Queries**
+
+```css
+* {
+  --columns: 6;
+  @media (min-width: 45em) { --columns: 12; }
+}
+```
+
+<!-- slide -->
+
+---
+demo: cssSusy
+resize: true
+caption: |
+  [AG Grid Nesting Test](http://oocss.org/grids_docs.html)
+  from OOCSS
+---
+
+<!-- slide -->
+
+## Manipulate **`hsl()`** Values
+
+```css
+* {
+  --h: 330;
+  --s: 100%;
+  --l: 34%;
+  background: hsl(var(--h), var(--s), var(--l));
+}
+```
+
+<!-- slide -->
+
+## Hue is **Radial**
+
+```css
+* {
+  --complement: calc(var(--h) - 180);
+  background: hsl(var(--complement), var(--s), var(--l));
+}
+```
+
+<!-- slide -->
+
+## Lightness is "**Clamped**"
+
+```css
+* {
+  --threshold: 55;
+  --contrast: calc((var(--l) - var(--threshold)) * -100%);
+  color: hsl(var(--h), var(--s), var(--contrast));
+}
+```
+
+<!-- slide -->
+
+---
+demo: 'hslTheme'
+caption: |
+  Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
+---
+
+<!-- slide -->
+
+## Variable **Issues**:
+
+1. Unknown value `type`s
+  (transition known properties, not variables)
+2. Don't work inside `url()`
+3. ~~`var(--size)em`~~ **=>** `calc(var(--size) * 1em)`
+
+<!-- slide -->
+
+## Houdini [Properties & Values API][values] **\***
+**\*** Experimental (behind Chrome flag)
+
+[values]: https://drafts.css-houdini.org/css-properties-values-api/
+
+<!-- slide -->
+
+## In **JavaScript**
+
+```js
+CSS.registerProperty({
+  name: "--brand-color",
+  syntax: "<color>",
+  initialValue: "pink",
+  inherits: true,
+});
+```
+
+<!-- slide -->
+
+## Proposed **CSS**
+
+```css
+@property --brand-color {
+  syntax: "<color>";
+  initialValue: "pink";
+  inherits: true;
+}
+```
 
 <!-- slide -->
 
@@ -29,4 +317,4 @@ layout: todo
 ### Assignment:
 
 - Button Variations? (doesn't require  calc…)
-- Simpler Variable-Based Layout System?
+- Variable-Based Layout System?
