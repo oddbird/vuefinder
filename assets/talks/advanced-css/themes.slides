@@ -22,7 +22,7 @@ layout: title
 <!-- slide -->
 
 ---
-todo: DEMO light/dark
+demo: cssTheme
 ---
 
 <!-- slide -->
@@ -63,8 +63,8 @@ html.dark {
 
 ```css
 [data-theme='light'] {
-  --background: #ddd;
-  --text: #222;
+  --background: #ddf;
+  --text: #226;
 }
 
 [data-theme] {
@@ -84,9 +84,9 @@ Brand **`=>`** Theme **`=>`** Purpose **`=>`**
 
 ```css
 html {
-  --brand-dark: #222;
+  --brand-dark: #226;
   --brand-darker: #000;
-  --brand-light: #ddd;
+  --brand-light: #ddf;
   --brand-lighter: #fff;
 }
 ```
@@ -134,7 +134,7 @@ html {
 <!-- slide -->
 
 ---
-todo: DEMO light/dark
+demo: cssTheme
 ---
 
 <!-- slide -->
@@ -143,9 +143,9 @@ todo: DEMO light/dark
 
 ```scss
 $brand-colors: (
-  'brand-dark': #222,
+  'brand-dark': #226,
   'brand-darker': #000,
-  'brand-light': #ddd,
+  'brand-light': #ddf,
   'brand-lighter': #fff,
 );
 ```

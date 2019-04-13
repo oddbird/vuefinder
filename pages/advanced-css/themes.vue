@@ -9,12 +9,8 @@
   import fileSrc from '~/assets/talks/advanced-css/themes.slides';
 
   // Inline-Demo Components as needed
-  // import cssAwesome from '~/components/demos/cssAwesome';
-  // import cssChart from '~/components/demos/cssChart';
-  // import layoutFlow from '~/components/demos/layoutFlow';
-  // import cssLinegraph from '~/components/demos/cssLinegraph';
-  // import cssPlot from '~/components/demos/cssPlot';
-  // import hslTheme from '~/components/demos/hslTheme';
+  import cssTheme from '~/components/demos/cssTheme';
+  import hslTheme from '~/components/demos/hslTheme';
 
   export default {
     components: {
@@ -24,12 +20,8 @@
       return {
         src: fileSrc,
         demos: {
-        //   cssAwesome,
-        //   cssChart,
-        //   layoutFlow,
-        //   cssLinegraph,
-        //   cssPlot,
-        //   hslTheme,
+          cssTheme,
+          hslTheme,
         }
       }
     },

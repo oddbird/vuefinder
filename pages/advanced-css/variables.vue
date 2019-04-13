@@ -9,7 +9,7 @@
   import fileSrc from '~/assets/talks/advanced-css/variables.slides';
 
   // Inline-Demo Components as needed
-  import hslTheme from '~/components/demos/hslTheme';
+  // import hslTheme from '~/components/demos/hslTheme';
 
   export default {
     components: {
@@ -19,7 +19,7 @@
       return {
         src: fileSrc,
         demos: {
-          hslTheme,
+          // hslTheme,
         }
       }
     },
