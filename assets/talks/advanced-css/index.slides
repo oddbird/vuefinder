@@ -19,23 +19,23 @@ versions:
     title: Defining Layouts
     slug:  layout
   - date: 12:00pm
-    title: CSS Variables & Functions
-    slug: variables
+    title: Building Systems
+    slug: systems
   - date: 1:00pm
     title: '`lunch`'
   - date: 2:00pm
-    title: Dynamic Styles
-    slug: dynamic
+    title: CSS Variables & Functions
+    slug: variables
   - date: 2:45pm
-    title: Building Systems
-    slug: systems
+    title: 🛠 Color Themes
+    slug: themes
   - date: 3:30pm
     title: '`coffee`'
   - date: 3:45pm
-    title: Color Themes
-    slug: themes
+    title: Dynamic Styles
+    slug: dynamic
   - date: 4:30pm
-    title: Documentation
+    title: 🛠 Documentation
     slug: docs
 ---
 

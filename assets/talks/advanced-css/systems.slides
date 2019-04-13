@@ -33,10 +33,6 @@ style:
 
 <!-- slide -->
 
-## **Classes** Are The **API**
-
-<!-- slide -->
-
 ## `class="`**`column col6of12 last`**`"`
 
 <!-- slide -->
@@ -92,8 +88,8 @@ style:
 
 <!-- slide -->
 
-## Avoid The "**Cute Duckling Scam**"
-`colors.css` | `layout.css` | `typography.css`
+## Beware "**Cute Duckling Scam**"
+**`colors.css`** | **`layout.css`** | **`typography.css`**
 
 <!-- slide -->
 
@@ -243,16 +239,6 @@ Invented for **Reusable Patterns**
 
 <!-- slide -->
 
-## Semantics **Improve Maintainance**
-Write **Meaningful Code**
-
-<!-- slide -->
-
-## Code is **Communication**
-Most coding is maintainance...
-
-<!-- slide -->
-
 ## **DRY**: **D**on't **R**epeat **Y**ourself
 ### `.warning { border-color: red; }`
 
@@ -265,6 +251,47 @@ Most coding is maintainance...
 
 ## **Reusable** | **Isolated**
 The **Cascade** is about **Balance**
+
+<!-- slide -->
+
+---
+caption: |
+  `data` is optional, `-` should be enforced
+---
+
+## **Namespace** Related Selectors
+`.btn-success` | `.btn-error` **`=>`** **`[data-btn="success`** `|` **`error"]`**
+
+<!-- slide -->
+
+---
+caption: |
+  More [details on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
+---
+
+- `[data-attr]` `=>` **Presence** (even if empty)
+- `[data-attr`**`=`**`"..."]` `=>` **Exact** match
+- `[data-attr`**`*`**`="..."]` `=>` **Any** match
+- `[data-attr`**`~`**`="..."]` `=>` **String**-delimited
+- `[data-attr`**`|`**`="..."]` `=>` **Hyphen**-delimited
+- `[data-attr`**`^`**`="..."]` `=>` **Starts** with...
+- `[data-attr`**`$`**`="..."]` `=>` **Ends** with...
+- `[data-attr="..."` **`i`**`|`**`s`**`]` `=>` **Case** sensativity
+
+<!-- slide -->
+
+## **Base**: `[data-btn]`
+### **Variations**: `[data-btn~='success']`
+
+<!-- slide -->
+
+## Code is **Communication**
+Most coding is maintainance...
+
+<!-- slide -->
+
+## Semantics **Improve Maintainance**
+Write **Meaningful Code**
 
 <!-- slide -->
 
@@ -284,15 +311,55 @@ style:
 
 <!-- slide -->
 
+## **Patterns** `=>` Reusable Skins
+### **Components** `=>` Specific Functionality
+
+<!-- slide -->
+
 ---
-image: '/images/patterns/itcss-layers-note.png'
+image: '/images/advanced-css/itcss-layers-note.png'
 style:
   --image-size: contain
 ---
 
 <!-- slide -->
 
-## Design **Tokens** (Settings)
+---
+image: '/images/patterns/partials.png'
+alt: |
+  Sass folder, with nested config, initial, layout,
+  patterns, components, and styleguide folders
+style:
+  --image-size: contain
+caption: |
+  It's the concept that matters,
+  not the way you name it
+---
+
+<!-- slide -->
+
+## **Abstractions** by Type
+**`colors.scss`** | **`sizes.scss`** | **`fonts.scss`**
+
+<!-- slide -->
+
+## Sass **Duckling Scam**
+**`variables.scss`** | **`functions.scss`** | **`mixins.scss`**
+
+<!-- slide -->
+
+## Safe to **Import Anywhere**
+`@import 'config/index';` **`=>`** No CSS output
+
+<!-- slide -->
+
+---
+caption: |
+  **\*** Term coined by [Jina Anne](https://twitter.com/jina),
+  working on [SalesForce Lightning Design System](http://lightningdesignsystem.com/)
+---
+
+## Design **Tokens**\* (Settings)
 ![Color preview screenshot](https://dl.dropbox.com/s/onv9n6628lmcpbv/color-preview.jpg)
 
 <!-- slide -->
@@ -300,66 +367,86 @@ style:
 ## CSS **Custom Properties**
 
 ```css
-:root {
+html {
+  --color-brand-blue: hsl(195, 85%, 35%);
   --color-text-default: rgb(62, 62, 60);
   --color-text-warning: rgb(255, 183, 93);
   --color-text-error: rgb(194, 57, 52);
-}
-
-.example {
-  background: var(--color-text-error);
 }
 ```
 
 <!-- slide -->
 
-## 👍 **Browser** Support
+## 👍
+## DOM **Aware**
+## **Zero** Dependencies
 
 <!-- slide -->
 
-## 👎 Not **Meaningfully** Organized
-## 👎 Encourages **One-Offs**
-## 👎 Difficult to **Automate**
+---
+caption: |
+  **\*** This might be a solvable problem,
+  and I'm interested in it
+---
+
+## 👎
+## Not **Meaningfully** Organized **\***
+### Difficult to **Automate** / **Enforce**
+## Difficult to Show **Relationships**
 
 <!-- slide -->
 
 ## Sass **Variables**
 
 ```scss
-$color-text-default: rgb(62, 62, 60);
+$color-brand: hsl(195, 85%, 35%);
+$color-text-default: darken($color-brand, 50%);
 $color-text-warning: rgb(255, 183, 93);
 $color-text-error: rgb(194, 57, 52);
+```
 
-.example {
-  background: $color-text-error;
+<!-- slide -->
+
+## 👍
+## Easy to Show **Relationships**
+
+<!-- slide -->
+
+## 👎
+## Not **Meaningfully** Organized
+### Difficult to **Automate** / **Enforce**
+
+<!-- slide -->
+
+## Sass **Maps**
+
+```scss
+$colors: (
+  'brand-blue': hsl(195, 85%, 35%),
+  'text': rgb(62, 62, 60),
+  'warning': rgb(255, 183, 93),
+  'error': rgb(194, 57, 52),
+);
+```
+
+<!-- slide -->
+
+## **Accessing** Maps
+### `map-get($map, $key)`
+
+```scss
+html {
+  background: map-get($colors, 'brand-blue');
 }
 ```
 
 <!-- slide -->
 
-## 👎 Not **Meaningfully** Organized
-## 👎 Encourages **One-Offs**
-## 👎 Difficult to **Automate**
-
-<!-- slide -->
-
----
-caption: |
-  See [OddBird's **Accoutrement**](https://oddbird.net/accoutrement/)
----
-
-## Sass **Maps**
+## Adding **&** Editing **&** Merging
+### `map-merge($map1, $map2)`
 
 ```scss
-$text-colors: (
-  'default': rgb(62, 62, 60),
-  'warning': rgb(255, 183, 93),
-  'error': rgb(194, 57, 52),
-);
-
-.example {
-  background: color('error');
-}
+$colors: map-merge($brand-colors, $text-colors);
 ```
 
 <!-- slide -->
@@ -382,12 +469,51 @@ $colors: (
 ```scss
 $colors: (
   '_brand-pink': hsl(330, 85%, 68%),
-  'escher': '#_brand-pink',
-  'godel': '#escher',
-  'bach': '#godel',
-  'kevin bacon': '#bach' ('lighten': 20%),
+  'escher': '_brand-pink',
+  'godel': 'escher',
+  'bach': 'godel',
+  'kevin bacon': 'bach',
 );
 ```
+
+<!-- slide -->
+
+## **Recursive** Function
+
+```scss
+@function color(
+  $name,
+  $map: $colors
+) {
+  $name: map-get($map, $name) or $name;
+
+  // Self-calling lookup
+  @if map-has-key($colors, $name) {
+    $name: color($name);
+  }
+
+  @return $name;
+}
+```
+
+<!-- slide -->
+
+## Map **Adjustments**
+
+```scss
+$colors: (
+  '_brand-pink': hsl(330, 85%, 68%),
+  'escher': '_brand-pink',
+  'godel': 'escher',
+  'bach': 'godel',
+  'kevin bacon': 'bach' ('lighten': 20%),
+);
+```
+
+<!-- slide -->
+
+## ✨
+## [More **Function** Logic]
 
 <!-- slide -->
 
@@ -405,54 +531,99 @@ style:
 
 <!-- slide -->
 
-## 👍 **Meaningful** Relationships!
-## 👍 Encourages **Patterns**
-## 👍 **Functional** Adjustments
+## ¯\\\_**(ツ)**_/¯
+## Requires **Tooling**
+### Additional **Syntax**
 
 <!-- slide -->
 
-## 👎 **Requires** Additional Tooling
+## 👍
+## **Meaningful** Organization
+## **Visible** Relationships
+### Possible to **Automate** / **Enforce**
 
 <!-- slide -->
 
-## Even More **Layers**
-**Global** Settings » **Theme** Defaults » **Component** Details
-
-<!-- slide -->
+## Meaningful to **Humans** & **Machines**
 
 ```scss
-$brand-colors: (
-  '_brand-blue': hsl(195, 85%, 35%),
-  '_brand-pink': hsl(330, 85%, 48%),
-);
-
-$theme-colors: (
-  'text': …,
-  'border': …,
-  // ...
-);
-
-$button-colors: (
-  'button-text': …,
-  'button-border': …,
-  // ...
-);
+@each $color in map-keys($colors) {
+  [data-color='#{$color}'] {
+    background-color: color($color);
+  }
+}
 ```
 
 <!-- slide -->
 
 ---
-image: '/images/patterns/itcss-layers-note.png'
-style:
-  --image-size: contain
+todo: DEMO color loops
 ---
 
 <!-- slide -->
 
-## "Code is **Communication**"
-—Sarah Drasner
+## Assigned **Dynamically**
+
+```scss
+@each $name, $color in $colors {
+  $complement: (
+    '#{$name}--complement': complement($color)
+  );
+
+  $colors: map-merge($colors, $complement);
+}
+```
 
 <!-- slide -->
+
+## Accessed **Dynamically**
+
+```scss
+// this works:
+@mixin background($color-name) {
+  background: color($color-name);
+}
+
+// this doesn't work:
+@mixin background($color-name) {
+  background: $#{$color-name};
+}
+```
+
+<!-- slide -->
+
+## Even More **Layers**
+**Global** Colors » **Theme** Colors » **Component** Colors
+
+<!-- slide -->
+
+## **Export**able
+
+```scss
+// sass
+$colors: (
+  'brand-orange': hsl(24, 100%, 39%),
+  'brand-blue': hsl(195, 85%, 35%),
+  'brand-pink': hsl(330, 85%, 48%),
+);
+
+@include json-encode($colors);
+```
+
+<!-- slide -->
+
+```css
+/* css */
+/*! json-encode: '{
+  'brand-orange': 'hsl(24, 100%, 39%)',
+  'brand-blue': 'hsl(195, 85%, 35%)',
+  'brand-pink': 'hsl(330, 85%, 48%)'
+}' */
+```
+
+<!-- slide -->
+
+## Tools Can **Add Meaning**
 
 ```scss
 .grid-span {
@@ -466,18 +637,6 @@ style:
 
 ```scss
 .grid-span {
-  width: ((3*4em) + (2*1em)) / ((12*4em) + (11*1em)) * 100%; // 23.7288136%
-  margin-right: 1em / ((12*4em) + (11*1em)) * 100%; // 01.6949153%
-  padding-left: ((1*4em) + (1*1em)) / ((12*4em) + (11*1em)); // 08.4745763%
-}
-```
-
-<!-- slide -->
-
-## Code Patterns **Add Meaning**
-
-```scss
-.grid-span {
   width: span(3);
   margin-right: gutter();
   padding-left: span(1 wide);
@@ -486,22 +645,18 @@ style:
 
 <!-- slide -->
 
----
-layout: todo
----
+## OddBird's [**Accoutrement**](https://oddbird.net/accoutrement/)
+Map tools for **colors**, **type**, **animations**, **sizes**, etc...
 
-- Establishing Conventions:
-  - CSS Systems & OOCSS
-  - Atomic Design / BEM / SMACSS / ITCSS
-  - Attribute Selectors
-  - (Design Systems)
-- Separation of concerns / layers
-- Single File Components & scoping
-- Importing abstractions
-- Using Sass maps for organization
-- Recursion and reference
-- Looping
-- Testing
+<!-- slide -->
+
+## ¯\\\_**(ツ)**_/¯
+## Always a **Trade-Off**
+
+<!-- slide -->
+
+## **Functions** `=>` Abstractions
+## **Mixins** `=>` Patterns (as needed)
 
 <!-- slide -->
 
@@ -512,6 +667,6 @@ layout: todo
 ### Assignment:
 
 - Write a map of colors
-- Write a function & tests to access the map
-- Write a loop to display colors?
+- Write a function to access the map
+- Write a loop to display colors
 - Use `data-` attributes as selectors
