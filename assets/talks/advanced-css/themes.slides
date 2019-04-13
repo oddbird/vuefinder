@@ -10,6 +10,249 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 <!-- slide -->
 
 ---
+layout: title
+---
+
+<!-- slide -->
+
+### **White Label** Products
+## **Light**/**Dark**/**High-Contrast** Modes
+### **User** Customization
+
+<!-- slide -->
+
+---
+todo: DEMO light/dark
+---
+
+<!-- slide -->
+
+## Rough **Concept**
+
+```css
+html {
+  --background-light: #eee;
+  --background-dark: #111;
+  --text-light: #ccc;
+  --text-dark: #333;
+}
+```
+
+<!-- slide -->
+
+```css
+html.light {
+  background: var(--background-light);
+  color: var(--text-dark);
+}
+
+html.dark {
+  background: var(--background-dark);
+  color: var(--text-light);
+}
+```
+
+<!-- slide -->
+
+### Themes `=>` **Systems**
+## `[data-theme="`**`light`**`|`**`dark`**`"]`
+
+<!-- slide -->
+
+## **Define** & **Apply**
+
+```css
+[data-theme='light'] {
+  --background: #ddd;
+  --text: #222;
+}
+
+[data-theme] {
+  background: var(--background);
+  color: var(--text);
+}
+```
+
+<!-- slide -->
+
+## Think in **Layers**
+Brand **`=>`** Theme **`=>`** Purpose **`=>`**
+
+<!-- slide -->
+
+## **Global** Brand Colors
+
+```css
+html {
+  --brand-dark: #222;
+  --brand-darker: #000;
+  --brand-light: #ddd;
+  --brand-lighter: #fff;
+}
+```
+
+<!-- slide -->
+
+## **Scoped** Theme Colors
+"Soft Patch" **Purpose** `=>` **Global**
+
+```css
+[data-theme='light'] {
+  --bg-color: var(--brand-light);
+  --text-color: var(--brand-dark);
+}
+
+[data-theme='dark'] {
+  --bg-color: var(--brand-dark);
+  --text-color: var(--brand-light);
+}
+```
+
+<!-- slide -->
+
+## **Scoped** Theme Colors
+"Hard Patch" **Property** `=>` **Purpose**
+
+```css
+[data-theme] {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+```
+
+<!-- slide -->
+
+## New Theme `=>` **Soft Patch**
+
+```css
+[data-theme='contrast'] {
+  --bg-color: var(--brand-lighter);
+  --text-color: var(--brand-darker);
+}
+```
+
+<!-- slide -->
+
+---
+todo: DEMO light/dark
+---
+
+<!-- slide -->
+
+## Generated From **Sass Maps**
+
+```scss
+$brand-colors: (
+  'brand-dark': #222,
+  'brand-darker': #000,
+  'brand-light': #ddd,
+  'brand-lighter': #fff,
+);
+```
+
+<!-- slide -->
+
+## Themes **Map References**
+
+```scss
+$light-theme: (
+  'bg-color': 'brand-light',
+  'text-color': 'brand-dark',
+);
+```
+
+<!-- slide -->
+
+## Map of **Themes** `=>` **Names**
+
+```scss
+$themes: (
+  'light': $light-theme,
+  'dark': $dark-theme,
+  'contrast': $contrast-theme,
+);
+```
+
+<!-- slide -->
+
+---
+caption: |
+  CSS variables values
+  will not be compiled
+  unless **`#{explicity marked}`**
+---
+
+## **Loop** `=>` Global Variables
+
+```scss
+html {
+  @each $var, $color in $brand-colors {
+    --#{$var}: #{$color};
+  }
+}
+```
+
+<!-- slide -->
+
+## **Loop** `=>` Theme Variables
+
+```scss
+@each $name, $theme in $themes {
+  [data-theme='#{$name}'] {
+    @each $local, $global in $theme {
+      --#{$local}: var(--#{$global});
+    }
+  }
+}
+```
+
+<!-- slide -->
+
+## Individual **HSL** Values
+
+```css
+* {
+  --h: 330;
+  --s: 100%;
+  --l: 34%;
+  background: hsl(var(--h), var(--s), var(--l));
+}
+```
+
+<!-- slide -->
+
+## Hue is **Radial**
+
+```css
+* {
+  --complement: calc(var(--h) - 180);
+  background: hsl(var(--complement), var(--s), var(--l));
+}
+```
+
+<!-- slide -->
+
+## Lightness is "**Clamped**"
+
+```css
+* {
+  --threshold: 55;
+  --contrast: calc((var(--l) - var(--threshold)) * -100%);
+  color: hsl(var(--h), var(--s), var(--contrast));
+}
+```
+
+<!-- slide -->
+
+---
+demo: hslTheme
+caption: |
+  Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
+---
+
+<!-- slide -->
+
+---
 layout: todo
 ---
 

@@ -32,8 +32,16 @@ Firefox 31 (unless you count **`currentColor`**)
 
 <!-- slide -->
 
+### `var(--my-font,` **`Baskerville, Georgia, serif`**`)`
+
+<!-- slide -->
+
+### `var(--my-color,` **`var(--other-color, pink)`**`)`
+
+<!-- slide -->
+
 ## Sass Variables **Scope**
-###  No **DOM** Awareness
+No **DOM** Awareness
 
 ```scss
 .example { $columns: 2; }
@@ -43,7 +51,7 @@ Firefox 31 (unless you count **`currentColor`**)
 <!-- slide -->
 
 ## CSS Variables **Inherit**
-### **DOM** Awareness!
+**DOM** Awareness!
 
 ```scss
 .example { --columns: 2; }
@@ -166,6 +174,19 @@ button.green {
 
 <!-- slide -->
 
+## Individual **Color** Values
+
+```css
+* {
+  --h: 330;
+  --s: 100%;
+  --l: 34%;
+  background: hsl(var(--h), var(--s), var(--l));
+}
+```
+
+<!-- slide -->
+
 ## `calc(` **`16px`** `+` **`20%`** `)`
 mix and match units
 
@@ -225,56 +246,25 @@ caption: |
 
 <!-- slide -->
 
-## Manipulate **`hsl()`** Values
+### Variable **Issues**:
+## Unknown **Value Types**
 
-```css
-* {
-  --h: 330;
-  --s: 100%;
-  --l: 34%;
-  background: hsl(var(--h), var(--s), var(--l));
+<!-- slide -->
+
+## Transition & Animate **Results**
+Not the variable itself...
+
+```scss
+button {
+  --color: green;
+  background: var(--color);
+  transition: background 0.5s;
+
+  &:hover {
+    --color: red;
+  }
 }
 ```
-
-<!-- slide -->
-
-## Hue is **Radial**
-
-```css
-* {
-  --complement: calc(var(--h) - 180);
-  background: hsl(var(--complement), var(--s), var(--l));
-}
-```
-
-<!-- slide -->
-
-## Lightness is "**Clamped**"
-
-```css
-* {
-  --threshold: 55;
-  --contrast: calc((var(--l) - var(--threshold)) * -100%);
-  color: hsl(var(--h), var(--s), var(--contrast));
-}
-```
-
-<!-- slide -->
-
----
-demo: hslTheme
-caption: |
-  Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
----
-
-<!-- slide -->
-
-## Variable **Issues**:
-
-1. Unknown value `type`s
-  (transition known properties, not variables)
-2. Don't work inside `url()`
-3. ~~`var(--size)em`~~ **=>** `calc(var(--size) * 1em)`
 
 <!-- slide -->
 
@@ -310,11 +300,49 @@ CSS.registerProperty({
 
 <!-- slide -->
 
+## **Content** Requires **Quoted Values**
+
+```css
+div::after {
+  --string: 'hello world';
+  content: var(--string);
+}
+```
+
+<!-- slide -->
+
+## Content **Hack** For Numbers
+
+```css
+div::after {
+  --number: 3;
+  counter-reset: number var(--number);
+  content: counter(number);
+}
+```
+
+<!-- slide -->
+
+### Currently
+## **No Support** in **`url()`** | **`@media`**
+
+<!-- slide -->
+
+### ~~`var(--size)em`~~
+## `calc( var(--size)` **`* 1em`** `)`
+
+<!-- slide -->
+
+## `@supports (` **`--css: vars`** `) {}`
+Any valid **definition** will work...
+
+<!-- slide -->
+
 ---
 layout: todo
 ---
 
 ### Assignment:
 
-- Button Variations? (doesn't require  calc…)
+- Button Variations? (doesn't require calc…)
 - Variable-Based Layout System?

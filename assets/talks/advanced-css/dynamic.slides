@@ -193,44 +193,44 @@ style:
 
 <!-- slide -->
 
-## **Setting** Vue Data
-
-```html
-<script>
-  export default {
-    data() {
-      return { ... our data here ... }
-    },
-  }
-</script>
-```
-
-<!-- slide -->
-
-## Our **Chart** Data
+## **Get** (Inline / Computed) Variables
 
 ```js
-{
-  scale: 100;
-  years: [
-    {
-      date: 2000,
-      value: 45,
-    },
-    // etc...
-  ]
-}
+element.style.getPropertyValue("--my-var");
+getComputedStyle(element).getPropertyValue("--my-var");
 ```
 
 <!-- slide -->
 
-## Data `=>` Inline **Variables**
+## **Set** (Inline) Variable
+element.style.setProperty("--my-var", jsVar + 4);
+
+<!-- slide -->
+
+## **Bind** Variables in Vue
 
 ```html
 <table :style="{ '--scale': scale }" >
   <tr v-for="year in years" :key="year.date" >
     <th>{{ year.date }}</th>
     <td :style="{ '--value': year.value }" >
+```
+
+<!-- slide -->
+
+## Our **Chart** Data
+
+```html
+<script>
+  export default {
+    data() {
+      return {
+        scale: 100;
+        years: [{ date: 2000, value: 45 }, ...]
+      }
+    },
+  }
+</script>
 ```
 
 <!-- slide -->

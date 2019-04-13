@@ -268,11 +268,6 @@ caption: |
 
 <!-- slide -->
 
-## **Progressive Enhancement** is Built-In
-`font-family: Consolas, Menlo, Monaco, 'Courier New', monospace;`
-
-<!-- slide -->
-
 ---
 image: '/images/advanced-css/judo.jpg'
 alt: Judo athlete throwing a competitor
@@ -286,6 +281,57 @@ image: '/images/advanced-css/sappho.jpg'
 alt: Illustration of the poet Sappho
 caption: create meaningful associations, like poetry
 ---
+
+<!-- slide -->
+
+## **Progressive Enhancement** is Built-In
+CSS is **Resilient**
+
+<!-- slide -->
+
+## Font **Stacks**
+# `font-family:` **`Consolas, Menlo, 'Courier New', monospace`**`;`
+
+<!-- slide -->
+
+## Ignored **Properties**
+
+```css
+body {
+   /* Browser default `display: block` */
+  display: flex;
+  display: grid;
+}
+```
+
+<!-- slide -->
+
+## **`@supports`** `(`**`property: value`**`) { ... }`
+
+<!-- slide -->
+
+## Modern Specs Are **Detailed**
+
+<!-- slide -->
+
+## Modern Browsers Are **Evergreen**
+
+<!-- slide -->
+
+---
+caption: |
+  Read more about
+  [Houdini](https://css-tricks.com/css-houdini-could-change-the-way-we-write-and-manage-css/)
+  for direct access to CSS inner workings
+---
+
+## Current Direction is **Extensible**
+
+```html
+<script>
+  CSS.paintWorklet.addModule('my-houdini-worklet.js')
+</script>
+```
 
 <!-- slide -->
 
