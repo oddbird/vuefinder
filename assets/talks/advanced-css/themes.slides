@@ -208,10 +208,81 @@ html {
 
 <!-- slide -->
 
+## **SVG** Icons...
+### `fill: var(`**`--icon-color`**`,` **`currentColor`**`);`
+
+<!-- slide -->
+
+## Accoutrement
+## [Maps **`=>`** CSS Variables][vars]
+
+[vars]: https://www.oddbird.net/accoutrement/docs/core-vars.html
+
+<!-- slide -->
+
+## **Set Themes** in HTML
+
+```html
+<html data-theme="light">...</html>
+```
+
+<!-- slide -->
+
+## And/Or **Toggle Themes** in JS
+
+```js
+document.documentElement.setAttribute('data-theme', 'dark')
+```
+
+<!-- slide -->
+
+## Check **OS Preference**
+
+```css
+@media (prefers-color-scheme: light) {...}
+```
+
+```js
+window.matchMedia('(prefers-color-scheme: light)')
+```
+
+<!-- slide -->
+
+---
+todo: DEMO miriam.codes themes
+---
+
+<!-- slide -->
+
+---
+caption: |
+  [Dark theme in a day][theme] by **Marcin Wichary**
+
+  [theme]: https://medium.com/@mwichary/dark-theme-in-a-day-3518dde2955a
+---
+
+## Variable **Hues**
+
+```css
+html {
+  /* Available Hues */
+  --h-base: 330;
+  --h-accent: 120;
+
+  /* Soft Patch */
+  --hue: var(--h-base);
+
+  /* Generate Colors for that hue */
+  --brand-dark: hsl(var(--hue), 50%, 15%);
+}
+```
+
+<!-- slide -->
+
 ## Individual **HSL** Values
 
 ```css
-* {
+.hsl {
   --h: 330;
   --s: 100%;
   --l: 34%;
@@ -224,7 +295,7 @@ html {
 ## Hue is **Radial**
 
 ```css
-* {
+.hsl {
   --complement: calc(var(--h) - 180);
   background: hsl(var(--complement), var(--s), var(--l));
 }
@@ -235,7 +306,7 @@ html {
 ## Lightness is "**Clamped**"
 
 ```css
-* {
+.hsl {
   --threshold: 55;
   --contrast: calc((var(--l) - var(--threshold)) * -100%);
   color: hsl(var(--h), var(--s), var(--contrast));
@@ -256,20 +327,9 @@ caption: |
 layout: todo
 ---
 
-- Naming layers
-- Automating relationships
-- hsl manipulation
-- looping to generate
-
-<!-- slide -->
-
----
-layout: todo
----
-
 ### Assignment:
 
 - Make a second color map for a second theme
 - Loop to apply colors to variables
 - Use variables to show themes
-- Use conrast function to auto-set some of the colors?
+- Use contrast function to auto-set some of the colors?
