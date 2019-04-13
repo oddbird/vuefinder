@@ -9,8 +9,24 @@ tags: [css, sass, design systems, components, variables, naming, grid, layout]
 
 <!-- slide -->
 
-## Design **Systems**!
-Intersection of **Design** & **Code** & **Documentation**
+---
+layout: title
+---
+
+<!-- slide -->
+
+### So You **Built** Some Beautiful Patterns...
+## I'm Sorry, **But**
+
+<!-- slide -->
+
+---
+caption: |
+  ---First Rule of **Design Systems**
+---
+
+## If They're Not **Documented**,
+## They **Don't Exist**
 
 <!-- slide -->
 
@@ -18,7 +34,7 @@ Intersection of **Design** & **Code** & **Documentation**
 image: '/images/patterns/lightning.jpg'
 alt: Salesforce Lightning Design System
 style:
-  --image-position: 'top'
+  --image-position: top
 ---
 
 <!-- slide -->
@@ -27,7 +43,7 @@ style:
 image: '/images/patterns/lonely-planet-colors.jpg'
 alt: Lonely Planet Design System
 style:
-  --image-position: 'top'
+  --image-position: top
 ---
 
 <!-- slide -->
@@ -36,16 +52,34 @@ style:
 image: '/images/patterns/chimp-grids.jpg'
 alt: Mailchimp Grids
 style:
-  --image-position: 'top'
+  --image-position: top
 ---
 
 <!-- slide -->
 
 ---
-image: '/images/agile-systems/herman-scale.jpg'
-alt: Herman Scale Previews
+image: '/images/advanced-css/sizes-doc.jpg'
+alt: Size Previews
 style:
-  --image-size: 'contain'
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: '/images/patterns/chimp-voice.jpg'
+alt: Mailchimp Voice
+style:
+  --image-position: top
+---
+
+<!-- slide -->
+
+---
+image: '/images/patterns/lightning-motion.jpg'
+alt: Salesforce LDS Motion System
+style:
+  --image-position: top
 ---
 
 <!-- slide -->
@@ -68,7 +102,7 @@ alt: 'New York City Transit Authority Graphic Standards Manual'
 image: '/images/patterns/NYC-date.jpg'
 alt: '1970'
 style:
-  --image-size: 'contain'
+  --image-size: contain
 ---
 
 <!-- slide -->
@@ -91,43 +125,32 @@ alt: 'Numbers 5-8'
 image: '/images/patterns/NYC-sign.jpg'
 alt: 'Diagram of sign construction'
 style:
-  --image-position: 'bottom'
+  --image-position: bottom
 ---
 
 <!-- slide -->
 
-## « Nerd
+## `<-` Nerd
 
 <!-- slide -->
 
-## Nerd »
+## Nerd `->`
 
 <!-- slide -->
 
-## **¯\\\_(ツ)_/¯**
-## Nerd
+## ¯\\\_**(ツ)**_/¯
+## Nerds
 
 <!-- slide -->
 
-## Design *Systems*
-**Style** Guides + **Tool**kits + **Pattern** Libraries + **???**
-
-<!-- slide -->
-
----
-image: '/images/patterns/chimp-voice.jpg'
-alt: Mailchimp Voice
-style:
-  --image-position: 'top'
----
+## Design Systems `==` **Integration**
+Design **&** Code **&** Process **&** Tools **&** Docs **&** ???
 
 <!-- slide -->
 
 ---
-image: '/images/patterns/lightning-motion.jpg'
-alt: Salesforce LDS Motion System
-style:
-  --image-position: 'top'
+image: '/images/agile-systems/lego-organizer.jpg'
+alt: 'Lego Organizer'
 ---
 
 <!-- slide -->
@@ -140,21 +163,9 @@ alt: 'Lego Component Library'
 <!-- slide -->
 
 ---
-image: '/images/agile-systems/lego-organizer.jpg'
-alt: 'Lego Organizer'
----
-
-<!-- slide -->
-
----
 image: '/images/patterns/lego.jpg'
 alt: 'Lego Airplane'
 ---
-
-<!-- slide -->
-
-## Design Systems `==` **Integration**
-Design *&* Code *&* process *&* tools *&* … *&* ???
 
 <!-- slide -->
 
@@ -199,43 +210,13 @@ alt: 'Scribbled out: LDS icons with markup'
 <!-- slide -->
 
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-<!-- slide -->
-
-### "If it doesn't have tests, **it's legacy code**"
-Patterns must be **repeatable**
-
-<!-- slide -->
-
-### "If it's not documented, **it doesn't exist**"
-Patterns must be **repeated**
-
-<!-- slide -->
-
-> Since OddBird thinks about handoff from the beginning,
-> **maintenance has been super easy**.
-> For example, 100% unit test coverage was a given.
-> I never had to ask for it.
->
-> —Sara Taillon, **CTO** at **ORCAS**
-
-<!-- slide -->
-
-1. ~~**Why** Design Systems?~~
-2. ## Pattern **Audit**
-3. Start with **Design Tokens**
-4. Integrated **Agile Process**
-5. Define the **API**
+### Small Company, Multiple Clients, Plan for Handoff
 
 <!-- slide -->
 
 ### **Existing** Apps:
 ## What Do We **Have**?
-
-<!-- slide -->
-
-## Take **Screenshots**
-**Organize** into Groups
+Take **Screenshots** & **Organize**
 
 <!-- slide -->
 
@@ -254,12 +235,14 @@ caption: |
 
 ---
 image: '/images/agile-systems/stats-colors.jpg'
+alt: Color stats from the Vue website
 ---
 
 <!-- slide -->
 
 ---
 image: '/images/agile-systems/stats-fonts.jpg'
+alt: Font and size stats from the Vue website
 ---
 
 <!-- slide -->
@@ -269,278 +252,67 @@ image: '/images/agile-systems/stats-fonts.jpg'
 
 <!-- slide -->
 
-1. ~~**Why** Design Systems?~~
-2. ~~Pattern **Audit**~~
-3. ## Start with **Design Tokens**
-4. Integrated **Agile Process**
-5. Define the **API**
-
-<!-- slide -->
-
-### ~~3. Start with **Design Tokens**~~
-## 3. Start **Somewhere**, Stay **Agile**
+## Start with **Design Tokens**
+Board reach, low specificity
 
 <!-- slide -->
 
 ---
 image: '/images/patterns/itcss-metrics.png'
 style:
-  --image-size: 'contain'
-caption: |
-  [**Inverted Triangle**](http://technotif.com/manage-large-css-projects-with-itcss/)
-  by [**Harry Roberts**](https://twitter.com/csswizardry)
+  --image-size: contain
 ---
 
 <!-- slide -->
 
----
-image: '/images/patterns/un-itcss-metrics.png'
-style:
-  --image-size: 'contain'
-caption: |
-  **Normal Triangle** by ~~Maslow~~ **Miriam**
----
+# ~~Start with **Design Tokens**~~
+## Start **Anywhere Specific**
 
 <!-- slide -->
 
----
-image: '/images/patterns/itcss-layers.png'
-style:
-  --image-size: 'contain'
----
+### Continuous **Integration**
+## **Accurate** `>` Complete
 
 <!-- slide -->
 
-## **Cascading** Style Sheets
-Invented to create **re-usable patterns**
+## **Automate** from **Structured Code**
+### To Make Patterns & Documentation
+## The **Lazy** Option
 
 <!-- slide -->
 
-## `.warning { color: red; }`
+## Why We Write **Meaningful** Code
+
+```scss
+// sass
+$colors: (
+  'brand-orange': hsl(24, 100%, 39%),
+  'brand-blue': hsl(195, 85%, 35%),
+  'brand-pink': hsl(330, 85%, 48%),
+);
+
+@include json-encode($colors);
+```
 
 <!-- slide -->
-
-## Design **Tokens** (Settings)
-![Color preview screenshot](https://dl.dropbox.com/s/onv9n6628lmcpbv/color-preview.jpg)
-
-<!-- slide -->
-
-## CSS **Custom Properties**
 
 ```css
-:root {
-  --color-text-default: rgb(62, 62, 60);
-  --color-text-warning: rgb(255, 183, 93);
-  --color-text-error: rgb(194, 57, 52);
-}
-
-.example {
-  background: var(--color-text-error);
-}
-```
-
-<!-- slide -->
-
-## 👍 **Browser** Support
-
-<!-- slide -->
-
-## 👎 Not **Meaningfully** Organized
-## 👎 Encourages **One-Offs**
-## 👎 Difficult to **Automate**
-
-<!-- slide -->
-
-## Sass **Variables**
-
-```scss
-$color-text-default: rgb(62, 62, 60);
-$color-text-warning: rgb(255, 183, 93);
-$color-text-error: rgb(194, 57, 52);
-
-.example {
-  background: $color-text-error;
-}
-```
-
-<!-- slide -->
-
-## 👎 Not **Meaningfully** Organized
-## 👎 Encourages **One-Offs**
-## 👎 Difficult to **Automate**
-
-<!-- slide -->
-
----
-caption: |
-  See [OddBird's **Accoutrement**](https://oddbird.net/accoutrement/)
----
-
-## Sass **Maps**
-
-```scss
-$text-colors: (
-  'default': rgb(62, 62, 60),
-  'warning': rgb(255, 183, 93),
-  'error': rgb(194, 57, 52),
-);
-
-.example {
-  background: color('error');
-}
-```
-
-<!-- slide -->
-
-## The **Map Problem**
-
-```scss
-$colors: (
-  'brand-blue': hsl(195, 85%, 35%),
-  'gray': desaturate(map-get($colors, 'brand-blue'), 80%),
-);
-```
-
-### **`[ERROR] Undefined variable: "$colors".`**
-
-<!-- slide -->
-
-## Map **Self-Reference**
-
-```scss
-$colors: (
-  '_brand-pink': hsl(330, 85%, 68%),
-  'escher': '#_brand-pink',
-  'godel': '#escher',
-  'bach': '#godel',
-  'kevin bacon': '#bach' ('lighten': 20%),
-);
-```
-
-<!-- slide -->
-
----
-style:
-  --align-self: 'stretch'
-  background-color: 'hsl(330, 85%, 48%)'
-  color: 'white'
-  display: 'flex'
-  align-items: 'center'
-  justify-content: 'center'
----
-
-## `color('kevin bacon')`
-
-<!-- slide -->
-
-## 👍 **Meaningful** Relationships!
-## 👍 Encourages **Patterns**
-## 👍 **Functional** Adjustments
-
-<!-- slide -->
-
-## 👎 **Requires** Additional Tooling
-
-<!-- slide -->
-
-## Even More **Layers**
-**Global** Settings » **Theme** Defaults » **Component** Details
-
-<!-- slide -->
-
-```scss
-$brand-colors: (
-  '_brand-blue': hsl(195, 85%, 35%),
-  '_brand-pink': hsl(330, 85%, 48%),
-);
-
-$theme-colors: (
-  'text': …,
-  'border': …,
-  // ...
-);
-
-$button-colors: (
-  'button-text': …,
-  'button-border': …,
-  // ...
-);
-```
-
-<!-- slide -->
-
----
-image: '/images/patterns/itcss-layers-note.png'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
-## "Code is **Communication**"
-—Sarah Drasner
-
-<!-- slide -->
-
-```scss
-.grid-span {
-  width: 23.7288136%;
-  margin-right: 01.6949153%;
-  padding-left: 08.4745763%;
-}
-```
-
-<!-- slide -->
-
-```scss
-.grid-span {
-  width: ((3*4em) + (2*1em)) / ((12*4em) + (11*1em)) * 100%; // 23.7288136%
-  margin-right: 1em / ((12*4em) + (11*1em)) * 100%; // 01.6949153%
-  padding-left: ((1*4em) + (1*1em)) / ((12*4em) + (11*1em)); // 08.4745763%
-}
-```
-
-<!-- slide -->
-
-## Code Patterns **Add Meaning**
-
-```scss
-.grid-span {
-  width: span(3);
-  margin-right: gutter();
-  padding-left: span(1 wide);
-}
-```
-
-<!-- slide -->
-
-```scss
-// Susy Span
-// ---------
-/// This is the primary function in Susy —
-/// used to return the width of a span across one or more columns,
-/// and any relevant gutters along the way.
-/// With the default settings,
-/// `span(3)` will return the width of 3 columns,
-/// and the 2 intermediate gutters.
-/// This can be used to set the `width` property of grid elements,
-/// or `margin` and `padding`
-/// to push, pull, and pad your elements.
-/// @example scss - span half the grid
-///   .foo {
-///     width: susy-span(6 of 12);
-///   }
-@function susy-span(…) {…}
+/* css */
+/*! json-encode: '{
+  'brand-orange': 'hsl(24, 100%, 39%)',
+  'brand-blue': 'hsl(195, 85%, 35%)',
+  'brand-pink': 'hsl(330, 85%, 48%)'
+}' */
 ```
 
 <!-- slide -->
 
 ---
 caption: |
-  See [Salesforce-UX *Theo*](https://github.com/salesforce-ux/theo)
+  Salesforce-UX [**Theo**](https://github.com/salesforce-ux/theo)
 ---
 
-# **YAML** & **Theo**
+## Salesforce **Theo**: `YAML`
 
 ```yml
 props:
@@ -548,8 +320,6 @@ props:
     value: "rgb(62, 62, 60)"
   text_warning:
     value: "rgb(255, 183, 93)"
-  text_error:
-    value: "rgb(194, 57, 52)"
 
 global:
   type: "color"
@@ -557,6 +327,8 @@ global:
 ```
 
 <!-- slide -->
+
+## **String-Based** Relationships
 
 ```yml
 aliases:
@@ -571,8 +343,39 @@ props:
 
 <!-- slide -->
 
-## 👍 Easier to **Export** from YAML
-## 👎 Not A **Style Language**
+## SLDS is **Not Just Web**
+Exports to various style languages
+
+<!-- slide -->
+
+---
+caption: |
+  Amazon [**Style Dictionary**](https://amzn.github.io/style-dictionary/#/)
+---
+
+## Amazon **Style Dictionary**: `JSON`
+**Alias-only** Relationships
+
+```json
+{
+  "color": {
+    "theme": {
+      "brand": { "value": "{color.brand.main.value}" },
+      "light": { "value": "#ebebeb" }
+    }
+  }
+}
+```
+
+<!-- slide -->
+
+## ¯\\\_**(ツ)**_/¯
+## I Mean, **Sure**
+
+<!-- slide -->
+
+## 👎
+## Not **Style Languages**
 
 <!-- slide -->
 
@@ -581,79 +384,46 @@ adjust to **your** needs…
 
 <!-- slide -->
 
-1. ~~**Why** Design Systems?~~
-2. ~~Pattern **Audit**~~
-3. ~~Start with **Design Tokens**~~
-4. ## Integrated **Agile Process**
-5. Define the **API**
-
-<!-- slide -->
-
-## "Less **Theory**, More **Practice**"
-Less **Mockups**, More **Code**
+## Integrated **Tools**
 
 <!-- slide -->
 
 ---
-image: '/images/process/list.png'
-alt: 'QuarqNet list sketch'
----
+image: '/images/patterns/sassdoc.jpg'
+style:
+  --image-position: top
+caption: |
+  [**SassDoc**](http://sassdoc.com)
+  by [Hugo Giraudel](https://hugogiraudel.com/)
+----
 
 <!-- slide -->
 
----
-image: '/images/process/qn-mockup.jpg'
-alt: 'QuarqNet code sample'
----
-
-<!-- slide -->
-
----
-image: '/images/process/interactive.jpg'
-alt: 'QuarqNet interactive mockup'
----
-
-<!-- slide -->
-
-## (**Ugly** Helps Focus)
-
-<!-- slide -->
-
----
-image: '/images/process/qasper.jpg'
-alt: 'QuarqNet final'
----
-
-<!-- slide -->
-
-## **Iterate** on Features/Epics
-sketch » wire-frame » html markup » back-end » **design**
-
-<!-- slide -->
-
-### Test, Test, Test
-## Tight **Feedback Loop**
-
-<!-- slide -->
-
-## "Move Fast & **Fix Things**"
-Everyone is **responsible** & **collaborating**
-
-<!-- slide -->
-
-### Make Patterns & Documentation
-## The **Lazy** Option
-
-<!-- slide -->
-
-## **Automate** from **Structured Code**
+```scss
+// Color
+// -----
+/// The primary function for
+/// accessing colors in your palette...
+///
+/// @example scss
+///   html {
+///     background: color('background');
+///   }
+///
+/// @param {string | list} $color -
+///   The name of a color in your palette...
+///
+/// @return {color} -
+///   A calculated css-ready color...
+@function color(...) {...}
+```
 
 <!-- slide -->
 
 ---
 image: '/images/agile-systems/herman.jpg'
 style:
-  --image-size: 'contain'
+  --image-size: contain
 caption: |
   OddBird's [**Herman**](https://oddbird.net/herman)
   is based on [**SassDoc**](http://sassdoc.com) syntax
@@ -687,84 +457,31 @@ $slds-colors: (
 
 <!-- slide -->
 
-## `/// @sizes` **`{ruler}`**
-![Herman Ruler](/images/agile-systems/herman-ruler.jpg)
-
-<!-- slide -->
-
 ## `/// ` **`@ratios`**
 ![Herman Ratios](/images/agile-systems/herman-ratios.jpg)
 
 <!-- slide -->
 
-## Design System as **Artifact**
-Code is a **Single Source of Truth**
-
-<!-- slide -->
-
-## Up-To-Date **`>`** Comprehensive
-### Start small, **make it easy**, and expand…
-
-<!-- slide -->
-
-1. ~~**Why** Design Systems?~~
-2. ~~Pattern **Audit**~~
-3. ~~Start with **Design Tokens**~~
-4. ~~Integrated **Agile Process**~~
-5. ## Define the **API**
-
-<!-- slide -->
-
 ---
-image: '/images/patterns/lightning-code.jpg'
-alt: 'LDS icons with markup'
+todo: SLIDE Herman fonts
 ---
 
-<!-- slide -->
-
-### `class="slds-icon` **`slds-icon-text-warning`** `slds-icon--x-small"`
-
-<!-- slide -->
-
-## Related Class Patterns » **Data Attributes**
-icon **color** and **size** classes
+## `/// ` **`@fonts`**
+![Herman Ratios](/images/agile-systems/herman-ratios.jpg)
 
 <!-- slide -->
 
-### **`data-slds-icon-color`**`="<option>"`
-`.slds-icon-text-default` | `.slds-icon-text-warning` | `.slds-icon-text-error`
-
-<!-- slide -->
-
-## HTML Template **Logic is Great**
-**pre-processors** for your markup!
-
-<!-- slide -->
-
-## Example: **Vue**
-### `<icon :image="isSuccess` **`?`** `'checkmark'` **`:`** `'x'">`
-
-<!-- slide -->
-
-## **Components** Provide Meaning
+## **Components** Also Provide Meaning
 ### `<my-icon name="gear" />`
 
 <!-- slide -->
 
-## `///` **`@icons`** `templates/icons/`
-
-<!-- slide -->
-
-![Herman Icons](/images/agile-systems/herman-icons.jpg)
-
-<!-- slide -->
-
 ## **Consistency** & **Accessibility**\*
-*If you bake that into the pattern…
+*If you bake that into the pattern...
 
 <!-- slide -->
 
-## *Herman* Components
+## Herman **Components**: `Nunjucks`
 
 ```scss
 /// Navigation items, with inactive and active states.
@@ -784,8 +501,7 @@ icon **color** and **size** classes
 <!-- slide -->
 
 ## **¯\\\_(ツ)_/¯**
-## **Sass-First** Breaks Down…
-### Only **Nunjucks** For Now…
+## **Sass-First** Breaks Down at Components...
 
 <!-- slide -->
 
@@ -810,16 +526,14 @@ icon **color** and **size** classes
 
 <!-- slide -->
 
-## I Want **Both** :)
-please…
+---
+todo: SLIDES storybook
+---
 
 <!-- slide -->
 
-1. ~~**Why** Design Systems?~~
-2. ~~Pattern **Audit**~~
-3. ~~Start with **Design Tokens**~~
-4. ~~Integrated **Agile Process**~~
-5. ~~Define the **API**~~
+## I Want **Both** :)
+please…
 
 <!-- slide -->
 
@@ -835,40 +549,6 @@ Helps the human factors…
 
 ## **Agile** & **Integrated** Process
 Everyone shares a single-source…
-
-<!-- slide -->
-
----
-image: '/images/patterns/lego-site.jpg'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
----
-image: '/images/patterns/lego-helmet.jpg'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
----
-image: '/images/patterns/lego-atomic.jpg'
-style:
-  --image-size: 'contain'
----
-
-<!-- slide -->
-
----
-layout: todo
----
-
-- Exporting to JSON
-- Alternatives: Theo, Style Dictionary
-- SassDoc / Herman / Storybook
 
 <!-- slide -->
 

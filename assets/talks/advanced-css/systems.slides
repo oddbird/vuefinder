@@ -655,8 +655,39 @@ Map tools for **colors**, **type**, **animations**, **sizes**, etc...
 
 <!-- slide -->
 
+## Tools are a **ByProduct**
+Add them **as you need them** (**DRY** but **DSfP**)
+
+<!-- slide -->
+
+## Sass **Your Own Tools**
+(or **contribute** to ours...)
+
+<!-- slide -->
+
+## 👍
+## Opinionated about **Organization**
+
+<!-- slide -->
+
+## 👍
+## Opinionated about **Code Quality**
+
+<!-- slide -->
+
+## 👎
+## Opinionated about **Styles**
+
+<!-- slide -->
+
 ## **Functions** `=>` Abstractions
-## **Mixins** `=>` Patterns (as needed)
+### **Mixins** `=>` Patterns (as needed)
+
+<!-- slide -->
+
+---
+todo: SLIDES testing??
+---
 
 <!-- slide -->
 
