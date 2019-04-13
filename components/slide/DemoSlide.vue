@@ -26,10 +26,17 @@
         return this.meta.demos[this.slide.data.demo];
       },
       frameSrc() {
-        const demoUrl = `/demos/${this.slide.data.demo}/`
-        return process.env.isDev
-          ? demoUrl
-          : process.env.httpUrl + demoUrl;
+        const demo = this.slide.data.demo;
+
+        if (demo.includes('://')) {
+          return demo;
+        } else {
+          const demoUrl = `/demos/${demo}/`
+          return process.env.isDev
+            ? demoUrl
+            : process.env.httpUrl + demoUrl;
+        }
+
       },
     },
   }

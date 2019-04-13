@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>@@@ ToDo:</h2>
+    <h2>ToDo:</h2>
     <h3
       v-if="slide.data.todo"
       v-html="$md.renderInline(slide.data.todo)" />

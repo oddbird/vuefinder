@@ -213,10 +213,24 @@ html {
 
 <!-- slide -->
 
-## Accoutrement
-## [Maps **`=>`** CSS Variables][vars]
+---
+caption: |
+  See Accoutrement
+  [Maps **`=>`** CSS Variables][vars]
+  and [miriam.codes][mia]
 
-[vars]: https://www.oddbird.net/accoutrement/docs/core-vars.html
+  [vars]: https://www.oddbird.net/accoutrement/docs/core-vars.html
+  [mia]: https://github.com/mirisuzanne/mia/blob/master/_src/scss/config/_themes.scss#L12
+---
+
+### Accoutrement
+## **Automated Theme** Colors
+
+```scss
+$auto-colors: (
+  'text': 'background' ('contrast': 'brand-light' 'brand-dark'),
+);
+```
 
 <!-- slide -->
 
@@ -248,9 +262,31 @@ window.matchMedia('(prefers-color-scheme: light)')
 
 <!-- slide -->
 
----
-todo: DEMO miriam.codes themes
----
+## Add **Transitions**?
+
+```css
+.theme-change * {
+  transition: all 300ms 0 !important;
+}
+```
+
+<!-- slide -->
+
+## **Dim Images** in Dark Mode?
+
+```css
+[data-theme='dark'] {
+  --img-brightness: 75%;
+}
+
+img {
+  filter: brightness(var(--img-brightness, 100%);
+
+  &:hover {
+    --img-brightness: 100%;
+  }
+}
+```
 
 <!-- slide -->
 
@@ -327,9 +363,6 @@ caption: |
 layout: todo
 ---
 
-### Assignment:
-
-- Make a second color map for a second theme
-- Loop to apply colors to variables
-- Use variables to show themes
-- Use contrast function to auto-set some of the colors?
+1. Make multiple themes
+2. Generate your themes from Sass maps
+3. Use provided `contrast` function to auto-set text colors
