@@ -323,7 +323,39 @@ todo: DEMO sizing
 
 <!-- slide -->
 
-### 1D "Flow" Layouts:
+### Coming Soon:
+## `display:` **`<outside> <inside>`**`;`
+
+<!-- slide -->
+
+- **Display-Outside** `=>` Behavior with **siblings**
+- **Display-Inside** `=>` Context for **children**
+
+<!-- slide -->
+
+## Compared to **Current Values**
+
+- `block` `=>` **`block flow`**
+- `flex` `=>` **`block flex`**
+- `inline-flex` `=>` **`inline flex`**
+- `inline-block` `=>` **`inline flow-root`**
+
+<!-- slide -->
+
+---
+caption: |
+  [Understanding CSS Layout And The Block Formatting Context][bfc]
+
+  [bfc]: https://www.smashingmagazine.com/2017/12/understanding-css-layout-block-formatting-context/
+---
+
+## `display:` **`flow-root`**`;`
+## **Block Formatting Context**
+Clears floats, prevents margin-collapse, etc…
+
+<!-- slide -->
+
+### 1D Layouts:
 ## **Multi-Column** & **Flexbox**
 
 <!-- slide -->
@@ -385,17 +417,15 @@ caption: |
 
 <!-- slide -->
 
-> Authors must use order and the grid-placement properties only for visual,
->  not logical, reordering of content.
-> Style sheets that use these features
-> to perform logical reordering are non-conforming.
+> Authors must use order and the grid-placement properties
+> **only for visual, not logical, reordering** of content.
 >
 > ---w3c [specification](https://drafts.csswg.org/css-grid/#order-accessibility)
 
 <!-- slide -->
 
-## Ordering **Can Improve** Readability
-Maintain **logical order** across layouts
+## Use Ordering to **Improve Readability**
+Always check your tab-order...
 
 <!-- slide -->
 
@@ -407,10 +437,4 @@ Maintain **logical order** across layouts
 
 ---
 todo: DEMO flex (w/ order issues?)
----
-
-<!-- slide -->
-
----
-todo: ASSIGNMENT Distribution??
 ---

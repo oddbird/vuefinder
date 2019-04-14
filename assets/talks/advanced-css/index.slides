@@ -8,18 +8,18 @@ versions:
     title: Workshop Intro
     slug: intro
   - date: 9:45am
-    title: Do No Harm (a CSS Manifesto)
+    title: 🛠 Do No Harm (a CSS Manifesto)
     slug:  manifesto
   - date: 10:00am
-    title: Distributing Space
+    title: 🛠 Distributing Space
     slug:  flex
   - date: 11:00am
     title: '`coffee`'
   - date: 11:15am
-    title: Defining Layouts
+    title: 🛠 Defining Layouts
     slug:  layout
   - date: 12:00pm
-    title: Building Systems
+    title: 🛠 Building Systems
     slug: systems
   - date: 1:00pm
     title: '`lunch`'
@@ -35,7 +35,7 @@ versions:
     title: Dynamic Styles
     slug: dynamic
   - date: 4:30pm
-    title: Documentation
+    title: 🛠 Documentation
     slug: docs
 ---
 

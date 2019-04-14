@@ -338,7 +338,6 @@ caption: |
 layout: todo
 ---
 
-### Assignment:
-
-- Build a bar graph (or any graph you want)?
-- Build a day-planner e.g. Tegy Time?
+1. Build a graph of any kind
+2. Adjust both layout and colors based on data
+3. Build a sprite animation

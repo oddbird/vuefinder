@@ -342,7 +342,5 @@ Any valid **definition** will work...
 layout: todo
 ---
 
-### Assignment:
-
-- Button Variations? (doesn't require calc…)
-- Variable-Based Layout System?
+1. Build 3 button colors, and 2 button padding-sizes
+2. Build a variable-based layout system
