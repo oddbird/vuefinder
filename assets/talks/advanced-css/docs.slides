@@ -558,8 +558,6 @@ Everyone shares a single-source…
 layout: todo
 ---
 
-### Assignment:
-
 1. Use SassDoc/Herman to document a Sass map function
 2. Generate Sass maps from Style Dictionary to create a new theme
 3. Use Storybook to document a component

@@ -269,8 +269,6 @@ todo: DEMO overlapping areas
 layout: todo
 ---
 
-### Assignment:
-
 - Responsive Layout using Grid Areas
 - Optionally use named-lines for complex areas?
 - Auto-Fit/Fill Image Gallery
