@@ -462,12 +462,8 @@ $slds-colors: (
 
 <!-- slide -->
 
----
-todo: SLIDE Herman fonts
----
-
 ## `/// ` **`@fonts`**
-![Herman Ratios](/images/agile-systems/herman-ratios.jpg)
+![Herman Ratios](/images/patterns/herman-fonts.jpg)
 
 <!-- slide -->
 
@@ -527,7 +523,13 @@ todo: SLIDE Herman fonts
 <!-- slide -->
 
 ---
-todo: SLIDES storybook
+image: '/images/advanced-css/storybook.jpg'
+alt: Screenshot of storybook showing a button component
+caption: |
+  [Storybook][sb] shows UI components in isolation
+  from React, Vue, or Angular
+
+  [sb]: https://storybook.js.org/
 ---
 
 <!-- slide -->
@@ -558,5 +560,6 @@ layout: todo
 
 ### Assignment:
 
-- Use SassDoc/Herman to document previous assignments
-- Optionally use style-dictionary + storybook?
+1. Use SassDoc/Herman to document a Sass map function
+2. Generate Sass maps from Style Dictionary to create a new theme
+3. Use Storybook to document a component

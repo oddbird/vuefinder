@@ -247,9 +247,23 @@ caption: |
 
 <!-- slide -->
 
----
-todo: DEMO inheritance?
----
+## **Inherited** Properties:
+Mostly **text** related..
+
+- `color`
+- `text-shadoe`
+- `font`
+- etc...
+
+<!-- slide -->
+
+## **Non-Inherited** Properties:
+Mostly **box** related..
+
+- `background`
+- `box-shadow`
+- `padding` / `margin`
+- etc...
 
 <!-- slide -->
 

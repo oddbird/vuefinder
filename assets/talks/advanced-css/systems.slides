@@ -94,7 +94,7 @@ style:
 <!-- slide -->
 
 ---
-todo: IMAGE separation of concerns?
+demo: codeConcerns
 ---
 
 <!-- slide -->
@@ -557,7 +557,10 @@ style:
 <!-- slide -->
 
 ---
-todo: DEMO color loops
+demo: sassSocial
+caption: |
+  Looping through colors
+  and assigning them to components
 ---
 
 <!-- slide -->
@@ -685,8 +688,40 @@ Add them **as you need them** (**DRY** but **DSfP**)
 
 <!-- slide -->
 
+## Write **Tests** for **Logic**
+Sass functions & mixins
+
+<!-- slide -->
+
 ---
-todo: SLIDES testing??
+image: '/images/advanced-css/true.jpg'
+alt: Screenshot of the Oddbird True website
+caption: |
+  Write Sass unit tests with OddBird's
+  [True](https://www.oddbird.net/true/)
+---
+
+<!-- slide -->
+
+```scss
+@include describe('Plus [function]') {
+  @include it('Adds two or more numbers together') {
+    @include assert-equal(
+      plus(5, 8, 13),
+      5 + 8 + 13
+    );
+  }
+}
+```
+
+<!-- slide -->
+
+---
+image: '/images/patterns/true.jpg'
+alt: True command-line output, with all tests passing
+caption: |
+  True integrates with Mocha
+  and other JS test runners
 ---
 
 <!-- slide -->
@@ -695,9 +730,8 @@ todo: SLIDES testing??
 layout: todo
 ---
 
-### Assignment:
-
 - Write a map of colors
 - Write a function to access the map
 - Write a loop to display colors
 - Use `data-` attributes as selectors
+- Write tests for your function
