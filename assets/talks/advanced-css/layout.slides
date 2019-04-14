@@ -243,6 +243,18 @@ todo: DEMO overlapping areas
 
 <!-- slide -->
 
+### Coming Soon:
+###  `grid-template-columns:` **`subgrid`**`;`
+###  `grid-template-rows:` **`subgrid`**`;`
+
+<!-- slide -->
+
+---
+todo: DEMO subgrid need
+---
+
+<!-- slide -->
+
 ## 2018: **Intrinsic** Web Design
 [Jen Simmons](https://twitter.com/jensimmons/status/980980521848127488)
 
