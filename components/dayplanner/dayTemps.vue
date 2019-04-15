@@ -2,40 +2,45 @@
   <table
     class="temps"
     :style="{
-      '--high-temp': Math.max(...temps),
-      '--low-temp': Math.min(...temps),
-    }"
-  >
+      '--high-temp': high,
+      '--low-temp': low,
+    }" >
+
+    <!-- Hours -->
     <tr data-row="hours">
       <th
-        v-for="(temp, index) in temps"
-        :key="index"
-        data-cell="hour"
-      >
-        {{ time(index + start) }}
+        v-for="(temp, time) in temps"
+        :key="time"
+        data-cell="hour" >
+        {{ time }}
       </th>
     </tr>
+
+    <!-- Temps -->
     <tr
       data-row="temps"
-      style="--ease: var(--out-back);"
-    >
+      style="--ease: var(--out-back);" >
+
+      <!-- Temp -->
       <td
-        v-for="(temp, index) in temps"
-        :key="index"
+        v-for="(temp, time, index) in temps"
+        :key="time"
         data-cell="temp"
         :style="{
           '--temp': temp,
           '--index': index,
-        }"
-      >
+        }" >
         <span class="temp">{{ temp }}°</span>
       </td>
+
     </tr>
+
   </table>
 </template>
 
 <style lang="scss">
 .temps {
+  font-size: var(--small);
   display: grid;
   grid: auto 1fr / 1fr;
 }
@@ -54,17 +59,17 @@
 }
 
 [data-cell='temp'] {
-  --pad: 5;
+  --pad: 2;
   --min: 32;
   --min-calc: calc(var(--low-temp) - var(--pad));
-  --range: calc(var(--high-temp) - var(--min));
+  --range: calc(var(--high-temp) - var(--min-calc));
   display: grid;
   grid-template-rows: repeat(var(--range), minmax(0, 1fr));
 
   &::before {
     content: '';
-    --temp-hue: calc(var(--temp) / var(--high-temp) * -360);
-    --delay: calc(var(--index) * 0.1s);
+    --temp-hue: calc(var(--temp) / var(--range) * -180 + 90);
+    --delay: calc(var(--index) * 50ms);
     animation: grow-y var(--speed, 500ms) var(--delay, 0s) var(--ease, ease-in-out) both;
     background: hsl(var(--temp-hue), 75%, 50%);
     grid-row: calc(var(--high-temp) + 1 - var(--temp)) / -1;
@@ -75,7 +80,6 @@
 
 .temp {
   grid-row: -1;
-  text-align: center;
 }
 
 @keyframes grow-y {
@@ -119,33 +123,54 @@
 <script>
   export default {
     props: {
+      allTemps: {
+        type: Array,
+        required: true,
+      },
       start: {
         type: Number,
-        default: 6,
+        required: true,
       },
       end: {
         type: Number,
-        default: 22,
+        required: true,
       },
-    },
-    data() {
-      return {
-        dayTemps: [
-          49, 48, 47, 46, 45, 45, 45, 46, 49, 53, 59, 63,
-          66, 69, 71, 71, 72, 71, 70, 68, 65, 62, 59, 57,
-        ],
-      }
     },
     computed: {
       temps() {
-        return this.dayTemps.slice(this.start, this.end);
+        return this.makeTemps();
+      },
+      high() {
+        return Math.max(...this.allTemps);
+      },
+      low() {
+        return Math.min(...this.allTemps);
+      },
+    },
+    watch: {
+      start() {
+        this.temps = this.makeTemps();
+      },
+      end() {
+        this.temps = this.makeTemps();
       }
     },
     methods: {
+      makeTemps() {
+        const slice = this.allTemps.slice(this.start, this.end);
+        const times = {};
+
+        slice.forEach((temp, i) => {
+          const time = this.time(i + this.start);
+          times[time] = temp;
+        });
+
+        return times;
+      },
       time(hour) {
-        return hour > 12
-          ? `${hour - 12}pm`
-          : `${hour}am`;
+        return (hour < 12)
+          ? `${hour || 12}am`
+          : `${hour - 12 || hour}pm`;
       },
     },
   }

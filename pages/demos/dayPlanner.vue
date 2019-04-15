@@ -1,49 +1,94 @@
 <template>
   <main
-    data-grid="day"
+    class="day-planner"
     :style="{
       '--day-start': start,
       '--day-end': end,
       '--resolution': resolution,
     }"
   >
-    <header class="about">
+    <header>
       <h1>Monday, April 15</h1>
       <p>Denver, CO</p>
     </header>
 
-    <day-temps :start="start" :end="end" />
-    <day-events :start="start" :end="end" />
+    <form data-edit="day">
+      <label for="day-start">
+        <span data-label="day-start">Day Start:</span>
+        <input
+          id="day-start"
+          type="number"
+          min="0" max="8"
+          v-model.number="start"
+          @keydown.stop=""
+        >
+      </label>
+
+      <label for="day-end">
+        <span data-label="day-end">Day End:</span>
+        <input
+          id="day-end"
+          type="number"
+          min="18" max="24"
+          v-model.number="end"
+          @keydown.stop=""
+        >
+      </label>
+    </form>
+
+    <day-temps
+      data-demo="temps"
+      :allTemps="allTemps"
+      :start="start"
+      :end="end"
+    />
+
+    <day-events
+      data-demo="events"
+      :events="events"
+      :start="start"
+      :end="end"
+    />
   </main>
 </template>
 
 <style lang="scss">
-// base styles…
-@import '~accoutrement/sass/init';
-@include import-webfonts;
+// basic layout
+// ------------
 
-html {
-  @include font-family('code');
-
-  --small: 0.75em;
-  --gutter: 1em;
-
-  font-size: calc(16px + 0.5vw);
+.day-planner {
+  // outside…
+  min-height: 100vh;
   padding: var(--gutter);
+
+  // inside…
+  display: grid;
+  grid-template:
+    'head edit' auto
+    'temps temps' 1fr
+    'events events' auto
+    / 1fr 1fr;
+  row-gap: var(--gutter);
 }
 
-// page layout
-[data-grid="day"] {
-  display: grid;
+// // layout areas
+header { grid-area: head; }
+[data-edit='day'] { grid-area: edit; }
+[data-demo='temps'] { grid-area: temps; }
+[data-demo='events'] { grid-area: events; }
+
+
+// day grid
+// --------
+
+.day-planner {
   background: linear-gradient(
     to right,
     hsla(0, 0%, 50%, 0.25) 1px,
     transparent 1px 100%,
   );
   background-size: calc(100% / var(--day-hours));
-  grid: auto 1fr auto / auto;
-  min-height: calc(100vh - (var(--gutter) * 2));
-  row-gap: var(--gutter);
+  background-origin: content-box;
 
   // for our sub-grids to use…
   --day-hours: calc(var(--day-end) - var(--day-start));
@@ -52,9 +97,47 @@ html {
   --day-columns: repeat(var(--col-count), var(--col-size));
 }
 
+
+// for pretty
+// ----------
+
+header,
+[data-edit] {
+  background: white;
+}
+
 p,
 time {
   font-size: var(--small);
+  font-style: italic;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+[data-edit] {
+  display: flex;
+  font-size: var(--small);
+  gap: var(--gutter);
+  justify-content: flex-end;
+}
+
+[for] {
+  align-items: center;
+  display: flex;
+  font-style: italic;
+  gap: inherit;
+}
+
+[data-label] {
+  flex: 0 1 max-content;
+}
+
+input {
+  flex: 1 1 4ch;
+  max-width: 6ch;
 }
 </style>
 
@@ -69,19 +152,60 @@ time {
       dayEvents,
     },
     data() {
+      const allTemps = [
+        49, 48, 47, 46, 45, 45, 45, 46, 49, 53, 59, 63,
+        66, 69, 71, 71, 72, 71, 70, 68, 65, 62, 59, 57,
+      ];
+
+      const events = [
+        {
+          name: 'Tax Day'
+        },
+        {
+          name: 'Morning Routine',
+          category: 'personal',
+          start: 8,
+          end: 9.25,
+        },
+        {
+          name: 'OddBird Standup',
+          category: 'work',
+          start: 9.5,
+          end: 10,
+        },
+        {
+          name: 'Packing',
+          category: 'travel',
+          start: 10,
+          end: 11,
+        },
+        {
+          name: 'Transit…',
+          category: 'travel',
+          start: 12.5,
+          end: 14.5,
+        },
+        {
+          name: 'Client Meeting',
+          category: 'work',
+          start: 14,
+          end: 14.5,
+        },
+        {
+          name: 'DEN => SFO',
+          category: 'travel',
+          start: 14.5,
+          end: 17.25,
+        },
+      ];
+
       return {
-        start: 6,
-        end: 22,
+        allTemps,
+        events,
+        start: 0,
+        end: 24,
         resolution: 4,
       }
-    },
-    computed: {
-      high() {
-        return Math.max(...Object.values(this.data.temps));
-      },
-      low() {
-        return Math.min(...Object.values(this.data.temps));
-      },
     },
   }
 </script>

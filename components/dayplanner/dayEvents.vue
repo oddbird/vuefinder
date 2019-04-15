@@ -33,8 +33,8 @@
 }
 
 .event {
-  --grid-start: calc((var(--start) - var(--day-start)) * var(--resolution));
-  --grid-end: calc((var(--end) - var(--day-start)) * var(--resolution));
+  --grid-start: calc((var(--start) - var(--day-start)) * var(--resolution) + 1);
+  --grid-end: calc((var(--end) - var(--day-start)) * var(--resolution) + 1);
   background: var(--category-hsl);
   grid-column: var(--grid-start, 1) / var(--grid-end, -1);
   border: 1px solid hsla(var(--category-hue, 0), 50%, 50%, var(--a, 0.25));
@@ -86,7 +86,7 @@
 }
 
 time {
-  font-size: 0.75em;
+  font-size: var(--small);
 
   & + &::before {
     content: ' — ';
@@ -97,59 +97,18 @@ time {
 <script>
   export default {
     props: {
+      events: {
+        type: Array,
+        required: true,
+      },
       start: {
         type: Number,
-        default: 6,
+        required: true,
       },
       end: {
         type: Number,
-        default: 22,
+        required: true,
       },
-    },
-    data() {
-      return {
-        events: [
-          {
-            name: 'Tax Day'
-          },
-          {
-            name: 'Morning Routine',
-            category: 'personal',
-            start: 8,
-            end: 9.25,
-          },
-          {
-            name: 'OddBird Standup',
-            category: 'work',
-            start: 9.5,
-            end: 10,
-          },
-          {
-            name: 'Packing',
-            category: 'travel',
-            start: 10,
-            end: 11,
-          },
-          {
-            name: 'Transit…',
-            category: 'travel',
-            start: 12.5,
-            end: 14.5,
-          },
-          {
-            name: 'Client Meeting',
-            category: 'work',
-            start: 14,
-            end: 14.5,
-          },
-          {
-            name: 'DEN => SFO',
-            category: 'travel',
-            start: 14.5,
-            end: 17.25,
-          },
-        ],
-      }
     },
     methods: {
       time(numeric) {
