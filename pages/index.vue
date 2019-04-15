@@ -60,8 +60,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/assets/scss/_vuefinder.scss";
-
 .talk-list {
   display: grid;
   grid-gap: size('gutter') size('double-gutter');

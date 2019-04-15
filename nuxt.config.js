@@ -48,6 +48,9 @@ module.exports = {
   },
 
   build: {
+    splitChunks: {
+      layouts: true
+    },
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
