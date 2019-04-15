@@ -7,12 +7,12 @@
       '--resolution': resolution,
     }"
   >
-    <header>
+    <header class="header">
       <h1>Monday, April 15</h1>
       <p>Denver, CO</p>
     </header>
 
-    <form data-edit="day">
+    <form class="edit">
       <label for="day-start">
         <span data-label="day-start">Day Start:</span>
         <input
@@ -36,15 +36,13 @@
       </label>
     </form>
 
-    <day-temps
-      data-demo="temps"
+    <day-temps class="temps"
       :allTemps="allTemps"
       :start="start"
       :end="end"
     />
 
-    <day-events
-      data-demo="events"
+    <day-events class="events"
       :events="events"
       :start="start"
       :end="end"
@@ -71,24 +69,26 @@
   row-gap: var(--gutter);
 }
 
-// // layout areas
-header { grid-area: head; }
-[data-edit='day'] { grid-area: edit; }
-[data-demo='temps'] { grid-area: temps; }
-[data-demo='events'] { grid-area: events; }
+// layout areas
+.header { grid-area: head; }
+.edit { grid-area: edit; }
+.temps { grid-area: temps; }
+.events { grid-area: events; }
 
 
 // day grid
 // --------
 
 .day-planner {
-  background: linear-gradient(
-    to right,
-    hsla(0, 0%, 50%, 0.25) 1px,
-    transparent 1px 100%,
-  );
+  background:
+    linear-gradient(
+      to right,
+      hsla(0, 0%, 50%, 0.25) 1px,
+      transparent 1px 100%,
+    );
   background-size: calc(100% / var(--day-hours));
   background-origin: content-box;
+  min-width: calc(var(--day-hours) * 1.5em);
 
   // for our sub-grids to use…
   --day-hours: calc(var(--day-end) - var(--day-start));
@@ -101,8 +101,8 @@ header { grid-area: head; }
 // for pretty
 // ----------
 
-header,
-[data-edit] {
+.header,
+.edit {
   background: white;
 }
 
@@ -117,14 +117,17 @@ td {
   text-align: center;
 }
 
-[data-edit] {
+// forms
+// -----
+
+.edit {
   display: flex;
   font-size: var(--small);
   gap: var(--gutter);
   justify-content: flex-end;
 }
 
-[for] {
+label {
   align-items: center;
   display: flex;
   font-style: italic;

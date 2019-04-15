@@ -1,6 +1,5 @@
 <template>
-  <table
-    class="temps"
+  <table class="temps"
     :style="{
       '--high-temp': high,
       '--low-temp': low,
@@ -56,6 +55,8 @@
 
 [data-cell='hour'] {
   padding-bottom: var(--gutter);
+  text-align: left;
+  writing-mode: vertical-lr;
 }
 
 [data-cell='temp'] {
