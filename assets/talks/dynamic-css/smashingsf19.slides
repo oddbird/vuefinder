@@ -193,7 +193,10 @@ resize: true
 <!-- slide -->
 
 ---
-todo: IMG mario sprites / DEMO?
+image: /images/dynamic-css/smashingsf19/mariobrad.jpeg
+alt: Mario Sprites slide,from Brad Frost
+style:
+  --image-size: contain
 ---
 
 <!-- slide -->
@@ -202,7 +205,7 @@ todo: IMG mario sprites / DEMO?
 image: /images/dynamic-css/vueconf19/sprite.jpeg
 alt: Krystal Campioni, Sprite animation
 style:
-  --image-size: 'contain'
+  --image-size: contain
 ---
 
 <!-- slide -->
@@ -217,7 +220,7 @@ style:
 <!-- slide -->
 
 ---
-demo: 'cssSprites'
+demo: cssSprites
 caption: |
   Animated sprites from
   [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
@@ -226,18 +229,21 @@ caption: |
 
 <!-- slide -->
 
-## [Lea Verou](http://twitter.com/leaverou) on **Variables**
+### **Lea Verou**
+## CSS Variables
 [video](https://www.youtube.com/watch?v=2an6-WVPuJU)
 | [slides](http://leaverou.github.io/css-variables)
 
 <!-- slide -->
 
-## **Rachel Andrew**: gridbyexample.com
+### **Rachel Andrew**
+## gridbyexample.com
 examples, templates, and fallbacks
 
 <!-- slide -->
 
-## **Jen Simmons**: youtube.com/layoutland
+### **Jen Simmons**
+## youtube.com/layoutland
 also: labs.jensimmons.com
 
 <!-- slide -->

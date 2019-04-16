@@ -18,35 +18,56 @@
 </template>
 
 <script>
-export default {
-  data() {
-    let spriteSrc = '/images/dynamic-css/vueconf19/animations.png';
+  const urlSrc = (spriteSrc) => {
     if (!spriteSrc.includes('://') && !process.env.isDev) {
       spriteSrc = process.env.httpUrl + spriteSrc;
     }
-    spriteSrc = `url(${spriteSrc})`;
+    return `url(${spriteSrc})`;
+  }
 
-    return {
-      sprite: {
-        src: spriteSrc, // e.g. url('…')
-        columns: 10,
-        rows: 5,
+  const monsters = {
+    sprite: {
+      src: urlSrc('/images/dynamic-css/vueconf19/animations.png'),
+      columns: 10,
+      rows: 5,
+    },
+    actions: [
+      {
+        name: 'idle',
+        row: 0,
       },
-      actions: [
-        {
-          name: 'idle',
-          row: 0, // 0 index
-        },
-        {
-          name: 'attack',
-          row: 1,
-        },
-        {
-          name: 'special',
-          row: 2,
-        },
-      ],
-    }
+      {
+        name: 'attack',
+        row: 1,
+      },
+      {
+        name: 'special',
+        row: 2,
+      },
+    ],
+  };
+
+  const metroid = {
+    sprite: {
+      src: urlSrc('/images/dynamic-css/smashingsf19/metroidsprite.png'),
+      columns: 10,
+      rows: 12,
+    },
+    actions: [
+      {
+        name: 'run-right',
+        row: 2,
+      },
+      {
+        name: 'run-left',
+        row: 3,
+      },
+    ],
+  };
+
+export default {
+  data() {
+    return monsters;
   },
 }
 </script>
