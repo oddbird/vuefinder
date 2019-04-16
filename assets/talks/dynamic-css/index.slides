@@ -5,6 +5,9 @@ author: 'miriam'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
+  - slug: 'smashingsf19'
+    title: 'Smashing SF'
+    date: '16 Apr, 2019'
   - slug: 'vueconf19'
     title: 'VueConf US'
     date: '26 Mar, 2019'
