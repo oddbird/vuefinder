@@ -24,7 +24,7 @@
             type="number"
             @keydown.stop=""
             v-model="plot[i].value"
-            min="1"
+            min="2"
             :max='scale'>
         </td>
       </tr>
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     randomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max - 1) + 1);
+      return Math.floor(Math.random() * Math.floor(max - 2) + 2);
     },
     changeData() {
       this.plot.forEach((e, i) => {
@@ -137,11 +137,16 @@ td {
   grid-column: 1;
   grid-row: var(--start) / -2;
 
-  /* Background-Color */
-  --position: calc(var(--start) / var(--scale) * 100%);
-  background-image: linear-gradient(to right, green, yellow, orange, red);
-  background-size: 1600% 100%;
-  background-position: var(--position) 0;
+  /* Background-Gradient Color */
+  // --position: calc(var(--start) / var(--scale) * 100%);
+  // background-image: linear-gradient(to right, green, yellow, orange, red);
+  // background-size: 1600% 100%;
+  // background-position: var(--position) 0;
+
+  /* HSL Color */
+  --hue-scale: 120; /* red => green */
+  --hue: calc(var(--value) / var(--scale) * var(--hue-scale));
+  background-color: hsl(var(--hue), 100%, 50%);
 
   /* Other styles… */
   align-content: center;

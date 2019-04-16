@@ -1,6 +1,12 @@
 <template>
   <div data-banner="project" >
     <nuxt-link
+      v-if="meta.home"
+      :to="meta.home">
+      ↩
+    </nuxt-link>
+    <nuxt-link
+      v-else
       to="/"
       rel="home">
       🏠

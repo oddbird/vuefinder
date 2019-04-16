@@ -52,7 +52,7 @@ style:
 
 <!-- slide -->
 
-## Web **History**
+## HTML/CSS **History**
 
 <!-- slide -->
 
@@ -818,16 +818,14 @@ section {
 ## Bar **Charts**
 
 ```html
-<dl class="chart" style="--scale: 100">
-  <dt class="date">2000</dt>
-  <dd class="bar" style="--value: 45">45%</dd>
-
-  <dt class="date">2001</dt>
-  <dd class="bar" style="--value: 100">100%</dd>
-
+<table class="chart" style="--scale: 100">
+  <tr class="year">
+    <th class="date">2000</th>
+    <td class="bar" style="--value: 45">45%</td>
+  </tr>
   <!-- etc… -->
-</dl>
-```html
+</table>
+```
 
 <!-- slide -->
 

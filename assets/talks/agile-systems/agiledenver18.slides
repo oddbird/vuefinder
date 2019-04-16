@@ -1,10 +1,10 @@
 ---
-title: 'Agile Design Systems'
-event: 'Agile Denver'
-author: 'miriam'
-date: '2018-10-22'
-image: '/images/agile-systems/_cover.jpg'
-tags: ['css', 'sass', 'design systems', 'components', 'performance']
+title: Agile Design Systems
+event: Agile Denver
+author: miriam
+date: 2018-10-22
+image: /images/agile-systems/_cover.jpg
+tags: [css, sass, design systems, components, performance]
 ---
 
 How can we incorporate patterns into our code,

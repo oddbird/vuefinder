@@ -21,6 +21,7 @@
   import SlideCaption from '~/components/utility/SlideCaption.vue';
 
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
+  import TodoSlide from '~/components/slide/TodoSlide.vue';
   import TitleSlide from '~/components/slide/TitleSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
   import VideoSlide from '~/components/slide/VideoSlide.vue';
@@ -36,6 +37,7 @@
       ImageSlide,
       VideoSlide,
       DefaultSlide,
+      TodoSlide,
       SplitSlide,
       TemplateSlide,
       ContactSlide,
@@ -79,6 +81,7 @@
         defaultLayout = this.slide.data.video ? 'video' : defaultLayout;
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
+        defaultLayout = this.slide.data.todo ? 'todo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
       style() {
@@ -92,7 +95,9 @@
           style['--image'] = `url('${imageUrl}')`;
         }
 
-        if ((this.getLayout === 'image') || (this.getLayout === 'demo')) {
+        const fullScreen = ['image', 'demo', 'split', 'todo'];
+
+        if (fullScreen.includes(this.getLayout)) {
           if (!style['align-self'] && !style['--align-self']) {
             style['--align-self'] = 'stretch';
           }

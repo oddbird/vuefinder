@@ -1,5 +1,5 @@
 <template>
-  <layout-grid />
+  <layout-grid data-demo="layoutGrid" />
 </template>
 
 <script>

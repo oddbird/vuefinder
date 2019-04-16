@@ -9,7 +9,7 @@
     </h3>
 
     <div class="content">
-      <div class="resize">
+      <div class="resize" contenteditable>
         Resize Me!
       </div>
 

@@ -23,3 +23,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+## Deploy
+
+Push to master, and let Netlify do the rest…

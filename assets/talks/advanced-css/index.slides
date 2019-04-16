@@ -1,0 +1,51 @@
+---
+title: Advanced CSS & Sass
+subtitle: for Modern Applications
+author: miriam
+tags: [css, sass, design systems, components, variables, naming, grid, layout]
+versions:
+  - date: 9:30am
+    title: Workshop Intro
+    slug: intro
+  - date: 9:45am
+    title: Do No Harm (a CSS Manifesto)
+    slug:  manifesto
+  - date: 10:00am
+    title: 🛠 Distributing Space
+    slug:  flex
+  - date: 11:00am
+    title: '`coffee`'
+  - date: 11:15am
+    title: 🛠 Defining Layouts
+    slug:  layout
+  - date: 12:00pm
+    title: Building Systems
+    slug: systems
+  - date: 1:00pm
+    title: '`lunch`'
+  - date: 2:00pm
+    title: CSS Variables & Functions
+    slug: variables
+  - date: 2:45pm
+    title: Color Themes
+    slug: themes
+  - date: 3:30pm
+    title: '`coffee`'
+  - date: 3:45pm
+    title: Dynamic Styles
+    slug: dynamic
+  - date: 4:30pm
+    title: Integrated Documentation
+    slug: docs
+---
+
+*CSS is the web-language of design* --
+providing powerful and dynamic tools
+for cross-browser & cross-device experiences.
+
+<!-- more -->
+
+Code Exercises & Demos:
+
+- [CodeSandbox](https://codesandbox.io/s/214yy98mqp)
+- [GitHub](https://codesandbox.io/s/214yy98mqp)
