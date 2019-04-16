@@ -8,28 +8,28 @@
     <!-- Hours -->
     <tr data-row="hours">
       <th
-        v-for="(temp, time) in temps"
-        :key="time"
-        data-cell="hour" >
+        data-cell="hour-title"
+        v-for="(temp, time) in temps" :key="time" >
         {{ time }}
       </th>
     </tr>
 
     <!-- Temps -->
-    <tr
-      data-row="temps"
-      style="--ease: var(--out-back);" >
+    <!-- :style="{'--ease': ease}" -->
+    <tr data-row="temps">
 
       <!-- Temp -->
+      <!-- (temp, time, index) -->
+      <!-- '--index': index, -->
       <td
-        v-for="(temp, time, index) in temps"
-        :key="time"
-        data-cell="temp"
+        data-cell="temp-value"
         :style="{
           '--temp': temp,
-          '--index': index,
-        }" >
-        <span class="temp">{{ temp }}°</span>
+        }"
+        v-for="(temp, time) in temps" :key="time" >
+        <span class="temp-value">
+          {{ temp }}°
+        </span>
       </td>
 
     </tr>
@@ -38,60 +38,141 @@
 </template>
 
 <style lang="scss">
-.temps {
-  font-size: var(--small);
-  display: grid;
-  grid: auto 1fr / 1fr;
-}
+// Grid Alignment
+// --------------
 
-[data-row] {
-  display: grid;
-  grid-template-columns: var(--day-columns);
-}
+// .temps {
+//   display: grid;
+//   grid: auto 1fr / 1fr;
+// }
 
-[data-cell] {
-  grid-column-end: span var(--resolution);
-}
+// [data-row] { // table header & data rows
+//   display: grid;
+//   grid-template-columns: var(--day-template);
+// }
 
-[data-cell='hour'] {
-  padding-bottom: var(--gutter);
-  text-align: left;
-  writing-mode: vertical-lr;
-}
+// [data-cell] { // header and data cells
+//   grid-column-end: span var(--columns-per-hour);
+// }
 
-[data-cell='temp'] {
-  --pad: 2;
-  --min: 32;
-  --min-calc: calc(var(--low-temp) - var(--pad));
-  --range: calc(var(--high-temp) - var(--min-calc));
-  display: grid;
-  grid-template-rows: repeat(var(--range), minmax(0, 1fr));
 
-  &::before {
-    content: '';
-    --temp-hue: calc(var(--temp) / var(--range) * -180 + 90);
-    --delay: calc(var(--index) * 50ms);
-    animation: grow-y var(--speed, 500ms) var(--delay, 0s) var(--ease, ease-in-out) both;
-    background: hsl(var(--temp-hue), 75%, 50%);
-    grid-row: calc(var(--high-temp) + 1 - var(--temp)) / -1;
-    margin: 0 1px;
-    transform-origin: 50% 100%;
-  }
-}
+// Title Orientation
+// -----------------
 
-.temp {
-  grid-row: -1;
-}
+// [data-cell='hour-title'] {
+//   writing-mode: vertical-lr;
+// }
 
-@keyframes grow-y {
-  from {
-    transform: scaleY(0);
-  }
 
-  to {
-    transform: scaleY(1);
-  }
-}
+// Value Visualization
+// -------------------
+
+// [data-cell='temp-value'] {
+//   --range: calc(var(--high-temp) - var(--low-temp));
+//   display: grid;
+//   grid-template-rows: repeat(var(--range), minmax(0, 1fr));
+
+//   &::before {
+//     content: '';
+//     background: hsl(0, 75%, 50%);
+//     grid-row: calc(var(--high-temp) + 1 - var(--temp)) / -1;
+//     margin: 0 1px;
+//   }
+// }
+
+// .temp-value {
+//   grid-row: -1;
+// }
+
+
+// Change the Scale
+// ----------------
+
+// [data-cell='temp-value'] {
+//   --range: calc(var(--high-temp) - var(--min-temp, var(--low-temp, 32)));
+//   --min-temp: calc(var(--low-temp) - var(--pad, 2));
+//   --pad: 2;
+// }
+
+
+// Add Colors
+// ----------
+
+// [data-cell='temp-value'] {
+//   &::before {
+//     --temp-fraction: calc(var(--temp) / var(--range));
+//     --hue-range: 180;
+//     --temp-hue: calc(
+//       var(--temp-fraction) * var(--hue-range)
+//     );
+//     background: hsl(var(--temp-hue, 0), 75%, 50%);
+//   }
+// }
+
+
+// Improved Colors
+// ---------------
+
+// [data-cell='temp-value'] {
+//   &::before {
+//     --hue-direction: -1;
+//     --hue-offset: 90;
+//     --temp-hue: calc(
+//       var(--temp-fraction)
+//       * var(--hue-range)
+//       * var(--hue-direction)
+//       + var(--hue-offset)
+//     );
+//   }
+// }
+
+
+// Graph Animation
+// ---------------
+
+// @keyframes grow-y {
+//   from {
+//     transform: scaleY(0);
+//   }
+
+//   to {
+//     transform: scaleY(1);
+//   }
+// }
+
+// [data-cell='temp-value'] {
+//   &::before {
+//     animation: grow-y
+//       var(--speed, 2s)
+//       var(--delay, 0s)
+//       var(--ease, ease-in-out)
+//       both;
+//   }
+// }
+
+
+// Animation Origin
+// ================
+
+// [data-cell='temp-value'] {
+//   &::before {
+//     transform-origin: 50% 100%;
+//   }
+// }
+
+
+// Animation Index Delay
+// =====================
+// - counter() is only valid in content property
+// - :nth-child() selectors would have to be explicit
+
+// [data-cell='temp-value'] {
+//   --delay: calc(var(--index) * 50ms);
+// }
+
+
+// Animation Easing Presets
+// ------------------------
 
 [style*='--ease'] {
   --in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -121,6 +202,22 @@
 }
 </style>
 
+
+<style data-note="style cleanup...">
+.temps {
+  font-size: var(--small);
+}
+
+[data-cell='hour-title'] {
+  padding-bottom: var(--gutter);
+  text-align: left;
+}
+
+[data-cell='temp-value'] {
+  text-align: center;
+}
+</style>
+
 <script>
   export default {
     props: {
@@ -136,6 +233,11 @@
         type: Number,
         required: true,
       },
+    },
+    data() {
+      return {
+        ease: 'ease-in'
+      }
     },
     computed: {
       temps() {

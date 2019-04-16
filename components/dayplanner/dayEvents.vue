@@ -2,95 +2,110 @@
   <div class="events">
     <h2>Events:</h2>
     <section
-      v-for="(event, index) in events"
-      :key="index"
       class="event"
       :style="{
-        '--start': event.start,
-        '--end': event.end,
+        '--event-start': event.start,
+        '--event-end': event.end,
         '--category': `var(--${event.category})`,
       }"
-    >
-      <div class="event-inner">
+      v-for="(event, index) in events" :key="index" >
         <h3>{{ event.name }}</h3>
-        <time v-if="event.start">{{ time(event.start) }}</time>
-        <time v-if="event.end">{{ time(event.end) }}</time>
-      </div>
+        <div v-if="event.start && event.end" >
+          <time v-if="event.start">{{ time(event.start) }}</time>–<time v-if="event.end">{{ time(event.end) }}</time>
+        </div>
     </section>
   </div>
 </template>
 
 <style lang="scss">
-.events {
-  display: grid;
-  grid-auto-flow: dense;
-  grid-auto-rows: 1.5em;
-  grid-template-columns: var(--day-columns);
+// The Day Grid
+// ------------
 
-  > * {
-    grid-column: 1 / -1;
-  }
-}
+// .events {
+//   display: grid;
+//   grid-template-columns: var(--day-template);
+// }
 
+
+// Full-Width Defaults
+// -------------------
+
+// .events {
+//   > * {
+//     grid-column: 1 / -1;
+//   }
+// }
+
+
+// Event Colors
+// ------------
+
+// [style*='--category'] {
+//   --undefined: 0;
+//   --personal: 190;
+//   --work: 90;
+//   --travel: 240;
+// }
+
+// .event {
+//   --category-hue: var(--category, 0);
+//   --category-background: hsl(var(--category-hue, 0), 65%, 70%);
+//   --category-border: hsl(var(--category-hue, 0), 50%, 50%);
+//   background: var(--category-background);
+//   border: 1px solid var(--category-border);
+//   border-radius: 0.25em;
+//   padding: calc(var(--gutter) / 4);
+// }
+
+
+// Event Positions
+// ---------------
+
+// .event {
+//   --event-start-column: calc((var(--event-start) - var(--day-start)) * var(--columns-per-hour) + 1);
+//   --event-end-column: calc((var(--event-end) - var(--day-start)) * var(--columns-per-hour) + 1);
+//   grid-column: var(--event-start-column, 1) / var(--event-end-column, -1);
+// }
+
+
+// Grid Overflow
+// -------------
+
+// .event {
+//   > * {
+//     background: inherit;
+//     overflow: var(--overflow, hidden);
+//     padding: 0 calc(var(--gutter) / 4);
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: var(--width, auto);
+//   }
+
+//   &:hover {
+//     --overflow: visible;
+//     --width: max-content;
+//     filter: drop-shadow(0 0 0.125em black);
+//     z-index: 10;
+//   }
+// }
+
+
+// Grid Flow
+// ---------
+
+// .events {
+//   grid-auto-flow: dense;
+// }
+</style>
+
+
+<style  data-note="style cleanup...">
 .event {
-  --grid-start: calc((var(--start) - var(--day-start)) * var(--resolution) + 1);
-  --grid-end: calc((var(--end) - var(--day-start)) * var(--resolution) + 1);
-  background: var(--category-hsl);
-  grid-column: var(--grid-start, 1) / var(--grid-end, -1);
-  border: 1px solid hsla(var(--category-hue, 0), 50%, 50%, var(--a, 0.25));
-  border-radius: 0.25em;
-  position: relative;
-
-  &:hover {
-    --a: 0.5;
-    --delay: 0s;
-    --opacity: 1;
-    --pointer: auto;
-  }
-}
-
-.event-inner {
-  opacity: var(--opacity, 0);
-  pointer-events: var(--pointer, none);
-  background: white;
-  filter: drop-shadow(0 0 0.25em gray);
-  padding: 0.25em 1em;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: min-content;
-  width: 80vw;
-  max-width: max-content;
-  transition: opacity 200ms var(--delay, 100ms);
-  z-index: 100;
-
-  &::after {
-    content: '';
-    height: 0;
-    border: 0.5em solid transparent;
-    border-top-color: white;
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-  }
-}
-
-[style*='--category'] {
-  --personal: 190;
-  --work: 12;
-  --travel: 240;
-  --category-hue: var(--category, 0);
-  --category-hsl: hsl(var(--category-hue, 0), 65%, 70%);
-}
-
-time {
   font-size: var(--small);
+}
 
-  & + &::before {
-    content: ' — ';
-  }
+.event-times {
+  white-space: nowrap;
 }
 </style>
 

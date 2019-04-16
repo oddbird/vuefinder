@@ -4,7 +4,6 @@
     :style="{
       '--day-start': start,
       '--day-end': end,
-      '--resolution': resolution,
     }"
   >
     <header class="header">
@@ -50,57 +49,67 @@
   </main>
 </template>
 
+
 <style lang="scss">
-// basic layout
-// ------------
+// Setup
+// -----
 
-.day-planner {
-  // outside…
-  min-height: 100vh;
-  padding: var(--gutter);
-
-  // inside…
-  display: grid;
-  grid-template:
-    'head edit' auto
-    'temps temps' 1fr
-    'events events' auto
-    / 1fr 1fr;
-  row-gap: var(--gutter);
-}
-
-// layout areas
-.header { grid-area: head; }
-.edit { grid-area: edit; }
-.temps { grid-area: temps; }
-.events { grid-area: events; }
+// .day-planner {
+//   min-height: 100vh;
+//   padding: var(--gutter);
+// }
 
 
-// day grid
+// Grid Layout
+// -----------
+
+// .day-planner {
+//   display: grid;
+//   grid-template:
+//     'head edit' auto
+//     'temps temps' 1fr
+//     'events events' auto
+//     / 1fr 1fr; // minmax(auto, 1fr)
+//   row-gap: var(--gutter);
+// }
+
+// .header { grid-area: head; }
+// .edit { grid-area: edit; }
+// .temps { grid-area: temps; }
+// .events { grid-area: events; }
+
+
+// Day Grid
 // --------
 
-.day-planner {
-  background:
-    linear-gradient(
-      to right,
-      hsla(0, 0%, 50%, 0.25) 1px,
-      transparent 1px 100%,
-    );
-  background-size: calc(100% / var(--day-hours));
-  background-origin: content-box;
-  min-width: calc(var(--day-hours) * 1.5em);
+// .day-planner {
+//   --hours-per-day: calc(var(--day-end) - var(--day-start));
 
-  // for our sub-grids to use…
-  --day-hours: calc(var(--day-end) - var(--day-start));
-  --col-count: calc(var(--day-hours) * var(--resolution));
-  --col-size: minmax(0, 1fr);
-  --day-columns: repeat(var(--col-count), var(--col-size));
-}
+//   --columns-per-hour: 4;
+//   --columns-per-day: calc(var(--hours-per-day) * var(--columns-per-hour));
+
+//   --column-size: minmax(0, 1fr);
+//   --day-template: repeat(var(--columns-per-day), var(--column-size));
+// }
 
 
-// for pretty
-// ----------
+// Visualizing the Grid
+// --------------------
 
+// .day-planner {
+//   background:
+//     linear-gradient(
+//       to right,
+//       hsl(210, 50%, 50%) 1px,
+//       transparent 1px 100%,
+//     );
+//   background-size: calc(100% / var(--hours-per-day));
+//   background-origin: content-box;
+// }
+</style>
+
+
+<style data-note="style cleanup...">
 .header,
 .edit {
   background: white;
@@ -112,13 +121,9 @@ time {
   font-style: italic;
 }
 
-th,
-td {
-  text-align: center;
-}
 
-// forms
-// -----
+/* Forms
+   ----- */
 
 .edit {
   display: flex;
@@ -177,22 +182,34 @@ input {
           end: 10,
         },
         {
-          name: 'Packing',
-          category: 'travel',
+          name: 'Workshop/Talk Review',
+          category: 'work',
           start: 10,
           end: 11,
         },
         {
-          name: 'Transit…',
+          name: 'Packing',
           category: 'travel',
-          start: 12.5,
+          start: 10.5,
+          end: 11.5,
+        },
+        {
+          name: 'Lunch',
+          category: 'personal',
+          start: 12,
+          end: 12.5,
+        },
+        {
+          name: 'Transit',
+          category: 'travel',
+          start: 12.75,
           end: 14.5,
         },
         {
           name: 'Client Meeting',
           category: 'work',
           start: 14,
-          end: 14.5,
+          end: 15,
         },
         {
           name: 'DEN => SFO',
@@ -207,7 +224,6 @@ input {
         events,
         start: 0,
         end: 24,
-        resolution: 4,
       }
     },
   }
