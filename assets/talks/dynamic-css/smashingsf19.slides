@@ -1,11 +1,11 @@
 ---
-title: 'Dynamic CSS'
-subtitle: 'without Slides'
-event: 'Smashing Conf'
-author: 'miriam'
+title: Dynamic CSS
+subtitle: without Slides
+event: Smashing Conf
+author: miriam
 date: '2019-04-17'
-image: '/images/dynamic-css/_cover.jpg'
-tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
+image: /images/dynamic-css/_cover.jpg
+tags: [css, variables, custom properties, grid, graphs]
 ---
 
 Don't be fooled by the declarative syntax,
@@ -22,7 +22,7 @@ layout: title
 
 ---
 image: /images/dynamic-css/smashingsf19/bey.jpg
-alt: Homecoming, a film by Beyonce
+alt: Homecoming, a film by Beyoncé
 ---
 
 <!-- slide -->
@@ -188,8 +188,8 @@ resize: true
 
 ---
 demo: cssSprites
-# props:
-#   sprite: metroid
+props:
+  sprite: metroid
 caption: |
   Animated sprites from
   [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
