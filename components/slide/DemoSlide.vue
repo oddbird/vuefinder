@@ -2,10 +2,13 @@
   <figure :data-resize='slide.data.resize' >
     <component v-if="inlineDemo"
       :data-demo="slide.data.demo"
-      :is="inlineDemo" />
+      :is="inlineDemo"
+      v-bind="slide.data.props"
+    />
     <iframe v-else
       :data-demo="slide.data.demo"
-      :src="frameSrc" />
+      :src="frameSrc"
+    />
   </figure>
 </template>
 

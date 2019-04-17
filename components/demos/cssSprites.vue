@@ -2,12 +2,12 @@
   <section
     class="sprite-demo"
     :style="{
-      '--src': sprite.src,
-      '--columns': sprite.columns,
-      '--rows': sprite.rows,
+      '--src': show.sprite.src,
+      '--columns': show.sprite.columns,
+      '--rows': show.sprite.rows,
     }">
     <div
-      v-for="action in actions"
+      v-for="action in show.actions"
       :key="action.name"
       :data-action="action.name"
       :style="{
@@ -67,7 +67,23 @@
 
 export default {
   data() {
-    return monsters;
+    return {
+      sprites: {
+        monsters,
+        metroid,
+      }
+    };
+  },
+  props: {
+    sprite: {
+      type: String,
+      default: 'monsters'
+    },
+  },
+  computed: {
+    show() {
+      return this.sprites[this.sprite];
+    }
   },
 }
 </script>

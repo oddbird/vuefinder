@@ -3,7 +3,7 @@ title: 'Dynamic CSS'
 subtitle: 'without Slides'
 event: 'Smashing Conf'
 author: 'miriam'
-date: '2019-04-16'
+date: '2019-04-17'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 ---
@@ -20,7 +20,10 @@ layout: title
 
 <!-- slide -->
 
-## talks.oddbird.net/dynamic-css/
+---
+image: /images/dynamic-css/smashingsf19/bey.jpg
+alt: Homecoming, a film by Beyonce
+---
 
 <!-- slide -->
 
@@ -35,9 +38,12 @@ caption: |
 
 <!-- slide -->
 
+## talks.oddbird.net/dynamic-css/
+
+<!-- slide -->
+
 ![OddBird Faces](/images/_oddbird/allbirds.svg)
-### [**OddBird**](https://oddbird.net)
-Full-Stack Agency:
+### [**OddBird**](https://oddbird.net) Full-Stack Agency
 **Custom Applications** | **Design Systems** | **Refactors**
 
 <!-- slide -->
@@ -47,27 +53,15 @@ Full-Stack Agency:
 
 <!-- slide -->
 
-![CSS is Awesome (overflow meme)](/images/dynamic-css/css-is-awesome.jpg)
+## **Stop** Using Slides
 
 <!-- slide -->
 
----
-image: /images/advanced-css/indesign-is.jpg
-alt: |
-  A box with text inside
-  that says 'InDesign is'
-  and then has a small + icon
-  to indicate overset text
-caption: ¯\\\_**(ツ)**_/¯ what were you hoping for?
-style:
-  --image-size: 60%
----
+## Hey **Vitaly**,
+### **Miriam** is Cheating
 
-<!-- slide -->
-
-## **Declarative** Syntax
-## **`!=`**
-## **Static** Results
+## **`↙`**
+(she's over there)
 
 <!-- slide -->
 
@@ -193,34 +187,9 @@ resize: true
 <!-- slide -->
 
 ---
-image: /images/dynamic-css/smashingsf19/mariobrad.jpeg
-alt: Mario Sprites slide,from Brad Frost
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-image: /images/dynamic-css/vueconf19/sprite.jpeg
-alt: Krystal Campioni, Sprite animation
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-image: /images/dynamic-css/vueconf19/animations-copy.png
-alt: Sprite from Monster Slayer animation
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
 demo: cssSprites
+# props:
+#   sprite: metroid
 caption: |
   Animated sprites from
   [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
@@ -229,22 +198,63 @@ caption: |
 
 <!-- slide -->
 
-### **Lea Verou**
-## CSS Variables
-[video](https://www.youtube.com/watch?v=2an6-WVPuJU)
-| [slides](http://leaverou.github.io/css-variables)
+---
+split:
+  image: /images/_people/leaverou.jpg
+  size: cover
+---
+
+# Lea Verou | [@LeaVerou](https://twitter.com/LeaVerou/)
+### [CSS Variables Talk](https://www.youtube.com/watch?v=2an6-WVPuJU)
+and [slides](http://leaverou.github.io/css-variables)
 
 <!-- slide -->
 
-### **Rachel Andrew**
-## gridbyexample.com
+---
+split:
+  image: /images/_people/rachelandrew.jpg
+  size: cover
+---
+
+# Rachel Andrew | [@rachelandrew](https://twitter.com/rachelandrew)
+### gridbyexample.com
 examples, templates, and fallbacks
 
 <!-- slide -->
 
-### **Jen Simmons**
-## youtube.com/layoutland
-also: labs.jensimmons.com
+---
+split:
+  image: /images/_people/jensimmons.jpg
+  size: cover
+---
+
+# Jen Simmons | [@jensimmons](https://twitter.com/jensimmons)
+### youtube.com/layoutland
+and labs.jensimmons.com
+
+<!-- slide -->
+
+![CSS is Awesome (overflow meme)](/images/dynamic-css/css-is-awesome.jpg)
+
+<!-- slide -->
+
+---
+image: /images/advanced-css/indesign-is.jpg
+alt: |
+  A box with text inside
+  that says 'InDesign is'
+  and then has a small + icon
+  to indicate overset text
+caption: ¯\\\_**(ツ)**_/¯ what were you hoping for?
+style:
+  --image-size: 60%
+---
+
+<!-- slide -->
+
+## **Declarative** Syntax
+## **`!=`**
+## **Static** Results
 
 <!-- slide -->
 
@@ -261,10 +271,9 @@ caption: |
 layout: template
 ---
 
-### Have **Fun**!
+## Have **Fun**!
 
-## **Sign Up** for the [**OddBird Newsletter**][news]
-Practical thoughts on **design**, **process**, and **code**...
+### **Sign Up** for the [**OddBird Newsletter**][news]
 
 [news]: https://mailchi.mp/6a5ceb1ab43c/oddnews_signup
 

@@ -7,7 +7,7 @@ tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
   - slug: 'smashingsf19'
     title: 'Smashing SF'
-    date: '16 Apr, 2019'
+    date: '17 Apr, 2019'
   - slug: 'vueconf19'
     title: 'VueConf US'
     date: '26 Mar, 2019'
