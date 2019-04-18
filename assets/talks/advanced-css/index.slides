@@ -11,12 +11,12 @@ versions:
     title: Do No Harm (a CSS Manifesto)
     slug:  manifesto
   - date: 10:00am
-    title: 🛠 Distributing Space
+    title: Distributing Space
     slug:  flex
   - date: 11:00am
     title: '`coffee`'
   - date: 11:15am
-    title: 🛠 Defining Layouts
+    title: Defining Layouts
     slug:  layout
   - date: 12:00pm
     title: Building Systems
@@ -42,10 +42,3 @@ versions:
 *CSS is the web-language of design* --
 providing powerful and dynamic tools
 for cross-browser & cross-device experiences.
-
-<!-- more -->
-
-Code Exercises & Demos:
-
-- [CodeSandbox](https://codesandbox.io/s/214yy98mqp)
-- [GitHub](https://codesandbox.io/s/214yy98mqp)

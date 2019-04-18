@@ -44,7 +44,7 @@ creates **implicit** `auto`-sized grids
 <!-- slide -->
 
 ---
-todo: DEMO auto grid
+todo: DEMO implicit-default grid
 ---
 
 <!-- slide -->
@@ -85,7 +85,7 @@ same concept, different algorythm
 <!-- slide -->
 
 ---
-todo: DEMO auto grid
+todo: DEMO implicit grid with settings
 ---
 
 <!-- slide -->
