@@ -204,18 +204,10 @@ resize: true
 
 <!-- slide -->
 
----
-caption: Use quotes when defining line-names
----
-
 ## **Named** Grid Lines
-**`['before']`** `1fr` **`['after']`**
+**`[before]`** `1fr` **`[after]`**
 
 <!-- slide -->
-
----
-caption: No quotes when aligning to named lines
----
 
 ## **Align** to Names
 `grid-column:` **`before`** `/` **`after`** `;`
@@ -227,13 +219,13 @@ with matching **`*-start`** & **`*-end`** names
 
 <!-- slide -->
 
-## **`['nav-start']`** `15em` **`['nav-end']`**
+## **`[nav-start]`** `15em` **`[nav-end]`**
 ## `grid-area: nav;`
 
 <!-- slide -->
 
 ## **Overlapping** Areas
-**`['full-start' 'nav-start']`** `20em` **`['nav-end']`** `1fr` **`['full-end']`**
+**`[full-start nav-start]`** `20em` **`[nav-end]`** `1fr` **`[full-end]`**
 
 <!-- slide -->
 

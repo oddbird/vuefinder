@@ -272,7 +272,7 @@ caption: |
 - `[data-attr]` `=>` **Presence** (even if empty)
 - `[data-attr`**`=`**`"..."]` `=>` **Exact** match
 - `[data-attr`**`*`**`="..."]` `=>` **Any** match
-- `[data-attr`**`~`**`="..."]` `=>` **String**-delimited
+- `[data-attr`**`~`**`="..."]` `=>` **Space**-delimited (like classes)
 - `[data-attr`**`|`**`="..."]` `=>` **Hyphen**-delimited
 - `[data-attr`**`^`**`="..."]` `=>` **Starts** with...
 - `[data-attr`**`$`**`="..."]` `=>` **Ends** with...
