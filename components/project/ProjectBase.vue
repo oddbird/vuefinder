@@ -14,6 +14,8 @@
       :view="view"
       @open="toggleView('slides', $event)"
       @close="close" />
+
+    <odd-footer />
   </main>
 </template>
 
@@ -22,12 +24,14 @@
   import shuffle from 'lodash/shuffle';
   import ProjectMeta from '~/components/project/ProjectMeta.vue';
   import ProjectSlides from '~/components/project/ProjectSlides.vue';
+  import OddFooter from '~/components/utility/OddFooter.vue';
   import path from 'path';
 
   export default {
     components: {
       ProjectMeta,
       ProjectSlides,
+      OddFooter,
     },
     props: {
       src: {

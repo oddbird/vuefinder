@@ -1,5 +1,7 @@
 <template>
-  <button :data-btn-id="id"
+  <button
+    :data-btn-id="id"
+    :id="id"
     :data-btn-style="btnStyle"
     :disabled="disabled"
     :data-active='active'

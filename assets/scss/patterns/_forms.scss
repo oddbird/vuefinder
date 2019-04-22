@@ -1,0 +1,18 @@
+// Forms
+// =====
+
+[data-form] {
+  display: grid;
+  grid-gap: size('half-shim');
+  grid-template-columns: repeat(auto-fit, minmax(size('half-page'), 1fr));
+  text-align: left;
+}
+
+[data-form-span],
+[data-actions] {
+  grid-column: 1 / -1;
+}
+
+[data-actions] {
+  text-align: right;
+}

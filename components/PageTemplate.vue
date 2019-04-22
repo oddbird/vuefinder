@@ -1,5 +1,5 @@
 <template>
-  <main data-layout="page-template">
+  <div data-layout="page-template">
     <template-header logoHeight="10em"
       :pullContent="false" />
 
@@ -18,19 +18,23 @@
         :author="author" />
     </header>
 
-    <div class="page-content">
+    <main class="page-content">
       <slot>Hello World</slot>
-    </div>
-  </main>
+    </main>
+
+    <odd-footer class="page-info" />
+  </div>
 </template>
 
 <script>
   import TemplateHeader from '~/components/TemplateHeader.vue';
   import ByLine from '~/components/utility/ByLine.vue';
+  import OddFooter from '~/components/utility/OddFooter.vue';
 
   export default {
     components: {
       ByLine,
+      OddFooter,
       TemplateHeader,
     },
     props: {
@@ -66,6 +70,10 @@
   grid-column: content;
 }
 
+.page-info {
+  grid-column: full;
+}
+
 .page-header {
   align-items: center;
   display: flex;
@@ -97,7 +105,7 @@
 }
 
 .page-content {
-  margin-bottom: size('spacer');
+  margin-bottom: size('gutter');
 
   h2 {
     font-size: size('medium');
@@ -112,14 +120,6 @@
   ol,
   p {
     margin-bottom: size('newline');
-  }
-}
-</style>
-
-<style lang="scss">
-.page-title {
-  strong {
-    color: color('accent');
   }
 }
 </style>
