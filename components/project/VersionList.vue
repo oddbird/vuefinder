@@ -42,7 +42,7 @@
     methods: {
       fullPath(slug) {
         return slug
-          ? path.join(this.path, slug)
+          ? path.join(this.$route.path, slug)
           : null;
       }
     },

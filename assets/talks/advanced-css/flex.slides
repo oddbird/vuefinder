@@ -246,9 +246,19 @@ caption: |
 
 <!-- slide -->
 
----
-todo: DEMO box alignment
----
+## Now in [`flex`][flex] & [`grid`][grid]
+###
+Spec supports [`block`][block], [`table`][block],
+[`absolute`][block], [`multi-column`][multi], etc...
+
+[flex]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox
+[grid]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_In_Grid_Layout
+[block]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_In_Block_Abspos_Tables
+[multi]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Multi-column_Layout
+
+<!-- slide -->
+
+## [Alignment Demo](https://codepen.io/mirisuzanne/pen/KYBOaY?editors=0100)
 
 <!-- slide -->
 
@@ -273,9 +283,7 @@ Same values, but for placing an object
 
 <!-- slide -->
 
----
-todo: DEMO object-fit
----
+## [Object Fit Demo](https://codepen.io/stacy/pen/3933712956da32bd2e594748928bbb44)
 
 <!-- slide -->
 
@@ -292,8 +300,17 @@ caption: |
 <!-- slide -->
 
 ---
-todo: DEMO writing-mode
+caption: |
+  MDN [Compatability Table](https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation#Browser_compatibility)
 ---
+
+## Text-**Orientation**
+### (when writing-mode is vertical)
+**`mixed`** | **`upright`** | **`sideways`**
+
+<!-- slide -->
+
+## [Writing Modes & Orientation Demo](https://codepen.io/mirisuzanne/pen/YMOoYz?editors=1100)
 
 <!-- slide -->
 
@@ -312,14 +329,28 @@ caption: |
 
 <!-- slide -->
 
+---
+caption: |
+  [Mixed Support][can]
+
+  [can]: https://caniuse.com/#feat=intrinsic-width
+---
+
 ## **Intrinsic** Sizes
-auto | **`max-content`** | **`min-content`** | **`fit-content()`**
+**`stretch`** | **`max-content`** | **`min-content`**
 
 <!-- slide -->
 
 ---
-todo: DEMO sizing
+caption: |
+  More [details on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content)
 ---
+
+## **`fit-content(`**`<max>`**`)`** `=>` Grid-Templates
+
+<!-- slide -->
+
+## [Intrinsic Sizing Demo](https://codepen.io/mirisuzanne/pen/JVagQW?editors=1100)
 
 <!-- slide -->
 
@@ -365,9 +396,7 @@ Clears floats, prevents margin-collapse, etc…
 
 <!-- slide -->
 
----
-todo: DEMO multicolumn
----
+## [Multicolumn Demo](https://codepen.io/stacy/pen/ad84f0543a0e424568c4ce9899c84c40)
 
 <!-- slide -->
 
@@ -382,9 +411,7 @@ todo: DEMO multicolumn
 
 <!-- slide -->
 
----
-todo: DEMO flex-flow
----
+## [Flex-flow Demo](https://codepen.io/stacy/pen/dLZpqX?editors=0100)
 
 <!-- slide -->
 
@@ -399,7 +426,24 @@ Relative Distribution of **Unavailable** Space
 <!-- slide -->
 
 ## **`flex-basis`**`: auto;`
-Set the ideal **starting width**, before flexing
+The ideal **starting width**, before flexing
+
+<!-- slide -->
+
+---
+caption: |
+  The spec is written so that
+  [four flex shorthand values](https://www.w3.org/TR/css-flexbox-1/#flex-common)
+  are meant to handle the majority of
+  common use-cases.
+---
+
+## Common Cases `=>` **`flex`**
+**`initial`** | **`auto`** | **`none`** | **`<grow>`**
+
+<!-- slide -->
+
+## [Basic Values of Flex, Demo](https://codepen.io/mirisuzanne/pen/eoPORB?editors=1100)
 
 <!-- slide -->
 
@@ -435,6 +479,4 @@ Always check your tab-order...
 
 <!-- slide -->
 
----
-todo: DEMO flex (w/ order issues?)
----
+## [Flex-Order Demo](https://codepen.io/mirisuzanne/pen/YMJKbg?editors=0100)
