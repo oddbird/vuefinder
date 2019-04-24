@@ -60,7 +60,6 @@
   resize: both;
   overflow: auto;
   padding: 0.5rem;
-  width: 10em;
 }
 
 .next,

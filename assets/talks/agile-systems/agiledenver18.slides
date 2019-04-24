@@ -76,9 +76,9 @@ Client: **SRAM**, Field: **Professional Athletics**
 
 ---
 split:
-  image: '/images/_mia/sketch.svg'
-  size: 'contain'
-  margin: 'var(--gutter)'
+  image: /images/_mia/sketch.svg
+  size: contain
+  margin: var(--gutter)
 ---
 
 ## Project **Manager**

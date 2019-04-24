@@ -60,7 +60,7 @@ caption: |
 
 ---
 split:
-  image: '/images/advanced-css/natalie.jpg'
+  image: /images/advanced-css/natalie.jpg
   size: contain
 ---
 
@@ -155,7 +155,7 @@ we never know how tall things are...
 
 ---
 split:
-  image: '/images/advanced-css/nicole.jpg'
+  image: /images/advanced-css/nicole.jpg
   size: cover
 ---
 

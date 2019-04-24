@@ -25,16 +25,8 @@ layout: title
 
 <!-- slide -->
 
----
-demo: layoutGrid
-caption: Grid lines 1-indexed and -1 in reverse (see dev tools)
-resize: true
----
-
-<!-- slide -->
-
 ## Defined by the **Container**
-Use **`auto`** to access intrinsic sizing...
+With access to intrinsic sizing...
 
 <!-- slide -->
 
@@ -43,14 +35,41 @@ creates **implicit** `auto`-sized grids
 
 <!-- slide -->
 
+## Grid **Lines** `=>` **1-Indexed**
+
+<!-- slide -->
+
 ---
-todo: DEMO implicit-default grid
+pen:
+  title: Grid Terminology
+  id: ObmjeZ
+  user: stacy
 ---
 
 <!-- slide -->
 
 ## **`grid-auto-flow`**`: row;`
 **`column`** | [+ **`dense`**]
+
+<!-- slide -->
+
+## Item **Placement**
+
+```css
+.example {
+  grid-row: 2 / span 2;
+  grid-column: 1 / 4;
+  /* grid-area: 2 / 1 / span 2 / 4; */
+}
+```
+
+<!-- slide -->
+
+---
+pen:
+  title: Implicit Grids
+  id: rbqeRz
+---
 
 <!-- slide -->
 
@@ -85,7 +104,9 @@ same concept, different algorythm
 <!-- slide -->
 
 ---
-todo: DEMO implicit grid with settings
+pen:
+  title: Implicit Grids with Sizing
+  id: XQxNBg
 ---
 
 <!-- slide -->
@@ -118,7 +139,12 @@ caption: Great for... something? I'm sure...
 
 <!-- slide -->
 
-## [Auto-Fit Grid Demo](https://codepen.io/stacy/pen/xjRyda?editors=1100)
+---
+pen:
+  title: Auto-Fit Grid
+  id: xjRyda
+  user: stacy
+---
 
 <!-- slide -->
 
@@ -132,72 +158,9 @@ see also: **`grid-template-rows`**
 <!-- slide -->
 
 ---
-todo: DEMO grid template
----
-
-<!-- slide -->
-
-## Explicit **Placement**
-
-```css
-.example {
-  grid-row: 2 / span 2;
-  grid-column: 1 / 4;
-  /* grid-area: 2 / 1 / span 2 / 4; */
-}
-```
-
-<!-- slide -->
-
----
-todo: DEMO placement (with overlap)
----
-
-<!-- slide -->
-
----
-caption: |
-  Use quotes when defining area-names,
-  no quotes when aligning to named areas
----
-
-## Named Grid **Areas**
-
-```css
-body {
-  grid-template-areas: 'header header'
-                       'nav main'
-                       'nav footer';
-}
-
-h1 { grid-area: header; }
-nav { grid-area: nav; }
-main { grid-area: main; }
-footer { grid-area: footer; }
-```
-
-<!-- slide -->
-
-## **Single** Source of Truth
-
-```scss
-@media (max-width: 50em) {
-  body {
-    grid: 'header'
-          'nav'
-          'main'
-          'footer'
-         / 1fr;
-  }
-}
-```
-
-<!-- slide -->
-
----
-demo: layoutGrid
-caption: Resize window to see media-query in action…
-resize: true
+pen:
+  title: Implicit Grids with Sizing
+  id: KYZRQQ
 ---
 
 <!-- slide -->
@@ -228,7 +191,9 @@ with matching **`*-start`** & **`*-end`** names
 <!-- slide -->
 
 ---
-todo: DEMO overlapping areas
+pen:
+  title: Overlapping Named Lines
+  id: XQxpPx
 ---
 
 <!-- slide -->
@@ -239,9 +204,12 @@ todo: DEMO overlapping areas
 
 <!-- slide -->
 
----
-todo: DEMO subgrid need
----
+## Demo in **Firefox Nightly**...
+Pens by Rachel Andrew
+
+1. [Columns & Rows](https://codepen.io/rachelandrew/pen/axLzYv)
+2. [Columns, Implicit Rows](https://codepen.io/rachelandrew/pen/YMYEVO)
+3. [Rows, Explicit Columns](https://codepen.io/rachelandrew/pen/mgpqBv)
 
 <!-- slide -->
 
@@ -264,6 +232,30 @@ todo: DEMO subgrid need
 - **`fr`** `=>` **Fluid** (relational)
 - **`minmax()`** `=>` **Fluid** until **Fixed**
 - **`auto`** `=>` **Flow**
+
+<!-- slide -->
+
+---
+split:
+  image: /images/_people/stacy.jpeg
+  size: cover
+---
+
+# Stacy Kvernmo | [@stacykvernmo](https://twitter.com/stacykvernmo)
+### [CodePen Grid Demos](https://codepen.io/collection/XRRJGq/2/#)
+Designer & Engineer at [OddBird](https://oddbird.net)
+
+<!-- slide -->
+
+---
+split:
+  image: /images/_people/rachelandrew.jpg
+  size: cover
+---
+
+# Rachel Andrew | [@rachelandrew](https://twitter.com/rachelandrew)
+### gridbyexample.com
+examples, templates, and fallbacks
 
 <!-- slide -->
 

@@ -10,21 +10,18 @@ versions:
     slug:  manifesto
   - title: Distributing Space
     slug:  flex
-  - title: '`coffee`'
   - title: Defining Layouts
     slug:  layout
   - title: Building Systems
     slug: systems
-  - title: '`lunch`'
   - title: CSS Variables & Functions
     slug: variables
   - title: Color Themes
     slug: themes
-  - title: '`coffee`'
-  - title: Dynamic Styles
-    slug: dynamic
   - title: Integrated Documentation
     slug: docs
+  - title: Dynamic Styles [optional]
+    slug: dynamic
 ---
 
 *CSS is the web-language of design* --

@@ -29,6 +29,7 @@
   import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
   import DemoSlide from '~/components/slide/DemoSlide.vue';
+  import PenSlide from '~/components/slide/PenSlide.vue';
 
   export default {
     components: {
@@ -42,6 +43,7 @@
       TemplateSlide,
       ContactSlide,
       DemoSlide,
+      PenSlide,
     },
     props: {
       slide: {
@@ -59,9 +61,16 @@
     },
     computed: {
       hasCaption() {
-        return this.slide.data.caption || this.slide.data.demo || this.slide.data.tags ? true : false;
+        return this.slide.data.caption
+          || this.slide.data.demo
+          || this.slide.data.tags
+          || this.slide.data.pen
+          ? true
+          : false;
       },
       getCaption() {
+        let caption = this.slide.data.caption || '';
+
         if (this.slide.data.demo) {
           const demoPath = `/demos/${this.slide.data.demo}`;
           const demoUrl = process.env.isDev
@@ -71,9 +80,18 @@
           const srcPath = `${process.env.codeSrc}/blob/master/components${demoPath}.vue`;
           const srcLink = `[source](${srcPath})`;
           const demoCaption = ` [${permaLink} / ${srcLink}]`;
-          let caption = this.slide.data.caption || '';
           return  caption + demoCaption;
+        } else if (this.slide.data.pen) {
+          const pen = this.slide.data.pen;
+          const user = pen.user || 'mirisuzanne';
+          const penLink = `https://codepen.io/${user}/pen/${pen.id}?editors=1100`;
+          const byLine = pen.author || `@${user}`;
+          const credit = `[${pen.title}](${penLink}) by ${byLine}`;
+          const presLink = `https://codepen.io/${user}/pres/${pen.id}?editors=1100`;
+          const present = `[presentation](${presLink})`;
+          return  caption + `[${credit} | ${present}]`;
         }
+
         return this.slide.data.caption;
       },
       getLayout() {
@@ -81,6 +99,7 @@
         defaultLayout = this.slide.data.video ? 'video' : defaultLayout;
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
+        defaultLayout = this.slide.data.pen ? 'pen' : defaultLayout;
         defaultLayout = this.slide.data.todo ? 'todo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;
       },
@@ -95,7 +114,7 @@
           style['--image'] = `url('${imageUrl}')`;
         }
 
-        const fullScreen = ['image', 'demo', 'split', 'todo'];
+        const fullScreen = ['image', 'demo', 'split', 'todo', 'pen'];
 
         if (fullScreen.includes(this.getLayout)) {
           if (!style['align-self'] && !style['--align-self']) {

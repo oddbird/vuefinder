@@ -101,20 +101,17 @@ style:
 
 <!-- slide -->
 
----
-image: '/images/layouts/12-after.jpg'
-alt: a red box spanning 1 of 12 columns, with a right margin to create gutter
-style:
-  --image-size: contain
----
+## 2011: **Responsive** Web Design
+[Ethan Marcotte](https://alistapart.com/article/responsive-web-design)
 
-<!-- slide -->
-
-## `class="`**`column col6of12 last`**`"`
+1. **`%`** Images
+2. **`%`** Columns
+3. **`@media`** Queries
 
 <!-- slide -->
 
 ## Fluid Grid Math **Sux**
+Often forcing **`%`** to represent **`px`** or **`em`**
 
 ```scss
 .grid-span {
@@ -126,7 +123,20 @@ style:
 
 <!-- slide -->
 
-### **Now:**
+## 2018: **Intrinsic** Web Design
+[Jen Simmons](https://twitter.com/jensimmons/status/980980521848127488)
+
+<!-- slide -->
+
+1. **Fluid** & **Fixed**
+2. Stages of **Squishiness**
+3. Truly **Two-Dimensional** Layouts
+4. **Nested** Contexts
+5. **Expand** & **Contract** Content
+6. Media Queries, **As Needed**
+
+<!-- slide -->
+
 ## Real **CSS Layout** Tools
 Not just **Grid** or **Flexbox**...
 
@@ -258,7 +268,11 @@ Spec supports [`block`][block], [`table`][block],
 
 <!-- slide -->
 
-## [Alignment Demo](https://codepen.io/mirisuzanne/pen/KYBOaY?editors=0100)
+---
+pen:
+  title: Alignment
+  id: KYBOaY
+---
 
 <!-- slide -->
 
@@ -283,7 +297,12 @@ Same values, but for placing an object
 
 <!-- slide -->
 
-## [Object Fit Demo](https://codepen.io/stacy/pen/3933712956da32bd2e594748928bbb44)
+---
+pen:
+  title: Object Fit
+  id: NmwdWP
+  user: stacy
+---
 
 <!-- slide -->
 
@@ -310,7 +329,11 @@ caption: |
 
 <!-- slide -->
 
-## [Writing Modes & Orientation Demo](https://codepen.io/mirisuzanne/pen/YMOoYz?editors=1100)
+---
+pen:
+  title: Writing Modes & Orientation
+  id: YMOoYz
+---
 
 <!-- slide -->
 
@@ -350,7 +373,11 @@ caption: |
 
 <!-- slide -->
 
-## [Intrinsic Sizing Demo](https://codepen.io/mirisuzanne/pen/JVagQW?editors=1100)
+---
+pen:
+  title: Intrinsic Sizing
+  id: JVagQW
+---
 
 <!-- slide -->
 
@@ -396,7 +423,12 @@ Clears floats, prevents margin-collapse, etc…
 
 <!-- slide -->
 
-## [Multicolumn Demo](https://codepen.io/stacy/pen/ad84f0543a0e424568c4ce9899c84c40)
+---
+pen:
+  title: Multicolumn
+  id: vMWKRq
+  user: stacy
+---
 
 <!-- slide -->
 
@@ -411,7 +443,12 @@ Clears floats, prevents margin-collapse, etc…
 
 <!-- slide -->
 
-## [Flex-flow Demo](https://codepen.io/stacy/pen/dLZpqX?editors=0100)
+---
+pen:
+  title: Flex-flow
+  id: dLZpqX
+  user: stacy
+---
 
 <!-- slide -->
 
@@ -443,7 +480,11 @@ caption: |
 
 <!-- slide -->
 
-## [Basic Values of Flex, Demo](https://codepen.io/mirisuzanne/pen/eoPORB?editors=1100)
+---
+pen:
+  title: Basic Values of Flex,
+  id: eoPORB
+---
 
 <!-- slide -->
 
@@ -479,4 +520,20 @@ Always check your tab-order...
 
 <!-- slide -->
 
-## [Flex-Order Demo](https://codepen.io/mirisuzanne/pen/YMJKbg?editors=0100)
+---
+pen:
+  title: Flex-Order
+  id: YMJKbg
+---
+
+<!-- slide -->
+
+---
+split:
+  image: /images/_people/jensimmons.jpg
+  size: cover
+---
+
+# Jen Simmons | [@jensimmons](https://twitter.com/jensimmons)
+### youtube.com/layoutland
+and labs.jensimmons.com
