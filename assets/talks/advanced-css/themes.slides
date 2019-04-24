@@ -208,6 +208,14 @@ html {
 
 <!-- slide -->
 
+---
+pen:
+  title: Sass Color Maps `=>` CSS Vaiables
+  id: ROZvrB
+---
+
+<!-- slide -->
+
 ## **SVG** Icons...
 ### `fill: var(`**`--icon-color`**`,` **`currentColor`**`);`
 
@@ -355,6 +363,14 @@ html {
 demo: hslTheme
 caption: |
   Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
+---
+
+<!-- slide -->
+
+---
+pen:
+  title: 1296 Avatars using Multiple Loops
+  id: BQmXyb
 ---
 
 <!-- slide -->

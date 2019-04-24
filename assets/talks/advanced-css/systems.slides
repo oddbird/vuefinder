@@ -25,7 +25,7 @@ Blueprint, 960gs, etc…
 <!-- slide -->
 
 ---
-image: '/images/layouts/12-after.jpg'
+image: /images/layouts/12-after.jpg
 caption: Add a gutter on the right margin...
 style:
   --image-size: contain
@@ -72,7 +72,7 @@ split:
 <!-- slide -->
 
 ---
-image: '/images/patterns/systems.png'
+image: /images/patterns/systems.png
 alt: Cover page from 2008 CSS Systems talk by Natalie Downe
 style:
   --image-size: contain
@@ -214,7 +214,7 @@ Atomic Design, SMACSS, BEM, ITCSS, etc...
 <!-- slide -->
 
 ---
-image: '/images/patterns/itcss-metrics.png'
+image: /images/patterns/itcss-metrics.png
 style:
   --image-size: contain
 caption: |
@@ -225,7 +225,7 @@ caption: |
 <!-- slide -->
 
 ---
-image: '/images/patterns/un-itcss-metrics.png'
+image: /images/patterns/un-itcss-metrics.png
 style:
   --image-size: contain
 caption: |
@@ -296,7 +296,7 @@ Write **Meaningful Code**
 <!-- slide -->
 
 ---
-image: '/images/patterns/itcss-metrics.png'
+image: /images/patterns/itcss-metrics.png
 style:
   --image-size: contain
 ---
@@ -304,7 +304,7 @@ style:
 <!-- slide -->
 
 ---
-image: '/images/patterns/itcss-layers.png'
+image: /images/patterns/itcss-layers.png
 style:
   --image-size: contain
 ---
@@ -317,7 +317,7 @@ style:
 <!-- slide -->
 
 ---
-image: '/images/advanced-css/itcss-layers-note.png'
+image: /images/advanced-css/itcss-layers-note.png
 style:
   --image-size: contain
 ---
@@ -325,7 +325,7 @@ style:
 <!-- slide -->
 
 ---
-image: '/images/patterns/partials.png'
+image: /images/patterns/partials.png
 alt: |
   Sass folder, with nested config, initial, layout,
   patterns, components, and styleguide folders
@@ -498,6 +498,14 @@ $colors: (
 
 <!-- slide -->
 
+---
+pen:
+  title: Sass Recursive Function
+  id: bBdEXm
+---
+
+<!-- slide -->
+
 ## Map **Adjustments**
 
 ```scss
@@ -557,10 +565,9 @@ style:
 <!-- slide -->
 
 ---
-demo: sassSocial
-caption: |
-  Looping through colors
-  and assigning them to components
+pen:
+  title: Accoutrement Color Example
+  id: xqOwxe
 ---
 
 <!-- slide -->
@@ -694,7 +701,7 @@ Sass functions & mixins
 <!-- slide -->
 
 ---
-image: '/images/advanced-css/true.jpg'
+image: /images/advanced-css/true.jpg
 alt: Screenshot of the Oddbird True website
 caption: |
   Write Sass unit tests with OddBird's
@@ -717,7 +724,7 @@ caption: |
 <!-- slide -->
 
 ---
-image: '/images/patterns/true.jpg'
+image: /images/patterns/true.jpg
 alt: True command-line output, with all tests passing
 caption: |
   True integrates with Mocha

@@ -1,7 +1,7 @@
 ---
-title: Workshop Intro
-subtitle: and Links
-event: Advanced CSS & Sass
+title: Advanced CSS
+subtitle: '& Sass'
+event: for modern web applications
 home: /advanced-css/
 author: miriam
 tags: [css, sass, design systems, components, variables, naming, grid, layout]
