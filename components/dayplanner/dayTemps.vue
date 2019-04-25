@@ -71,7 +71,7 @@
 [data-cell='temp-value'] {
   --range: calc(var(--high-temp) - var(--low-temp));
   display: grid;
-  grid-template-rows: repeat(var(--range), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--range), minmax(1px, 1fr));
 
   &::before {
     content: '';

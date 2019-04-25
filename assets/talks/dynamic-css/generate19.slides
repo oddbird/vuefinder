@@ -1,0 +1,236 @@
+---
+title: Dynamic CSS
+subtitle: LiveCode!
+event: Generate NY
+author: miriam
+date: '2019-04-25'
+image: /images/dynamic-css/_cover.jpg
+tags: [css, variables, custom properties, grid, graphs]
+---
+
+Don't be fooled by the declarative syntax,
+CSS is a powerful language for
+building dynamic design systems.
+
+<!-- slide -->
+
+---
+layout: title
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/susy.png
+alt: Susy
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/susy-no.jpg
+alt: Susy, scribbled out
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+image: /images/_mia/sass.svg
+alt: Sass
+caption: Member of the **Sass Core Team**
+---
+
+<!-- slide -->
+
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+### [**OddBird**](https://oddbird.net) Full-Stack Agency
+**Custom Applications** | **Design Systems** | **Refactors**
+
+<!-- slide -->
+
+## Client **Day Planner**
+![Screenshot of schedule grid](/images/layouts/schedule.jpg)
+
+<!-- slide -->
+
+## I ❤ **CSS**
+"Declarative, Resilient, Contextual"
+
+<!-- slide -->
+
+## **Declarative** Syntax
+## **`!=`**
+## **Static** Results
+
+<!-- slide -->
+
+## Design for an **Unknown Canvas**
+CSS is **Dynamic** by Design
+
+<!-- slide -->
+
+---
+pen:
+  title: Variables & Grids & Calc (live code)
+  id: YMYepZ
+---
+
+<!-- slide -->
+
+---
+pen:
+  title: SusyCSS
+  id: ZBzRvX
+  tab: css
+---
+
+<!-- slide -->
+
+---
+pen:
+  title: SusyCSS Demo
+  id: PboVrw
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/susy-no.jpg
+alt: Susy, scribbled out
+style:
+  --image-size: contain
+caption: Please **Don't Use It**
+---
+
+<!-- slide -->
+
+## Client **Day Planner**
+![Screenshot of schedule grid](/images/layouts/schedule.jpg)
+
+<!-- slide -->
+
+## Define the **Day**
+
+```html
+<main style="
+  --day-start: 9,
+  --day-end: 18
+">
+```
+
+<!-- slide -->
+
+## Define the **Events**
+
+```html
+<section style="
+  --event-start: 13,
+  --event-end: 14
+">
+```
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/jsconfus18/learning.jpg
+alt: One does not simply "learn" JavaScript
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
+demo: dayPlanner
+caption: putting it all together…
+---
+
+<!-- slide -->
+
+---
+demo: cssPlot
+resize: true
+---
+
+<!-- slide -->
+
+---
+demo: cssLinegraph
+resize: true
+---
+
+<!-- slide -->
+
+---
+image: /images/layouts/invade.jpg
+caption: |
+  [Levitated Toy Factory](http://levitated.guru/work/)
+  at **Beyond Tellerand**
+---
+
+<!-- slide -->
+
+---
+demo: vueInvaders
+resize: true
+---
+
+<!-- slide -->
+
+---
+demo: cssSprites
+props:
+  sprite: monsters
+caption: |
+  Animated sprites from
+  [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
+  by [Krystal Campioni](https://twitter.com/krystalcampioni)
+---
+
+<!-- slide -->
+
+---
+demo: cssAwesome
+resize: true
+caption: |
+  Inspired by [Stacy Kvernmo](https://codepen.io/stacy/pen/VxvpBj)
+---
+
+<!-- slide -->
+
+---
+split:
+  image: /images/_people/jensimmons.jpg
+  size: cover
+---
+
+# Jen Simmons | [@jensimmons](https://twitter.com/jensimmons)
+### youtube.com/layoutland
+and labs.jensimmons.com
+
+<!-- slide -->
+
+---
+layout: template
+---
+
+## Have **Fun**!
+
+### **Sign Up** for the [**OddBird Newsletter**][news]
+
+[news]: https://mailchi.mp/6a5ceb1ab43c/oddnews_signup
+
+<!-- slide -->
+
+---
+layout: contact
+form:
+  email: birds@oddbird.net
+  next: https://oddbird.net/contact/thanks
+  submit: send it!
+---
+

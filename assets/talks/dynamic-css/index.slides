@@ -5,6 +5,9 @@ author: 'miriam'
 image: '/images/dynamic-css/_cover.jpg'
 tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
 versions:
+  - slug: 'generate19'
+    title: 'Generate NY'
+    date: '25 Apr, 2019'
   - slug: 'smashingsf19'
     title: 'Smashing SF'
     date: '17 Apr, 2019'
