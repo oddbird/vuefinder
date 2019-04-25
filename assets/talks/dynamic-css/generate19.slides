@@ -20,6 +20,18 @@ layout: title
 
 <!-- slide -->
 
+---
+image: /images/dynamic-css/generate/sass-lady.jpg
+alt: excited to learn advanced sass from the sass lady herself!!
+style:
+  --image-size: cover
+  --image-position: top
+caption: |
+  Tweet from [@halftes6](https://twitter.com/halftes6)
+---
+
+<!-- slide -->
+
 ## I ❤ **CSS**
 "Declarative, Resilient, Contextual"
 
@@ -96,6 +108,18 @@ and labs.jensimmons.com
 
 ## Client **Day Planner**
 ![Screenshot of schedule grid](/images/layouts/schedule.jpg)
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/generate/patterns.jpg
+alt: Map patterns to familiar vocabulary
+style:
+  --image-size: cover
+  --image-position: bottom
+caption: |
+  Thanks, Josh Clark
+---
 
 <!-- slide -->
 
