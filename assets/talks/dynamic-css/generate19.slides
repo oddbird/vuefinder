@@ -168,13 +168,31 @@ resize: true
 <!-- slide -->
 
 ---
+image: /images/dynamic-css/vueconf19/sprite.jpeg
+alt: Krystal Campioni on stage at VueConf US
+style:
+  --image-size: contain
+caption: |
+  [Krystal Campioni](https://twitter.com/krystalcampioni)
+  Showing animations from
+  [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/vueconf19/animations-copy.png
+alt: Sprite from Monster Slayer animation
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
 demo: cssSprites
 props:
   sprite: monsters
-caption: |
-  Animated sprites from
-  [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
-  by [Krystal Campioni](https://twitter.com/krystalcampioni)
 ---
 
 <!-- slide -->

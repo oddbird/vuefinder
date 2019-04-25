@@ -51,58 +51,58 @@
 // Setup
 // -----
 
-.day-planner {
-  min-height: 100vh;
-  padding: var(--gutter);
-}
+// .day-planner {
+//   min-height: 100vh;
+//   padding: var(--gutter);
+// }
 
 
 // Grid Layout
 // -----------
 
-.day-planner {
-  display: grid;
-  grid-template:
-    'head edit' auto
-    'temps temps' 1fr
-    'events events' auto
-    / 1fr 1fr; // minmax(auto, 1fr)
-  row-gap: var(--gutter);
-}
+// .day-planner {
+//   display: grid;
+//   grid-template:
+//     'head edit' auto
+//     'temps temps' 1fr
+//     'events events' auto
+//     / 1fr 1fr; // minmax(auto, 1fr)
+//   row-gap: var(--gutter);
+// }
 
-.header { grid-area: head; }
-.edit { grid-area: edit; }
-.temps { grid-area: temps; }
-.events { grid-area: events; }
+// .header { grid-area: head; }
+// .edit { grid-area: edit; }
+// .temps { grid-area: temps; }
+// .events { grid-area: events; }
 
 
 // Day Grid
 // --------
 
-.day-planner {
-  --hours-per-day: calc(var(--day-end) - var(--day-start));
+// .day-planner {
+//   --hours-per-day: calc(var(--day-end) - var(--day-start));
 
-  --columns-per-hour: 4;
-  --columns-per-day: calc(var(--hours-per-day) * var(--columns-per-hour));
+//   --columns-per-hour: 4;
+//   --columns-per-day: calc(var(--hours-per-day) * var(--columns-per-hour));
 
-  --column-size: minmax(0, 1fr);
-  --day-template: repeat(var(--columns-per-day), var(--column-size));
-}
+//   --column-size: minmax(0, 1fr);
+//   --day-template: repeat(var(--columns-per-day), var(--column-size));
+// }
 
 
 // Visualizing the Grid
 // --------------------
 
-.day-planner {
-  background:
-    linear-gradient(
-      to right,
-      hsl(210, 50%, 50%) 1px,
-      transparent 1px 100%,
-    );
-  background-size: calc(100% / var(--hours-per-day));
-  background-origin: content-box;
-}
+// .day-planner {
+//   background:
+//     linear-gradient(
+//       to right,
+//       hsl(210, 50%, 50%) 1px,
+//       transparent 1px 100%,
+//     );
+//   background-size: calc(100% / var(--hours-per-day));
+//   background-origin: content-box;
+// }
 </style>
 
 

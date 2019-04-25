@@ -21,81 +21,81 @@
 // The Day Grid
 // ------------
 
-.events {
-  display: grid;
-  grid-template-columns: var(--day-template);
-}
+// .events {
+//   display: grid;
+//   grid-template-columns: var(--day-template);
+// }
 
 
 // Full-Width Defaults
 // -------------------
 
-.events {
-  > * {
-    grid-column: 1 / -1;
-  }
-}
+// .events {
+//   > * {
+//     grid-column: 1 / -1;
+//   }
+// }
 
 
 // Event Colors
 // ------------
 
-[style*='--category'] {
-  --undefined: 0;
-  --personal: 190;
-  --work: 90;
-  --travel: 240;
-}
+// [style*='--category'] {
+//   --undefined: 0;
+//   --personal: 190;
+//   --work: 90;
+//   --travel: 240;
+// }
 
-.event {
-  --category-hue: var(--category, 0);
-  --category-background: hsl(var(--category-hue, 0), 65%, 70%);
-  --category-border: hsl(var(--category-hue, 0), 50%, 50%);
-  background: var(--category-background);
-  border: 1px solid var(--category-border);
-  border-radius: 0.25em;
-  padding: calc(var(--gutter) / 4);
-}
+// .event {
+//   --category-hue: var(--category, 0);
+//   --category-background: hsl(var(--category-hue, 0), 65%, 70%);
+//   --category-border: hsl(var(--category-hue, 0), 50%, 50%);
+//   background: var(--category-background);
+//   border: 1px solid var(--category-border);
+//   border-radius: 0.25em;
+//   padding: calc(var(--gutter) / 4);
+// }
 
 
 // Event Positions
 // ---------------
 
-.event {
-  --event-start-column: calc((var(--event-start) - var(--day-start)) * var(--columns-per-hour) + 1);
-  --event-end-column: calc((var(--event-end) - var(--day-start)) * var(--columns-per-hour) + 1);
-  grid-column: var(--event-start-column, 1) / var(--event-end-column, -1);
-}
+// .event {
+//   --event-start-column: calc((var(--event-start) - var(--day-start)) * var(--columns-per-hour) + 1);
+//   --event-end-column: calc((var(--event-end) - var(--day-start)) * var(--columns-per-hour) + 1);
+//   grid-column: var(--event-start-column, 1) / var(--event-end-column, -1);
+// }
 
 
 // Grid Overflow
 // -------------
 
-.event {
-  > * {
-    background: inherit;
-    overflow: var(--overflow, hidden);
-    padding: 0 calc(var(--gutter) / 4);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: var(--width, auto);
-  }
+// .event {
+//   > * {
+//     background: inherit;
+//     overflow: var(--overflow, hidden);
+//     padding: 0 calc(var(--gutter) / 4);
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: var(--width, auto);
+//   }
 
-  &:hover {
-    --overflow: visible;
-    --width: max-content;
-    filter: drop-shadow(0 0 0.125em black);
-    z-index: 10;
-  }
-}
+//   &:hover {
+//     --overflow: visible;
+//     --width: max-content;
+//     filter: drop-shadow(0 0 0.125em black);
+//     z-index: 10;
+//   }
+// }
 
 
 // Grid Flow
 // ---------
 
-.events {
-  grid-auto-flow: dense;
-}
+// .events {
+//   grid-auto-flow: dense;
+// }
 </style>
 
 
