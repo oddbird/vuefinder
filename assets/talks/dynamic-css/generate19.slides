@@ -1,6 +1,6 @@
 ---
 title: Dynamic CSS
-subtitle: LiveCode!
+subtitle: (Semi) LiveCode!
 event: Generate NY
 author: miriam
 date: '2019-04-25'
@@ -20,43 +20,6 @@ layout: title
 
 <!-- slide -->
 
----
-image: /images/dynamic-css/susy.png
-alt: Susy
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-image: /images/dynamic-css/susy-no.jpg
-alt: Susy, scribbled out
-style:
-  --image-size: contain
----
-
-<!-- slide -->
-
----
-image: /images/_mia/sass.svg
-alt: Sass
-caption: Member of the **Sass Core Team**
----
-
-<!-- slide -->
-
-![OddBird Faces](/images/_oddbird/allbirds.svg)
-### [**OddBird**](https://oddbird.net) Full-Stack Agency
-**Custom Applications** | **Design Systems** | **Refactors**
-
-<!-- slide -->
-
-## Client **Day Planner**
-![Screenshot of schedule grid](/images/layouts/schedule.jpg)
-
-<!-- slide -->
-
 ## I ❤ **CSS**
 "Declarative, Resilient, Contextual"
 
@@ -70,6 +33,17 @@ caption: Member of the **Sass Core Team**
 
 ## Design for an **Unknown Canvas**
 CSS is **Dynamic** by Design
+
+<!-- slide -->
+
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+### [**OddBird**](https://oddbird.net) Full-Stack Agency
+**Custom Applications** | **Design Systems** | **Refactors**
+
+<!-- slide -->
+
+## Client **Day Planner**
+![Screenshot of schedule grid](/images/layouts/schedule.jpg)
 
 <!-- slide -->
 
@@ -105,6 +79,18 @@ style:
   --image-size: contain
 caption: Please **Don't Use It**
 ---
+
+<!-- slide -->
+
+---
+split:
+  image: /images/_people/jensimmons.jpg
+  size: cover
+---
+
+# Jen Simmons | [@jensimmons](https://twitter.com/jensimmons)
+### youtube.com/layoutland
+and labs.jensimmons.com
 
 <!-- slide -->
 
@@ -199,18 +185,6 @@ resize: true
 caption: |
   Inspired by [Stacy Kvernmo](https://codepen.io/stacy/pen/VxvpBj)
 ---
-
-<!-- slide -->
-
----
-split:
-  image: /images/_people/jensimmons.jpg
-  size: cover
----
-
-# Jen Simmons | [@jensimmons](https://twitter.com/jensimmons)
-### youtube.com/layoutland
-and labs.jensimmons.com
 
 <!-- slide -->
 
