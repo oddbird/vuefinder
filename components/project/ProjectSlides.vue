@@ -251,4 +251,16 @@
     --col: #{size('small-page')};
   }
 }
+
+[data-slide-view='print'] {
+  display: block;
+  padding: 0;
+
+  [data-slide] {
+    break-after: always;
+    break-before: always;
+    break-inside: avoid;
+    height: 100vh;
+  }
+}
 </style>

@@ -184,7 +184,7 @@
         });
 
         // defaults
-        data.meta.views = data.meta.views || ['grid', 'list', 'slides'];
+        data.meta.views = data.meta.views || ['grid', 'list', 'slides', 'print'];
         data.meta.view = data.meta.view || data.meta.views[0];
         data.meta.type = data.meta.type || 'talks';
         data.meta.demos = this.demos;

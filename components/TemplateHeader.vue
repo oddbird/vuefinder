@@ -36,6 +36,11 @@
   padding: size('shim');
   text-align: center;
   width: 100%;
+
+  @media print {
+    --background: #266478;
+    background: none;
+  }
 }
 
 [data-pull] {
