@@ -10,24 +10,24 @@
       </button-style>
     </div>
 
-    <table
-      class="chart"
-      :style="{'--scale': scale, '--count': plot.length}">
-      <tr
-        v-for="(bar, i) in plot"
-        :key="bar.year"
-        :style="{'--value': bar.value}">
-        <th>{{ bar.year }}</th>
-        <td>
-          <input
-            class="value"
-            type="number"
-            @keydown.stop=""
-            v-model="plot[i].value"
-            min="2"
-            :max='scale'>
-        </td>
-      </tr>
+    <table :style="{'--scale': scale, '--count': plot.length}">
+      <tbody class="chart">
+        <tr
+          v-for="(bar, i) in plot"
+          :key="bar.year"
+          :style="{'--value': bar.value}">
+          <th>{{ bar.year }}</th>
+          <td>
+            <input
+              class="value"
+              type="number"
+              @keydown.stop=""
+              v-model="plot[i].value"
+              min="2"
+              :max='scale'>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -87,15 +87,16 @@ export default {
   font-style: italic;
 }
 
-.chart {
-  /* Setup the grid */
+table {
   display: grid;
-  grid-template-columns: repeat(var(--count), minmax(0, 1fr));
-
-  /* other styles… */
   margin: 2em 0 1em;
   overflow: hidden;
   padding: 0 1em;
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: repeat(var(--count), minmax(0, 1fr));
 }
 
 tr {

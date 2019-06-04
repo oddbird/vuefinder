@@ -40,19 +40,19 @@ $offset-times: (
 // Changes
 // -------
 $transitions: (
-  'opacity': opacity time('post-fast') ease('in-out'),
-  'color': color time('fast') ease('in-out'),
-  'shadow': text-shadow time('pre-fast') ease('in-out'),
-  'background': background-color time('fast') ease('in-out'),
-  'border': border-color time('post-fast') ease('in-out'),
-  'underline': text-decoration-color time('post-fast') ease('in-out'),
+  'opacity': opacity time('post-fast') ease('_in-out'),
+  'color': color time('fast') ease('_in-out'),
+  'shadow': text-shadow time('pre-fast') ease('_in-out'),
+  'background': background-color time('fast') ease('_in-out'),
+  'border': border-color time('post-fast') ease('_in-out'),
+  'underline': text-decoration-color time('post-fast') ease('_in-out'),
 
   'link': ('#color', '#underline'),
   'btn': ('#color', '#background', '#border', '#shadow'),
 
   'move-base': transform time('medium'),
-  'move': '#move-base' ease('in-out'),
-  'elastic': '#move-base' ease('in-out-back'),
+  'move': '#move-base' ease('_in-out'),
+  'elastic': '#move-base' ease('_in-out-back'),
 );
 
 @include herman-changes('transitions', $transitions);
