@@ -23,8 +23,8 @@
       <transition-group name="plot-data"
         tag="tbody"
         class="plot-body" >
-        <tr v-for="(item, index) in plot"
-          :key="index"
+        <tr v-for="item in plot"
+          :key="item.name"
           :style="{
             '--x': item.x,
             '--y': item.y,
@@ -53,7 +53,7 @@
       const x = 100;
       const y = 100;
       const z = 25;
-      const plot = [...Array(20)].map((i) => {
+      const plot = [...Array(20)].map((e,i) => {
         return {
           name: `item-${i}`,
           x: this.randomInt(x),

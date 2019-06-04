@@ -48,6 +48,7 @@ module.exports = {
   },
 
   build: {
+    postcss: false,
     splitChunks: {
       layouts: true
     },

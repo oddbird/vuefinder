@@ -209,7 +209,7 @@
 // Views
 // -----
 [data-slide-view='list'] {
-  --ratio: #{fluid-ratio('widescreen')};
+  --ratio: #{fluid-ratio('_widescreen')};
 }
 
 [data-slide-view='slides'] {
@@ -239,7 +239,7 @@
 
 [data-slide-view='grid'] {
   --font-size: 14px;
-  --ratio: #{fluid-ratio('widescreen')};
+  --ratio: #{fluid-ratio('_widescreen')};
 
   @include above('page') {
     --col: #{size('small-page')};

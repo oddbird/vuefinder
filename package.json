@@ -23,15 +23,14 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.3",
     "@nuxtjs/style-resources": "^0.1.1",
-    "accoutrement": "^1.0.0",
-    "autoprefixer": "^9.4.5",
+    "accoutrement": "^2.1.1",
     "gray-matter": "^4.0.1",
     "markdown-it": "^8.4.2",
     "markdown-it-attrs": "^2.2.0",
     "markdown-it-highlightjs": "^3.0.0",
     "node-dir": "^0.1.17",
     "node-sass": "^4.11.0",
-    "nuxt": "^2.3.4",
+    "nuxt": "^2.8.0",
     "sass-loader": "^7.1.0",
     "typogr": "^0.6.8"
   },

@@ -31,7 +31,7 @@ $brand-colors: (
 $contrast-colors: (
   'white': #fff,
   'contrast-light': #f6f6f6,
-  'contrast-dark': '#brand-blue' ('shade': 35%, 'desaturate': 40%),
+  'contrast-dark': '#brand-blue' ('shade': 35% #000, 'desaturate': 40%),
 );
 
 @include herman-colors('contrast-colors', $contrast-colors);
