@@ -23,8 +23,8 @@
       <transition-group name="plot-data"
         tag="tbody"
         class="plot-body" >
-        <tr v-for="(item, index) in plot"
-          :key="index"
+        <tr v-for="item in plot"
+          :key="item.name"
           :style="{
             '--x': item.x,
             '--y': item.y,

@@ -48,6 +48,13 @@ module.exports = {
   },
 
   build: {
+    postcss: {
+      plugins: {
+        "postcss-import": {},
+        "postcss-url": {},
+        "autoprefixer": {},
+      },
+    },
     splitChunks: {
       layouts: true
     },
