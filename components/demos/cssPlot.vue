@@ -53,7 +53,7 @@
       const x = 100;
       const y = 100;
       const z = 25;
-      const plot = [...Array(20)].map((i) => {
+      const plot = [...Array(20)].map((e,i) => {
         return {
           name: `item-${i}`,
           x: this.randomInt(x),
