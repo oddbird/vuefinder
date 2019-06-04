@@ -1,6 +1,8 @@
 # nuxt-slides
 
-> Slideshows in nuxt
+Browser-slideshows in Nuxt
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30d40ecc-4478-4d8b-a659-2de63745d953/deploy-status)](https://app.netlify.com/sites/oddtalks/deploys)
 
 ## Build Setup
 
