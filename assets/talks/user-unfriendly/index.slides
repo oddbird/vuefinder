@@ -5,6 +5,9 @@ author: "miriam"
 image: "/images/agile-systems/_cover.jpg"
 tags: ["css", "html", "accessibility", "usability", "art", "process"]
 versions:
+  - slug: "opensource19"
+    title: "Open Source Conference"
+    date: "20 Jun, 2019"
   - slug: "agiledenver19"
     title: "Agile Denver"
     date: "18 Mar, 2019"
