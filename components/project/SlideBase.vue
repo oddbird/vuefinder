@@ -108,9 +108,6 @@
 
         if (this.slide.data.image) {
           let imageUrl = this.slide.data.image;
-          if (!imageUrl.includes('://') && !process.env.isDev) {
-            imageUrl = process.env.httpUrl + imageUrl;
-          }
           style['--image'] = `url('${imageUrl}')`;
         }
 
