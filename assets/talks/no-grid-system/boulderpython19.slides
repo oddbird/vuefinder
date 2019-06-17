@@ -1,10 +1,10 @@
 ---
-title: "Don't Use My Grid System"
-subtitle: 'The Past & Future of Web Layout'
-event: 'Boulder Python'
-author: 'miriam'
-date: '2019-02-12'
-tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
+title: Don't Use My Grid System
+subtitle: The Past & Future of Web Layout
+event: Boulder Python
+author: miriam
+date: 2019-02-12
+tags: [css, variables, custom properties, grid, graphs]
 ---
 
 Miriam (the creator of Susy)

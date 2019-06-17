@@ -19,6 +19,85 @@ layout: title
 
 <!-- slide -->
 
+![OddBird Faces](/images/_oddbird/allbirds.svg)
+
+## [OddBird](https://oddbird.net) **Web Consulting**
+Custom Apps, Design Systems, Refactors…
+
+<!-- slide -->
+
+---
+image: /images/patterns/oddbird-w-logo.jpg
+alt: Three children at a table – playing Magic, The Gathering
+caption: OddBird siblings (Jonny, Carl, and Miriam) in 1994
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/susy.png
+alt: Susy
+style:
+  --image-size: contain
+caption: I invented it!
+---
+
+<!-- slide -->
+
+---
+image: /images/dynamic-css/susy-no.jpg
+alt: No Susy
+---
+
+<!-- slide -->
+
+---
+image: /images/unfriendly/systems.jpg
+alt: |
+  slides showing grid diagrams and calculations,
+  above a picture and bio of Natalie Downe
+caption: |
+  Susy is based on Natalie Downe's
+  [CSS Systems](https://www.slideshare.net/nataliedowne/css-systems-presentation)
+---
+
+<!-- slide -->
+
+---
+image: /images/unfriendly/agtest.jpg
+alt: |
+  A grid of colorful nested boxes with lorem-ipsum text,
+  titled 'Complicated Nesting AG test'
+caption: |
+  And Nicole Sullivan's [OOCSS](http://oocss.org/grids_docs.html)
+---
+
+<!-- slide -->
+
+---
+image: /images/_mia/sass.svg
+alt: Sass
+caption: |
+  Re-imagined in [Sass](http://sass-lang.com)
+  (I'm now a member of the **core team**)
+---
+
+<!-- slide -->
+
+---
+image: /images/layouts/susy-first.jpg
+alt: |
+  First git commit of Susy on GitHub,
+  credited to Carl Meyer
+style:
+  --image-position: top
+caption: |
+  I created my GitHub account
+  later that day
+---
+
+<!-- slide -->
+
 ---
 image: /images/unfriendly/hellogoodbye.jpg
 alt: |
@@ -88,43 +167,20 @@ alt: |
 
 <!-- slide -->
 
----
-split:
-  image: /images/unfriendly/chuckmee.jpg
-  size: cover
----
-
-## [**Chuck Mee**](http://charlesmee.org)
-### The (Re)Making Project
+## **Open Source** Model
+Making Things **For People** / **With People**
 
 <!-- slide -->
 
----
-image: /images/unfriendly/remaking.jpg
-alt: There is no such thing as an original play.
-caption: |
-  Chuck Mee Jr,
-  [About the (re)making project](http://charlesmee.org/about.shtml)
----
-
-<!-- slide -->
-
-### **User**/Audience Focus –
-## 1. Making Things **For People**
-
-<!-- slide -->
-
-### **Team** Focus –
-## 2. Making Things **With People**
-
-<!-- slide -->
-
-### **Open Source** Model
 ## Rejects the **Lone Genius** Myth **\***
 
 <!-- slide -->
 
-## **\*** Except for **Miriam** who came up with all of this **on her own** without any outside influence at all, because she's **sooooooo smart**.
+## Rejects **Authorial Control** **\***
+
+<!-- slide -->
+
+## **\*** Except for **Miriam** who came up with all of this **on her own** without any outside influence at all, because she's **sooooooo smart** and absolutely in control.
 
 <!-- slide -->
 
@@ -138,91 +194,20 @@ caption: |
 
 <!-- slide -->
 
----
-image: /images/patterns/oddbird-w-logo.jpg
-alt: Three children at a table – playing Magic, The Gathering
-caption: OddBird siblings (Jonny, Carl, and Miriam) in 1994
----
+# chapter 1
+## Making Things **For People**
+### Ideas **`=>`** User Experiences
 
 <!-- slide -->
 
-![OddBird Faces](/images/_oddbird/allbirds.svg)
-
-## [OddBird](https://oddbird.net) **Web Consulting**
-Custom Apps, Design Systems, Refactors…
-
-<!-- slide -->
-
----
-image: /images/dynamic-css/susy.png
-alt: Susy
-style:
-  --image-size: contain
-caption: I invented it!
----
-
-<!-- slide -->
-
----
-image: /images/unfriendly/systems.jpg
-alt: |
-  slides showing grid diagrams and calculations,
-  above a picture and bio of Natalie Downe
-caption: |
-  Susy is based on Natalie Downe's
-  [CSS Systems](https://www.slideshare.net/nataliedowne/css-systems-presentation)
----
-
-<!-- slide -->
-
----
-image: /images/unfriendly/agtest.jpg
-alt: |
-  A grid of colorful nested boxes with lorem-ipsum text,
-  titled 'Complicated Nesting AG test'
-caption: |
-  And Nicole Sullivan's [OOCSS](http://oocss.org/grids_docs.html)
----
-
-<!-- slide -->
-
----
-image: /images/_mia/sass.svg
-alt: Sass
-caption: |
-  Re-imagined in [Sass](http://sass-lang.com)
-  (I'm now a member of the **core team**)
----
-
-<!-- slide -->
-
----
-image: /images/layouts/susy-first.jpg
-alt: |
-  First git commit of Susy on GitHub,
-  credited to Carl Meyer
-style:
-  --image-position: top
-caption: |
-  I created my GitHub account
-  later that day
----
-
-<!-- slide -->
-
----
-image: /images/dynamic-css/susy-no.jpg
-alt: No Susy
----
-
-<!-- slide -->
-
-## 1. Making Things **For People**
-
-<!-- slide -->
-
-### Idea **`=>`** User Experience
 ## **Performative Turn**(s)
+
+<!-- slide -->
+
+---
+image: /images/unfriendly/novel-raw.jpg
+alt: Text editor with English and Spanish drafts of my novel
+---
 
 <!-- slide -->
 
@@ -244,16 +229,6 @@ alt: Teacup Gorilla at Larimer Lounge
 image: /images/_mia/true-west.jpg
 alt: 2016 True West Award in Theater
 ---
-
-<!-- slide -->
-
-## **Theater** `=>` Mixed Media
-writing, acting, choreography, architecture, music, lights…
-
-<!-- slide -->
-
-## **Web** `=>` Mixed Media
-writing, architecture, code, design, interaction…
 
 <!-- slide -->
 
@@ -357,6 +332,18 @@ A **big tent** movement
 
 <!-- slide -->
 
+## Single "**Real**" Identity?
+
+<!-- slide -->
+
+## **First** Name / **Last** Name?
+
+<!-- slide -->
+
+## Male / Female / **Other**?
+
+<!-- slide -->
+
 ## **!** 👨
 
 <!-- slide -->
@@ -403,18 +390,6 @@ caption: |
   No shit, Ev.
   From [Business Insider](https://www.businessinsider.com/twitter-co-founder-ev-williams-team-diversity-2019-5)
 ---
-
-<!-- slide -->
-
-## **First** Name / **Last** Name?
-
-<!-- slide -->
-
-## Single "**Real**" Identity?
-
-<!-- slide -->
-
-## Male / Female / **Other**?
 
 <!-- slide -->
 
@@ -473,10 +448,6 @@ works with art feedback as well…
 
 <!-- slide -->
 
-## When the **Problem** is in Act V, The **Solution** is Often in Act I
-
-<!-- slide -->
-
 ## Always Ask **Why**
 look for the **root causes**…
 
@@ -488,6 +459,10 @@ common pain-points, related issues, etc…
 <!-- slide -->
 
 ## Recognize **Personal Bias**
+
+<!-- slide -->
+
+## When the **Problem** is in Act V, The **Solution** is Often in Act I
 
 <!-- slide -->
 
@@ -795,45 +770,17 @@ alt: Lineup of smart watches
 
 <!-- slide -->
 
-## What are the **Tradeoffs**?
-
-<!-- slide -->
-
----
-image: /images/process/sidesaddle-shuffle.jpg
-alt: Novel in a box
-style:
-  --image-position: left
----
-
-<!-- slide -->
-
----
-image: /images/process/sidesaddle-web.jpg
-alt: Novel online, with interactive controls
-caption: read.ridingsidesaddle.com (in progress)
-style:
-  --image-position: top
----
-
-<!-- slide -->
-
-> The '**collectible**' is because sometimes
-> you want to treasure the book
-> and touch the book
-> and **know that you have a special one**.
->
-> ---Seth Godin, [Transforming the Book Industry][seth]
-
-[seth]: https://www.socialmediaexaminer.com/transforming-the-book-industry-how-seth-godin-is-poking-the-box/
-
-<!-- slide -->
-
 ## Why HTML/CSS are **Declarative**
 Too Many **Variables**
 
 <!-- slide -->
 
+### The **Web** Model
+## Is **User-Controlled** By Design
+
+<!-- slide -->
+
+# chapter 2
 ## Making Things **With People**
 
 <!-- slide -->

@@ -1,11 +1,11 @@
 ---
-title: 'User Unfriendly'
-subtitle: 'Notes Towards a Queer Web'
-event: 'Agile Denver'
-author: 'miriam'
-date: '2019-03-18'
-image: '/images/agile-systems/_cover.jpg'
-tags: ['css', 'html', 'accessibility', 'usability', 'art', 'process']
+title: User Unfriendly
+subtitle: Notes Towards a Queer Web
+event: Agile Denver
+author: miriam
+date: 2019-03-18
+image: /images/agile-systems/_cover.jpg
+tags: [css, html, accessibility, usability, art, process]
 ---
 
 A project-manager’s reflections on human-centered problem-solving,
@@ -27,17 +27,17 @@ Application **Design** & **Development**
 <!-- slide -->
 
 ---
-image: '/images/patterns/oddbird-w-logo.jpg'
-alt: 'OddBird siblings (Jonny, Carl, and Miriam) in 1994'
+image: /images/patterns/oddbird-w-logo.jpg
+alt: OddBird siblings (Jonny, Carl, and Miriam) in 1994
 ---
 
 <!-- slide -->
 
 ---
-image: '/images/process/clients.jpg'
+image: /images/process/clients.jpg
 alt: 'OddBird Clients: Mozilla, SRAM, ORCAS'
 style:
-  --image-size: 'contain'
+  --image-size: contain
 ---
 
 <!-- slide -->
