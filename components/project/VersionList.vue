@@ -1,7 +1,7 @@
 <template>
   <ul class="version-list">
-    <li v-for="(version, index) in versions"
-      :key="index">
+    <li v-for="version in liveVersions"
+      :key="version.slug">
 
       <nuxt-link
         v-if="version.slug"
@@ -19,7 +19,7 @@
       />
 
       <span v-if="version.date">
-        — {{ version.date }}
+        — {{ displayDate(version.date) }}
       </span>
     </li>
   </ul>
@@ -39,12 +39,46 @@
         required: true,
       },
     },
+    computed: {
+      liveVersions() {
+        return this.versions.filter(version => this.isLive(version));
+      }
+    },
     methods: {
       fullPath(slug) {
         return slug
           ? path.join(this.path, slug)
           : null;
-      }
+      },
+      displayDate(date) {
+        const months = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'September',
+          'October',
+          'November',
+          'December'
+        ];
+        const mos = months.map(m => m.slice(0, 3));
+
+        return `${mos[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+      },
+      isLive(version) {
+        if (version.public) {
+          return version.public;
+        }
+
+        if (version.date) {
+          return version.date <= new Date();
+        }
+
+        return true;
+      },
     },
   }
 </script>

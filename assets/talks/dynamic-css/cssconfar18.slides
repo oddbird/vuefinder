@@ -1,11 +1,11 @@
 ---
-title: 'Dynamic CSS'
-subtitle: 'Layouts & Beyond'
-event: 'CSSConf, AR'
-author: 'miriam'
-date: '2018-08-18'
-image: '/images/dynamic-css/_cover.jpg'
-tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
+title: Dynamic CSS
+subtitle: Layouts & Beyond
+event: CSSConf, AR
+author: miriam
+date: 2018-08-18
+image: /images/dynamic-css/_cover.jpg
+tags: [css, variables, custom properties, grid, graphs]
 ---
 
 Don't be fooled by the declarative syntax,

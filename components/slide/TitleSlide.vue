@@ -10,7 +10,7 @@
       </h2>
       <p v-if="meta.event || meta.date">
         <strong v-if="meta.event">{{ meta.event }}</strong>
-        <span v-if="meta.date"> — {{ meta.date }}</span>
+        <span v-if="meta.date"> — {{ displayDate(meta.date) }}</span>
       </p>
     </div>
   </template-base>
@@ -33,6 +33,26 @@
       meta: {
         type: Object,
         required: true
+      },
+    },
+    methods: {
+      displayDate(date) {
+        const months = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'September',
+          'October',
+          'November',
+          'December'
+        ];
+        const mos = months.map(m => m.slice(0, 3));
+
+        return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
       },
     },
   }
