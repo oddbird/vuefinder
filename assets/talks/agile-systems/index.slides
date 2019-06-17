@@ -1,13 +1,13 @@
 ---
-title: 'Agile Design Systems'
-subtitle: 'with Meaningful Code'
-author: 'miriam'
-image: '/images/agile-systems/_cover.jpg'
-tags: ['css', 'sass', 'design systems', 'components', 'performance']
+title: Agile Design Systems
+subtitle: with Meaningful Code
+author: miriam
+image: /images/agile-systems/_cover.jpg
+tags: [css, sass, design systems, components, performance]
 versions:
-  - slug: 'agiledenver18'
-    title: 'Agile Denver'
-    date: '22 Oct, 2018'
+  - slug: agiledenver18
+    title: Agile Denver
+    date: 2018-10-22
 ---
 
 Style Guides & Pattern Libraries

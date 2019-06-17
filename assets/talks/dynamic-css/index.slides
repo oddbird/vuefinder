@@ -1,31 +1,31 @@
 ---
-title: 'Dynamic CSS'
-subtitle: 'Layouts & Beyond'
-author: 'miriam'
-image: '/images/dynamic-css/_cover.jpg'
-tags: ['css', 'variables', 'custom properties', 'grid', 'graphs']
+title: Dynamic CSS
+subtitle: Layouts & Beyond
+author: miriam
+image: /images/dynamic-css/_cover.jpg
+tags: [css, variables, custom properties, grid, graphs]
 versions:
-  - slug: 'generate19'
-    title: 'Generate NY'
-    date: '25 Apr, 2019'
-  - slug: 'smashingsf19'
-    title: 'Smashing SF'
-    date: '17 Apr, 2019'
-  - slug: 'vueconf19'
-    title: 'VueConf US'
-    date: '26 Mar, 2019'
-  - slug: 'frontrange18'
-    title: 'Front Range Front End'
-    date: '1 Nov, 2018'
-  - slug: 'fullstack18'
-    title: 'Full Stack Fest'
-    date: '7 Sept, 2018'
-  - slug: 'jsconfus18'
-    title: 'JS Conf US'
-    date: '21 Aug, 2018'
-  - slug: 'cssconfar18'
-    title: 'CSS Conf Argentina'
-    date: '18 Aug, 2018'
+  - slug: generate19
+    title: Generate NY
+    date: 2019-04-25
+  - slug: smashingsf19
+    title: Smashing SF
+    date: 2019-04-17
+  - slug: vueconf19
+    title: VueConf US
+    date: 2019-03-26
+  - slug: frontrange18
+    title: Front Range Front End
+    date: 2018-11-01
+  - slug: fullstack18
+    title: Full Stack Fest
+    date: 2018-09-07
+  - slug: jsconfus18
+    title: JS Conf US
+    date: 2018-08-21
+  - slug: cssconfar18
+    title: CSS Conf Argentina
+    date: 2018-08-18
 ---
 
 Don't be fooled by the declarative syntax,

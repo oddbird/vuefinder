@@ -1,16 +1,16 @@
 ---
-title: "Don't Use My Grid System"
-subtitle: 'The Past & Future of Web Layout'
-author: 'miriam'
-image: '/images/dynamic-css/_cover.jpg'
-tags: ['css', 'layout', 'susy', 'grid', 'graphs']
+title: Don't Use My Grid System
+subtitle: The Past & Future of Web Layout
+author: miriam
+image: /images/dynamic-css/_cover.jpg
+tags: [css, layout, susy, grid, graphs]
 versions:
-  - slug: 'boulderpython19'
-    title: 'Boulder Python'
-    date: '12 Feb, 2019'
-  - slug: 'covalence19'
-    title: 'Covalence Conference'
-    date: '16 Jan, 2019'
+  - slug: boulderpython19
+    title: Boulder Python
+    date: 2019-02-12
+  - slug: covalence19
+    title: Covalence Conference
+    date: 2019-01-16
 ---
 
 Miriam (the creator of Susy)
