@@ -130,6 +130,15 @@ caption: |
 <!-- slide -->
 
 ---
+image: /images/unfriendly/opensource19/documentation.jpg
+alt: Writing documentation slide from Olivier
+caption: |
+  Slide from **Olivier Crête** of Collabora
+---
+
+<!-- slide -->
+
+---
 image: /images/agile-systems/herman.jpg
 style:
   --image-size: contain
