@@ -39,14 +39,13 @@ image: /images/dynamic-css/susy.png
 alt: Susy
 style:
   --image-size: contain
-caption: I invented it!
 ---
 
 <!-- slide -->
 
 ---
 image: /images/dynamic-css/susy-no.jpg
-alt: No Susy
+alt: Susy scribbled out
 ---
 
 <!-- slide -->
@@ -163,15 +162,34 @@ alt: |
   You cannot create results.
   You can only create conditions
   in which something might happen.
+caption: |
+  Anne Bogart, _[A Director Prepares][director]_
+
+  [director]: https://www.amazon.com/Director-Prepares-Seven-Essays-Theatre/dp/0415238323
 ---
 
 <!-- slide -->
 
-## **Open Source** Model
-Making Things **For People** / **With People**
+## **Making** Theater / **Making** Software
 
 <!-- slide -->
 
+## Making Things **For People**
+Audience / Users / Developers
+
+<!-- slide -->
+
+## Making Things **With People**
+Team / Open Source Community
+
+<!-- slide -->
+
+## Talk about **People**
+and how we **make things** for/with each other
+
+<!-- slide -->
+
+## **Open Source** Model
 ## Rejects the **Lone Genius** Myth **\***
 
 <!-- slide -->
