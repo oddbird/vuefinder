@@ -35,6 +35,15 @@ caption: OddBird siblings (Jonny, Carl, and Miriam) in 1994
 <!-- slide -->
 
 ---
+image: /images/process/clients.jpg
+alt: 'Mozilla, SRAM, ORCAS'
+style:
+  --image-size: contain
+---
+
+<!-- slide -->
+
+---
 image: /images/dynamic-css/susy.png
 alt: Susy
 style:
@@ -94,6 +103,51 @@ caption: |
   I created my GitHub account
   later that day
 ---
+
+<!-- slide -->
+
+---
+image: /images/unfriendly/greenmud.jpg
+alt: |
+  Into The Green Green Mud, a novel with pictures
+style:
+  --image-position: top
+caption: |
+  **Susy** is named after a character in my first
+  (**Creative Commons**) novel
+---
+
+<!-- slide -->
+
+---
+image: /images/advanced-css/true.jpg
+alt: Screenshot of the Oddbird True website
+caption: |
+  Write Sass **unit tests** with OddBird's
+  [**True**](https://www.oddbird.net/true/)
+---
+
+<!-- slide -->
+
+---
+image: /images/agile-systems/herman.jpg
+style:
+  --image-size: contain
+caption: |
+  OddBird's [**Herman**](https://oddbird.net/herman)
+  **design-system** site generator
+----
+
+<!-- slide -->
+
+---
+image: /images/patterns/sassdoc.jpg
+style:
+  --image-position: top
+caption: |
+  [**SassDoc**](http://sassdoc.com)
+  by [Hugo Giraudel](https://hugogiraudel.com/)
+----
 
 <!-- slide -->
 
