@@ -603,14 +603,6 @@ caption: |
 
 <!-- slide -->
 
-> **Any barrier that exists**
-> between the user and some part of the system
-> will eventually be **a barrier to creative expression**.
->
-> ---“**Design Principles Behind Smalltalk**” (Byte 1981)
-
-<!-- slide -->
-
 ---
 image: /images/dynamic-css/susy.png
 alt: Susy
@@ -624,6 +616,14 @@ style:
 image: /images/dynamic-css/susy-no.jpg
 alt: No Susy
 ---
+
+<!-- slide -->
+
+> **Any barrier that exists**
+> between the user and some part of the system
+> will eventually be **a barrier to creative expression**.
+>
+> ---“**Design Principles Behind Smalltalk**” (Byte 1981)
 
 <!-- slide -->
 
