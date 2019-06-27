@@ -963,6 +963,23 @@ alt: Raspberry Pi Kit vs Tablet
 <!-- slide -->
 
 ---
+image: /images/unfriendly/humane.jpg
+alt: |
+  Empowering,
+  Finite,
+  Inclusive,
+  Respectful,
+  Thoughtful,
+  Transparent
+style:
+  --image-size: contain
+caption: |
+  [Humane By Design](https://humanebydesign.com/) Principles
+---
+
+<!-- slide -->
+
+---
 image: /images/unfriendly/eatfood.jpg
 alt: |
   Solve real problems.
