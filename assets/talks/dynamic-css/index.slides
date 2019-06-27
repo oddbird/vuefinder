@@ -5,6 +5,9 @@ author: miriam
 image: /images/dynamic-css/_cover.jpg
 tags: [css, variables, custom properties, grid, graphs]
 versions:
+  - slug: design4drupal19
+    title: Design 4 Drupal
+    date: 2019-06-27
   - slug: generate19
     title: Generate NY
     date: 2019-04-25

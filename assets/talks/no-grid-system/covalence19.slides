@@ -67,7 +67,7 @@ caption: 'Jessica Lord: [Nativize is the New Normalize](https://www.youtube.com/
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/susy.png'
+image: '/images/dynamic-css/susy.jpg'
 alt: 'Susy'
 style:
   --image-size: 'contain'
