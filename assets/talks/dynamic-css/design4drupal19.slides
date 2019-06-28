@@ -46,9 +46,19 @@ caption: |
 
 <!-- slide -->
 
+## **Intrinsic** Design
+truly fluid, meaningful, mixed-approach
+
+<!-- slide -->
+
+## **Dynamic** CSS
+styles based on dynamic parameters
+
+<!-- slide -->
+
 ## [**Calc()** & **Variables** & **Grids**][intro]
 
-[intro]: https://codepen.io/mirisuzanne/pen/
+[intro]: https://codepen.io/mirisuzanne/pres/KjyxpM
 
 <!-- slide -->
 
@@ -170,7 +180,7 @@ resize: true
 ---
 demo: cssSprites
 props:
-  sprite: metroid
+  sprite: monsters
 caption: |
   Animated sprites from
   [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)
