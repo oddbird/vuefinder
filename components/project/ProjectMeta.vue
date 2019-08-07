@@ -19,6 +19,12 @@
           :subtitle="meta.subtitle" />
       </h1>
 
+      <a v-if="meta.download"
+        class="pdf-link"
+        :href="`/download/${meta.download}`">
+        🖨️ print/pdf
+      </a>
+
       <by-line
         id="banner"
         :author="meta.author" />
@@ -115,12 +121,24 @@
   }
 }
 
-[data-title='project'] {
-  display: inline-block;
+[data-header='project'] {
+  align-items: baseline;
+  display: grid;
+  justify-content: start;
+
+  @include above('page') {
+    grid-gap: 0 size('gutter');
+    grid-template-columns: auto auto;
+  }
+}
+
+.pdf-link,
+[data-byline='banner'] {
+  font-size: size('xsmall');
 }
 
 [data-byline='banner'] {
-  font-size: size('xsmall');
+  grid-column: 1 / -1;
 }
 
 [data-nav='slides'] {

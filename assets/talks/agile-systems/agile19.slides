@@ -5,6 +5,7 @@ author: miriam
 date: 2019-08-07
 image: /images/agile-systems/_cover.jpg
 oddsite: talks/agile-systems/
+download: agile-systems/agile19.pdf
 tags: [css, sass, design systems, components, performance]
 toc:
   - name: '**Why** Design Systems?'
