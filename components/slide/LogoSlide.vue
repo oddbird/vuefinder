@@ -26,18 +26,17 @@
 <style lang="scss">
 [data-slide-layout='logo'] {
   align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  gap: size('double-gutter');
-  justify-content: space-evenly;
+  display: grid;
+  grid: auto-flow / repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: size('double-gutter');
+  justify-content: center;
   margin: 0 auto;
   max-height: 100vh;
   padding: size('gutter');
-}
 
-img {
-  flex: 1;
-  min-width: 200px;
+  [data-slide-view='grid'] & {
+    grid: auto-flow / repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: size('gutter');
+  }
 }
-
 </style>

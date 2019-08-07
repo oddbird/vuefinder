@@ -67,7 +67,7 @@
         ];
         const mos = months.map(m => m.slice(0, 3));
 
-        return `${mos[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        return `${mos[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
       },
       isPublic(version) {
         if (version.public) {
