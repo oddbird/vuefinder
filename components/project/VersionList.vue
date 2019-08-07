@@ -1,15 +1,15 @@
 <template>
   <ul class="version-list">
-    <li v-for="version in liveVersions"
+    <li v-for="version in publicVersions"
       :key="version.slug">
 
       <nuxt-link
-        v-if="version.slug"
+        v-if="version.slug && isLive(version)"
         :to="fullPath(version.slug)"
         v-html="$md.renderInline(version.title)"
       />
       <a
-        v-else-if="version.url"
+        v-else-if="version.url && isLive(version)"
         :href="version.url"
         v-html="`» ${$md.renderInline(version.title)}`"
       />
@@ -40,8 +40,8 @@
       },
     },
     computed: {
-      liveVersions() {
-        return this.versions.filter(version => this.isLive(version));
+      publicVersions() {
+        return this.versions.filter(version => this.isPublic(version));
       }
     },
     methods: {
@@ -59,6 +59,7 @@
           'May',
           'June',
           'July',
+          'August',
           'September',
           'October',
           'November',
@@ -66,13 +67,16 @@
         ];
         const mos = months.map(m => m.slice(0, 3));
 
-        return `${mos[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+        return `${mos[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
       },
-      isLive(version) {
+      isPublic(version) {
         if (version.public) {
           return version.public;
         }
 
+        return true;
+      },
+      isLive(version) {
         if (version.date) {
           return version.date <= new Date();
         }

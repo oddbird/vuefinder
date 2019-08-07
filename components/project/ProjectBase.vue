@@ -73,7 +73,7 @@
         },
         {
           property: 'article:published_time',
-          content: `${page.date}T00:00:00`,
+          content: `${this.isoDate(page.date)}T00:00:00`,
         },
       ];
 
@@ -119,6 +119,15 @@
       }
     },
     methods: {
+      isoDate(date)  {
+        const m0 = date.getUTCMonth();
+        const mm = `${m0 + 1}`.padStart(2, '0');
+        const d = date.getUTCDate();
+        const dd = `${d}`.padStart(2, '0');
+        const yyyy = date.getUTCFullYear();
+        const iso = `${yyyy}-${mm}-${dd}`;
+        return iso;
+      },
       projectUrl() {
         let route = this.$route.path.endsWith('/')
           ? this.$route.path

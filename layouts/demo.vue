@@ -3,13 +3,11 @@
 </template>
 
 <style lang="scss">
-  @import '~accoutrement/sass/init';
   @include import-webfonts;
 
   html {
     @include font-family('code');
-    font-size: calc(16px + 0.5vw);
-    --gutter: 1em;
-    --small: 0.75em;
+    font-size: calc(100% + 0.5vw);
+    font-size: calc(1em + 0.5vw);
   }
 </style>

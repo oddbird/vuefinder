@@ -21,6 +21,8 @@
   import SlideCaption from '~/components/utility/SlideCaption.vue';
 
   import DefaultSlide from '~/components/slide/DefaultSlide.vue';
+  import TocSlide from '~/components/slide/TocSlide.vue';
+  import LogoSlide from '~/components/slide/LogoSlide.vue';
   import TodoSlide from '~/components/slide/TodoSlide.vue';
   import TitleSlide from '~/components/slide/TitleSlide.vue';
   import ImageSlide from '~/components/slide/ImageSlide.vue';
@@ -34,6 +36,8 @@
   export default {
     components: {
       SlideCaption,
+      TocSlide,
+      LogoSlide,
       TitleSlide,
       ImageSlide,
       VideoSlide,
@@ -96,6 +100,8 @@
       },
       getLayout() {
         let defaultLayout = this.slide.data.image ? 'image' : 'default';
+        defaultLayout = this.slide.data.toc ? 'toc' : defaultLayout;
+        defaultLayout = this.slide.data.logos ? 'logo' : defaultLayout;
         defaultLayout = this.slide.data.video ? 'video' : defaultLayout;
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;

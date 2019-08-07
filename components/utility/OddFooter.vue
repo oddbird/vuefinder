@@ -27,7 +27,7 @@
     },
     computed: {
       year() {
-        return new Date().getFullYear();
+        return new Date().getUTCFullYear();
       }
     },
   }
