@@ -8,7 +8,12 @@
     </slot>
 
     <footer data-part="template-footer">
-      <nuxt-link :to="$route.path"
+      <a v-if="meta.oddsite"
+        :href="`https://${oddUrl}`">
+        {{ oddUrl }}
+      </a>
+      <nuxt-link v-else
+        :to="$route.path"
         class="slides-url">
         {{ meta.projectUrl }}
       </nuxt-link>
@@ -36,6 +41,14 @@
         type: Object,
         required: true
       },
+    },
+    computed: {
+      oddUrl() {
+        if (this.meta.oddsite) {
+          return `oddbird.net/${this.meta.oddsite}`;
+        }
+        return null;
+      }
     },
   }
 </script>

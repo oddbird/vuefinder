@@ -4,6 +4,7 @@ event: Agile Alliance
 author: miriam
 date: 2019-08-07
 image: /images/agile-systems/_cover.jpg
+oddsite: talks/agile-systems/
 tags: [css, sass, design systems, components, performance]
 toc:
   - name: '**Why** Design Systems?'
@@ -1183,6 +1184,9 @@ layout: template
 ---
 
 ## **Thank you**!
+[Download the checklist »][check]
+
+[check]: https://oddbird.net/static/resources/design-systems-checklist.pdf
 
 <!-- slide -->
 

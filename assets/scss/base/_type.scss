@@ -72,6 +72,12 @@ abbr[title] {
 }
 
 
+hr {
+  border-bottom: size('quarter-shim') dotted color('border');
+  margin: size('shim');
+}
+
+
 .amp {
   @include font-family('amp');
   font-style: italic;
