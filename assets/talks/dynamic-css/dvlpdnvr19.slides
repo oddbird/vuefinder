@@ -247,6 +247,39 @@ caption: |
 
 <!-- slide -->
 
+```css
+html {
+  --os-mode: 1;
+
+  @media (prefers-color-scheme: dark) {
+    --os-mode: -1;
+  }
+
+  @media (prefers-color-scheme: light) {
+    --os-mode: 1;
+  }
+}
+```
+
+<!-- slide -->
+
+```css
+[data-colors='light'] {
+  --html-mode: 1;
+}
+
+[data-colors='dark'] {
+  --html-mode: -1;
+}
+
+[data-colors] {
+  --given-mode: var(--user-mode, var(--html-mode, var(--os-mode, 1)));
+  --mode: var(--given-mode, 1);
+}
+```
+
+<!-- slide -->
+
 ## 2017: CSS **Grid**
 Firefox 52 **&** Chrome 57 **&** Safari 10
 
