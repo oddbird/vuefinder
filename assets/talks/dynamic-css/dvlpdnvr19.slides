@@ -167,6 +167,16 @@ pen:
 <!-- slide -->
 
 ---
+image: /images/dynamic-css/smashing-vars.jpg
+alt: CSS Custom Properties in the Cascade by Miriam Suzanne
+caption: |
+  Article on
+  [Smashing Magazine](https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/)
+---
+
+<!-- slide -->
+
+---
 pen:
   title: SusyCSS
   id: ZBzRvX
