@@ -36,24 +36,20 @@ caption: OddBird siblings (Jonny, Carl, and Miriam) in 1994
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/susy.jpg'
-alt: 'Susy'
+image: /images/dynamic-css/susy.jpg
+alt: Susy
 style:
-  --image-size: 'contain'
+  --image-size: contain
 ---
 
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/susy-no.jpg'
-alt: 'Susy, scribbled out'
+image: /images/dynamic-css/susy-no.jpg
+alt: Susy, scribbled out
 style:
-  --image-size: 'contain'
+  --image-size: contain
 ---
-
-<!-- slide -->
-
-## HTML/CSS **History**
 
 <!-- slide -->
 
@@ -92,8 +88,8 @@ caption: |
 <!-- slide -->
 
 ---
-image: '/images/dynamic-css/devices.jpg'
-alt: 'A zillion different devices of all sizes (original)'
+image: /images/dynamic-css/devices.jpg
+alt: A zillion different devices of all sizes (original)
 ---
 
 <!-- slide -->
@@ -240,7 +236,7 @@ caption: Please **Don't Use It**
 <!-- slide -->
 
 ---
-demo: 'hslTheme'
+demo: hslTheme
 caption: |
   Inspired by [Facundo Corradini](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)
 ---
@@ -286,8 +282,8 @@ Firefox 52 **&** Chrome 57 **&** Safari 10
 <!-- slide -->
 
 ---
-demo: 'layoutGrid'
-caption: 'Grid lines 1-indexed and -1 in reverse (see dev tools)'
+demo: layoutGrid
+caption: Grid lines 1-indexed and -1 in reverse (see dev tools)
 resize: true
 ---
 
@@ -342,8 +338,8 @@ footer { grid-area: footer; }
 <!-- slide -->
 
 ---
-demo: 'layoutGrid'
-caption: 'Resize window to see media-query in action…'
+demo: layoutGrid
+caption: Resize window to see media-query in action...
 resize: true
 ---
 
@@ -365,7 +361,7 @@ resize: true
 
 ---
 style:
-  text-align: 'left'
+  text-align: left
 ---
 
 ## **`px`**/**`em`**/**`%`** `=>` fixed
@@ -377,7 +373,7 @@ style:
 
 ---
 style:
-  text-align: 'left'
+  text-align: left
 ---
 
 ## **`%`** `=>` relative to **parent width**
@@ -497,7 +493,9 @@ style:
 <!-- slide -->
 
 ---
-demo: 'cssSprites'
+demo: cssSprites
+props:
+  sprite: monsters
 caption: |
   Animated sprites from
   [Monster Slayer](https://github.com/krystalcampioni/monster-slayer)

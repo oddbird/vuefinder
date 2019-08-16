@@ -52,6 +52,7 @@
 // -----
 
 .day-planner {
+  --gutter: 1em;
   min-height: 100vh;
   padding: var(--gutter);
 }
@@ -64,9 +65,9 @@
   display: grid;
   grid-template:
     'head edit' auto
-    'temps temps' 1fr
+    'temps temps' minmax(10em, 1fr)
     'events events' auto
-    / 1fr 1fr; // minmax(auto, 1fr)
+    / 1fr 1fr;
   row-gap: var(--gutter);
 }
 
@@ -107,6 +108,12 @@
 
 
 <style data-note="style cleanup...">
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+}
+
 .header,
 .edit {
   background: white;
@@ -116,6 +123,11 @@ p,
 time {
   font-size: var(--small);
   font-style: italic;
+}
+
+h1, h2, h3 {
+  font-size: 1em;
+  margin: 0;
 }
 
 

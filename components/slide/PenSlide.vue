@@ -1,26 +1,28 @@
 <template>
   <div class="pen-wrapper">
-    <p
-      class="codepen"
-      data-height="100%"
-      data-theme-id="light"
-      :data-editable="pen.edit"
-      :data-default-tab="tab"
-      :data-user="`${user}`"
-      :data-slug-hash="pen.id"
-      :data-pen-title="pen.title"
-    >
-      <span>
-        See the Pen
-        <a :href="`https://codepen.io/${user}/pen/${pen.id}/`">
-          {{ pen.title }}
-        </a>
-        by {{ author || 'Miriam Suzanne' }}
-        (<a :href="`https://codepen.io/${user}/`">@{{ user }}</a>)
-        on <a href="https://codepen.io">CodePen</a>.
-      </span>
-    </p>
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    <no-ssr>
+      <p
+        class="codepen"
+        data-height="100%"
+        data-theme-id="light"
+        :data-editable="pen.edit"
+        :data-default-tab="tab"
+        :data-user="`${user}`"
+        :data-slug-hash="pen.id"
+        :data-pen-title="pen.title"
+      >
+        <span>
+          See the Pen
+          <a :href="`https://codepen.io/${user}/pen/${pen.id}/`">
+            {{ pen.title }}
+          </a>
+          by {{ author || 'Miriam Suzanne' }}
+          (<a :href="`https://codepen.io/${user}/`">@{{ user }}</a>)
+          on <a href="https://codepen.io">CodePen</a>.
+        </span>
+      </p>
+      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    </no-ssr>
   </div>
 </template>
 

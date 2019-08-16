@@ -1,40 +1,41 @@
 <template>
-  <table class="temps"
+  <table
     :style="{
       '--high-temp': high,
       '--low-temp': low,
     }" >
 
-    <!-- Hours -->
-    <tr data-row="hours">
-      <th
-        data-cell="hour-title"
-        v-for="(temp, time) in temps" :key="time" >
-        {{ time }}
-      </th>
-    </tr>
+    <thead>
+      <!-- Hours -->
+      <tr data-row="hours">
+        <th
+          data-cell="hour-title"
+          v-for="(temp, time) in temps" :key="time" >
+          {{ time }}
+        </th>
+      </tr>
+    </thead>
 
-    <!-- Temps -->
-    <!--  -->
-    <tr data-row="temps" :style="{'--ease': ease}">
+    <tbody>
+      <!-- Temps -->
+      <!-- :style="{'--ease': ease}" -->
+      <tr data-row="temps" >
 
-      <!-- Temp -->
-      <!-- (temp, time, index) -->
-      <!-- '--index': index, -->
-      <td
-        data-cell="temp-value"
-        :style="{
-          '--temp': temp,
-          '--index': index,
-        }"
-        v-for="(temp, time, index) in temps" :key="time" >
-        <span class="temp-value">
-          {{ temp }}°
-        </span>
-      </td>
+        <!-- Temp -->
+        <td
+          data-cell="temp-value"
+          :style="{
+            '--temp': temp,
+            '--index': index,
+          }"
+          v-for="(temp, time, index) in temps" :key="time" >
+          <span class="temp-value">
+            {{ temp }}°
+          </span>
+        </td>
 
-    </tr>
-
+      </tr>
+    </tbody>
   </table>
 </template>
 
@@ -92,7 +93,7 @@
 [data-cell='temp-value'] {
   --range: calc(var(--high-temp) - var(--min-temp, var(--low-temp, 32)));
   --min-temp: calc(var(--low-temp) - var(--pad, 2));
-  --pad: 2;
+  --pad: 3;
 }
 
 
@@ -207,6 +208,10 @@
 <style data-note="style cleanup...">
 .temps {
   font-size: var(--small);
+}
+
+thead, tbody {
+  display: contents;
 }
 
 [data-cell='hour-title'] {
