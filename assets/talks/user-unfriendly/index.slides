@@ -5,6 +5,9 @@ author: miriam
 image: /images/unfriendly/_cover.jpg
 tags: [css, html, accessibility, usability, art, process]
 versions:
+  - slug: agnesscott19
+    title: Agnes Scott College
+    date: 2019-09-17
   - slug: design4drupal19
     title: Design 4 Drupal
     date: 2019-06-27

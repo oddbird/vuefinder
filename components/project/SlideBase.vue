@@ -31,6 +31,7 @@
   import TemplateSlide from '~/components/slide/TemplateSlide.vue';
   import ContactSlide from '~/components/slide/ContactSlide.vue';
   import DemoSlide from '~/components/slide/DemoSlide.vue';
+  import EmbedSlide from '~/components/slide/EmbedSlide.vue';
   import PenSlide from '~/components/slide/PenSlide.vue';
 
   export default {
@@ -47,6 +48,7 @@
       TemplateSlide,
       ContactSlide,
       DemoSlide,
+      EmbedSlide,
       PenSlide,
     },
     props: {
@@ -105,6 +107,7 @@
         defaultLayout = this.slide.data.video ? 'video' : defaultLayout;
         defaultLayout = this.slide.data.split ? 'split' : defaultLayout;
         defaultLayout = this.slide.data.demo ? 'demo' : defaultLayout;
+        defaultLayout = this.slide.data.embed ? 'embed' : defaultLayout;
         defaultLayout = this.slide.data.pen ? 'pen' : defaultLayout;
         defaultLayout = this.slide.data.todo ? 'todo' : defaultLayout;
         return this.slide.data.layout || this.meta.layout || defaultLayout;
