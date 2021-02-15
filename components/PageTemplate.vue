@@ -56,6 +56,7 @@
 
 <style lang="scss" scoped>
 [data-layout='page-template'] {
+  background-color: color('white');
   display: grid;
   grid-gap: size('newline');
   grid-template-columns:

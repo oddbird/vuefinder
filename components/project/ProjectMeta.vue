@@ -99,6 +99,10 @@
   grid-row-gap: size('half-shim');
   grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, auto);
   padding: size('shim');
+
+  @media print {
+    display: none;
+  }
 }
 
 [rel='home'] {
