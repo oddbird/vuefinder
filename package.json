@@ -25,7 +25,7 @@
     "@nuxtjs/style-resources": "^0.1.1",
     "accoutrement": "^2.1.1",
     "gray-matter": "^4.0.1",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-attrs": "^2.2.0",
     "markdown-it-highlightjs": "^3.0.0",
     "node-dir": "^0.1.17",
