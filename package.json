@@ -29,7 +29,7 @@
     "markdown-it-attrs": "^2.2.0",
     "markdown-it-highlightjs": "^3.0.0",
     "node-dir": "^0.1.17",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.8.0",
     "sass-loader": "^7.1.0",
     "typogr": "^0.6.8"
